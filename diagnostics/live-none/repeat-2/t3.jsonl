@@ -1,0 +1,5 @@
+{"type":"thread.started","thread_id":"01a0fe0d-c139-7b80-9d3c-73e880858a0f"}
+{"type":"item.completed","item":{"id":"item_0","type":"error","message":"Under-development features enabled: chronicle. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/fngux2/.codex/config.toml."}}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_1","type":"agent_message","text":"NONE_R2_CONTEXT_OK: NONE_R2_TEXT_OK | NONE_R2_MCP_OK"}}
+{"type":"turn.completed","usage":{"input_tokens":100450,"cached_input_tokens":99431,"cache_write_input_tokens":0,"output_tokens":69,"reasoning_output_tokens":0}}

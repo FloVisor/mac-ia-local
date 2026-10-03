@@ -1,0 +1,6 @@
+Les deux tests passent.
+
+**Résumé :**
+- **`calcul.py`** : fonction `multiplication(a, b)` ajoutée.
+- **`test_calcul.py`** : test `test_multiplication` ajouté, test `test_addition` conservé.
+- **Résultat `unittest -v`** : **2 tests exécutés, 0 échec, 0 erreur.** ✅

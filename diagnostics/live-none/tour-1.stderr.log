@@ -1,0 +1,62 @@
+Reading additional input from stdin...
+2026-10-02T19:15:09.462857Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-02T19:15:09.462888Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-02T19:15:09.477352Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.feature.state] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:09.477382Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.feature.state] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:09.477451Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.thread.started] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:09.516556Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.shell_snapshot] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:09.766986Z  WARN codex_otel::events::session_telemetry: metrics duration [codex.startup.phase.duration_ms] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:09.772124Z  WARN codex_otel::events::session_telemetry: metrics duration [codex.startup.phase.duration_ms] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:10.160653Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-10-02T19:15:10.160689Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-10-02T19:15:10.496073Z  WARN codex_otel::events::session_telemetry: metrics histogram [codex.thread.skills.enabled_total] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:10.496104Z  WARN codex_otel::events::session_telemetry: metrics histogram [codex.thread.skills.kept_total] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:10.496111Z  WARN codex_otel::events::session_telemetry: metrics histogram [codex.thread.skills.truncated] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:10.496115Z  WARN codex_otel::events::session_telemetry: metrics histogram [codex.thread.skills.description_truncated_chars] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:10.496131Z  WARN codex_otel::events::session_telemetry: metrics histogram [codex.thread.skills.enabled_total] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:10.496136Z  WARN codex_otel::events::session_telemetry: metrics histogram [codex.thread.skills.kept_total] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:10.496139Z  WARN codex_otel::events::session_telemetry: metrics histogram [codex.thread.skills.truncated] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:10.496143Z  WARN codex_otel::events::session_telemetry: metrics histogram [codex.thread.skills.description_truncated_chars] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:11.326481Z  WARN codex_memories_write::phase1::job::result: Phase 1 job failed for thread 01a0fcbc-e20a-7c13-a991-d72f66d7710a: unexpected status 401 Unauthorized: Missing bearer or basic authentication in header, url: http://127.0.0.1:11435/api/codex/v1/responses, cf-ray: a44608ca9b633a77-CDG, request id: req_7263203dc1ba4e68bcc79138f84fb6e7
+2026-10-02T19:15:11.326831Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.memory.phase2] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.602535Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.api_request] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.604737Z  WARN codex_otel::events::session_telemetry: metrics duration [codex.api_request.duration_ms] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.613110Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.sse_event] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.613252Z  WARN codex_otel::events::session_telemetry: metrics duration [codex.sse_event.duration_ms] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.614425Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.sse_event] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.614456Z  WARN codex_otel::events::session_telemetry: metrics duration [codex.sse_event.duration_ms] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.614691Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.sse_event] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.614708Z  WARN codex_otel::events::session_telemetry: metrics duration [codex.sse_event.duration_ms] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.615612Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.sse_event] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.615619Z  WARN codex_otel::events::session_telemetry: metrics duration [codex.sse_event.duration_ms] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.615629Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.sse_event] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.615633Z  WARN codex_otel::events::session_telemetry: metrics duration [codex.sse_event.duration_ms] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.624442Z  WARN codex_otel::events::session_telemetry: metrics duration [codex.turn.ttft.duration_ms] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.624557Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.sse_event] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.624570Z  WARN codex_otel::events::session_telemetry: metrics duration [codex.sse_event.duration_ms] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.624589Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.sse_event] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.624594Z  WARN codex_otel::events::session_telemetry: metrics duration [codex.sse_event.duration_ms] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.626540Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.sse_event] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.626615Z  WARN codex_otel::events::session_telemetry: metrics duration [codex.sse_event.duration_ms] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.626716Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.sse_event] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.626744Z  WARN codex_otel::events::session_telemetry: metrics duration [codex.sse_event.duration_ms] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.628482Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.sse_event] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.628493Z  WARN codex_otel::events::session_telemetry: metrics duration [codex.sse_event.duration_ms] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.629491Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.sse_event] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.629497Z  WARN codex_otel::events::session_telemetry: metrics duration [codex.sse_event.duration_ms] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.633373Z  WARN codex_otel::events::session_telemetry: metrics duration [codex.turn.ttfm.duration_ms] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.712843Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.hooks.run] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.712860Z  WARN codex_otel::events::session_telemetry: metrics duration [codex.hooks.run.duration_ms] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.712865Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.hooks.run] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.712868Z  WARN codex_otel::events::session_telemetry: metrics duration [codex.hooks.run.duration_ms] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.716881Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.turn.network_proxy] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.717151Z  WARN codex_otel::events::session_telemetry: metrics histogram [codex.turn.tool.call] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.717631Z  WARN codex_otel::events::session_telemetry: metrics histogram [codex.turn.token_usage] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.717773Z  WARN codex_otel::events::session_telemetry: metrics histogram [codex.turn.token_usage] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.717776Z  WARN codex_otel::events::session_telemetry: metrics histogram [codex.turn.token_usage] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.717779Z  WARN codex_otel::events::session_telemetry: metrics histogram [codex.turn.token_usage] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.717781Z  WARN codex_otel::events::session_telemetry: metrics histogram [codex.turn.token_usage] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.717784Z  WARN codex_otel::events::session_telemetry: metrics histogram [codex.turn.token_usage] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.717787Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.turn.memory] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.717991Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.turn.unified_exec.running_processes] failed: tag value contains invalid characters: qwen3.6:35b-coding
+2026-10-02T19:15:46.773396Z  WARN codex_otel::events::session_telemetry: metrics counter [codex.conversation.turn.count] failed: tag value contains invalid characters: qwen3.6:35b-coding

@@ -1,0 +1,5 @@
+**Résumé :**
+
+- **calcul.py** : fonction `multiplication(a, b)` ajoutée (return `a * b`)
+- **test_calcul.py** : test `test_multiplication(6, 7) == 42` ajouté, test `test_addition` conservé
+- **Exécution** : 2 tests exécutés, tous les deux passent ✅

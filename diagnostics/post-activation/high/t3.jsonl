@@ -1,0 +1,6 @@
+{"type":"thread.started","thread_id":"01a0fe26-053c-7463-a358-cf5cd3280122"}
+{"type":"item.completed","item":{"id":"item_0","type":"error","message":"Under-development features enabled: chronicle. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/fngux2/.codex/config.toml."}}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_1","type":"reasoning","text":"L'utilisateur me demande de rappeler les deux marqueurs que j'ai envoyés précédemment, au format spécifique. Je dois me souvenir exactement de ce que j'ai répondu :\n1. \"POST_HIGH_TEXT_OK\" \n2. \"POST_HIGH_MCP_OK\"\n\nJe dois les formater exactement comme demandé : `<marqueur1> | <marqueur2>`"}}
+{"type":"item.completed","item":{"id":"item_2","type":"agent_message","text":"POST_HIGH_TEXT_OK | POST_HIGH_MCP_OK"}}
+{"type":"turn.completed","usage":{"input_tokens":100475,"cached_input_tokens":99052,"cache_write_input_tokens":0,"output_tokens":244,"reasoning_output_tokens":0}}

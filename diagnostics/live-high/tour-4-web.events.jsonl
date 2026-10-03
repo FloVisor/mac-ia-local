@@ -1,0 +1,17 @@
+{"type":"thread.started","thread_id":"01a0fdff-0a7b-7ed2-96ce-c26cd20728dc"}
+{"type":"item.completed","item":{"id":"item_0","type":"error","message":"Under-development features enabled: chronicle. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/fngux2/.codex/config.toml."}}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_1","type":"reasoning","text":"L'utilisateur me demande de faire une recherche web sur \"Go 1.26.8 release notes go.dev\" en utilisant la recherche web intégrée (web_search), puis de répondre avec un format spécifique. C'est une requête simple qui n'a pas besoin de mémoire."}}
+{"type":"item.started","item":{"id":"item_2","type":"web_search","id":"ws_882934_1","query":"Go 1.26.8 release notes go.dev","action":{"type":"search","query":"Go 1.26.8 release notes go.dev"}}}
+{"type":"error","message":"Reconnecting... 1/5 (stream disconnected before completion: ollama cloud is disabled: web search is unavailable)"}
+{"type":"item.started","item":{"id":"item_3","type":"web_search","id":"ws_425461_1","query":"Go 1.26.8 release notes go.dev","action":{"type":"search","query":"Go 1.26.8 release notes go.dev"}}}
+{"type":"error","message":"Reconnecting... 2/5 (stream disconnected before completion: ollama cloud is disabled: web search is unavailable)"}
+{"type":"item.started","item":{"id":"item_4","type":"web_search","id":"ws_31909_1","query":"Go 1.26.8 release notes go.dev","action":{"type":"search","query":"Go 1.26.8 release notes go.dev"}}}
+{"type":"error","message":"Reconnecting... 3/5 (stream disconnected before completion: ollama cloud is disabled: web search is unavailable)"}
+{"type":"item.started","item":{"id":"item_5","type":"web_search","id":"ws_791106_1","query":"Go 1.26.8 release notes go.dev","action":{"type":"search","query":"Go 1.26.8 release notes go.dev"}}}
+{"type":"error","message":"Reconnecting... 4/5 (stream disconnected before completion: ollama cloud is disabled: web search is unavailable)"}
+{"type":"item.started","item":{"id":"item_6","type":"web_search","id":"ws_478024_1","query":"Go 1.26.8 release notes go.dev","action":{"type":"search","query":"Go 1.26.8 release notes go.dev"}}}
+{"type":"error","message":"Reconnecting... 5/5 (stream disconnected before completion: ollama cloud is disabled: web search is unavailable)"}
+{"type":"item.started","item":{"id":"item_7","type":"web_search","id":"ws_921292_1","query":"Go 1.26.8 release notes go.dev","action":{"type":"search","query":"Go 1.26.8 release notes go.dev"}}}
+{"type":"error","message":"stream disconnected before completion: ollama cloud is disabled: web search is unavailable"}
+{"type":"turn.failed","error":{"message":"stream disconnected before completion: ollama cloud is disabled: web search is unavailable"}}

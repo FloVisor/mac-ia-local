@@ -1,0 +1,7 @@
+{"type":"thread.started","thread_id":"01a0fe0a-b410-7df3-8de6-f0baeaad0534"}
+{"type":"item.completed","item":{"id":"item_0","type":"error","message":"Under-development features enabled: chronicle. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/fngux2/.codex/config.toml."}}
+{"type":"turn.started"}
+{"type":"item.started","item":{"id":"item_1","type":"command_execution","command":"/bin/bash -lc 'cat /Users/fngux2/codex-ollama-maintenance/witness-none/temoin.txt'","aggregated_output":"","exit_code":null,"status":"in_progress"}}
+{"type":"item.completed","item":{"id":"item_1","type":"command_execution","command":"/bin/bash -lc 'cat /Users/fngux2/codex-ollama-maintenance/witness-none/temoin.txt'","aggregated_output":"VALEUR_TEMOIN=BLEU-3197\n","exit_code":0,"status":"completed"}}
+{"type":"item.completed","item":{"id":"item_2","type":"agent_message","text":"FILE_NONE_OK: VALEUR_TEMOIN=BLEU-3197"}}
+{"type":"turn.completed","usage":{"input_tokens":151430,"cached_input_tokens":125858,"cache_write_input_tokens":0,"output_tokens":128,"reasoning_output_tokens":0}}

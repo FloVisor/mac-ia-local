@@ -1,0 +1,5 @@
+**Résumé :**
+
+- `calcul.py` : ajout de `soustraction(a, b)` conservant `addition(a, b)`.
+- `test_calcul.py` : nouveau test `test_soustraction` ajouté, l'existant `test_addition` conservé.
+- `python3 -m unittest -v` : **2 tests passés, 0 échec** → tout fonctionne.

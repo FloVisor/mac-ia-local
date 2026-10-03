@@ -1,0 +1,6 @@
+{"type":"thread.started","thread_id":"01a0fdff-0a7b-7ed2-96ce-c26cd20728dc"}
+{"type":"item.completed","item":{"id":"item_0","type":"error","message":"Under-development features enabled: chronicle. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/fngux2/.codex/config.toml."}}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_1","type":"reasoning","text":"The user wants me to respond with exactly \"HIGH_TEXT_OK\" without using any tools. This is a simple request that doesn't require any tool calls."}}
+{"type":"item.completed","item":{"id":"item_2","type":"agent_message","text":"HIGH_TEXT_OK"}}
+{"type":"turn.completed","usage":{"input_tokens":25620,"cached_input_tokens":0,"cache_write_input_tokens":0,"output_tokens":38,"reasoning_output_tokens":0}}

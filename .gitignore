@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+
+# Caches et toolchains volumineux (non versionnés)
+.cache/
+toolchains/
+
+# Binaires et artefacts de build
+artifacts/
+isolated-home/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Go
+*.test
+*.out

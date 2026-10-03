@@ -1,0 +1,6 @@
+{"type":"thread.started","thread_id":"01a0fe0e-8262-70e2-ac2c-f4f17e8eac93"}
+{"type":"item.completed","item":{"id":"item_0","type":"error","message":"Under-development features enabled: chronicle. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/fngux2/.codex/config.toml."}}
+{"type":"turn.started"}
+{"type":"item.completed","item":{"id":"item_1","type":"reasoning","text":"L'utilisateur me demande de rappeler les deux marqueurs précédents sans utiliser d'outil. Je dois simplement me souvenir de ce que j'ai répondu précédemment.\n\n1. Premier marqueur: \"HIGH_R2_TEXT_OK\" (après la demande de répondre exactement à cela sans outil)\n2. Deuxième marqueur: \"HIGH_R2_MCP_OK\" (après l'appel MCP n8n_health_check)"}}
+{"type":"item.completed","item":{"id":"item_2","type":"agent_message","text":"HIGH_R2_CONTEXT_OK: HIGH_R2_TEXT_OK | HIGH_R2_MCP_OK"}}
+{"type":"turn.completed","usage":{"input_tokens":100606,"cached_input_tokens":99201,"cache_write_input_tokens":0,"output_tokens":390,"reasoning_output_tokens":0}}
