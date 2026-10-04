@@ -116,6 +116,7 @@ ps aux | grep -E "llama-server|EngineCore"   # RSS Ollama ; vLLM vit en wired GP
 10. [10-vllm-optimization.md](10-vllm-optimization.md) — optimisation
 11. [11-switch-criteria.md](11-switch-criteria.md) — critère de bascule
 12. [12-rollback.md](12-rollback.md) — rollback
+13. [13-final-report.md](13-final-report.md) — **rapport final 20 points (recap perfs)**
 
 ## Troubleshooting
 
