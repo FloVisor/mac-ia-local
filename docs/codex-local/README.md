@@ -102,6 +102,8 @@ ps aux | grep -E "llama-server|EngineCore"   # RSS Ollama ; vLLM vit en wired GP
 | Tour Codex | **27–38s** | 3–6 min |
 | RAM | 24.4 GB RSS | ~36 GB wired GPU |
 
+**2026-10-04** : Qwen3-Coder-30B-A3B testé sur vLLM-Metal ([07-vllm-model-comparison.md](07-vllm-model-comparison.md)) — décodage 19–34 tok/s (léger gain), préfill 4x plus lent, tours Codex 4.5–14.5 min. Verdict : le mauvais décodage vLLM vient du chemin mono-requête vLLM-Metal, pas du modèle. Ollama conservé.
+
 ## Documents
 
 1. [01-baseline-codex.md](01-baseline-codex.md) — audit initial complet
@@ -117,6 +119,7 @@ ps aux | grep -E "llama-server|EngineCore"   # RSS Ollama ; vLLM vit en wired GP
 11. [11-switch-criteria.md](11-switch-criteria.md) — critère de bascule
 12. [12-rollback.md](12-rollback.md) — rollback
 13. [13-final-report.md](13-final-report.md) — **rapport final 20 points (recap perfs)**
+14. [07-vllm-model-comparison.md](07-vllm-model-comparison.md) — **comparaison Qwen3-Coder-30B vs Qwen3.6 sur vLLM-Metal (2026-10-04)**
 
 ## Troubleshooting
 

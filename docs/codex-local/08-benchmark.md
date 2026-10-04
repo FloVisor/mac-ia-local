@@ -2,6 +2,8 @@
 
 Date : 2026-10-03/04 · Même corpus `evidence/bench-prompts/`, temp 0.6, 3 runs (médiane [min–max]) pour A/B/C, 1 run par niveau de contexte.
 
+> **2026-10-04 (mission modèle témoin)** : un 3e backend `mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit` a été qualifié sur vLLM-Metal avec la même méthodologie — résultats complets et analyse des hypothèses H1–H4 dans [07-vllm-model-comparison.md](07-vllm-model-comparison.md). Synthèse : décodage 23.4/34.1/18.9 tok/s (A/B/C), préfill 64K/125K 4x plus lent que Qwen3.6, tours Codex 4.5–14.5 min. Cause racine du mauvais décodage vLLM : le chemin mono-requête vLLM-Metal (H3), pas l'architecture ni la mémoire. Qwen3.8-27B non testé (critères non remplis).
+
 ## 1. Tableau comparatif global
 
 | Test | Ollama (qwen3.6:35b-coding Q4_K_M 22GB) | vLLM (mlx-community/Qwen3.6-35B-A3B-4bit 20.4GB) | Delta |
