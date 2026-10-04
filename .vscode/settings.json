@@ -1,0 +1,12 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^echo \"=== DISK ===\"; df -h /; echo \"=== GIT ===\"; git --version; echo \"=== SHELL ===\"; echo \\$SHELL; \\$SHELL --version 2>/dev/null \\| head -1; echo \"=== HOMEBREW ===\"; which brew && brew --version \\| head -1; echo \"=== PYTHON ===\"; which python3 && python3 --version; echo \"=== OLLAMA ===\"; which ollama && ollama --version 2>&1 \\| head -2; echo \"=== CODEX ===\"; which codex && codex --version 2>&1 \\| head -2$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^echo \"=== OLLAMA LIST ===\"; ollama list; echo \"=== OLLAMA PS ===\"; ollama ps; echo \"=== SHOW qwen3\\.6:35b-coding ===\"; ollama show qwen3\\.6:35b-coding 2>&1 \\| head -40$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
