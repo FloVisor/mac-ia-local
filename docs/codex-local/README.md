@@ -104,6 +104,10 @@ ps aux | grep -E "llama-server|EngineCore"   # RSS Ollama ; vLLM vit en wired GP
 
 **2026-10-04** : Qwen3-Coder-30B-A3B testé sur vLLM-Metal ([07-vllm-model-comparison.md](07-vllm-model-comparison.md)) — décodage 19–34 tok/s (léger gain), préfill 4x plus lent, tours Codex 4.5–14.5 min. Verdict : le mauvais décodage vLLM vient du chemin mono-requête vLLM-Metal, pas du modèle. Ollama conservé.
 
+## Etat actuel de vLLM-Metal (qualification close)
+
+**Ollama reste le backend local par défaut** (decode 56–75 tok/s, tour Codex 27–38 s) ; **vLLM-Metal reste installé uniquement comme plateforme de qualification** (decode 17–34 tok/s, tours 3–14 min — cause : chemin mono-requête vLLM-Metal, pas le modèle ni la mémoire). Retester uniquement si une release vLLM/vLLM-Metal mentionne Apple Silicon/Metal/decode/kernels ; **gate : ≥ 50 tok/s au test B** (baseline vLLM ~22, Ollama ~68) avant toute requalification complète. Ne pas rebenchmarker Ollama tant que sa version/modèle/config n'ont pas changé. Tout le détail — baseline figée, seuils, protocole court, checklist, commandes : **[08-vllm-metal-conclusion-and-retest.md](08-vllm-metal-conclusion-and-retest.md)**.
+
 ## Documents
 
 1. [01-baseline-codex.md](01-baseline-codex.md) — audit initial complet
@@ -120,6 +124,7 @@ ps aux | grep -E "llama-server|EngineCore"   # RSS Ollama ; vLLM vit en wired GP
 12. [12-rollback.md](12-rollback.md) — rollback
 13. [13-final-report.md](13-final-report.md) — **rapport final 20 points (recap perfs)**
 14. [07-vllm-model-comparison.md](07-vllm-model-comparison.md) — **comparaison Qwen3-Coder-30B vs Qwen3.6 sur vLLM-Metal (2026-10-04)**
+15. [08-vllm-metal-conclusion-and-retest.md](08-vllm-metal-conclusion-and-retest.md) — **conclusion de la qualification + procédure/gates de retest**
 
 ## Troubleshooting
 
