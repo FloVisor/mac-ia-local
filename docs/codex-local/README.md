@@ -125,6 +125,7 @@ ps aux | grep -E "llama-server|EngineCore"   # RSS Ollama ; vLLM vit en wired GP
 13. [13-final-report.md](13-final-report.md) — **rapport final 20 points (recap perfs)**
 14. [07-vllm-model-comparison.md](07-vllm-model-comparison.md) — **comparaison Qwen3-Coder-30B vs Qwen3.6 sur vLLM-Metal (2026-10-04)**
 15. [08-vllm-metal-conclusion-and-retest.md](08-vllm-metal-conclusion-and-retest.md) — **conclusion de la qualification + procédure/gates de retest**
+16. [14-ctx-checkpoints.md](14-ctx-checkpoints.md) — **limitation des context checkpoints llama-server à 4 (LLAMA_ARG_CTX_CHECKPOINTS=4, 2026-10-04)**
 
 ## Troubleshooting
 
