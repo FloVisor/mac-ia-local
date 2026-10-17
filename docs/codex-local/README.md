@@ -127,6 +127,7 @@ ps aux | grep -E "llama-server|EngineCore"   # RSS Ollama ; vLLM vit en wired GP
 15. [08-vllm-metal-conclusion-and-retest.md](08-vllm-metal-conclusion-and-retest.md) — **conclusion de la qualification + procédure/gates de retest**
 16. [14-ctx-checkpoints.md](14-ctx-checkpoints.md) — **limitation des context checkpoints llama-server à 4 (LLAMA_ARG_CTX_CHECKPOINTS=4, 2026-10-04)**
 17. [15-local-llm-mcp-delegation-policy.md](15-local-llm-mcp-delegation-policy.md) — **MCP local_llm : politique de délégation automatique proposée (diff, non appliquée, 2026-10-17)**
+18. [16-model-effort-selector.md](16-model-effort-selector.md) — **sélecteur d'effort Codex : règle des ≥3 niveaux, procédure et pièges (keep_alive 30m + correctif qwen3.6:35b-coding, 2026-10-17)**
 
 ## MCP local_llm (2026-10-17)
 
