@@ -126,6 +126,18 @@ ps aux | grep -E "llama-server|EngineCore"   # RSS Ollama ; vLLM vit en wired GP
 14. [07-vllm-model-comparison.md](07-vllm-model-comparison.md) — **comparaison Qwen3-Coder-30B vs Qwen3.6 sur vLLM-Metal (2026-10-04)**
 15. [08-vllm-metal-conclusion-and-retest.md](08-vllm-metal-conclusion-and-retest.md) — **conclusion de la qualification + procédure/gates de retest**
 16. [14-ctx-checkpoints.md](14-ctx-checkpoints.md) — **limitation des context checkpoints llama-server à 4 (LLAMA_ARG_CTX_CHECKPOINTS=4, 2026-10-04)**
+17. [15-local-llm-mcp-delegation-policy.md](15-local-llm-mcp-delegation-policy.md) — **MCP local_llm : politique de délégation automatique proposée (diff, non appliquée, 2026-10-17)**
+
+## MCP local_llm (2026-10-17)
+
+Serveur MCP `local_llm` (`~/.codex/bin/local-llm-mcp`, source versionnée dans
+[mcp/local-llm-mcp/](../../mcp/local-llm-mcp/)) : outil unique `delegate`
+déléguant des tâches autonomes au modèle local muse-glimmer:30b-mlx
+(raisonnement high, sans fallback, wire Ollama `/v1` sans auth).
+Testé de bout en bout le 2026-10-17 — détail, installation, profils, sécurité :
+[README du MCP](../../mcp/local-llm-mcp/README.md) · captures :
+[diagnostics/local-llm-mcp/](../../diagnostics/local-llm-mcp/).
+Délégation automatique : **non activée**, proposition de diff dans le document 15.
 
 ## Troubleshooting
 

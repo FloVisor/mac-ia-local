@@ -17,3 +17,17 @@ __pycache__/
 # Go
 *.test
 *.out
+
+# Secrets et credentials
+*.pem
+*.key
+auth.json
+.env
+.env.*
+
+# Journaux et fichiers temporaires
+*.log
+*.tmp
+*.swp
+*~
+.tmp/

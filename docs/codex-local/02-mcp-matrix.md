@@ -24,3 +24,11 @@ Source : `codex mcp list` + `~/.codex/config.toml` + plugins.
 ## Critère de non-régression post-migration
 
 Rejouer : initialize + tools/list sur n8n-mcp et node_repl, + 1 appel `n8n_health_check`. Résultat attendu : identique (PASS, latences comparables), car les MCP ne dépendent pas du backend LLM.
+
+## Ajout ultérieur : local_llm (2026-10-17)
+
+Serveur MCP `local_llm` (`~/.codex/bin/local-llm-mcp`) ajouté **après** cette
+matrice : outil unique `delegate` vers le modèle local muse-glimmer:30b-mlx.
+Testé de bout en bout le 2026-10-17 (initialize, tools/list, tools/call — PASS).
+Documentation complète : [mcp/local-llm-mcp/README.md](../../mcp/local-llm-mcp/README.md) ·
+captures : [diagnostics/local-llm-mcp/](../local-llm-mcp/).
