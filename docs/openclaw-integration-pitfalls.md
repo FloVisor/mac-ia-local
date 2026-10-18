@@ -128,11 +128,117 @@ l'empreinte mémoire cumulée et décharger après test
 - `dmPolicy=disabled` (pas de réponses automatiques entrantes)
 - `tools.allow` inclut `message`
 - Calendrier Graph : `default` ajouté aux ressources autorisées
-- Modèle unique : Qwen omlx (aucun provider parasite)
+- Modèle principal : Qwen omlx 65k déclaré (cap serveur 128k), utility model `ollama/qwen3:0.6b-titre` (0,79 Go, keep_alive 5 min)
+- Skill `tool-ids` : IDs exacts + format tool_search correct, visible du modèle
 - `commands.ownerAllowFrom` vidé : les réponses dashboard ne fuient plus
   vers iMessage (effet de bord de l'approbation d'appairage à surveiller)
 - `tools.exec.safeBinProfiles.osascript` : permet la résolution de contacts
   via AppleScript sans approbation manuelle
+
+## 7. Timeout titres 15 s codé en dur (constat structurel, 2026-10-18)
+
+**Symptôme** : `dashboard session title generation exhausted; using a
+crustacean fallback name` (9 occurrences le 2026-10-18 avant correction).
+
+**Cause racine** : le timeout de génération de titre est codé en dur à
+15 s (`const TIMEOUT_MS = 15e3`) dans
+`~/.openclaw/runtime/current/lib/node_modules/openclaw/dist/conversation-label-generator-CtZqoFhF.mjs`.
+Aucune clé de config ne l'expose. Le Qwen 35B local met >15 s par requête
+→ échec systématique → slug crustacé.
+
+**Ne pas patcher le dist** (écrasé au prochain upgrade).
+
+**Solution retenue** : mini-modèle Ollama dédié au titrage.
+
+### Déploiement validé (2026-10-18)
+
+- Modèle : `qwen3:0.6b-titre` — variante **créée localement** de `qwen3:0.6b`
+  avec `PARAMETER num_ctx 2048` (Modelfile). Justification ctx réduit : le
+  modèle de base alloue un KV-cache pour 40 960 tokens par défaut → **5,64 Go
+  de VRAM** pour 522 Mo de poids. Avec ctx 2048 : **0,79 Go**. Le titrage
+  n'a jamais besoin de plus de quelques centaines de tokens.
+- Config : `models.providers.ollama` (baseUrl 127.0.0.1:11434) +
+  `agents.defaults.utilityModel = "ollama/qwen3:0.6b-titre"`.
+- `OLLAMA_KEEP_ALIVE=5m` (LaunchAgent `org.gangneux.ollama-serve` **et**
+  `org.gangneux.ollama-env` — les deux définissent la variable, il faut
+  patcher les deux plists).
+- Latence mesurée : **~1,2 s** moyenne (0,9-1,3 s), très loin du timeout
+  de 15 s.
+- Déchargement confirmé : `/api/ps` vide après 5 min d'inactivité.
+
+### Piège : le titrage n'est déclenché que par le chemin `chat.send`
+
+Le CLI `openclaw agent` ne déclenche PAS la génération de titre (sessions
+`direct` non candidates). Seules les clés `dashboard:`, `ios-`, `node-`
+sont auto-titrées (`isAutoTitleSessionKey` dans
+`dashboard-session-title-DGVVxyGL.mjs`). Pour tester sans Control UI :
+`openclaw gateway call sessions.title.prepare --json --params
+'{"agentId":"main","message":"..."}'`.
+
+### Piège : RAM tendue + mini-modèle chargé = rejet prefill du modèle principal
+
+Le garde-fou mémoire d'oMLX rejette les prompts quand le pic de prefill
+dépasse le plafond dynamique (~22,8 Go sur 48 Go de machine avec ~20 Go déjà
+utilisés par le modèle 35B). Le mini-modèle Ollama chargé (0,79 Go) peut
+faire basculer la garde → `prefill_memory_exceeded` sur le modèle
+**principal**. Symptômes : `400 oMLX prefill memory guard rejected this
+prompt`. Parade : keep_alive court (5 min) pour que le mini-modèle ne reste
+pas chargé inutilement.
+
+## 8. Bug format tool_search du Qwen 35B (2026-10-18)
+
+**Symptôme** : `tool_search failed: set limit on each batch query, not on
+the batch request` (échecs à 11:10, 11:19, 12:01, 12:07, 12:42) puis
+`tool_call failed: Unknown tool id` (ex. `list_registres` sans préfixe) et
+hallucinations (tickets GLPI inventés).
+
+**Cause** : le Qwen 35B formate mal tool_search — il place `limit` au niveau
+du batch (`{"limit":5,"queries":[{"query":"..."}]}`) au lieu de le mettre
+dans chaque query (`{"queries":[{"query":"...","limit":5}]}`), et appelle
+des IDs sans préfixe MCP.
+
+**Parade** : skill `~/.openclaw/workspace/skills/tool-ids/SKILL.md` qui
+liste les IDs exacts (`orion__*`, `outline__*`, `exec`, `message`,
+`microsoft-graph`), documente le format correct par-query, et instruit
+d'appeler `tool_call` directement avec l'ID exact. Vérifier
+`openclaw skills list --json` → `modelVisible: true`.
+
+## Benches de validation (2026-10-18)
+
+### BENCH #1 — Titres (7 requêtes sessions.title.prepare)
+
+- 6/7 titres réels (1 `null`), latence moyenne ~1,2 s
+- 0 `title generation exhausted` après déploiement (dernier : 12:43,
+  avant le changement à 12:49)
+- Exemples : "Fonctionnement des containers Docker",
+  "Calculer le budget mensuel pour les courses alimentaires"
+
+### BENCH #2 — Tooling (10 requêtes agent main)
+
+- `tool_search failed` : **0/10** (vs 6 échecs entre 12:01 et 12:42 avant
+  la skill)
+- `tool_call failed (Unknown tool id)` : **0/10**
+- Hallucinations détectées : **0** (données orion/outline croisées avec
+  `mcp probe`, exec osascript vérifié, Graph calendrier cohérent)
+- 2 échecs `prefill_memory_exceeded` (13:03, 13:05) sans lien tooling :
+  mini-modèle Ollama chargé pendant RAM tendue → résolus par déchargement
+  (keep_alive 5 min)
+
+### BENCH #3 — Mémoire
+
+- Avant : 0,4 Go libres (mini-modèle non chargé, baseline)
+- Pendant : 0,2 Go libres, mini-modèle 0,79 Go VRAM
+- Après (5 min) : 2,0 Go libres, `/api/ps` vide → **déchargement confirmé**
+
+### Non-régression
+
+- iMessage : `connected, works` (probe OK)
+- Graph : lecture calendrier OK (0 événement le 18/10, réponse cohérente)
+- Doctor : 4 warnings pré-existants (skill_workshop, memory search, bind
+  loopback, secrets en clair) — aucun nouveau
+- Modèle principal : `omlx/mlx-community--Qwen3.6-35B-A3B-4bit` toujours
+  `default,configured` ; contextWindow relevé 32768 → 65536 (décision
+  utilisateur 2026-10-18, cap serveur oMLX 131072 inchangé)
 
 ## Limite connue : comportement du modèle local
 
