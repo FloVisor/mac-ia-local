@@ -10,6 +10,7 @@ Environnement IA local sur macOS : build et validation d'ollama v0.35.0 (PR #184
 - `ollama-v0.35.0/` — source ollama v0.35.0 (fork local de [ollama/ollama](https://github.com/ollama/ollama))
 - `mcp/local-llm-mcp/` — serveur MCP de délégation vers le LLM local (muse-glimmer:30b-mlx) : [README](mcp/local-llm-mcp/README.md)
 - `docs/codex-local/` — documentation d'audit et de recette Codex local : [README](docs/codex-local/README.md)
+- `docs/openclaw-integration-pitfalls.md` — pièges d'intégration d'outils dans OpenClaw (TCC, tools.allow, politique Graph, saturation de session) et checklist pour les prochaines intégrations
 - `artifacts/`, `toolchains/`, `.cache/`, `isolated-home/` — binaires et caches locaux (exclus via `.gitignore`)
 
 ## Historique
