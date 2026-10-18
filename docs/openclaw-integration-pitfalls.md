@@ -197,11 +197,25 @@ du batch (`{"limit":5,"queries":[{"query":"..."}]}`) au lieu de le mettre
 dans chaque query (`{"queries":[{"query":"...","limit":5}]}`), et appelle
 des IDs sans préfixe MCP.
 
-**Parade** : skill `~/.openclaw/workspace/skills/tool-ids/SKILL.md` qui
-liste les IDs exacts (`orion__*`, `outline__*`, `exec`, `message`,
-`microsoft-graph`), documente le format correct par-query, et instruit
-d'appeler `tool_call` directement avec l'ID exact. Vérifier
-`openclaw skills list --json` → `modelVisible: true`.
+**Parade** : la skill seule ne suffit PAS — le modèle ne la consulte qu'à la demande.
+La correction efficace est dans **`~/.openclaw/workspace/AGENTS.md`** (injecté en
+permanence dans le system prompt) : section "Format des appels d'outils
+(CRITIQUE)" en tête de la section Tools (préfixes obligatoires + format
+par-query + exemple), et parcours orion rewritten avec les IDs préfixés
+(`orion__list_registries`, etc.). Vérifier aussi
+`openclaw skills list --json` → `modelVisible: true` pour la skill
+`tool-ids` (renfort).
+
+**Piège racine** : le AGENTS.md d'origine documentait le parcours orion avec
+des noms SANS préfixe (`list_registries`, `search_tools`...) — le modèle
+suivait ces instructions et ignorait la skill. Toujours vérifier la cohérence
+AGENTS.md ↔ IDs réels (`openclaw mcp probe <server> --json`).
+
+**Validation post-correction (2026-10-18 13:23-13:40)** : requête "Affiche mes
+tickets en cours GLPI" → l'agent a interrogé ~20 entités via
+`search_glpi_ticket`, trouvé 5 tickets réels (entité 31 ED-TRANS, IDs
+21424/21354/21198/21195/20132), 0 `tool_search failed`, 0 `Unknown tool id`
+sur 3 runs consécutifs.
 
 ## Benches de validation (2026-10-18)
 
