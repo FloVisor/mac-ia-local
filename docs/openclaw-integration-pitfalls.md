@@ -185,6 +185,45 @@ faire basculer la garde → `prefill_memory_exceeded` sur le modèle
 prompt`. Parade : keep_alive court (5 min) pour que le mini-modèle ne reste
 pas chargé inutilement.
 
+**Correction structurelle (2026-10-18 soir)** : `~/.omlx/settings.json` →
+`memory.memory_guard_tier = "custom"` +
+`memory.memory_guard_custom_ceiling_gb = 24.5` (plafond fixe au lieu du
+dynamique qui se resserre quand la RAM baisse). `final_ceiling` effectif
+passé de 26,0 Go à 39,3 Go. Compromis assumé : en RAM très tendue, macOS
+swappe au lieu de rejeter. Ollama également bridé :
+`OLLAMA_CONTEXT_LENGTH` 131072 → 4096 (le titrage n'a jamais besoin de plus).
+
+## 9. Paramètres inventés sur les outils Graph (2026-10-18 soir)
+
+**Symptôme** : `outlook_mail_read` → `invalid_read_parameter` (0 ms) ;
+`outlook_calendar_read` → `access_denied` (2 ms). Refus de validation
+**locale** stricte : le plugin n'accepte que des champs exacts par action
+(`READ_ACTION_FIELDS` dans `~/.openclaw/extensions/microsoft-graph/dist/index.js`).
+
+**Cause** : le modèle devine des paramètres plausibles mais interdits
+(`sender`, `from`, `query`, `calendarId` inventé).
+
+**Parade** : consigne compacte dans AGENTS.md (section Tools) listant les
+signatures exactes des actions courantes + « calendarId = "me" ou "default",
+jamais un nom inventé ». Validation : 3 appels mail consécutifs, 0 erreur
+(avant : 1 erreur par conversation en moyenne).
+
+## 10. Sessions longues = re-prefill complet (2026-10-18 soir)
+
+**Symptôme** : première réponse lente (2-6 min), runs qui s'enchaînent sans
+requête utilisateur.
+
+**Cause** : sessions accumulant des dizaines d'appels d'outils (ex :
+énumération GLPI multi-entités) → prompt 33k+ tokens. Le prompt-cache est
+**droppé à 6 144 tokens** à chaque tour (`historyRewrite`) → re-prefill
+complet à chaque requête. Un tour avorté (timeout livraison) est **rejoué
+automatiquement** par l'auto-reply, chaque essai refaisant un appel d'outil.
+
+**Règles** :
+- Compacter les sessions gonflées : `openclaw sessions compact <key> --agent main --max-lines 40`
+- Surveiller : `openclaw sessions --agent main --active 120` (colonne Tokens ctx %)
+- Une demande « toutes entités » GLPI = énumération interminable : restreindre à une entité connue
+
 ## 8. Bug format tool_search du Qwen 35B (2026-10-18)
 
 **Symptôme** : `tool_search failed: set limit on each batch query, not on
