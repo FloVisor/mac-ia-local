@@ -129,3 +129,20 @@ l'empreinte mémoire cumulée et décharger après test
 - `tools.allow` inclut `message`
 - Calendrier Graph : `default` ajouté aux ressources autorisées
 - Modèle unique : Qwen omlx (aucun provider parasite)
+- `commands.ownerAllowFrom` vidé : les réponses dashboard ne fuient plus
+  vers iMessage (effet de bord de l'approbation d'appairage à surveiller)
+- `tools.exec.safeBinProfiles.osascript` : permet la résolution de contacts
+  via AppleScript sans approbation manuelle
+
+## Limite connue : comportement du modèle local
+
+Le modèle Qwen 35B (32k contexte, 55 outils catalogués) est **inconstant**
+sur les enchaînements d'outils autonomes : il peut exécuter correctement
+osascript un tour, puis affirmer « exec non configuré » au tour suivant sans
+même essayer. Ce n'est pas un problème de configuration — la chaîne complète
+(résolution contact → envoi iMessage) est prouvée fonctionnelle en CLI.
+
+**Parade** : relancer la demande en cas d'échec de l'agent. Ne pas « corriger »
+la config sur la base des affirmations du modèle — vérifier les logs
+(`grep -E "exec|tool" /tmp/openclaw/openclaw-gateway.log`) pour distinguer
+un vrai refus d'une hallucination du modèle.
