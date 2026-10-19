@@ -256,6 +256,34 @@ tickets en cours GLPI" → l'agent a interrogé ~20 entités via
 21424/21354/21198/21195/20132), 0 `tool_search failed`, 0 `Unknown tool id`
 sur 3 runs consécutifs.
 
+**Statut 2026-10-19 (recette orion 0.3.0)** : le bug modèle **persiste** —
+premier appel `tool_search` de la session avec `limit` au niveau batch (échec
+10:58:15), puis **auto-correction au retry** (format par-query, succès) ; le
+run aboutit. La parade AGENTS.md reste nécessaire et suffisante en pratique :
+elle réduit à ~1 échec par session, immédiatement récupéré. La règle est
+présente dans les **trois** workspaces (main, perso, technique — même modèle
+Qwen 35B). Côté frontal orion 0.3.0, rien à corriger : les 4 appels orion du
+run ont tous réussi.
+
+**Session réelle 11:25 « Liste les tickets assignés du jour »** : 5 échecs
+avant succès — 3× `tool_search` batch-limit (11:25:36/38/40, corrigé à la 4ᵉ
+tentative), puis 2 omissions d'arguments obligatoires côté modèle :
+`orion__search_tools` sans `query` (11:25:51) et `orion__exec_tool` sans
+`tool_name` (11:26:14). Tous auto-corrigés au retry ; parcours orion final
+correct. **MAIS la réponse rendue était fausse** : 29 tickets des 16/10 et
+19/10 mélangés, dont #21455 non assigné à Florian.
+
+**Cause racine trouvée (11:35) — `args` vs `params` sur `exec_tool`** : la
+passerelle attend `params` ; le frontal **accepte `args` sans erreur et
+l'ignore silencieusement** (validation pydantic sur `tool_name` seul). Avec
+`args`, tous les filtres (`assigned_to`, `date_from`…) sont perdus →
+l'agent rend « tous les tickets ouverts » en croyant répondre à la demande.
+Avec `params` : `assigned_to=me` → 31 tickets (sans #21455) ;
++ `date_from/to=2026-10-19` → 1 ticket (#21457). **Le filtre date fonctionne
+parfaitement** — le diagnostic initial « filtre date ignoré » était faux.
+Parade : AGENTS.md des 3 workspaces (« `params`, jamais `args` ») ; à faire
+rejeter ou aliaser côté frontal orion (signalé à Raphaël).
+
 ## Benches de validation (2026-10-18)
 
 ### BENCH #1 — Titres (7 requêtes sessions.title.prepare)

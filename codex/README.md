@@ -128,13 +128,17 @@ ps aux | grep -E "llama-server|EngineCore"   # RSS Ollama ; vLLM vit en wired GP
 16. [14-ctx-checkpoints.md](14-ctx-checkpoints.md) — **limitation des context checkpoints llama-server à 4 (LLAMA_ARG_CTX_CHECKPOINTS=4, 2026-10-04)**
 17. [15-local-llm-mcp-delegation-policy.md](15-local-llm-mcp-delegation-policy.md) — **MCP local_llm : politique de délégation automatique proposée (diff, non appliquée, 2026-10-17)**
 18. [16-model-effort-selector.md](16-model-effort-selector.md) — **sélecteur d'effort Codex : règle des ≥3 niveaux, procédure et pièges (keep_alive 30m + correctif qwen3.6:35b-coding, 2026-10-17)**
+19. [17-local-llm-mcp-ctx-128k.md](17-local-llm-mcp-ctx-128k.md) — **MCP local_llm : garde de contexte relevée 32K → 128K sur oMLX (2026-10-19)**
 
-## MCP local_llm (2026-10-17)
+## MCP local_llm (2026-10-17, garde 128K le 2026-10-19)
 
 Serveur MCP `local_llm` (`~/.codex/bin/local-llm-mcp`, source versionnée dans
 [mcp/local-llm-mcp/](../mcp/local-llm-mcp/)) : outil unique `delegate`
-déléguant des tâches autonomes au modèle local muse-glimmer:30b-mlx
-(raisonnement high, sans fallback, wire Ollama `/v1` sans auth).
+déléguant des tâches autonomes au modèle local
+`mlx-community--Qwen3.6-35B-A3B-4bit` servi par **oMLX** (`127.0.0.1:8000`,
+wire `/v1` authentifié, sans fallback). Ollama n'est pas impliqué.
+Garde de contexte : **131 072 tokens** (comptage réel `/tokenize`), relevée de
+32 768 le 2026-10-19 — [validation](../diagnostics/local-llm-mcp-ctx128k-20261019/README.md).
 Testé de bout en bout le 2026-10-17 — détail, installation, profils, sécurité :
 [README du MCP](../mcp/local-llm-mcp/README.md) · captures :
 [diagnostics/local-llm-mcp/](../diagnostics/local-llm-mcp/).

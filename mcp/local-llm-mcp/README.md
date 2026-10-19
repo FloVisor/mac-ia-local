@@ -6,7 +6,8 @@ Objectif : permettre à Codex (GPT-6) de déléguer les tâches simples, indépe
 ou répétitives au modèle local, sans consommer le contexte ni les tokens cloud.
 
 - Source : [local-llm-mcp.py](local-llm-mcp.py) (copie exacte du binaire déployé `~/.codex/bin/local-llm-mcp`)
-- Statut : **fonctionnel, testé de bout en bout le 2026-10-17** (voir [Tests](#tests))
+- Statut : **fonctionnel, testé de bout en bout le 2026-10-17** ; garde de contexte
+  relevée à 128K et revalidée le 2026-10-19 (voir [Tests](#tests))
 
 ## Architecture
 
@@ -51,12 +52,18 @@ command = "/Users/fngux2/.codex/bin/local-llm-mcp"
 startup_timeout_sec = 30
 ```
 
+La garde de contexte n'est **pas** dans `config.toml` : elle est portée par le
+script (`MAX_TASK_TOKENS`, défaut `131072`). Un changement de garde se fait donc
+dans la source versionnée puis par redéploiement du binaire — voir
+[Installation](#installation).
+
 Variables d'environnement optionnelles (non définies par défaut) :
 
 | Variable | Défaut | Rôle |
 |---|---|---|
 | `LOCAL_LLM_MCP_BASE_URL` | `http://127.0.0.1:8000/v1` | Base URL du wire OpenAI-compatible oMLX |
 | `LOCAL_LLM_MCP_TIMEOUT` | `600` | Timeout HTTP par requête (secondes) |
+| `LOCAL_LLM_MCP_MAX_TASK_TOKENS` | `131072` | Garde de contexte : rejet au-delà (comptage réel `/tokenize`) |
 
 ## Outil disponible
 
@@ -71,11 +78,15 @@ Réponse : texte préfixé par les métadonnées
 `[profile=… model=mlx-community--Qwen3.6-35B-A3B-4bit server=oMLX:8000 …]` suivi de la
 réponse du modèle. En cas d'échec : `ERROR: …` avec `isError: true`.
 
-**Garde 32K** : la tâche est **rejetée au-delà de 32 768 tokens** (comptage réel
+**Garde 128K** : la tâche est **rejetée au-delà de 131 072 tokens** (comptage réel
 via `POST /tokenize` d'oMLX, tokeniseur du modèle ; fail-closed si le comptage
-est indisponible). Codex doit donc **optimiser ses demandes** : tâches
-courtes, autonomes, sans coller de gros fichiers — sinon découper ou déléguer
-en direct. Réglable via `LOCAL_LLM_MCP_MAX_TASK_TOKENS`.
+est indisponible). Cette valeur est alignée sur le cap serveur oMLX du modèle
+(`max_model_len: 131072`) et sur le catalogue Codex `qwen36-omlx` ; le plafond
+dur reste le serveur (prompt système + tâche > 131072 → HTTP 400
+`context_length_exceeded`). Réglable via `LOCAL_LLM_MCP_MAX_TASK_TOKENS`.
+
+> Historique : garde à 32 768 tokens du 2026-10-17 au 2026-10-19, relevée à
+> 131 072 le 2026-10-19 ([validation](../../diagnostics/local-llm-mcp-ctx128k-20261019/README.md)).
 
 ## Profils d'agents
 
@@ -89,28 +100,31 @@ Chaque profil sélectionne un prompt système distinct :
 | `testing` | Agent de test : plus petit ensemble de tests couvrant le changement, commandes exactes |
 | `documentation` | Rédacteur de doc : concis, factuel, cohérent avec la structure existante |
 
-## Modèle : muse-glimmer:30b-mlx
+## Modèle : mlx-community--Qwen3.6-35B-A3B-4bit (oMLX)
 
-| Propriété | Valeur (vérifiée via `/api/show`) |
+| Propriété | Valeur (vérifiée via `/v1/models` et `/tokenize`) |
 |---|---|
-| Architecture | `muse_glimmer` (52 blocs) |
-| Paramètres | 32.3B |
-| Quantification | nvfp4 |
-| Contexte | 131 072 tokens |
-| Taille sur disque | ~19.1 GB |
-| Capacités | completion, vision, tools, thinking |
+| Serveur | oMLX 0.7.1rc1, `127.0.0.1:8000`, LaunchAgent `org.gangneux.omlx-serve` |
+| Architecture | hybride GDN (10/40 couches full-attention, 2 KV heads) |
+| Paramètres | 35B total, ~3B actifs (MoE) |
+| Quantification | 4 bits |
+| Contexte | 131 072 tokens (`max_model_len`, cap par modèle dans `~/.omlx/model_settings.json`) |
+| Mémoire résidente | ~21,4 Go (RSS mesurée, modèle chargé) |
+| Capacités | completion, tools, thinking natif |
 
 ## Raisonnement natif
 
 Le MCP n'impose pas de `reasoning_effort` : le modèle Qwen3.6 utilise son
 thinking natif. Seul le contenu final (`content`) est retourné à Codex.
+Le thinking est désactivé par profil pour `testing` et `documentation`
+(`chat_template_kwargs.enable_thinking = false`), activé pour les autres.
 
 ## Fonctionnement des délégations
 
 1. Codex (GPT-6) décide de déléguer et appelle `mcp__local_llm__delegate` avec
    un profil et une tâche **autonome** (tout le contexte doit être inclus dans
    `task`, car le serveur est sans état).
-2. Le MCP compte les tokens de la tâche via `/tokenize` (rejet > 32 768), puis
+2. Le MCP compte les tokens de la tâche via `/tokenize` (rejet > 131 072), puis
    construit la requête : prompt système du profil + tâche, pas de streaming.
 3. oMLX traite la requête (modèle épinglé, déjà chargé).
 4. Le MCP retourne la réponse préfixée des métadonnées à Codex, qui valide et
@@ -146,17 +160,19 @@ identique au protocole de [02-mcp-matrix.md](../../codex/02-mcp-matrix.md)) :
 | `resources/list` / `resources/templates/list` | Non supporté (par design, `-32601`) — confirmé via session Codex du 2026-10-17 |
 | Découverte par Codex | **PASS** — namespace `mcp__local_llm` + tool `delegate` visible dans la session Codex du 2026-10-17 |
 | Garde 32K (2026-10-17) | **PASS** — tâche 67 507 tokens rejetée proprement ; tâche courte acceptée |
+| Garde 128K (2026-10-19) | **PASS** — tâche 40 000 tokens acceptée (35,1 s) ; tâche 150 000 tokens rejetée proprement |
 
-Captures : [diagnostics/local-llm-mcp/](../../diagnostics/local-llm-mcp/)
+Captures : [diagnostics/local-llm-mcp/](../../diagnostics/local-llm-mcp/) ·
+[garde 128K](../../diagnostics/local-llm-mcp-ctx128k-20261019/README.md)
 
 ### À valider
 
 - Appel `delegate` **depuis Codex** (la session du 17/10 a découvert l'outil mais
   l'appel n'a pas été consigné comme exécuté ; le test stdio direct ci-dessus
-  valide le chemin complet serveur → Ollama → modèle).
-- Profils `coding`, `review`, `testing`, `documentation` (seul `analysis` a été
-  appelé).
-- Comportement en erreur : Ollama arrêté (message `unreachable` attendu).
+  valide le chemin complet serveur → oMLX → modèle).
+- Profils `coding`, `review`, `documentation` (seuls `analysis` et `testing` ont
+  été appelés).
+- Comportement en erreur : oMLX arrêté (message `unreachable` attendu).
 - Latence de bout en bout sur une tâche réelle (chargement à froid du modèle).
 
 ## Limitations

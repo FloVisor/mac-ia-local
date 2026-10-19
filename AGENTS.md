@@ -39,3 +39,14 @@ python -m pytest witness-a/ -q
 - Ne pas committer binaires, caches ni clés API ; vérifier `.gitignore` avant tout commit.
 - Toute modification de config Ollama/vLLM/oMLX doit être validée par un test témoin (`witness-a/`) et documentée dans `diagnostics/`.
 - Ne pas reconstruire ollama sans demande explicite : utiliser l'artefact qualifié existant.
+
+## Anomalies MCP orion (frontal de Raphaël) vs agent local — routage des corrections
+
+Quand Florian remonte un comportement fautif d'un agent utilisant le MCP orion (ou tout MCP tiers), **déterminer d'abord le côté responsable**, puis appliquer la règle :
+
+1. **Reproduire l'appel fautif en direct** (client MCP, sans l'agent — ex. `diagnostics/mcp-mixtrio-orion-030-20261019/orion_mcp_client.py`) pour isoler frontal vs modèle.
+2. **Bug côté MCP (frontal/passerelle)** → **ne PAS bricoler l'agent**. Le documenter dans `diagnostics/` + `openclaw/integration-pitfalls.md` et **le remonter à Raphaël** (mail récapitulatif : symptôme, reproduction, cause, fix demandé). Parade agent uniquement en attendant le fix, marquée comme temporaire.
+3. **Bug côté agent/modèle local** (formatage d'appels, arguments omis, hallucination) → corriger **dans l'agent** : `AGENTS.md` du workspace OpenClaw concerné (injecté en permanence dans le system prompt), skill local si besoin. Documenter dans `openclaw/integration-pitfalls.md`.
+4. **Règle d'or** : un paramètre accepté mais silencieusement ignoré, ou une réponse fausse sans erreur, est presque toujours un bug **MCP** — jamais compensable durablement côté agent.
+
+Exemples tranchés (2026-10-19) : `exec_tool` ignorant `args` → MCP (remonté) ; `tool_search` avec `limit` au niveau batch → modèle Qwen (parade AGENTS.md des 3 workspaces).

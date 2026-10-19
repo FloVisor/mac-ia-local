@@ -28,7 +28,10 @@ Rejouer : initialize + tools/list sur n8n-mcp et node_repl, + 1 appel `n8n_healt
 ## Ajout ultérieur : local_llm (2026-10-17)
 
 Serveur MCP `local_llm` (`~/.codex/bin/local-llm-mcp`) ajouté **après** cette
-matrice : outil unique `delegate` vers le modèle local muse-glimmer:30b-mlx.
-Testé de bout en bout le 2026-10-17 (initialize, tools/list, tools/call — PASS).
+matrice : outil unique `delegate` vers le modèle local
+`mlx-community--Qwen3.6-35B-A3B-4bit` sur oMLX (port 8000).
+Testé de bout en bout le 2026-10-17 (initialize, tools/list, tools/call — PASS) ;
+garde de contexte relevée à 128K et revalidée le 2026-10-19.
 Documentation complète : [mcp/local-llm-mcp/README.md](../mcp/local-llm-mcp/README.md) ·
-captures : [diagnostics/local-llm-mcp/](../diagnostics/local-llm-mcp/).
+captures : [diagnostics/local-llm-mcp/](../diagnostics/local-llm-mcp/),
+[diagnostics/local-llm-mcp-ctx128k-20261019/](../diagnostics/local-llm-mcp-ctx128k-20261019/).

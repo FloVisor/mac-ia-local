@@ -17,8 +17,9 @@ MODEL = "mlx-community--Qwen3.6-35B-A3B-4bit"
 BASE_URL = os.environ.get("LOCAL_LLM_MCP_BASE_URL", "http://127.0.0.1:8000/v1")
 REQUEST_TIMEOUT = int(os.environ.get("LOCAL_LLM_MCP_TIMEOUT", "600"))
 # Garde locale : plafond de contexte des tâches déléguées (tokens réels, via /tokenize).
-# Indépendant du cap serveur (131072) et du catalogue Codex : ne protège que ce MCP.
-MAX_TASK_TOKENS = int(os.environ.get("LOCAL_LLM_MCP_MAX_TASK_TOKENS", "32768"))
+# Aligné sur le cap oMLX du modèle (131072 = 128K) et le catalogue Codex qwen36-omlx.
+# Le plafond dur reste le serveur : prompt système + tâche > 131072 → 400.
+MAX_TASK_TOKENS = int(os.environ.get("LOCAL_LLM_MCP_MAX_TASK_TOKENS", "131072"))
 
 
 def _api_key():
