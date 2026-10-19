@@ -2024,8 +2024,8 @@ func TestCodexAppConfigurePopulatesCatalogFromEnrichedModels(t *testing.T) {
 	}
 	for _, model := range catalog.Models[:3] {
 		slug, _ := model["slug"].(string)
-		if model["display_name"] != slug {
-			t.Fatalf("display_name should match slug for %q: %v", slug, model["display_name"])
+		if model["display_name"] != "Ollama "+slug {
+			t.Fatalf("display_name should be prefixed with Ollama for %q: %v", slug, model["display_name"])
 		}
 		if model["visibility"] != "list" {
 			t.Fatalf("visibility for %q = %v, want list", slug, model["visibility"])

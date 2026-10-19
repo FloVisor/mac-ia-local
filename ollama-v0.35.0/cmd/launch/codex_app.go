@@ -1119,11 +1119,33 @@ func writeCodexAppRoutingCatalog(path string, models []LaunchModel, autoReview c
 		Controls  *modelpkg.Thinking `json:"controls,omitempty"`
 	}
 	type routingEntry struct {
-		Slug     string           `json:"slug"`
-		Thinking thinkingMetadata `json:"thinking"`
+		Slug          string           `json:"slug"`
+		Thinking      thinkingMetadata `json:"thinking"`
+		Upstream      string           `json:"upstream,omitempty"`
+		UpstreamModel string           `json:"upstream_model,omitempty"`
+		UpstreamAPIKey string          `json:"upstream_api_key,omitempty"`
 	}
 	entries := make([]routingEntry, 0, len(models))
+	// Preserve manually-routed entries (e.g. qwen36-omlx -> oMLX) that are
+	// not part of the Ollama model list being configured.
+	preserved := map[string]bool{}
+	if previous, err := os.ReadFile(path); err == nil {
+		var prior struct {
+			Models []routingEntry `json:"models"`
+		}
+		if json.Unmarshal(previous, &prior) == nil {
+			for _, entry := range prior.Models {
+				if entry.Upstream != "" {
+					entries = append(entries, entry)
+					preserved[entry.Slug] = true
+				}
+			}
+		}
+	}
 	for _, model := range models {
+		if preserved[model.Name] {
+			continue
+		}
 		metadata := codexAppModelMetadataFromLaunchModel(model)
 		entries = append(entries, routingEntry{
 			Slug: model.Name,
@@ -1391,9 +1413,10 @@ func codexAppCatalogEntry(model string, metadata codexAppModelMetadata, priority
 	}
 
 	// Keep Ollama models visible in API-key sessions.
+	displayName := "Ollama " + model
 	return map[string]any{
 		"slug":                                 model,
-		"display_name":                         model,
+		"display_name":                         displayName,
 		"description":                          "Ollama model",
 		"default_reasoning_level":              defaultReasoningLevel,
 		"supported_reasoning_levels":           supportedReasoningLevels,

@@ -191,6 +191,7 @@ func (h *CodexDesktop) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 
 	model, hasModel := extractModel(decodedBody)
+	effort := extractReasoningEffort(decodedBody)
 	routed := false
 	var autoReview autoReviewState
 	var routedModel routingModel
@@ -244,6 +245,26 @@ func (h *CodexDesktop) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 			writeJSONError(w, http.StatusBadRequest, "prepare Codex request for Ollama: "+err.Error())
 			return
 		}
+		if routedModel.Upstream != "" {
+			upstream, err := parseBaseURL("upstream", routedModel.Upstream)
+			if err != nil {
+				h.logActivity(started, r.Method, suffix, model, "upstream", http.StatusBadGateway, "request_error")
+				writeJSONError(w, http.StatusBadGateway, "invalid upstream URL for model "+model+": "+err.Error())
+				return
+			}
+			targetBase = upstream
+			// Upstream servers expose the OpenAI wire at /v1; the routing
+			// entry already carries the /v1 prefix in its URL, so strip it
+			// from the request suffix to avoid doubling it.
+			targetSuffix = strings.TrimPrefix(suffix, "/v1")
+			route = "upstream"
+			requestBody, err = prepareUpstreamRequest(decodedBody, routedModel)
+			if err != nil {
+				h.logActivity(started, r.Method, suffix, model, "upstream", http.StatusBadRequest, "request_error")
+				writeJSONError(w, http.StatusBadRequest, "prepare Codex request for upstream "+model+": "+err.Error())
+				return
+			}
+		}
 		requestBody, err = normalizeFullAccessExecTool(requestBody)
 		if err != nil {
 			h.logActivity(started, r.Method, suffix, model, "ollama", http.StatusBadRequest, "request_error")
@@ -272,6 +293,8 @@ func (h *CodexDesktop) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		hasModel:     hasModel,
 		routed:       routed,
 		route:        route,
+		routedModel:  routedModel,
+		effort:       effort,
 		autoReview:   autoReview,
 		target:       targetBase,
 		targetSuffix: targetSuffix,
@@ -305,7 +328,7 @@ func (h *CodexDesktop) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	if status == 0 {
 		status = http.StatusBadGateway
 	}
-	h.logActivity(started, r.Method, suffix, model, route, status, result)
+	h.logActivityEffort(started, r.Method, suffix, model, route, status, result, state.effort)
 }
 
 // serveReverseProxy handles the sentinel panic ReverseProxy uses when a
@@ -339,6 +362,8 @@ type proxyRequest struct {
 	hasModel     bool
 	routed       bool
 	route        string
+	routedModel  routingModel
+	effort       string
 	autoReview   autoReviewState
 	target       *url.URL
 	targetSuffix string
@@ -364,9 +389,12 @@ func (h *CodexDesktop) rewrite(pr *httputil.ProxyRequest) {
 	pr.Out.Body = io.NopCloser(bytes.NewReader(state.body))
 	pr.Out.ContentLength = int64(len(state.body))
 	if state.routed {
-		// Never forward Codex credentials to Ollama.
+		// Never forward Codex credentials to Ollama or an upstream.
 		pr.Out.Header = make(http.Header)
 		copyOllamaRequestHeaders(pr.Out.Header, pr.In.Header)
+		if state.route == "upstream" && state.routedModel.UpstreamAPIKey != "" {
+			pr.Out.Header.Set("Authorization", "Bearer "+state.routedModel.UpstreamAPIKey)
+		}
 		return
 	}
 	if state.normalized {
@@ -479,8 +507,16 @@ func (r *responseRecorder) Hijack() (net.Conn, *bufio.ReadWriter, error) {
 }
 
 func (h *CodexDesktop) logActivity(started time.Time, method, path, model, route string, status int, result string) {
+	h.logActivityEffort(started, method, path, model, route, status, result, "")
+}
+
+func (h *CodexDesktop) logActivityEffort(started time.Time, method, path, model, route string, status int, result, effort string) {
+	format := "route=%s model=%q method=%s path=%s status=%d duration=%s result=%s"
+	if effort != "" {
+		format += " effort=%s"
+	}
 	h.writeActivity(
-		"route=%s model=%q method=%s path=%s status=%d duration=%s result=%s",
+		format,
 		route,
 		model,
 		method,
@@ -488,6 +524,7 @@ func (h *CodexDesktop) logActivity(started time.Time, method, path, model, route
 		status,
 		time.Since(started).Round(time.Millisecond),
 		result,
+		effort,
 	)
 }
 
@@ -581,6 +618,13 @@ type routingThinkingMetadata struct {
 type routingModel struct {
 	Slug     string                   `json:"slug"`
 	Thinking *routingThinkingMetadata `json:"thinking,omitempty"`
+	// Upstream, when set, routes this slug to an alternate local OpenAI
+	// Responses-compatible server (e.g. oMLX) instead of the Ollama listener.
+	Upstream string `json:"upstream,omitempty"`
+	// UpstreamModel overrides the model name sent to Upstream (defaults to Slug).
+	UpstreamModel string `json:"upstream_model,omitempty"`
+	// UpstreamAPIKey, when set, is sent as a Bearer token to Upstream.
+	UpstreamAPIKey string `json:"upstream_api_key,omitempty"`
 }
 
 type routingCatalog struct {

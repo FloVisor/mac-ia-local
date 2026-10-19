@@ -575,3 +575,96 @@ func isOllamaReasoningItemID(id string) bool {
 	}
 	return true
 }
+
+// upstreamThinkingBudgets maps Codex reasoning efforts to explicit thinking
+// budgets for upstream servers whose chat template ignores reasoning_effort
+// (e.g. Qwen3.6 on oMLX). Verified against oMLX 0.7.1rc1: the budget is
+// enforced by a logits processor (ThinkingBudgetProcessor), and effort "none"
+// maps to enable_thinking=false which produces zero reasoning tokens.
+var upstreamThinkingBudgets = map[string]int{
+	"low":    512,
+	"medium": 2048,
+	"high":   8192,
+	"max":    16384,
+}
+
+// prepareUpstreamRequest rewrites a Codex Responses request for an alternate
+// local upstream (oMLX): model name override plus an explicit, effective
+// reasoning mapping (enable_thinking / thinking_budget) since the upstream
+// template does not read reasoning_effort natively.
+func prepareUpstreamRequest(body []byte, model routingModel) ([]byte, error) {
+	normalized, _, err := normalizeRequestInput(body, normalizeOllamaInputItem)
+	if err != nil {
+		return nil, err
+	}
+	var payload map[string]json.RawMessage
+	if err := json.Unmarshal(normalized, &payload); err != nil {
+		return nil, err
+	}
+	targetModel := model.UpstreamModel
+	if targetModel == "" {
+		targetModel = model.Slug
+	}
+	encodedModel, err := json.Marshal(targetModel)
+	if err != nil {
+		return nil, err
+	}
+	payload["model"] = encodedModel
+
+	// Map reasoning.effort to parameters the upstream actually applies.
+	var effort string
+	if rawReasoning, ok := payload["reasoning"]; ok {
+		var reasoning map[string]json.RawMessage
+		if err := json.Unmarshal(rawReasoning, &reasoning); err == nil {
+			if rawEffort, ok := reasoning["effort"]; ok {
+				_ = json.Unmarshal(rawEffort, &effort)
+			}
+		}
+	}
+	if effort != "" {
+		ctk := map[string]any{}
+		if raw, ok := payload["chat_template_kwargs"]; ok {
+			_ = json.Unmarshal(raw, &ctk)
+		}
+		if _, exists := ctk["enable_thinking"]; !exists {
+			if effort == "none" || effort == "minimal" || effort == "off" {
+				ctk["enable_thinking"] = false
+			} else {
+				ctk["enable_thinking"] = true
+				if budget, ok := upstreamThinkingBudgets[effort]; ok {
+					if _, hasBudget := payload["thinking_budget"]; !hasBudget {
+						payload["thinking_budget"] = mustMarshalJSON(budget)
+					}
+				}
+			}
+		}
+		encodedCTK, err := json.Marshal(ctk)
+		if err != nil {
+			return nil, err
+		}
+		payload["chat_template_kwargs"] = encodedCTK
+	}
+
+	return json.Marshal(payload)
+}
+
+func mustMarshalJSON(v any) json.RawMessage {
+	encoded, err := json.Marshal(v)
+	if err != nil {
+		return json.RawMessage("null")
+	}
+	return encoded
+}
+
+// extractReasoningEffort returns the reasoning effort Codex requested, if any.
+func extractReasoningEffort(body []byte) string {
+	var payload struct {
+		Reasoning *struct {
+			Effort string `json:"effort"`
+		} `json:"reasoning"`
+	}
+	if err := json.Unmarshal(body, &payload); err != nil || payload.Reasoning == nil {
+		return ""
+	}
+	return strings.TrimSpace(payload.Reasoning.Effort)
+}
