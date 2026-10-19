@@ -1,8 +1,10 @@
 #!/opt/homebrew/bin/python3
-"""MCP stdio server delegating to the local muse-glimmer:30b-mlx model.
+"""MCP stdio server delegating to the local Qwen3.6-35B-A3B model on oMLX.
 
-Non-destructive: uses the standard Ollama /v1 wire (no auth), never the
-Codex /api/codex/v1 wire. Single model, no fallback, reasoning effort high.
+Non-destructive: uses the standard OpenAI /v1 wire of the local oMLX server
+(authenticated, localhost only), never the Codex /api/codex/v1 wire.
+Single model, no fallback. Reasoning: native thinking of Qwen3.6
+(reasoning_effort is ignored by this model's template; no silent downgrade).
 """
 import datetime
 import json
@@ -11,10 +13,62 @@ import sys
 import urllib.error
 import urllib.request
 
-MODEL = "muse-glimmer:30b-mlx"
-BASE_URL = os.environ.get("LOCAL_LLM_MCP_BASE_URL", "http://127.0.0.1:11434/v1")
-REASONING_EFFORT = "high"
+MODEL = "mlx-community--Qwen3.6-35B-A3B-4bit"
+BASE_URL = os.environ.get("LOCAL_LLM_MCP_BASE_URL", "http://127.0.0.1:8000/v1")
 REQUEST_TIMEOUT = int(os.environ.get("LOCAL_LLM_MCP_TIMEOUT", "600"))
+# Garde locale : plafond de contexte des tâches déléguées (tokens réels, via /tokenize).
+# Indépendant du cap serveur (131072) et du catalogue Codex : ne protège que ce MCP.
+MAX_TASK_TOKENS = int(os.environ.get("LOCAL_LLM_MCP_MAX_TASK_TOKENS", "32768"))
+
+
+def _api_key():
+    """Read the oMLX API key from its settings (single source of truth)."""
+    key = os.environ.get("LOCAL_LLM_MCP_API_KEY")
+    if key:
+        return key
+    path = os.path.expanduser("~/.omlx/settings.json")
+    try:
+        with open(path) as f:
+            return json.load(f)["auth"]["api_key"]
+    except (OSError, KeyError, ValueError):
+        return None
+
+
+def _headers():
+    headers = {"Content-Type": "application/json"}
+    api_key = _api_key()
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
+    return headers
+
+
+def count_task_tokens(task):
+    """Exact token count of the task via the server tokenizer (/tokenize).
+
+    Returns (count, None) on success, (None, error) on failure — fail closed.
+    """
+    req = urllib.request.Request(
+        BASE_URL.rstrip("/").removesuffix("/v1") + "/tokenize",
+        data=json.dumps({"model": MODEL, "prompt": task}).encode(),
+        headers=_headers(),
+        method="POST",
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
+            return json.load(resp)["count"], None
+    except (urllib.error.URLError, KeyError, ValueError) as e:
+        return None, f"Token counting unavailable ({e}); refusing task without a real count."
+
+
+# Thinking natif par profil : ON (raisonnement profond) pour analyse/code/review,
+# OFF (reponse directe, ~x3 plus rapide) pour documentation et tests.
+PROFILE_THINKING = {
+    "analysis": True,
+    "coding": True,
+    "review": True,
+    "testing": False,
+    "documentation": False,
+}
 
 PROFILES = {
     "analysis": (
@@ -48,21 +102,33 @@ def log(msg):
 def call_model(profile, task):
     if profile not in PROFILES:
         return None, f"Unknown profile '{profile}'. Valid: {', '.join(sorted(PROFILES))}."
+    count, err = count_task_tokens(task)
+    if err:
+        return None, err
+    if count > MAX_TASK_TOKENS:
+        return None, (
+            f"Task is {count} tokens > local MCP limit {MAX_TASK_TOKENS} "
+            "(real count via oMLX /tokenize). Split the task or delegate it "
+            "directly through the model provider."
+        )
     payload = {
         "model": MODEL,
         "messages": [
             {"role": "system", "content": PROFILES[profile]},
             {"role": "user", "content": task},
         ],
-        "reasoning_effort": REASONING_EFFORT,
         "stream": False,
     }
+    if not PROFILE_THINKING.get(profile, True):
+        payload["chat_template_kwargs"] = {"enable_thinking": False}
+    headers = _headers()
     req = urllib.request.Request(
         BASE_URL.rstrip("/") + "/chat/completions",
         data=json.dumps(payload).encode(),
-        headers={"Content-Type": "application/json"},
+        headers=headers,
         method="POST",
     )
+    started = datetime.datetime.now(datetime.timezone.utc)
     try:
         with urllib.request.urlopen(req, timeout=REQUEST_TIMEOUT) as resp:
             data = json.load(resp)
@@ -73,16 +139,23 @@ def call_model(profile, task):
         return None, (
             f"Local model '{MODEL}' unreachable at {BASE_URL}: {e.reason}. "
             "No fallback is configured by design; fix the local provider "
-            "(Ollama on 127.0.0.1:11434) and retry."
+            "(oMLX on 127.0.0.1:8000, LaunchAgent org.gangneux.omlx-serve) "
+            "and retry."
         )
     try:
         msg = data["choices"][0]["message"]
         content = msg.get("content") or ""
-        reasoning = msg.get("reasoning") or ""
         out = content.strip()
         if not out:
             return None, "Local model returned empty content."
-        meta = f"[profile={profile} model={MODEL} reasoning_effort={REASONING_EFFORT}]"
+        rid = data.get("id", "n/a")
+        usage = data.get("usage") or {}
+        dur_ms = int((datetime.datetime.now(datetime.timezone.utc) - started).total_seconds() * 1000)
+        meta = (
+            f"[profile={profile} model={MODEL} server=oMLX:8000 "
+            f"request_id={rid} duration_ms={dur_ms} "
+            f"completion_tokens={usage.get('completion_tokens', 'n/a')}]"
+        )
         return f"{meta}\n\n{out}", None
     except (KeyError, IndexError, TypeError) as e:
         return None, f"Unexpected local model response shape: {e}"
@@ -93,8 +166,9 @@ TOOLS = [
         "name": "delegate",
         "description": (
             "Delegate a self-contained task to the local LLM "
-            f"({MODEL}, reasoning effort high). No fallback: if the model "
-            "is unavailable, a clear error is returned."
+            f"({MODEL} on oMLX, native thinking). Task is rejected above "
+            f"{MAX_TASK_TOKENS} tokens (real count via oMLX /tokenize). "
+            "No fallback: if the model is unavailable, a clear error is returned."
         ),
         "inputSchema": {
             "type": "object",
@@ -128,7 +202,7 @@ def handle(request):
             "jsonrpc": "2.0", "id": req_id, "result": {
                 "protocolVersion": "2024-11-05",
                 "capabilities": {"tools": {}},
-                "serverInfo": {"name": "local-llm-mcp", "version": "1.0.0"},
+                "serverInfo": {"name": "local-llm-mcp", "version": "1.1.0"},
             },
         })
     elif method == "notifications/initialized":
@@ -159,7 +233,7 @@ def handle(request):
 
 
 def main():
-    log(f"starting: model={MODEL} base_url={BASE_URL} effort={REASONING_EFFORT}")
+    log(f"starting: model={MODEL} base_url={BASE_URL} server=oMLX")
     for line in sys.stdin:
         line = line.strip()
         if not line:
