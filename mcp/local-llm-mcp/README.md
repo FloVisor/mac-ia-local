@@ -136,7 +136,7 @@ local ne voit ni le dépôt, ni les fichiers, ni l'historique de conversation.
 ## Tests
 
 Test de bout en bout réalisé le **2026-10-17** (probe JSON-RPC stdio direct,
-identique au protocole de [02-mcp-matrix.md](../../docs/codex-local/02-mcp-matrix.md)) :
+identique au protocole de [02-mcp-matrix.md](../../codex/02-mcp-matrix.md)) :
 
 | Test | Résultat |
 |---|---|

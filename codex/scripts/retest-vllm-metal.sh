@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # Retest rapide vLLM-Metal — relève versions/mémoire puis lance A/B/C.
 # N'installe rien, ne supprime aucun modèle, ne modifie ni Codex ni Ollama.
-# Usage: bash scripts/codex-local/retest-vllm-metal.sh [--skip-bench]
+# Usage: bash codex/scripts/retest-vllm-metal.sh [--skip-bench]
 set -euo pipefail
 
 REPO="$(cd "$(dirname "$0")/../.." && pwd)"
-BENCH_DIR="$REPO/docs/codex-local/evidence"
+BENCH_DIR="$REPO/codex/evidence"
 ENDPOINT="http://127.0.0.1:11400/v1"
 MODEL="mlx-community/Qwen3.6-35B-A3B-4bit"
 REPORT_DIR="${REPO}/artifacts/vllm-retest"
@@ -29,7 +29,7 @@ if [[ "${1:-}" == "--skip-bench" ]]; then
 fi
 
 if ! curl -s --max-time 5 "$ENDPOINT/health" >/dev/null 2>&1; then
-  echo "vLLM non joignable sur $ENDPOINT — démarrer le serveur (voir docs/codex-local/08-vllm-metal-conclusion-and-retest.md §13) puis relancer." >&2
+  echo "vLLM non joignable sur $ENDPOINT — démarrer le serveur (voir codex/08-vllm-metal-conclusion-and-retest.md §13) puis relancer." >&2
   exit 1
 fi
 

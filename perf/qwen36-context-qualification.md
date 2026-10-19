@@ -20,7 +20,7 @@ Identique pour chaque niveau N ∈ {32K, 64K, 128K, 256K} :
 - **Mémoire** : RSS (`ps`), swap (`sysctl vm.swapusage`), pression (`memory_pressure -Q`), mémoire GPU rapportée par oMLX (`/health → engine_pool.current_model_memory`), scan des logs `process_memory_enforcer` pendant la fenêtre. `sudo powermetrics` indisponible (pas de sudo non interactif) — limitation documentée.
 - **Concurrence** (niveaux passant A–D) : 2 requêtes simultanées à N−2048 tokens chacune, vérification : réponses distinctes (ACK-ALPHA/ACK-BRAVO), pas de mélange, pas de timeout, pas de rejet.
 
-Scripts versionnables : [gen_input.py](../../scripts/codex-local/qwen36-context/gen_input.py), [measure_level.py](../../scripts/codex-local/qwen36-context/measure_level.py). Résultats bruts JSON : `toolchains/qwen36-context-campaign/results/` (non versionnés, `toolchains/` ignoré).
+Scripts versionnables : [gen_input.py](scripts/qwen36-context/gen_input.py), [measure_level.py](scripts/qwen36-context/measure_level.py). Résultats bruts JSON : `toolchains/qwen36-context-campaign/results/` (non versionnés, `toolchains/` ignoré).
 
 ## 2. Tableau unique de résultats
 

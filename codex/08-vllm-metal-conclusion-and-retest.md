@@ -105,10 +105,10 @@ vllm serve mlx-community/Qwen3.6-35B-A3B-4bit \
 **Étape 3 — Tests API directs A/B/C** (3 runs chacun), mesurer TTFT, tok/s, total, mémoire, swap :
 
 ```sh
-python3 docs/codex-local/evidence/bench.py \
+python3 codex/evidence/bench.py \
   --endpoint http://127.0.0.1:11400/v1 \
   --model mlx-community/Qwen3.6-35B-A3B-4bit \
-  --prompt-file docs/codex-local/evidence/bench-prompts/B-reasoning.md --runs 3
+  --prompt-file codex/evidence/bench-prompts/B-reasoning.md --runs 3
 ```
 
 (idem avec `A-generation.md` et `C-repo-task.md`)
@@ -208,17 +208,17 @@ sysctl vm.swapusage
 memory_pressure -Q
 
 # Benchmarks A/B/C (3 runs, médiane)
-python3 docs/codex-local/evidence/bench.py \
+python3 codex/evidence/bench.py \
   --endpoint http://127.0.0.1:11400/v1 \
   --model mlx-community/Qwen3.6-35B-A3B-4bit \
-  --prompt-file docs/codex-local/evidence/bench-prompts/A-generation.md --runs 3
+  --prompt-file codex/evidence/bench-prompts/A-generation.md --runs 3
 # (idem B-reasoning.md, C-repo-task.md)
 
 # Contexte 64K/128K (si gate franchi)
-python3 docs/codex-local/evidence/bench-context.py --help
+python3 codex/evidence/bench-context.py --help
 ```
 
-Script de retest optionnel : [scripts/codex-local/retest-vllm-metal.sh](../../scripts/codex-local/retest-vllm-metal.sh) — relève versions/mémoire puis lance A/B/C (n'installe rien, ne supprime rien).
+Script de retest optionnel : [codex/scripts/retest-vllm-metal.sh](scripts/retest-vllm-metal.sh) — relève versions/mémoire puis lance A/B/C (n'installe rien, ne supprime rien).
 
 ## 14. Protection des preuves
 

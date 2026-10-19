@@ -1,7 +1,7 @@
 # Sélecteur d'effort Codex — pièges et procédure (modèles Ollama locaux)
 
 Date : 2026-10-17 · Suite à deux corrections successives sur `qwen3.6:35b-coding`
-(capture complète : [diagnostics/keepalive30-20261017/](../../diagnostics/keepalive30-20261017/README.md))
+(capture complète : [diagnostics/keepalive30-20261017/](../diagnostics/keepalive30-20261017/README.md))
 
 ## Règle d'or
 

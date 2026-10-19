@@ -19,7 +19,7 @@ Date : 2026-10-03 · Serveur : Ollama 0.35.1 (API) sur 127.0.0.1:11434 · Modèl
 
 ## 2. Résultats quantitatifs (3 runs, médiane [min–max])
 
-Corpus : `docs/codex-local/evidence/bench-prompts/` · temp 0.6 · bench.py (streaming, TTFT sur premier delta content/reasoning)
+Corpus : `codex/evidence/bench-prompts/` · temp 0.6 · bench.py (streaming, TTFT sur premier delta content/reasoning)
 
 | Test | TTFT médian | Total médian | Tokens out | tok/s médian |
 |---|---|---|---|---|

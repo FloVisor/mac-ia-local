@@ -131,7 +131,7 @@ codex exec --profile qwen36-omlx-test --skip-git-repo-check "…"
 # --- Rejouer les benchmarks ---
 python3 toolchains/qwen36-campaign/bench2.py --endpoint http://127.0.0.1:8000/v1 \
   --model mlx-community--Qwen3.6-35B-A3B-4bit --api-key <clé ~/.omlx/settings.json> \
-  --prompt-file docs/codex-local/evidence/bench-prompts/B-reasoning.md --runs 3
+  --prompt-file codex/evidence/bench-prompts/B-reasoning.md --runs 3
 python3 toolchains/qwen36-campaign/bench2-context.py --endpoint … --label … --api-key …
 python3 -m unittest toolchains/qwen36-campaign/test_bench2.py  # (depuis le dossier campagne)
 ```
