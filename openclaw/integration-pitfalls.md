@@ -333,3 +333,49 @@ même essayer. Ce n'est pas un problème de configuration — la chaîne complè
 la config sur la base des affirmations du modèle — vérifier les logs
 (`grep -E "exec|tool" /tmp/openclaw/openclaw-gateway.log`) pour distinguer
 un vrai refus d'une hallucination du modèle.
+
+## Lecteur documentaire commun (PDF / OCR) — 2026-10-19
+
+Recette complète : [diagnostics/openclaw-document-reader-20261019](../diagnostics/openclaw-document-reader-20261019/VALIDATION.md).
+
+### Pièges rencontrés
+
+1. **`--agent "*"` n'est pas hérité par les agents nommés.** Une entrée
+   d'allowlist ajoutée avec `--agent "*"` ne s'applique pas à `main`, `perso`,
+   `technique` : il faut une entrée par agent. Symptôme :
+   `SYSTEM_RUN_DENIED: approval cannot safely bind this command` sur un agent
+   alors qu'un autre passe.
+2. **Les commandes composées ne sont pas liables par l'approbation.** `cmd1 && cmd2`,
+   pipes et redirections échouent en `ask` comme en `allowlist`. Utiliser des
+   appels simples, ou allowlister le binaire et laisser l'agent enchaîner les
+   appels.
+3. **`tools.exec.mode: "ask"` génère des popups à chaque miss.** Pour un usage
+   documentaire fluide : passer en `allowlist` et n'ajouter que les binaires
+   nécessaires, par agent. Vérifier ensuite qu'une commande non listée reste
+   refusée (`curl` → `exec denied: allowlist miss`).
+4. **Le store `media://inbound` est partagé entre agents.** Une pièce jointe
+   Outlook téléchargée par Pro est lisible par tous. Le convertisseur copie
+   l'original dans `<workspace-agent>/.documents/<agent>/<conversation>/originals/`
+   avant conversion.
+5. **Ne jamais déduire l'agent d'une valeur par défaut.** Un `--agent` par
+   défaut à `main` ferait écrire les artefacts de Perso dans le workspace de
+   Pro. Déduire du répertoire de travail réel, et échouer explicitement
+   (`agent_not_determined`) hors workspace.
+6. **Frontmatter de skill** : une virgule finale dans le bloc JSON `metadata`
+   rend le YAML invalide et le skill disparaît silencieusement de la liste.
+   Valider avec `python3 -c "import yaml; yaml.safe_load(...)"` après édition.
+7. **Wrapper appelé par symlink** : `dirname "$0"` pointe vers `~/.local/bin`.
+   Résoudre les liens (`readlink` en boucle) avant de localiser le script.
+
+### Checklist appliquée
+
+- [x] Identifiants réels des agents (`openclaw agents list`), pas les noms affichés
+- [x] Emplacement partagé des skills vérifié (`<state-dir>/skills`)
+- [x] Copies locales masquantes contrôlées (workspace, `.agents`, workshop)
+- [x] Skill visible modèle pour les 3 agents (`skills list --json`)
+- [x] Allowlist de skills préservée (seul ajout : `document-reader` pour Technique)
+- [x] Convertisseur exécuté depuis chaque agent (pas seulement le terminal)
+- [x] OCR réellement exécuté sur un scan depuis chaque agent
+- [x] Pièce jointe récupérée avec les connecteurs propres à chaque agent
+- [x] Isolation des artefacts vérifiée (3 dossiers distincts)
+- [x] `tools.deny` et MCP inchangés (Perso : Graph/orion/outline toujours refusés)
