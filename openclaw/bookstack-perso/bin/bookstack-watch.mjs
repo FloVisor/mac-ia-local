@@ -8,8 +8,8 @@
 import { readFileSync } from "node:fs";
 import { homedir } from "node:os";
 import { join } from "node:path";
-import { resolveSecretRefValues } from "openclaw/plugin-sdk/secret-ref-runtime";
 import { BookStackClient } from "../lib/http.js";
+import { resolveApiToken } from "../lib/config.js";
 import { ActivityRegistry } from "../lib/registry.js";
 import { pollOnce } from "../lib/watcher.js";
 
@@ -28,11 +28,7 @@ async function main() {
 
   const config = loadConfig();
   const pluginConfig = config.plugins?.entries?.["bookstack-perso"]?.config ?? {};
-  const ref = pluginConfig.apiToken;
-  if (!ref) throw new Error("apiToken SecretRef absent de la configuration du plugin.");
-  const resolved = await resolveSecretRefValues([ref], { config });
-  const token = resolved.get(`${ref.source}:${ref.provider}:${ref.id}`);
-  if (typeof token !== "string" || !token.includes(":")) throw new Error("Jeton BookStack non résolu.");
+  const token = await resolveApiToken(pluginConfig.apiToken, { config });
 
   const baseUrl = String(pluginConfig.baseUrl ?? "https://bookstack.gangneux.org").replace(/\/+$/, "");
   const client = new BookStackClient({ baseUrl, host: new URL(baseUrl).host, token });

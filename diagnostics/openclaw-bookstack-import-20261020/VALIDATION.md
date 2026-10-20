@@ -98,3 +98,15 @@ et retry immédiat au bon format.
 - `terminal upload staging is busy`
 - `microsoft-graph` : provenance-invalid (plugin non vérifiable)
 - `session observer disabled after consecutive failures`
+
+## 5. Régression `missing_token` (2026-10-20, après import)
+
+Tous les outils `bookstack_*` renvoyaient `missing_token` alors que le secret
+était présent. Cause : le runtime matérialise les `secretInputs` déclarés au
+manifeste et passe la **chaîne** résolue dans `api.pluginConfig.apiToken` ; le
+plugin exigeait un objet SecretRef.
+
+Correctif : `resolveApiToken()` accepte chaîne (matérialisée) ou SecretRef
+(lecture froide), schémas en `["string","object"]`, watcher aligné.
+Vérifié : `bookstack_activity list` → `ok: true`, livre 36 « Appartement VARS ».
+Détail : [openclaw/integration-pitfalls.md](../../openclaw/integration-pitfalls.md).

@@ -410,3 +410,60 @@ Recette complète : [diagnostics/openclaw-bookstack-import-20261020](../diagnost
    binaire (`-w`) puis démasquer.
 6. **`tool_search` : `limit` au niveau batch est rejeté.** Le validateur exige
    `limit` dans chaque query. Consigne permanente dans les trois `AGENTS.md`.
+
+## SecretRef matérialisé : `missing_token` sur tous les outils BookStack — 2026-10-20
+
+Symptôme : `bookstack_activity` (et tous les `bookstack_*`) renvoient
+`{"ok": false, "error": "missing_token"}` alors que le SecretRef est bien
+configuré et que `openclaw secrets store list` voit `PERSO_BOOKSTACK_API_TOKEN`.
+
+Cause : pour tout chemin déclaré dans `configContracts.secretInputs`, le runtime
+**résout le SecretRef et réécrit la valeur en clair** dans le snapshot de config
+avant d'appeler `register(api)`. `api.pluginConfig.apiToken` est donc une
+**chaîne** (`ID:SECRET`), pas l'objet `{source, provider, id}`. Le plugin
+testait `typeof ref !== "object"` → rejet systématique.
+
+Règle : un plugin ne doit jamais supposer que `api.pluginConfig` contient le
+SecretRef. Il doit accepter les deux formes :
+
+- chaîne → jeton déjà matérialisé, à utiliser tel quel ;
+- objet `{source, provider, id}` → lecture froide (CLI, watcher, script), à
+  résoudre via `resolveSecretRefValues`.
+
+Correctif appliqué : `resolveApiToken()` dans
+[openclaw/bookstack-perso/lib/config.js](bookstack-perso/lib/config.js), utilisé
+par `resolveConfig()` et par `bin/bookstack-watch.mjs`. Les schémas
+(`openclaw.plugin.json`, `index.js`) déclarent `apiToken` en
+`["string", "object"]` pour que la validation accepte la valeur matérialisée.
+
+Vérification : `openclaw gateway call tools.invoke --params
+'{"name":"bookstack_activity","args":{"action":"list"},"sessionKey":"..."}'`
+→ `ok: true`, activité « Appartement VARS » (livre 36).
+
+## `num_ctx` injecté par OpenClaw écrase `OLLAMA_CONTEXT_LENGTH` — 2026-10-20
+
+Symptôme : `llama-server` repasse à `-c 32768` (~4 Go de footprint) pour le
+modèle utilitaire `qwen3:0.6b-titre`, malgré `OLLAMA_CONTEXT_LENGTH=4096` dans
+le LaunchAgent Ollama.
+
+Cause : `OLLAMA_CONTEXT_LENGTH` n'est qu'un défaut côté serveur ; tout
+`options.num_ctx` envoyé par le client gagne. OpenClaw en injecte un sur chaque
+appel Ollama, résolu ainsi :
+
+- natif `/api/chat` : `params.num_ctx` → `contextTokens` → (rien) ;
+- OpenAI-compat : `params.num_ctx` → `contextTokens` → `contextWindow` →
+  `maxTokens` → 200 000.
+
+Sans `params.num_ctx` ni `contextTokens` dans la config, `contextTokens` tombe
+sur `min(OLLAMA_LOCAL_CONTEXT_TOKENS=32768, contextWindow découvert)` → 32768.
+
+Règle : pour tout modèle Ollama local, épingler explicitement les trois champs
+sur l'entrée modèle :
+
+```json
+{ "contextWindow": 4096, "contextTokens": 4096, "params": { "num_ctx": 4096 } }
+```
+
+Ne pas descendre sous 4000 : le garde-fou OpenClaw bloque en dessous
+(`CONTEXT_WINDOW_HARD_MIN_TOKENS`). Détail et mesures :
+[diagnostics/ollama-ctx-regression-20261020/README.md](../diagnostics/ollama-ctx-regression-20261020/README.md).

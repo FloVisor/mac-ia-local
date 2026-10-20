@@ -10,7 +10,7 @@ export default {
     additionalProperties: false,
     properties: {
       baseUrl: { type: "string" },
-      apiToken: { type: "object" },
+      apiToken: { type: ["string", "object"] },
     },
   },
   register(api) {

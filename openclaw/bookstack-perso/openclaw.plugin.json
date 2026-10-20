@@ -31,7 +31,10 @@
         "type": "string"
       },
       "apiToken": {
-        "type": "object"
+        "type": [
+          "string",
+          "object"
+        ]
       }
     }
   },
