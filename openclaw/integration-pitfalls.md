@@ -524,3 +524,97 @@ Correctifs :
 Règle : un PDF = une page + une pièce jointe. Jamais de page de synthèse à la
 place d'un import. `exec` allowlist = une commande simple, sans `2>&1`, `||`,
 `;` ni `|`.
+
+## `bookstack_import` : `pageId` accepté puis ignoré — 2026-10-20
+
+Symptôme : « ajoute la fiche dans la page Présentation » → une **nouvelle page**
+est créée dans le chapitre `Documents`, la page cible reste intacte. Le modèle
+annonce ensuite que c'est « le protocole d'import ».
+
+Cause : `pageId` était déclaré dans le schéma de `bookstack_import` mais lu
+uniquement dans la branche `action === "reextract"`. En mode `import`, la
+destination était forcée à `params.chapterId ?? activity.documentsChapterId`
+puis `POST /pages`. Paramètre validé, puis silencieusement ignoré — cas n°4 de
+la règle d'or (bug outil, pas bug modèle). Aucun outil ne savait écrire dans une
+page existante : `update_page` remplaçait le Markdown sans fusion.
+
+Correctifs :
+
+1. `pageId` hors `reextract` → `pageId_requires_reextract` (erreur explicite,
+   plus d'ignorance silencieuse).
+2. `targetPageId` : l'extraction est ajoutée dans la page existante
+   (`appendExtraction`), ou remplacée en place si un bloc
+   `<!-- openclaw:extraction:start/end -->` existe déjà. Rien n'est supprimé.
+3. `confirm=true` exigé si la cible n'est pas une page d'extraction ;
+   `target_outside_activity` si elle est hors du livre.
+4. `destination: { pageId, chapterId, created }` dans le retour : `created:
+   false` prouve qu'aucune page n'a été créée.
+5. `bookstack_structure update_page` accepte `mode` : `append`, `section`
+   (+ `section`), `edit` (+ `find`/`replace`), `replace`. `section` et `edit`
+   échouent proprement (`section_not_found` + titres, `text_not_found`,
+   `ambiguous_text`) au lieu de deviner.
+6. `mergeExtraction` ne reconstruit plus une page sans marqueurs : il ajoute le
+   bloc à la suite.
+7. Consignes : `workspace-perso/AGENTS.md` et skill `perso-bookstack` —
+   un document va dans une page dédiée de `Documents` ; `Présentation` est une
+   fiche de synthèse humaine ; demande ambiguë → demander.
+
+Règle : un paramètre déclaré doit être lu ou rejeté. Jamais de repli silencieux
+sur une autre destination.
+
+## Titres de session : le 0.6B déforme le vocabulaire métier — 2026-10-20
+
+Symptôme : la session « Trouve le dernier ticket en cours au collège Saint Jean
+Baptiste… certificat SSL 1 adresse let'and crypt » s'affiche **« Dernier ticket
+crypté en cours »**. Le titre est faux sur le fond (aucun chiffrement en jeu) et
+instable d'un appel à l'autre.
+
+Cause : `agents.defaults.utilityModel` pointait sur `ollama/qwen3:0.6b-titre`
+(0,6 Md). Sur le prompt de titrage réel (`sessions.title.prepare`), le modèle
+transforme « let'and crypt » (Let's Encrypt) en « crypté » et produit une sortie
+différente à chaque échantillon. Ce n'est pas un bug du prompt ni du modèle
+principal : c'est la capacité du modèle utilitaire qui est insuffisante.
+
+Mesures (même prompt, même source, `think:false`, ctx 4096) :
+
+| Modèle | Latence | Titre obtenu |
+|---|---|---|
+| `qwen3:0.6b-titre` | ~0,3 s | « Créer un ticket avec SSL certificat », « Trouve le dernier ticket créé », « Chapitre certificat SSL créé »… (10 sorties ≠) |
+| `qwen3:1.7b` | ~4 s | « Dernier ticket SSL demandé » (stable, mais perd le client) |
+| `qwen3:4b-instruct` | ~0,1 s | « Dernier ticket college saint jean baptiste » (stable) |
+| modèle principal 35B (omlx) | ~125 s | « Brouillon email certificat SSL » |
+| `muse-glimmer:30b-mlx` | ~150 s | « Certificat ssl collège saint jean baptiste » |
+
+Correctif retenu : `agents.defaults.utilityModel = ollama/qwen3:4b-instruct`
+(entrée provider `ollama` avec `num_ctx: 4096`, `think: false`), ancienne entrée
+`qwen3:0.6b-titre` retirée. Vérifié via
+`openclaw gateway call sessions.title.prepare` : titres corrects et stables.
+
+Règle : le titrage est une tâche de **compréhension**, pas de recopie. Un modèle
+< 1 Md déforme les termes métier (SSL, Let's Encrypt, GLPI) ; plancher pratique
+= 4B instruct. Ne pas router le titrage vers le modèle principal : 100× plus
+lent pour un gain nul.
+
+Sauvegarde : `~/.openclaw/openclaw.json.bak-pre-titre-4b-*`.
+
+## Demande de devis commercial : contenu non typé — 2026-10-20
+
+Symptôme : quatre allers-retours sur le même brouillon (« mets plus de forme »,
+« le commercial doit établir un devis », « indique le nom du client dans
+l'objet »), puis un statut GLPI annoncé à tort comme appliqué.
+
+Cause : aucune spécification de la demande de devis. L'agent improvisait objet
+et corps, omettait le client et le ticket, et se fiait à
+`change_status_glpi_ticket` qui renvoie `{}` sans erreur même quand rien n'est
+appliqué.
+
+Correctif : skill `demande-devis-commercial` (workspace Pro) + règle dans
+`workspace/AGENTS.md` — 5 champs obligatoires (client, ID client, ticket,
+prestation, destinataire), objet `Demande de devis — <prestation> — <client> —
+Ticket #<id>`, corps au gabarit fixe, interdiction d'annoncer un montant ou un
+délai, et vérification obligatoire du statut par `search_glpi_ticket`
+(`ticket_status: "en_attente"`) avant d'annoncer le passage en attente.
+
+Règle : une demande récurrente vers un tiers interne (commercial, achats,
+support) doit être **typée** (champs + gabarit) dans un skill, pas laissée à
+l'improvisation du modèle.
