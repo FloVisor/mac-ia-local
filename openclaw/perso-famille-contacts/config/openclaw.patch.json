@@ -1,0 +1,35 @@
+{
+  "agents": {
+    "entries": {
+      "perso": {
+        "tools": {
+          "alsoAllow": null,
+          "agentToAgent": { "send": [] }
+        }
+      },
+      "main": {
+        "tools": {
+          "deny": ["bookstack_*"],
+          "agentToAgent": { "send": ["perso"] }
+        }
+      }
+    }
+  },
+  "tools": {
+    "allow": [
+      "exec",
+      "microsoft-graph",
+      "orion__*",
+      "outline__*",
+      "message",
+      "web_fetch",
+      "sessions_send",
+      "sessions_list",
+      "session_status",
+      "bookstack_*",
+      "read"
+    ],
+    "sessions": { "visibility": "agent" },
+    "agentToAgent": { "enabled": true, "allow": ["main", "perso"] }
+  }
+}

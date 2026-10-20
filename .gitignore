@@ -34,3 +34,6 @@ auth.json
 
 # Plugin BookStack : lien local vers le runtime OpenClaw
 openclaw/bookstack-perso/node_modules/
+
+# Binaire compilé de l'outil perso-contacts
+openclaw/perso-famille-contacts/contacts-tool/build/
