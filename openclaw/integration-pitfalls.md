@@ -609,11 +609,14 @@ et corps, omettait le client et le ticket, et se fiait à
 appliqué.
 
 Correctif : skill `demande-devis-commercial` (workspace Pro) + règle dans
-`workspace/AGENTS.md` — 5 champs obligatoires (client, ID client, ticket,
-prestation, destinataire), objet `Demande de devis — <prestation> — <client> —
-Ticket #<id>`, corps au gabarit fixe, interdiction d'annoncer un montant ou un
-délai, et vérification obligatoire du statut par `search_glpi_ticket`
-(`ticket_status: "en_attente"`) avant d'annoncer le passage en attente.
+`workspace/AGENTS.md`. Le ticket GLPI est **facultatif** (une demande directe est
+normale) ; la demande est qualifiée par questions groupées (client, prestation,
+contexte, échéance, contraintes) ; la réponse à Florian est en **deux blocs
+séparés** — `Contexte :` puis la demande commerciale mise en forme (gras,
+listes) ; objet `Demande de devis — <prestation> — <client>[ — Ticket #<id>]` ;
+interdiction d'annoncer un montant ou un délai ; vérification obligatoire du
+statut par `search_glpi_ticket` (`ticket_status: "en_attente"`) avant d'annoncer
+le passage en attente.
 
 Règle : une demande récurrente vers un tiers interne (commercial, achats,
 support) doit être **typée** (champs + gabarit) dans un skill, pas laissée à
