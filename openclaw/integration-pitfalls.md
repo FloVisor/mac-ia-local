@@ -497,3 +497,30 @@ Sauvegardes : `*.bak-20261020-1017` / `*.bak-20261020-1019` dans `dist/`,
 
 Attention : ces patches vivent dans le runtime versionné ; une mise à jour
 d'OpenClaw les écrase. À revérifier après chaque upgrade.
+
+## Pièce jointe Gmail → BookStack : `attachmentId` pris pour un chemin — 2026-10-20
+
+Symptôme : `bookstack_import` renvoie
+`ENAMETOOLONG: name too long, stat 'ANGjdJ…'`, puis l'agent crée une page de
+synthèse « PDF non lu » à la place de l'import.
+
+Cause : l'`attachmentId` Gmail (jeton base64 de ~350 caractères) a été passé
+comme `filePath`. Aucune consigne ne décrivait la chaîne de récupération, et
+`exec` en allowlist refusait `gog gmail --help` / `find` (opérateurs `2>&1`,
+`||`).
+
+Correctifs :
+
+1. `openclaw/bookstack-perso/lib/tools.js` — `bookstack_import` rejette un
+   `filePath` sans `/`, sans `media://` et > 120 caractères avec
+   `invalid_file_path` et la commande `gog gmail attachment` à utiliser.
+2. `bookstack_search` valide `scope` (`activity|global`) et `corpus`
+   (`both|pages|comments`) : plus de repli silencieux sur `global`.
+3. `bookstack_page` accepte `id` comme alias de `pageId`.
+4. Consignes : `workspace-perso/AGENTS.md`, skills `perso-bookstack` et
+   `documents-extraction-ocr` décrivent la chaîne
+   `gog gmail get` → `gog gmail attachment --out` → `bookstack_import`.
+
+Règle : un PDF = une page + une pièce jointe. Jamais de page de synthèse à la
+place d'un import. `exec` allowlist = une commande simple, sans `2>&1`, `||`,
+`;` ni `|`.

@@ -110,3 +110,31 @@ Correctif : `resolveApiToken()` accepte chaîne (matérialisée) ou SecretRef
 (lecture froide), schémas en `["string","object"]`, watcher aligné.
 Vérifié : `bookstack_activity list` → `ok: true`, livre 36 « Appartement VARS ».
 Détail : [openclaw/integration-pitfalls.md](../../openclaw/integration-pitfalls.md).
+
+## 6. Import depuis une pièce jointe Gmail (2026-10-20, après correctifs)
+
+Cause : l'`attachmentId` Gmail (jeton base64 ~350 car.) était passé comme
+`filePath` → `ENAMETOOLONG`, puis repli sur une page de synthèse « PDF non lu ».
+
+Correctifs : `assertImportPath()` (`lib/extract.js`) + `invalid_file_path` dans
+`bookstack_import` ; validation `scope`/`corpus` de `bookstack_search` ;
+`id` alias de `pageId` dans `bookstack_page` ; consignes
+`workspace-perso/AGENTS.md`, skills `perso-bookstack` et
+`documents-extraction-ocr`.
+
+Rejeu réel (agent `perso`, gateway redémarré) :
+
+| Mail | PDF | Page | Pièce jointe |
+|---|---|---|---|
+| `1a13a78fcf38d6e2` | `Devis habitation_2.pdf` (Confort + mobilier, 229,60 €) | 46 | 10 |
+| `1a13a78fcf38d6e2` | `Devis habitation_3.pdf` (Essentielle, 143,67 €) | 47 | 11 |
+| `1a13a78fcf38d6e2` | `Devis habitation_4.pdf` (Confort, 165,13 €) | 48 | 12 |
+| `1a11c434dabf30df` | `Devis.pdf` (ACM PNO, 14,31 €/mois) | 49 | 13 |
+
+Chapitre 43 « Assurance » : 4 pages Markdown + 4 originaux. Pages 44/45
+(synthèses erronées) supprimées.
+
+Validation des garde-fous : `scope=book` → `invalid_scope` ; `corpus=bad` →
+`invalid_corpus` ; `attachmentId` comme `filePath` → `invalid_file_path` ;
+`bookstack_page {id:47}` → OK. Tests : `node --test test/extract.test.mjs`
+(3/3), `python3 -m unittest test_calcul` (2/2).

@@ -1,10 +1,10 @@
 import { str, num, bool, obj } from "./schema.js";
 import { resolveConfig } from "./config.js";
-import { ConfigError, BookStackError } from "./errors.js";
+import { ConfigError, BookStackError, ExtractError } from "./errors.js";
 import { BookStackClient } from "./http.js";
 import { makeRegistry, createActivity, findActivity, resolveActivityForSession, bookUrl, pageUrl, chapterUrl, PRESENTATION_PAGE, DOCUMENTS_CHAPTER, NOTES_CHAPTER } from "./activities.js";
 import * as gw from "./gateway.js";
-import { convertDocument, storeOriginal, resolveSourcePath } from "./extract.js";
+import { convertDocument, storeOriginal, resolveSourcePath, assertImportPath } from "./extract.js";
 import { CommentIndex } from "./comment-index.js";
 
 const text = (value) => ({ content: [{ type: "text", text: typeof value === "string" ? value : JSON.stringify(value, null, 2) }], details: value });
@@ -23,6 +23,7 @@ async function withContext(api, ctx, fn) {
   } catch (error) {
     if (error instanceof ConfigError) return fail(error.code, error.message);
     if (error instanceof BookStackError) return fail(error.code, error.message, { status: error.status, details: error.details });
+    if (error instanceof ExtractError) return fail(error.code, error.message, error.details ? { details: error.details } : {});
     if (error.code === "ambiguous_activity") return fail("ambiguous_activity", error.message, { candidates: error.candidates });
     if (error.code === "gateway_error") return fail("gateway_error", error.message);
     return fail("unexpected_error", `${error.name}: ${error.message}`);
@@ -423,6 +424,12 @@ export function buildTools(api) {
           const count = Math.min(Math.max(params.count ?? 10, 1), 50);
           const scope = params.scope ?? "activity";
           const corpus = params.corpus ?? "both";
+          if (scope !== "activity" && scope !== "global") {
+            return fail("invalid_scope", `scope invalide: ${scope}. Valeurs acceptées: activity | global.`);
+          }
+          if (!["both", "pages", "comments"].includes(corpus)) {
+            return fail("invalid_corpus", `corpus invalide: ${corpus}. Valeurs acceptées: both | pages | comments.`);
+          }
           let activity = null;
           if (params.activityId) activity = await findActivity(registry, { id: params.activityId });
           else if (scope === "activity") {
@@ -510,14 +517,16 @@ export function buildTools(api) {
       parameters: obj({
         action: str("read | attachments"),
         pageId: num(),
+        id: num("Alias de pageId (tolérance d'appel)."),
         attachmentId: num(),
         maxChars: num("Budget de caractères pour le contenu (défaut 20000)."),
       }, ["action"]),
       async run(params, ctx) {
         return withContext(api, ctx, async ({ config, client }) => {
+          const pageId = params.pageId ?? params.id;
           if (params.action === "read") {
-            if (!params.pageId) return fail("missing_page", "pageId requis.");
-            const page = await client.get(`/pages/${params.pageId}`);
+            if (!pageId) return fail("missing_page", "pageId requis.");
+            const page = await client.get(`/pages/${pageId}`);
             const budget = Math.min(Math.max(params.maxChars ?? 20000, 500), 200000);
             const markdown = page.markdown ?? null;
             const html = page.html ?? "";
@@ -542,12 +551,12 @@ export function buildTools(api) {
             });
           }
           if (params.action === "attachments") {
-            if (!params.pageId) return fail("missing_page", "pageId requis.");
+            if (!pageId) return fail("missing_page", "pageId requis.");
             const result = await client.get("/attachments", { count: 100 });
-            const rows = (result.data ?? []).filter((a) => a.uploaded_to === params.pageId);
+            const rows = (result.data ?? []).filter((a) => a.uploaded_to === pageId);
             return text({
               ok: true,
-              pageId: params.pageId,
+              pageId,
               attachments: rows.map((a) => ({ id: a.id, name: a.name, extension: a.extension, external: a.external, updatedAt: a.updated_at })),
             });
           }
@@ -644,7 +653,8 @@ export function buildTools(api) {
 
           const { readFile, stat } = await import("node:fs/promises");
           const { basename } = await import("node:path");
-          const sourcePath = resolveSourcePath(stateDir, params.filePath);
+          const rawPath = assertImportPath(params.filePath);
+          const sourcePath = resolveSourcePath(stateDir, rawPath);
 
           if (params.action === "reextract") {
             if (!params.pageId) return fail("missing_page", "pageId requis pour relancer une extraction.");

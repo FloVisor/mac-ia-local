@@ -56,6 +56,23 @@ export function resolveSourcePath(stateDir, filePath) {
   return join(stateDir, "media", "inbound", id);
 }
 
+/**
+ * Reject values that are attachment identifiers rather than paths.
+ *
+ * Gmail/Graph attachment ids are long base64 tokens; passing one as `filePath`
+ * used to surface as an opaque `ENAMETOOLONG`.
+ */
+export function assertImportPath(filePath) {
+  const value = String(filePath ?? "").trim();
+  if (!value.startsWith("media://") && !value.includes("/") && value.length > 120) {
+    throw new ExtractError(
+      "invalid_file_path",
+      "filePath ressemble à un identifiant de pièce jointe, pas à un chemin. Télécharger d'abord le fichier (ex. `gog gmail attachment <messageId> <attachmentId> --account auto --out <chemin>`), puis passer ce chemin local.",
+    );
+  }
+  return value;
+}
+
 /** Write a downloaded original into the agent's own document area. */
 function slug(value, fallback) {
   const cleaned = String(value ?? "").replace(/[^A-Za-z0-9._-]+/g, "-").replace(/^-+|-+$/g, "");
