@@ -31,3 +31,6 @@ auth.json
 *.swp
 *~
 .tmp/
+
+# Plugin BookStack : lien local vers le runtime OpenClaw
+openclaw/bookstack-perso/node_modules/

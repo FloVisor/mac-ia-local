@@ -1,0 +1,12 @@
+{
+  "name": "openclaw-plugin-bookstack-perso",
+  "version": "0.1.0",
+  "type": "module",
+  "private": true,
+  "main": "./index.js",
+  "files": ["index.js", "lib", "openclaw.plugin.json", "README.md"],
+  "openclaw": {
+    "extensions": ["./index.js"],
+    "compat": { "pluginApi": ">=2026.5.17" }
+  }
+}

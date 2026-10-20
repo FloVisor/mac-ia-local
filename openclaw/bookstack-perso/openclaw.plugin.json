@@ -1,0 +1,48 @@
+{
+  "id": "bookstack-perso",
+  "name": "BookStack Perso",
+  "description": "Gestion documentaire BookStack pour l'agent Perso (activités, rubriques, pages, pièces jointes, import/OCR).",
+  "version": "0.1.0",
+  "categories": [
+    "productivity",
+    "documents-files"
+  ],
+  "activation": {
+    "onStartup": true
+  },
+  "enabledByDefault": false,
+  "contracts": {
+    "tools": [
+      "bookstack_activity",
+      "bookstack_structure",
+      "bookstack_search",
+      "bookstack_page",
+      "bookstack_attachment",
+      "bookstack_import",
+      "bookstack_conversation",
+      "bookstack_comment"
+    ]
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "baseUrl": {
+        "type": "string"
+      },
+      "apiToken": {
+        "type": "object"
+      }
+    }
+  },
+  "configContracts": {
+    "secretInputs": {
+      "paths": [
+        {
+          "path": "apiToken",
+          "expected": "string"
+        }
+      ]
+    }
+  }
+}
