@@ -467,3 +467,33 @@ sur l'entrée modèle :
 Ne pas descendre sous 4000 : le garde-fou OpenClaw bloque en dessous
 (`CONTEXT_WINDOW_HARD_MIN_TOKENS`). Détail et mesures :
 [diagnostics/ollama-ctx-regression-20261020/README.md](../diagnostics/ollama-ctx-regression-20261020/README.md).
+
+## Titre de session : le 0.6B recopie l'enveloppe JSON — 2026-10-20
+
+Symptôme : une session s'affiche avec le titre littéral `{conversationLabel`.
+
+Cause : le modèle utilitaire `qwen3:0.6b-titre` recopie l'enveloppe
+`{"conversationLabelSource":"..."}` au lieu de produire un titre.
+`normalizeDashboardSessionTitle()` ne retirait que les guillemets appariés ;
+un fragment comme `{conversationLabel` passait le test de validité et était
+persisté comme `displayName`.
+
+Correctifs appliqués (runtime utilisateur, l'app bundle est protégée par SIP) :
+
+1. `dist/dashboard-session-title-*.mjs` — prompt enrichi d'un exemple
+   entrée/sortie et interdiction explicite de recopier l'enveloppe ;
+   `normalizeDashboardSessionTitle()` rejette désormais toute sortie
+   commençant par `{`/`[` ou contenant `conversationLabelSource`.
+2. `dist/conversation-label-generator-*.mjs` — même consigne ajoutée au
+   prompt partagé.
+3. Config : `models.providers.ollama.models[0].params.think = false`.
+
+Le point 3 est le correctif décisif : avec le raisonnement actif, le 0.6B
+produisait des sorties instables (titre vide, enveloppe recopiée, mots
+mélangés). Sans raisonnement, la sortie est stable et conforme.
+
+Sauvegardes : `*.bak-20261020-1017` / `*.bak-20261020-1019` dans `dist/`,
+`~/.openclaw/openclaw.json.bak-pre-think-false-*`.
+
+Attention : ces patches vivent dans le runtime versionné ; une mise à jour
+d'OpenClaw les écrase. À revérifier après chaque upgrade.
