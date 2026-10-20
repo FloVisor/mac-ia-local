@@ -49,4 +49,4 @@ Quand Florian remonte un comportement fautif d'un agent utilisant le MCP orion (
 3. **Bug côté agent/modèle local** (formatage d'appels, arguments omis, hallucination) → corriger **dans l'agent** : `AGENTS.md` du workspace OpenClaw concerné (injecté en permanence dans le system prompt), skill local si besoin. Documenter dans `openclaw/integration-pitfalls.md`.
 4. **Règle d'or** : un paramètre accepté mais silencieusement ignoré, ou une réponse fausse sans erreur, est presque toujours un bug **MCP** — jamais compensable durablement côté agent.
 
-Exemples tranchés (2026-10-19) : `exec_tool` ignorant `args` → MCP (remonté) ; `tool_search` avec `limit` au niveau batch → modèle Qwen (parade AGENTS.md des 3 workspaces).
+Exemples tranchés (2026-10-19) : `exec_tool` ignorant `args` → MCP (remonté) ; `tool_search` avec `limit` au niveau batch → modèle Qwen (parade AGENTS.md des 2 workspaces).

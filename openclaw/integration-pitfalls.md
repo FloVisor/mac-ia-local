@@ -261,9 +261,9 @@ premier appel `tool_search` de la session avec `limit` au niveau batch (échec
 10:58:15), puis **auto-correction au retry** (format par-query, succès) ; le
 run aboutit. La parade AGENTS.md reste nécessaire et suffisante en pratique :
 elle réduit à ~1 échec par session, immédiatement récupéré. La règle est
-présente dans les **trois** workspaces (main, perso, technique — même modèle
-Qwen 35B). Côté frontal orion 0.3.0, rien à corriger : les 4 appels orion du
-run ont tous réussi.
+présente dans les **deux** workspaces (main, perso — même modèle Qwen 35B ;
+l'agent `technique` a été fusionné dans `main` le 2026-10-20). Côté frontal
+orion 0.3.0, rien à corriger : les 4 appels orion du run ont tous réussi.
 
 **Session réelle 11:25 « Liste les tickets assignés du jour »** : 5 échecs
 avant succès — 3× `tool_search` batch-limit (11:25:36/38/40, corrigé à la 4ᵉ
@@ -281,7 +281,7 @@ l'agent rend « tous les tickets ouverts » en croyant répondre à la demande.
 Avec `params` : `assigned_to=me` → 31 tickets (sans #21455) ;
 + `date_from/to=2026-10-19` → 1 ticket (#21457). **Le filtre date fonctionne
 parfaitement** — le diagnostic initial « filtre date ignoré » était faux.
-Parade : AGENTS.md des 3 workspaces (« `params`, jamais `args` ») ; à faire
+Parade : AGENTS.md des 2 workspaces (« `params`, jamais `args` ») ; à faire
 rejeter ou aliaser côté frontal orion (signalé à Raphaël).
 
 ## Benches de validation (2026-10-18)
@@ -372,13 +372,35 @@ Recette complète : [diagnostics/openclaw-document-reader-20261019](../diagnosti
 - [x] Identifiants réels des agents (`openclaw agents list`), pas les noms affichés
 - [x] Emplacement partagé des skills vérifié (`<state-dir>/skills`)
 - [x] Copies locales masquantes contrôlées (workspace, `.agents`, workshop)
-- [x] Skill visible modèle pour les 3 agents (`skills list --json`)
-- [x] Allowlist de skills préservée (seul ajout : `document-reader` pour Technique)
+- [x] Skill visible modèle pour les 3 agents (`skills list --json`) — 2 agents depuis la fusion du 2026-10-20
+- [x] Allowlist de skills préservée (seul ajout : `document-reader` pour Technique, agent supprimé le 2026-10-20)
 - [x] Convertisseur exécuté depuis chaque agent (pas seulement le terminal)
 - [x] OCR réellement exécuté sur un scan depuis chaque agent
 - [x] Pièce jointe récupérée avec les connecteurs propres à chaque agent
-- [x] Isolation des artefacts vérifiée (3 dossiers distincts)
+- [x] Isolation des artefacts vérifiée (3 dossiers distincts à l'époque ; 2 depuis la fusion)
 - [x] `tools.deny` et MCP inchangés (Perso : Graph/orion/outline toujours refusés)
+
+## Fusion de l'agent Technique dans Pro — 2026-10-20
+
+L'agent `technique` est supprimé : son périmètre (MCP de Raphaël, doc et
+outils techniques pro) est traité directement par `main` (Pro). Recette
+complète : [diagnostics/openclaw-merge-technique-20261020](../diagnostics/openclaw-merge-technique-20261020/VALIDATION.md).
+
+Pièges à retenir :
+
+1. **`openclaw agents delete <id>` supprime aussi le workspace et l'agent dir**
+   (mise à la corbeille). Sauvegarder `workspace-<id>/` et `agents/<id>/` avant.
+2. **Les sessions ne se migrent pas** entre agents : l'historique de l'agent
+   supprimé disparaît avec lui. Copier la mémoire utile dans le workspace
+   cible (ici `.archive/technique-memory/`, hors contexte actif).
+3. **Les skills locaux ne sont pas partagés** : copier les skills propres à
+   l'agent supprimé dans `<workspace>/skills/` avant la suppression.
+4. **Les allowlists d'approbation `exec` sont par agent** : rien à fusionner,
+   mais vérifier `openclaw approvals get --json` après suppression.
+5. **Les skills managés (`~/.openclaw/skills/`) mentionnent les agents** :
+   retirer la ligne de l'agent supprimé des tableaux de sources
+   (`document-reader`, `documents-extraction-ocr`) et du message d'erreur de
+   `convert_document.py`.
 
 ## Import PDF/OCR BookStack et `invalid connect params` — 2026-10-20
 
@@ -409,7 +431,7 @@ Recette complète : [diagnostics/openclaw-bookstack-import-20261020](../diagnost
    fautive. `tcpdump -A` ne la voit pas (masquage XOR WebSocket) : capturer en
    binaire (`-w`) puis démasquer.
 6. **`tool_search` : `limit` au niveau batch est rejeté.** Le validateur exige
-   `limit` dans chaque query. Consigne permanente dans les trois `AGENTS.md`.
+   `limit` dans chaque query. Consigne permanente dans les deux `AGENTS.md`.
 
 ## SecretRef matérialisé : `missing_token` sur tous les outils BookStack — 2026-10-20
 
