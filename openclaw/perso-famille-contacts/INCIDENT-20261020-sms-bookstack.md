@@ -3,10 +3,11 @@
 Session : `agent:perso:dashboard:4455548a-2384-4e9d-8206-fadb5c3e761a`
 (groupe « Appartement VARS »).
 
-## Symptôme 1 — « l'envoi SMS a échoué »
+## Symptôme 1 — SMS « non distribué »
 
-**Le SMS est bien parti.** Message `id 24738`, chat 58, `2026-10-20T14:43:01Z`,
-`is_from_me: true`, texte conforme.
+**Le SMS n'a PAS été distribué.** Message `id 24738`, chat 58,
+`2026-10-20T14:43:01Z`, `is_from_me: true` — mais marqué **« non distribué »**
+en rouge dans Messages (constaté par Florian).
 
 L'agent a exécuté :
 
@@ -21,16 +22,32 @@ applescript send failed (may_have_completed): Messages automation returned
 success, but no matching outgoing text row was observed within 8 seconds.
 ```
 
-La vérification interne d'`imsg` (fenêtre de 8 s) n'a pas vu la ligne sortante
-à temps. L'agent a interprété ce message comme un échec et a proposé de
-réessayer — ce qui aurait produit un doublon.
+**Cause réelle** : `--service sms` forcé vers un contact iMessage. Le Mac n'a
+pas de relais SMS utilisable pour ce destinataire, donc `imagent` échoue au
+contrôle de routage :
 
-**Cause** : absence de règle de vérification post-envoi. Le message d'erreur
-lui-même indique `may_have_completed` et « retry is not safe ».
+```
+imagent: (IMDaemonCore) [com.apple.Messages:Chat] Routable message unable to
+perform downgrade/routing check. Is the account and service set correctly?
+```
 
-**Correctif appliqué** : règle explicite dans `AGENTS.md` (Perso) et dans les
-deux skills `imessage` — vérifier via `imsg history --chat-id <id> --limit 3 --json`
-avant de conclure, ne jamais réessayer sans cette vérification.
+(16:43:01.358, GUID `2BE4563A-CC26-42B6-9CA8-26C8C0B529F6` — seule occurrence
+de la journée, exactement sur ce message.)
+
+Le GUID a été retenté à 16:53 sans jamais recevoir de
+`SMSReceivedRelaySentReceipt`, contrairement aux envois réussis de 16:40:11 et
+16:40:12.
+
+**Diagnostic erroné corrigé** : la première analyse concluait « le SMS est bien
+parti » sur la base de `is_from_me: true`. C'est faux — `imsg history` n'expose
+ni `isDelivered` ni `isSent`, et la ligne est écrite dès la tentative. Seul
+**exit 0** prouve un envoi accepté.
+
+**Correctifs appliqués** :
+- `AGENTS.md` (Perso) et les deux skills `imessage` : ne plus forcer
+  `--service sms`, laisser `auto` ; `is_from_me` ne prouve rien ; exit 1 = état
+  inconnu ; « non distribué » = échec.
+- Ne jamais réessayer sans accord de Florian (risque de doublon).
 
 ## Symptôme 2 — BookStack non consulté
 
