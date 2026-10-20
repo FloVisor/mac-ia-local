@@ -379,3 +379,34 @@ Recette complète : [diagnostics/openclaw-document-reader-20261019](../diagnosti
 - [x] Pièce jointe récupérée avec les connecteurs propres à chaque agent
 - [x] Isolation des artefacts vérifiée (3 dossiers distincts)
 - [x] `tools.deny` et MCP inchangés (Perso : Graph/orion/outline toujours refusés)
+
+## Import PDF/OCR BookStack et `invalid connect params` — 2026-10-20
+
+Recette complète : [diagnostics/openclaw-bookstack-import-20261020](../diagnostics/openclaw-bookstack-import-20261020/VALIDATION.md).
+
+### Pièges rencontrés
+
+1. **`document-extract` désactivé = plus aucune pièce jointe lisible.**
+   C'est le seul fournisseur du contrat `documentExtractors`. Sans lui :
+   `PDF extraction disabled or unavailable` → `read-failure` →
+   `[Attachment could not be read]`. Vérifier
+   `plugins.entries.document-extract.enabled` avant tout diagnostic d'import.
+2. **`hydrationSuppressed` sur les pièces jointes non-image.** Le gateway
+   offloade le fichier vers `media://inbound/<id>` sans exposer ni chemin ni
+   texte : le modèle n'a aucun `filePath`. Les outils doivent accepter
+   `media://inbound/<id>` et le résoudre eux-mêmes (rejeter la traversée).
+3. **Troncature de slug qui mange l'extension.** Un `slug()` coupé à 80 car.
+   sur un nom de 103 car. supprimait `.pdf` → `Format non pris en charge : `.
+   Toujours préserver l'extension après troncature.
+4. **`openclaw gateway restart` ne redémarre pas le processus** (même PID), et
+   `openclaw plugins disable` ne décharge pas le plugin du gateway en cours.
+   Seul `openclaw gateway stop --force` garantit un état propre. Symptôme d'un
+   état corrompu : accumulation de `Plugin replacement applied` dans le log.
+5. **`invalid connect params: at /client/id`** = un client WebSocket envoie un
+   `client.id` hors de `GATEWAY_CLIENT_IDS` (17 valeurs canoniques). Le client
+   synthétique légitime du SDK envoie `gateway-client` / `internal` ; une
+   identité qui reprend `manifest.id` + `manifest.version` du plugin est
+   fautive. `tcpdump -A` ne la voit pas (masquage XOR WebSocket) : capturer en
+   binaire (`-w`) puis démasquer.
+6. **`tool_search` : `limit` au niveau batch est rejeté.** Le validateur exige
+   `limit` dans chaque query. Consigne permanente dans les trois `AGENTS.md`.
