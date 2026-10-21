@@ -1,0 +1,124 @@
+version: '3.8'
+services:
+  postgres:
+    image: postgres:17-bookworm@sha256:ec4dfc6571f04fe0731ce948c1500d676af49a7224392dcc6995cc1ee33a94bb
+    environment:
+      POSTGRES_DB: litellm
+      POSTGRES_USER: litellm
+      POSTGRES_PASSWORD_FILE: /run/secrets/litellm_db_password
+      POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256
+    secrets:
+      - source: db_password
+        target: litellm_db_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks: [database]
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U litellm -d litellm']
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    stop_grace_period: 60s
+    deploy:
+      replicas: 1
+      placement:
+        constraints: [node.hostname == docker-02]
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+      update_config:
+        parallelism: 1
+        order: stop-first
+        failure_action: pause
+      rollback_config:
+        parallelism: 1
+        order: stop-first
+  gateway:
+    image: ghcr.io/berriai/litellm:v1.104.5@sha256:b86d67931c06f491fdfd9112b5e7c96065a220ecb54dbe0060a0383999707f6c
+    entrypoint: [/bin/sh, /litellm-secret-entrypoint.sh]
+    command: [--config, /etc/litellm/config.yaml, --port, '4000', --num_workers, '1', --telemetry, 'False']
+    environment:
+      PROXY_BASE_URL: https://litellm.gangneux.org
+      UI_USERNAME: bootstrap-admin
+      STORE_MODEL_IN_DB: 'True'
+      LITELLM_CORS_ORIGINS: https://litellm.gangneux.org
+      LITELLM_CORS_ALLOW_CREDENTIALS: 'true'
+      NO_DOCS: 'true'
+      NO_REDOC: 'true'
+      NO_OPENAPI: 'true'
+      FORWARDED_ALLOW_IPS: 172.29.2.2
+      LITELLM_LOG: ERROR
+    configs:
+      - source: config
+        target: /etc/litellm/config.yaml
+      - source: qwen_context
+        target: /etc/litellm/qwen_context.py
+      - source: secret_loader
+        target: /litellm-secret-entrypoint.sh
+        mode: 0555
+    secrets:
+      - source: master_key
+        target: litellm_master_key
+      - source: salt_key
+        target: litellm_salt_key
+      - source: db_password
+        target: litellm_db_password
+      - source: bootstrap_password
+        target: litellm_bootstrap_password
+    networks: [database, TRAEFIK_BACKEND]
+    healthcheck:
+      test: [CMD, python, -c, 'import urllib.request; urllib.request.urlopen("http://127.0.0.1:4000/health/liveliness", timeout=5)']
+      interval: 30s
+      timeout: 8s
+      retries: 5
+      start_period: 180s
+    stop_grace_period: 60s
+    deploy:
+      replicas: 1
+      placement:
+        constraints: [node.hostname == docker-02]
+      restart_policy:
+        condition: on-failure
+        delay: 15s
+      update_config:
+        parallelism: 1
+        order: stop-first
+        failure_action: pause
+      rollback_config:
+        parallelism: 1
+        order: stop-first
+networks:
+  database:
+    driver: overlay
+    internal: true
+    driver_opts:
+      encrypted: 'true'
+  TRAEFIK_BACKEND:
+    external: true
+volumes:
+  postgres_data:
+    external: true
+    name: litellm_postgres_data
+configs:
+  config:
+    file: ./config.yaml
+    name: litellm_config_qwen8k_v1
+  qwen_context:
+    file: ./qwen_context.py
+    name: litellm_qwen_context_v2
+  secret_loader:
+    file: ./secret-entrypoint.sh
+secrets:
+  master_key:
+    external: true
+    name: litellm_master_key_v1
+  salt_key:
+    external: true
+    name: litellm_salt_key_v1
+  db_password:
+    external: true
+    name: litellm_db_password_v1
+  bootstrap_password:
+    external: true
+    name: litellm_bootstrap_password_v1

@@ -1,0 +1,18 @@
+http:
+  routers:
+    freellmapi:
+      rule: 'Host(`freellmapi.gangneux.org`)'
+      entryPoints: [websecure]
+      middlewares: [private-networks@file]
+      service: freellmapi
+      tls: {}
+  services:
+    freellmapi:
+      loadBalancer:
+        passHostHeader: true
+        servers:
+          - url: http://freellmapi_api:3001
+        healthCheck:
+          path: /api/ping
+          interval: 10s
+          timeout: 3s

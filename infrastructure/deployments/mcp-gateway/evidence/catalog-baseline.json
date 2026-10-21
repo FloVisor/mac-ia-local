@@ -1,0 +1,14 @@
+{
+  "codex": {
+    "catalog": "Reference | Digest | Title\nmcp/docker-mcp-catalog:latest\t| c855af4b06ed1cc11fc169cfb752941e9b5a489b1af870221308572611a88035\t| Docker MCP Catalog\n",
+    "profile_sha256": "3e52ec9e127eeba71cc644df178a1e2d3349175a46a8704a266b69143f7158e6"
+  },
+  "pro": {
+    "catalog": "Reference | Digest | Title\nmcp/docker-mcp-catalog:latest\t| c855af4b06ed1cc11fc169cfb752941e9b5a489b1af870221308572611a88035\t| Docker MCP Catalog\n",
+    "profile_sha256": "157b6af45dac5095dc8831a33c169fa7b4f4a182739574ac579764e7fc8d2640"
+  },
+  "perso": {
+    "catalog": "Reference | Digest | Title\nmcp/docker-mcp-catalog:latest\t| c855af4b06ed1cc11fc169cfb752941e9b5a489b1af870221308572611a88035\t| Docker MCP Catalog\n",
+    "profile_sha256": "205399e6c2d6c3fc64d23ea2f50a567f39155c035d4515c3a4c45bef25760ceb"
+  }
+}

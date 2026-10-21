@@ -1,0 +1,180 @@
+{
+  "models": [
+    {
+      "id": 52,
+      "platform": "groq",
+      "enabled": true,
+      "priority": 33
+    },
+    {
+      "id": 306,
+      "platform": "groq",
+      "enabled": true,
+      "priority": 322
+    },
+    {
+      "id": 281,
+      "platform": "mistral",
+      "enabled": true,
+      "priority": 339
+    },
+    {
+      "id": 285,
+      "platform": "mistral",
+      "enabled": true,
+      "priority": 344
+    },
+    {
+      "id": 161,
+      "platform": "openrouter",
+      "enabled": true,
+      "priority": 381
+    },
+    {
+      "id": 276,
+      "platform": "openrouter",
+      "enabled": true,
+      "priority": 382
+    }
+  ],
+  "pools": [
+    {
+      "name": "task-fast",
+      "id": 3,
+      "members": [
+        {
+          "model_db_id": 306,
+          "priority": 1,
+          "enabled": true,
+          "platform": "groq",
+          "model_id": "qwen/qwen3.8-27b"
+        },
+        {
+          "model_db_id": 285,
+          "priority": 2,
+          "enabled": true,
+          "platform": "mistral",
+          "model_id": "ministral-8b-2512"
+        },
+        {
+          "model_db_id": 276,
+          "priority": 3,
+          "enabled": true,
+          "platform": "openrouter",
+          "model_id": "dots-studio/dots-3-note-preview:free"
+        }
+      ]
+    },
+    {
+      "name": "task-coding",
+      "id": 4,
+      "members": [
+        {
+          "model_db_id": 281,
+          "priority": 1,
+          "enabled": true,
+          "platform": "mistral",
+          "model_id": "codestral-2508"
+        },
+        {
+          "model_db_id": 161,
+          "priority": 2,
+          "enabled": true,
+          "platform": "openrouter",
+          "model_id": "cohere/north-mini-code:free"
+        },
+        {
+          "model_db_id": 52,
+          "priority": 3,
+          "enabled": true,
+          "platform": "groq",
+          "model_id": "openai/gpt-oss-120b"
+        }
+      ]
+    },
+    {
+      "name": "task-reasoning",
+      "id": 5,
+      "members": [
+        {
+          "model_db_id": 52,
+          "priority": 1,
+          "enabled": true,
+          "platform": "groq",
+          "model_id": "openai/gpt-oss-120b"
+        },
+        {
+          "model_db_id": 306,
+          "priority": 2,
+          "enabled": true,
+          "platform": "groq",
+          "model_id": "qwen/qwen3.8-27b"
+        },
+        {
+          "model_db_id": 161,
+          "priority": 3,
+          "enabled": true,
+          "platform": "openrouter",
+          "model_id": "cohere/north-mini-code:free"
+        }
+      ]
+    },
+    {
+      "name": "task-long-context",
+      "id": 6,
+      "members": [
+        {
+          "model_db_id": 276,
+          "priority": 1,
+          "enabled": true,
+          "platform": "openrouter",
+          "model_id": "dots-studio/dots-3-note-preview:free"
+        },
+        {
+          "model_db_id": 161,
+          "priority": 2,
+          "enabled": true,
+          "platform": "openrouter",
+          "model_id": "cohere/north-mini-code:free"
+        },
+        {
+          "model_db_id": 285,
+          "priority": 3,
+          "enabled": true,
+          "platform": "mistral",
+          "model_id": "ministral-8b-2512"
+        }
+      ]
+    }
+  ],
+  "model_fields": [
+    "id",
+    "platform",
+    "modelId",
+    "displayName",
+    "intelligenceRank",
+    "speedRank",
+    "sizeLabel",
+    "rpmLimit",
+    "rpdLimit",
+    "tpmLimit",
+    "tpdLimit",
+    "monthlyTokenBudget",
+    "contextWindow",
+    "enabled",
+    "supportsVision",
+    "supportsTools",
+    "priority",
+    "fallbackEnabled",
+    "source",
+    "keyId",
+    "keyLabel",
+    "endpointScope",
+    "qualifiedModelId",
+    "hasOverrides",
+    "overrideFields",
+    "hasProvider",
+    "keyCount"
+  ]
+}
+

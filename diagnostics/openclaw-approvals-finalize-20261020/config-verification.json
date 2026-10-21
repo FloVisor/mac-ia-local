@@ -1,0 +1,15 @@
+{
+  "changedConfigPaths": [
+    ".agents.entries.main.tools.deny",
+    ".gateway.tools",
+    ".plugins.entries.microsoft-graph.config.warningApprovalsRequired",
+    ".plugins.entries.send-approval.config",
+    ".tools.alsoAllow",
+    ".tools.deny"
+  ],
+  "profile": "coding",
+  "agentsRoutingPreserved": true,
+  "modelsPreserved": true,
+  "graphBundleMatchesManifest": true,
+  "broadGogEntryPresent": false
+}

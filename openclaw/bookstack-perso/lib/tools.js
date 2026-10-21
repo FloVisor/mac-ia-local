@@ -6,6 +6,7 @@ import { makeRegistry, createActivity, findActivity, resolveActivityForSession, 
 import * as gw from "./gateway.js";
 import { convertDocument, storeOriginal, resolveSourcePath, assertImportPath } from "./extract.js";
 import { CommentIndex } from "./comment-index.js";
+import { extractionBlock, appendExtraction, mergeExtraction, replaceSection, applyEdit, headingsOf } from "./markdown.js";
 
 const text = (value) => ({ content: [{ type: "text", text: typeof value === "string" ? value : JSON.stringify(value, null, 2) }], details: value });
 
@@ -42,58 +43,6 @@ async function findExistingImport({ client, activity, sha256 }) {
     if ((page.markdown ?? "").includes(sha256)) return page;
   }
   return null;
-}
-
-/**
- * Rebuild an extraction page while preserving human-authored sections.
- *
- * The generated part is delimited by markers; anything a person added outside
- * them (notes, corrections) is carried over verbatim.
- */
-function mergeExtraction(existingMarkdown, { filename, source, sha256, conversion }) {
-  const START = "<!-- openclaw:extraction:start -->";
-  const END = "<!-- openclaw:extraction:end -->";
-  const generated = [
-    START,
-    "## Provenance",
-    `- Fichier original : ${filename}`,
-    `- Source : ${source}`,
-    `- Ré-extrait le : ${new Date().toISOString()}`,
-    `- Empreinte SHA-256 (16) : ${sha256}`,
-    `- Méthode : Docling${conversion.ocr_executed ? " + OCR" : ""} (${conversion.ocr_mode})`,
-    `- Pages : ${conversion.pages ?? "?"}`,
-    "",
-    "## Texte extrait",
-    "",
-    conversion.markdown ?? "",
-    END,
-  ].join("\n");
-
-  const startIdx = existingMarkdown.indexOf(START);
-  const endIdx = existingMarkdown.indexOf(END);
-  let preserved = "";
-  if (startIdx >= 0 && endIdx > startIdx) {
-    preserved = existingMarkdown.slice(endIdx + END.length).trim();
-  } else {
-    // Page héritée sans marqueurs : retirer l'ancien texte extrait quand il est
-    // reconnaissable, pour ne conserver que les ajouts humains.
-    const previous = (conversion.markdown ?? "").trim();
-    const lastIdx = previous ? existingMarkdown.lastIndexOf(previous) : -1;
-    if (lastIdx >= 0) {
-      preserved = existingMarkdown.slice(lastIdx + previous.length).trim();
-    } else {
-      const marker = existingMarkdown.indexOf("## Texte extrait");
-      if (marker >= 0) {
-        const after = existingMarkdown.slice(marker);
-        const split = after.indexOf("\n\n", after.indexOf("\n\n") + 2);
-        preserved = split > 0 ? after.slice(split).trim() : "";
-      }
-    }
-  }
-  const firstLine = existingMarkdown.split("\n")[0] ?? "";
-  const title = firstLine.startsWith("# ") ? firstLine : "";
-  const body = [title, "", generated, preserved ? `\n${preserved}` : ""].filter(Boolean).join("\n");
-  return { markdown: body, preserved: preserved ? ["contenu humain après le bloc d'extraction"] : [] };
 }
 
 /**
@@ -302,6 +251,10 @@ export function buildTools(api) {
         pageId: num(),
         title: str("Titre du chapitre ou de la page (prime sur name)."),
         markdown: str(),
+        mode: str("update_page : replace (défaut si markdown) | append | section | edit"),
+        section: str("update_page mode=section : titre de la section à remplacer."),
+        find: str("update_page mode=edit : texte exact à remplacer (une seule occurrence)."),
+        replace: str("update_page mode=edit : texte de remplacement."),
         description: str(),
         targetChapterId: num("Chapitre de destination (move)."),
         targetBookId: num("Livre de destination (move), ou identification de l'activité."),
@@ -365,11 +318,43 @@ export function buildTools(api) {
             const current = await client.get(`/pages/${params.pageId}`);
             const body = {};
             if (params.title) body.name = params.title;
-            if (params.markdown !== undefined) body.markdown = params.markdown;
+
+            const mode = params.mode ?? (params.markdown !== undefined ? "replace" : null);
+            if (mode === "replace") {
+              if (params.markdown === undefined) return fail("missing_markdown", "markdown requis pour mode=replace.");
+              body.markdown = params.markdown;
+            } else if (mode === "append") {
+              if (params.markdown === undefined) return fail("missing_markdown", "markdown requis pour mode=append.");
+              const base = (current.markdown ?? "").replace(/\s*$/, "");
+              body.markdown = base ? `${base}\n\n${params.markdown}` : params.markdown;
+            } else if (mode === "section") {
+              if (!params.section) return fail("missing_section", "section requise pour mode=section.", { headings: headingsOf(current.markdown ?? "") });
+              if (params.markdown === undefined) return fail("missing_markdown", "markdown requis pour mode=section.");
+              const result = replaceSection(current.markdown ?? "", params.section, params.markdown);
+              if (!result.ok) return fail(result.error, `Section introuvable : ${params.section}`, { headings: result.headings });
+              body.markdown = result.markdown;
+            } else if (mode === "edit") {
+              if (!params.find) return fail("missing_find", "find requis pour mode=edit.");
+              const result = applyEdit(current.markdown ?? "", params.find, params.replace ?? "");
+              if (!result.ok) {
+                return fail(result.error, `Remplacement impossible (${result.occurrences} occurrence(s)).`, {
+                  occurrences: result.occurrences,
+                });
+              }
+              body.markdown = result.markdown;
+            } else if (mode !== null) {
+              return fail("unknown_mode", `Mode inconnu : ${mode}`, { modes: ["replace", "append", "section", "edit"] });
+            }
+
             if (Object.keys(body).length === 0) return fail("nothing_to_update", "Aucun champ à modifier.");
             body.changelog = `Mise à jour OpenClaw (révision ${current.revision_count ?? "?"})`;
             const page = await client.put(`/pages/${params.pageId}`, body);
-            return text({ ok: true, page: { id: page.id, name: page.name, revision: page.revision_count }, url: pageUrl(config.baseUrl, page) });
+            return text({
+              ok: true,
+              mode: mode ?? "metadata",
+              page: { id: page.id, name: page.name, revision: page.revision_count },
+              url: pageUrl(config.baseUrl, page),
+            });
           }
 
           if (action === "move") {
@@ -628,7 +613,7 @@ export function buildTools(api) {
       name: "bookstack_import",
       label: "BookStack import",
       description:
-        "Importe un document dans l'activité liée: conserve l'original en pièce jointe, extrait le texte (OCR si nécessaire), crée la page d'extraction avec provenance. Ne produit ni résumé ni analyse.",
+        "Importe un document dans l'activité liée: conserve l'original en pièce jointe, extrait le texte (OCR si nécessaire), crée la page d'extraction avec provenance. Ne produit ni résumé ni analyse. Pour compléter une page existante, passer targetPageId (+ confirm=true si la page n'est pas une page d'extraction).",
       parameters: obj({
         filePath: str("Chemin local du document, ou référence de pièce jointe media://inbound/<id>."),
         activityId: str(),
@@ -637,12 +622,20 @@ export function buildTools(api) {
         ocr: str("auto | off | full_page | layout | pdf_aware"),
         tables: bool(),
         source: str("Provenance (email, URL, upload…)."),
-        pageId: num("Page d'extraction existante (reextract)."),
+        pageId: num("Réservé à action=reextract (page d'extraction à relancer)."),
+        targetPageId: num("Page existante à compléter : l'extraction y est ajoutée sans rien supprimer."),
+        confirm: bool("Confirme l'écriture dans une page qui n'est pas une page d'extraction."),
         action: str("import (défaut) | reextract"),
         force: bool("Créer une nouvelle version même si le document est déjà importé."),
       }, ["filePath"]),
       async run(params, ctx) {
         return withContext(api, ctx, async ({ config, client, registry }) => {
+          if (params.pageId && params.action !== "reextract") {
+            return fail(
+              "pageId_requires_reextract",
+              "pageId ne s'applique qu'à action=reextract. Pour compléter une page existante, utiliser targetPageId.",
+            );
+          }
           let activity = null;
           if (params.activityId) activity = await findActivity(registry, { id: params.activityId });
           else {
@@ -713,7 +706,8 @@ export function buildTools(api) {
           });
 
           // Doublon : même empreinte déjà importée dans cette activité.
-          if (params.force !== true) {
+          // Avec targetPageId, la cible est explicite : le doublon n'est pas bloquant.
+          if (params.force !== true && !params.targetPageId) {
             const existing = await findExistingImport({ client, activity, sha256: original.sha256 });
             if (existing) {
               return text({
@@ -736,33 +730,52 @@ export function buildTools(api) {
           });
 
           const chapterId = params.chapterId ?? activity.documentsChapterId ?? null;
-          const provenance = [
-            `- Fichier original : ${filename}`,
-            `- Source : ${params.source ?? "fichier local"}`,
-            `- Importé le : ${new Date().toISOString()}`,
-            `- Empreinte SHA-256 (16) : ${original.sha256}`,
-            `- Méthode : Docling${conversion.ocr_executed ? " + OCR" : ""} (${conversion.ocr_mode})`,
-            `- Pages : ${conversion.pages ?? "?"}`,
-            `- État : ${conversion.ok ? "converti" : "échec"}`,
-          ].join("\n");
+          const block = extractionBlock({
+            filename,
+            source: params.source ?? "fichier local",
+            sha256: original.sha256,
+            conversion,
+          });
 
-          const markdown = [
-            `# ${title}`,
-            "",
-            "<!-- openclaw:extraction:start -->",
-            "## Provenance",
-            provenance,
-            "",
-            "## Texte extrait",
-            "",
-            conversion.markdown ?? "",
-            "<!-- openclaw:extraction:end -->",
-          ].join("\n");
-
-          const pageBody = { name: title, markdown, tags: [{ name: "openclaw-role", value: "extraction" }] };
-          if (chapterId) pageBody.chapter_id = chapterId;
-          else pageBody.book_id = activity.bookId;
-          const page = await client.post("/pages", pageBody);
+          let page;
+          let destination;
+          if (params.targetPageId) {
+            const target = await client.get(`/pages/${params.targetPageId}`);
+            if (target.book_id !== activity.bookId) {
+              return fail("target_outside_activity", "La page cible n'appartient pas au livre de l'activité.", {
+                targetPageId: target.id,
+                targetBookId: target.book_id,
+                activityBookId: activity.bookId,
+              });
+            }
+            const existingMarkdown = target.markdown ?? "";
+            const isExtractionPage = existingMarkdown.includes("<!-- openclaw:extraction:start -->");
+            if (!isExtractionPage && params.confirm !== true) {
+              return fail(
+                "confirmation_required",
+                "La page cible n'est pas une page d'extraction : l'extraction y sera ajoutée à la suite du contenu existant. Renvoyer avec confirm=true.",
+                {
+                  targetPageId: target.id,
+                  targetName: target.name,
+                  preview: existingMarkdown.slice(0, 200),
+                  headings: headingsOf(existingMarkdown),
+                },
+              );
+            }
+            const merged = appendExtraction(existingMarkdown, block);
+            page = await client.put(`/pages/${target.id}`, {
+              markdown: merged,
+              changelog: `Import OpenClaw (révision ${target.revision_count ?? "?"})`,
+            });
+            destination = { pageId: page.id, chapterId: page.chapter_id ?? null, created: false };
+          } else {
+            const markdown = [`# ${title}`, "", block].join("\n");
+            const pageBody = { name: title, markdown, tags: [{ name: "openclaw-role", value: "extraction" }] };
+            if (chapterId) pageBody.chapter_id = chapterId;
+            else pageBody.book_id = activity.bookId;
+            page = await client.post("/pages", pageBody);
+            destination = { pageId: page.id, chapterId: page.chapter_id ?? chapterId ?? null, created: true };
+          }
 
           const attachment = await client.upload("/attachments", {
             fields: { name: filename, uploaded_to: page.id },
@@ -774,6 +787,7 @@ export function buildTools(api) {
             ok: true,
             activity: { id: activity.id, name: activity.name, bookId: activity.bookId },
             page: { id: page.id, name: page.name },
+            destination,
             url: `${config.baseUrl}/books/${activity.bookSlug ?? activity.bookId}/page/${page.slug ?? page.id}`,
             attachment: { id: attachment.id, name: attachment.name },
             original: { path: original.path, sha256: original.sha256, bytes: info.size },

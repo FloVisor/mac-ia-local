@@ -1,0 +1,12 @@
+✔ Orion discovery and Outline reads, direct and deferred, need no approval (0.570958ms)
+✔ exec_tool reads require a real matching contract result in same session (0.188833ms)
+✔ deferred actual get_contract result works; fabricated nested params do not (0.09425ms)
+✔ wrapper cannot bypass sender gates or side-effect refusals (0.588875ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 50.221125

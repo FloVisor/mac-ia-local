@@ -1,0 +1,3 @@
+[graphify extract] wrote /Users/fngux2/Workspaces/mac-ia-local/graphify-out/graph.json: 16693 nodes, 64183 edges, 447 communities
+[graphify extract] wrote /Users/fngux2/Workspaces/mac-ia-local/graphify-out/.graphify_analysis.json
+[graphify extract] incremental summary: 1220 files cached/unchanged, 119 re-extracted, 0 deleted

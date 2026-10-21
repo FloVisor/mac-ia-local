@@ -1,0 +1,352 @@
+{
+  "captured_at": "2026-10-21T06:28:39.435429+00:00",
+  "source": "Mac, forced frontend IP, no redirects, normal certificate validation",
+  "excluded": "acme-bootstrap synthetic backend and OAuth authorization/callback endpoints",
+  "probes": [
+    {
+      "domain": "bookstack.gangneux.org",
+      "family": 4,
+      "target": "192.168.205.10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 302,
+      "ssl_verify_result": 0,
+      "remote_ip": "192.168.205.10",
+      "duration_seconds": 0.105592,
+      "error": ""
+    },
+    {
+      "domain": "bookstack.gangneux.org",
+      "family": 6,
+      "target": "2a01:e0a:8ce:68c5::10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 302,
+      "ssl_verify_result": 0,
+      "remote_ip": "2a01:e0a:8ce:68c5::10",
+      "duration_seconds": 0.107014,
+      "error": ""
+    },
+    {
+      "domain": "diun.gangneux.org",
+      "family": 4,
+      "target": "192.168.205.10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 404,
+      "ssl_verify_result": 0,
+      "remote_ip": "192.168.205.10",
+      "duration_seconds": 0.043748,
+      "error": ""
+    },
+    {
+      "domain": "diun.gangneux.org",
+      "family": 6,
+      "target": "2a01:e0a:8ce:68c5::10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 404,
+      "ssl_verify_result": 0,
+      "remote_ip": "2a01:e0a:8ce:68c5::10",
+      "duration_seconds": 0.043513,
+      "error": ""
+    },
+    {
+      "domain": "dns.gangneux.org",
+      "family": 4,
+      "target": "192.168.205.10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 200,
+      "ssl_verify_result": 0,
+      "remote_ip": "192.168.205.10",
+      "duration_seconds": 0.044811,
+      "error": ""
+    },
+    {
+      "domain": "dns.gangneux.org",
+      "family": 6,
+      "target": "2a01:e0a:8ce:68c5::10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 200,
+      "ssl_verify_result": 0,
+      "remote_ip": "2a01:e0a:8ce:68c5::10",
+      "duration_seconds": 0.044688,
+      "error": ""
+    },
+    {
+      "domain": "gluetun.gangneux.org",
+      "family": 4,
+      "target": "192.168.205.10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 302,
+      "ssl_verify_result": 0,
+      "remote_ip": "192.168.205.10",
+      "duration_seconds": 0.070579,
+      "error": ""
+    },
+    {
+      "domain": "gluetun.gangneux.org",
+      "family": 6,
+      "target": "2a01:e0a:8ce:68c5::10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 302,
+      "ssl_verify_result": 0,
+      "remote_ip": "2a01:e0a:8ce:68c5::10",
+      "duration_seconds": 0.084906,
+      "error": ""
+    },
+    {
+      "domain": "home.gangneux.org",
+      "family": 4,
+      "target": "192.168.205.10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 307,
+      "ssl_verify_result": 0,
+      "remote_ip": "192.168.205.10",
+      "duration_seconds": 0.076458,
+      "error": ""
+    },
+    {
+      "domain": "home.gangneux.org",
+      "family": 6,
+      "target": "2a01:e0a:8ce:68c5::10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 307,
+      "ssl_verify_result": 0,
+      "remote_ip": "2a01:e0a:8ce:68c5::10",
+      "duration_seconds": 0.081647,
+      "error": ""
+    },
+    {
+      "domain": "homeassistant.gangneux.org",
+      "family": 4,
+      "target": "192.168.205.10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 405,
+      "ssl_verify_result": 0,
+      "remote_ip": "192.168.205.10",
+      "duration_seconds": 0.061331,
+      "error": ""
+    },
+    {
+      "domain": "homeassistant.gangneux.org",
+      "family": 6,
+      "target": "2a01:e0a:8ce:68c5::10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 405,
+      "ssl_verify_result": 0,
+      "remote_ip": "2a01:e0a:8ce:68c5::10",
+      "duration_seconds": 0.04722,
+      "error": ""
+    },
+    {
+      "domain": "n8n.gangneux.org",
+      "family": 4,
+      "target": "192.168.205.10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 200,
+      "ssl_verify_result": 0,
+      "remote_ip": "192.168.205.10",
+      "duration_seconds": 0.047091,
+      "error": ""
+    },
+    {
+      "domain": "n8n.gangneux.org",
+      "family": 6,
+      "target": "2a01:e0a:8ce:68c5::10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 200,
+      "ssl_verify_result": 0,
+      "remote_ip": "2a01:e0a:8ce:68c5::10",
+      "duration_seconds": 0.048305,
+      "error": ""
+    },
+    {
+      "domain": "nas.gangneux.org",
+      "family": 4,
+      "target": "192.168.205.10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 200,
+      "ssl_verify_result": 0,
+      "remote_ip": "192.168.205.10",
+      "duration_seconds": 1.571898,
+      "error": ""
+    },
+    {
+      "domain": "nas.gangneux.org",
+      "family": 6,
+      "target": "2a01:e0a:8ce:68c5::10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 200,
+      "ssl_verify_result": 0,
+      "remote_ip": "2a01:e0a:8ce:68c5::10",
+      "duration_seconds": 1.572415,
+      "error": ""
+    },
+    {
+      "domain": "owui.gangneux.org",
+      "family": 4,
+      "target": "192.168.205.10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 200,
+      "ssl_verify_result": 0,
+      "remote_ip": "192.168.205.10",
+      "duration_seconds": 0.061132,
+      "error": ""
+    },
+    {
+      "domain": "owui.gangneux.org",
+      "family": 6,
+      "target": "2a01:e0a:8ce:68c5::10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 200,
+      "ssl_verify_result": 0,
+      "remote_ip": "2a01:e0a:8ce:68c5::10",
+      "duration_seconds": 0.059902,
+      "error": ""
+    },
+    {
+      "domain": "portainer.gangneux.org",
+      "family": 4,
+      "target": "192.168.205.10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 200,
+      "ssl_verify_result": 0,
+      "remote_ip": "192.168.205.10",
+      "duration_seconds": 0.056408,
+      "error": ""
+    },
+    {
+      "domain": "portainer.gangneux.org",
+      "family": 6,
+      "target": "2a01:e0a:8ce:68c5::10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 200,
+      "ssl_verify_result": 0,
+      "remote_ip": "2a01:e0a:8ce:68c5::10",
+      "duration_seconds": 0.055585,
+      "error": ""
+    },
+    {
+      "domain": "qbittorrent.gangneux.org",
+      "family": 4,
+      "target": "192.168.205.10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 200,
+      "ssl_verify_result": 0,
+      "remote_ip": "192.168.205.10",
+      "duration_seconds": 0.046428,
+      "error": ""
+    },
+    {
+      "domain": "qbittorrent.gangneux.org",
+      "family": 6,
+      "target": "2a01:e0a:8ce:68c5::10",
+      "method": "HEAD",
+      "path": "/",
+      "exit": 0,
+      "http_code": 200,
+      "ssl_verify_result": 0,
+      "remote_ip": "2a01:e0a:8ce:68c5::10",
+      "duration_seconds": 0.046,
+      "error": ""
+    }
+  ],
+  "tls": {
+    "verified": true,
+    "certificate": {
+      "subject": [
+        [
+          [
+            "commonName",
+            "gangneux.org"
+          ]
+        ]
+      ],
+      "issuer": [
+        [
+          [
+            "countryName",
+            "US"
+          ]
+        ],
+        [
+          [
+            "organizationName",
+            "Let's Encrypt"
+          ]
+        ],
+        [
+          [
+            "commonName",
+            "YR2"
+          ]
+        ]
+      ],
+      "version": 3,
+      "serialNumber": "06360D7219E1EE900B2A2FA729A7BE4A7116",
+      "notBefore": "Sep 14 19:51:46 2026 GMT",
+      "notAfter": "Dec 13 19:51:45 2026 GMT",
+      "subjectAltName": [
+        [
+          "DNS",
+          "*.gangneux.org"
+        ],
+        [
+          "DNS",
+          "gangneux.org"
+        ]
+      ],
+      "caIssuers": [
+        "http://yr2.i.lencr.org/"
+      ],
+      "crlDistributionPoints": [
+        "http://yr2.c.lencr.org/23.crl"
+      ]
+    },
+    "protocol": "TLSv1.3",
+    "cipher": [
+      "TLS_AES_128_GCM_SHA256",
+      "TLSv1.3",
+      128
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "ok": false,
+  "toolName": "gmail_read",
+  "error": {
+    "code": "not_found",
+    "message": "Tool not available: gmail_read"
+  }
+}

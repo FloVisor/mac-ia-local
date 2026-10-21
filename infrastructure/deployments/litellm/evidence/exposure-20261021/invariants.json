@@ -1,0 +1,83 @@
+{
+  "immutable_files": {
+    "stack.yml": "a51b5e02aa42b3786b64d218842a4632d57a405c452681885cd76f261087bc10",
+    "config.yaml": "9ee4895f2076c6c0105bfc7267a9e98f513771cbd500f118a49e1ef4f4a65280"
+  },
+  "routers": {
+    "acme-bootstrap.yml": [
+      "rule: \"Host(`acme-bootstrap.gangneux.org`)\""
+    ],
+    "homeassistant.yml": [
+      "rule: \"Host(`homeassistant.gangneux.org`)\""
+    ],
+    "super-agent-oauth.yml": [
+      "rule: \"Host(`auth.gangneux.org`) && (PathPrefix(`/oauth/microsoft/authorize/`) || Path(`/oauth/microsoft/callback`) || PathPrefix(`/oauth/google/authorize/`) || Path(`/oauth/google/callback`))\""
+    ],
+    "gluetun.yml": [
+      "rule: \"Host(`gluetun.gangneux.org`)\""
+    ],
+    "litellm.yml": [
+      "rule: Host(`litellm.gangneux.org`) && ((Path(`/v1/models`) && Method(`GET`)) || (Path(`/v1/chat/completions`) && Method(`POST`)) || (Path(`/v1/responses`) && Method(`POST`)))",
+      "rule: Host(`litellm.gangneux.org`)",
+      "rule: Host(`litellm.gangneux.org`)"
+    ],
+    "diun.yml": [
+      "rule: \"Host(`diun.gangneux.org`)\""
+    ],
+    "qbittorrent.yml": [
+      "rule: \"Host(`qbittorrent.gangneux.org`)\""
+    ],
+    "openwebui.yml": [
+      "rule: \"Host(`owui.gangneux.org`)\""
+    ],
+    "portainer.yml": [
+      "rule: \"Host(`portainer.gangneux.org`)\""
+    ],
+    "n8n.yml": [
+      "rule: \"Host(`n8n.gangneux.org`)\""
+    ],
+    "minecraft.yml": [
+      "rule: \"HostSNI(`*`)\""
+    ],
+    "freellmapi.yml": [
+      "rule: 'Host(`freellmapi.gangneux.org`)'"
+    ],
+    "bookstack.yml": [
+      "rule: \"Host(`bookstack.gangneux.org`)\""
+    ],
+    "dns.yml": [
+      "rule: \"Host(`dns.gangneux.org`)\""
+    ],
+    "nas.yml": [
+      "rule: \"Host(`nas.gangneux.org`)\""
+    ],
+    "homepage.yml": [
+      "rule: \"Host(`home.gangneux.org`)\""
+    ]
+  },
+  "controlled_logs": {
+    "litellm_gateway": {
+      "read_exit": 0,
+      "known_secret_found": false,
+      "synthetic_prompt_found": false
+    },
+    "freellmapi_api": {
+      "read_exit": 0,
+      "known_secret_found": false,
+      "synthetic_prompt_found": false
+    },
+    "Traefik": {
+      "read_exit": 0,
+      "known_secret_found": false,
+      "synthetic_prompt_found": false
+    }
+  },
+  "traefik_started_at": "2026-09-27T14:12:11.785046975Z",
+  "service_ports": {
+    "litellm_gateway": [],
+    "litellm_postgres": [],
+    "freellmapi_api": []
+  },
+  "external_internet": "NOT_RUN: aucun point externe d\u00e9di\u00e9 identifi\u00e9 dans les acc\u00e8s existants de cette mission",
+  "graphical_ui": "NOT_RUN: aucun navigateur disponible dans cette session, constat ant\u00e9rieur inchang\u00e9"
+}

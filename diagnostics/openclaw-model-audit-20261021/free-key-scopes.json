@@ -1,0 +1,38 @@
+{
+  "openclaw-pro": {
+    "visible": [
+      "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit",
+      "local-ollama/qwen3:4b-instruct",
+      "local-ollama/embeddinggemma:latest",
+      "free-groq/qwen3.8-27b",
+      "free-groq/gpt-oss-120b",
+      "free-openrouter/dots-3-note-preview:free",
+      "free-openrouter/north-mini-code:free",
+      "free-mistral/ministral-8b-2512",
+      "free-mistral/codestral-2508",
+      "free/task-fast",
+      "free/task-coding",
+      "free/task-reasoning",
+      "free/task-long-context"
+    ],
+    "paid_visible": false
+  },
+  "openclaw-perso": {
+    "visible": [
+      "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit",
+      "local-ollama/qwen3:4b-instruct",
+      "local-ollama/embeddinggemma:latest",
+      "free-groq/qwen3.8-27b",
+      "free-groq/gpt-oss-120b",
+      "free-openrouter/dots-3-note-preview:free",
+      "free-openrouter/north-mini-code:free",
+      "free-mistral/ministral-8b-2512",
+      "free-mistral/codestral-2508",
+      "free/task-fast",
+      "free/task-coding",
+      "free/task-reasoning",
+      "free/task-long-context"
+    ],
+    "paid_visible": false
+  }
+}

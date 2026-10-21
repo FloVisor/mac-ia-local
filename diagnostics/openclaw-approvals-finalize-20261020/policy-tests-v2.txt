@@ -1,0 +1,32 @@
+[agents/tools] plugin approval gateway request failed; blocking tool call: Error: SIMULATED_TRANSPORT_ERROR
+[agents/tools] before_tool_call hook failed: tool=gmail_send toolCallId=f6f5aaf2-24d4-4198-9b29-ea3e4c1a5a07 error=Error: TEST_HOOK_FAILURE
+✔ installed runtime decision allow-once (5.767458ms)
+✔ installed runtime decision deny (0.437042ms)
+✔ installed runtime decision timeout (0.45475ms)
+✔ installed runtime decision cancelled (0.266708ms)
+✔ installed runtime decision undefined (0.190625ms)
+✔ installed runtime decision allow-always (0.222708ms)
+✔ installed runtime decision bogus (0.277792ms)
+✔ installed runtime transport error blocks tool (13.648708ms)
+✔ installed runtime freezes args and demands fresh approval for changed action (0.590584ms)
+✔ installed runtime rejects lower-priority parameter rewrite (0.279333ms)
+✔ installed runtime lower-priority veto and hook exception both block (9.390375ms)
+✔ all shell commands and unqualified execution paths fail closed (0.614917ms)
+✔ dedicated reads do not ask; Graph/BookStack remain separated (0.130333ms)
+✔ strict Gmail read argv: query is data, no flags/injection/control-flow (0.309125ms)
+✔ attachment read destination is generated inside own workspace (3.437792ms)
+✔ native grants bind agent/session/id/content and are consumable once (1.594833ms)
+✔ Gmail MIME binds body/recipients/attachment bytes, transport neutralized (1.712625ms)
+✔ memory exception respects canonical paths, relative paths, own workspace and symlinks (1.262625ms)
+✔ file_change approval protects exact preimage, native outside writes blocked (14.135875ms)
+✔ deletions of memory always require approval; trash/delete/archive distinguished (1.040542ms)
+✔ controlled system commands are fixed argv and are never run during qualification (0.41675ms)
+✔ known outgoing messages remain single-call gated, remote draft send remains blocked (0.138084ms)
+ℹ tests 22
+ℹ suites 0
+ℹ pass 22
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1018.426875

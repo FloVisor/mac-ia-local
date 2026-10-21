@@ -1,0 +1,4 @@
+; À créer dans la vue DNS INTERNE uniquement ; aucune écriture DNS réalisée.
+; Cibles ingress vérifiées le 21 octobre 2026.
+freellmapi.gangneux.org.  IN A     192.168.205.10
+freellmapi.gangneux.org.  IN AAAA  2a01:e0a:8ce:68c5::10

@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "toolName": "contacts_read",
+  "output": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"data\":{\"authorization\":\"authorized\",\"containers\":[{\"identifier\":\"45FF8789-86FB-4F95-BBF1-5AB006C99742:ABAccount\",\"name\":\"iCloud\",\"type\":\"carddav\"}],\"selectedContainer\":{\"identifier\":\"45FF8789-86FB-4F95-BBF1-5AB006C99742:ABAccount\",\"name\":\"iCloud\",\"type\":\"carddav\"}},\"ok\":true,\"status\":\"ok\"}\n"
+      }
+    ]
+  },
+  "source": "plugin"
+}

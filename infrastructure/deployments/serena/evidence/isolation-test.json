@@ -1,0 +1,23 @@
+[
+  {
+    "repository": "FloVisor/mac-ia-local",
+    "revision": "366df4d41ae13f84647efbb6170de584828005d6",
+    "branch": "main",
+    "dirty": false,
+    "remote_has_unpushed_mac_changes": false
+  },
+  {
+    "repository": "FloVisor/XITHI-Infrastructure-Ops",
+    "revision": "d2f9c0aec87717d8ef73e48613e2590fde97ad2e",
+    "branch": "main",
+    "dirty": false,
+    "remote_has_unpushed_mac_changes": false
+  },
+  {
+    "repository": "FloVisor/mac-ia-local",
+    "revision": "366df4d41ae13f84647efbb6170de584828005d6",
+    "branch": "main",
+    "dirty": false,
+    "remote_has_unpushed_mac_changes": false
+  }
+]

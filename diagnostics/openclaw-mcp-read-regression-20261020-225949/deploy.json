@@ -1,0 +1,7 @@
+{
+  "ok": false,
+  "error": {
+    "type": "cli_error",
+    "message": "The Gateway is not running. Start it before reloading a plugin."
+  }
+}

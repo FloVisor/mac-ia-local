@@ -1,0 +1,215 @@
+{
+  "ok": true,
+  "ts": 1792529041879,
+  "durationMs": 5,
+  "plugins": {
+    "loaded": [
+      "active-memory",
+      "anthropic",
+      "bookstack-perso",
+      "imessage",
+      "memory-core",
+      "microsoft-graph",
+      "ollama",
+      "send-approval"
+    ],
+    "errors": [],
+    "unavailable": []
+  },
+  "configReload": {
+    "hotReloadStatus": "active"
+  },
+  "channels": {
+    "imessage": {
+      "accountId": "default",
+      "enabled": true,
+      "lastStartAt": 1792529041563,
+      "lastStopAt": null,
+      "restartPending": false,
+      "reconnectAttempts": 0,
+      "lifecycle": "starting",
+      "lastInboundAt": null,
+      "lastOutboundAt": null,
+      "cliPath": "/opt/homebrew/bin/imsg",
+      "dbPath": null,
+      "configured": true,
+      "running": true,
+      "lastError": null,
+      "lastProbeAt": null,
+      "accounts": {
+        "default": {
+          "accountId": "default",
+          "enabled": true,
+          "lastStartAt": 1792529041563,
+          "lastStopAt": null,
+          "restartPending": false,
+          "reconnectAttempts": 0,
+          "lifecycle": "starting",
+          "lastInboundAt": null,
+          "lastOutboundAt": null,
+          "cliPath": "/opt/homebrew/bin/imsg",
+          "dbPath": null,
+          "configured": true,
+          "running": true,
+          "lastError": null,
+          "lastProbeAt": null
+        }
+      }
+    }
+  },
+  "channelOrder": [
+    "imessage"
+  ],
+  "channelLabels": {
+    "imessage": "iMessage"
+  },
+  "heartbeatSeconds": 1800,
+  "defaultAgentId": "main",
+  "agents": [
+    {
+      "agentId": "main",
+      "isDefault": true,
+      "heartbeat": {
+        "enabled": true,
+        "every": "30m",
+        "everyMs": 1800000,
+        "prompt": "Follow the heartbeat monitor scratch context when provided. Recurring tasks are automations; create or change their schedules with the automations tool, not heartbeat scratch. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply NO_REPLY.",
+        "target": "owner",
+        "ackMaxChars": 300
+      },
+      "sessions": {
+        "path": "/Users/fngux2/.openclaw/agents/main/agent/openclaw-agent.sqlite",
+        "count": 7,
+        "recent": [
+          {
+            "key": "agent:main:dashboard:593f9843-ea97-490b-8506-dbd14f7d60c7",
+            "updatedAt": 1792528420104,
+            "age": 621771
+          },
+          {
+            "key": "agent:main:main",
+            "updatedAt": 1792528389848,
+            "age": 652027
+          },
+          {
+            "key": "agent:main:dashboard:ffb0e7d3-44a3-473c-8f64-26233cab390c",
+            "updatedAt": 1792527519959,
+            "age": 1521916
+          },
+          {
+            "key": "agent:main:dashboard:543fe689-2cf1-4ad1-8613-85c1358fcb66",
+            "updatedAt": 1792526922344,
+            "age": 2119531
+          },
+          {
+            "key": "agent:main:dashboard:5385d214-3c82-45f1-a3f8-0d7dbbe86a24",
+            "updatedAt": 1792511694985,
+            "age": 17346890
+          }
+        ]
+      }
+    },
+    {
+      "agentId": "perso",
+      "name": "Perso",
+      "isDefault": false,
+      "heartbeat": {
+        "enabled": false,
+        "every": "disabled",
+        "everyMs": null,
+        "prompt": "Follow the heartbeat monitor scratch context when provided. Recurring tasks are automations; create or change their schedules with the automations tool, not heartbeat scratch. Do not infer or repeat old tasks from prior chats. If nothing needs attention, reply NO_REPLY.",
+        "target": "owner",
+        "ackMaxChars": 300
+      },
+      "sessions": {
+        "path": "/Users/fngux2/.openclaw/agents/perso/agent/openclaw-agent.sqlite",
+        "count": 9,
+        "recent": [
+          {
+            "key": "agent:perso:dashboard:8cc98460-0af6-41e0-8ec1-6b64994accb1",
+            "updatedAt": 1792512546136,
+            "age": 16495740
+          },
+          {
+            "key": "agent:perso:main",
+            "updatedAt": 1792512527744,
+            "age": 16514132
+          },
+          {
+            "key": "agent:perso:dashboard:3592a1b2-0406-469e-a94d-20205121c3ae",
+            "updatedAt": 1792500225378,
+            "age": 28816498
+          },
+          {
+            "key": "agent:perso:dashboard:a4c1040c-0818-4dae-8a7c-5732a85275c5",
+            "updatedAt": 1792499684867,
+            "age": 29357009
+          },
+          {
+            "key": "agent:perso:dashboard:770b6521-25de-4602-9821-d2a6be8e8f3a",
+            "updatedAt": 1792498598730,
+            "age": 30443146
+          }
+        ]
+      }
+    }
+  ],
+  "sessions": {
+    "path": "/Users/fngux2/.openclaw/agents/main/agent/openclaw-agent.sqlite",
+    "count": 7,
+    "recent": [
+      {
+        "key": "agent:main:dashboard:593f9843-ea97-490b-8506-dbd14f7d60c7",
+        "updatedAt": 1792528420104,
+        "age": 621771
+      },
+      {
+        "key": "agent:main:main",
+        "updatedAt": 1792528389848,
+        "age": 652027
+      },
+      {
+        "key": "agent:main:dashboard:ffb0e7d3-44a3-473c-8f64-26233cab390c",
+        "updatedAt": 1792527519959,
+        "age": 1521916
+      },
+      {
+        "key": "agent:main:dashboard:543fe689-2cf1-4ad1-8613-85c1358fcb66",
+        "updatedAt": 1792526922344,
+        "age": 2119531
+      },
+      {
+        "key": "agent:main:dashboard:5385d214-3c82-45f1-a3f8-0d7dbbe86a24",
+        "updatedAt": 1792511694985,
+        "age": 17346890
+      }
+    ]
+  },
+  "eventLoop": {
+    "degraded": true,
+    "degradedSinceMs": 4339,
+    "reasons": [
+      "event_loop_delay",
+      "event_loop_utilization",
+      "cpu"
+    ],
+    "intervalMs": 4339.449208,
+    "delayP99Ms": 4299.2,
+    "delayMaxMs": 4295.6,
+    "utilization": 1,
+    "cpuCoreRatio": 1.162,
+    "cpuBreakdown": {
+      "mainThreadCoreRatio": 0.989,
+      "hostUtilization": 0.328,
+      "hostCpuCount": 16
+    }
+  },
+  "modelRuntime": {
+    "degraded": false,
+    "pendingAgents": []
+  },
+  "childRuntime": {
+    "execPath": "/Users/fngux2/.openclaw/runtime/2026.10.5-release-1b58cb9a1b4f-2026-10-18T20-52-43.000Z/bin/bun",
+    "available": true
+  }
+}

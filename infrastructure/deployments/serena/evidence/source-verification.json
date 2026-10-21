@@ -1,0 +1,12 @@
+{
+  "mac-symbol": {
+    "path": "/srv/docker-local/serena/repositories/primary/FloVisor/mac-ia-local/mcp/local-llm-mcp/local-llm-mcp.py",
+    "revision": "366df4d41ae13f84647efbb6170de584828005d6",
+    "source_range_matches": true
+  },
+  "infra-symbol": {
+    "path": "/srv/docker-local/serena/repositories/primary/FloVisor/XITHI-Infrastructure-Ops/ansible/scripts/inventory/precompiled.py",
+    "revision": "d2f9c0aec87717d8ef73e48613e2590fde97ad2e",
+    "source_range_matches": true
+  }
+}

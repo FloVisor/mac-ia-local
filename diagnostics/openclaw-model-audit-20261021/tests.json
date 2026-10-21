@@ -1,0 +1,86 @@
+{
+  "test-pro-simple.json": {
+    "status": "ok",
+    "text": "PRO_OK",
+    "receipt": {
+      "runId": "a10308df-3e66-4d6d-8607-07e0dbb503e0",
+      "sessionId": "6beb0148-591c-4fb0-ae44-d1e0b5aa86e1",
+      "turnId": "a10308df-3e66-4d6d-8607-07e0dbb503e0",
+      "requested": {
+        "provider": "litellm-free-pro",
+        "model": "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit"
+      },
+      "effective": {
+        "provider": "litellm-free-pro",
+        "model": "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit",
+        "responseModel": "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit"
+      },
+      "successfulToolNames": [],
+      "rerouted": false,
+      "terminalDisposition": "visible"
+    },
+    "trace": {
+      "winnerProvider": "litellm-free-pro",
+      "winnerModel": "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit",
+      "attempts": [
+        {
+          "provider": "litellm-free-pro",
+          "model": "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit",
+          "result": "success",
+          "stage": "assistant"
+        }
+      ],
+      "fallbackUsed": false,
+      "runner": "embedded"
+    },
+    "context": 131072,
+    "estimated_prompt": 19076,
+    "completion": {
+      "stopReason": "stop",
+      "finishReason": "stop"
+    }
+  },
+  "test-perso-tool.json": {
+    "status": "ok",
+    "text": "Le contenu exact du fichier `/tmp/openclaw-audit-tool-proof-20261021.txt` est :\n\n`AUDIT_PROOF_801d756a5880b0ea410997aa`",
+    "receipt": {
+      "runId": "4726b5fe-5a97-4f76-a222-611a8d002ddd",
+      "sessionId": "dfa8c142-979d-4d76-aefe-2031ee95c4ba",
+      "turnId": "4726b5fe-5a97-4f76-a222-611a8d002ddd",
+      "requested": {
+        "provider": "litellm-free-perso",
+        "model": "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit"
+      },
+      "effective": {
+        "provider": "litellm-free-perso",
+        "model": "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit",
+        "responseModel": "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit"
+      },
+      "successfulToolNames": [
+        "read"
+      ],
+      "rerouted": false,
+      "terminalDisposition": "visible"
+    },
+    "trace": {
+      "winnerProvider": "litellm-free-perso",
+      "winnerModel": "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit",
+      "attempts": [
+        {
+          "provider": "litellm-free-perso",
+          "model": "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit",
+          "result": "success",
+          "stage": "assistant"
+        }
+      ],
+      "fallbackUsed": false,
+      "runner": "embedded"
+    },
+    "context": 131072,
+    "estimated_prompt": 22929,
+    "completion": {
+      "stopReason": "stop",
+      "finishReason": "stop"
+    }
+  }
+}

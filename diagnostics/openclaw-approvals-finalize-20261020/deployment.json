@@ -1,0 +1,7 @@
+{
+  "ok": false,
+  "error": {
+    "type": "cli_error",
+    "message": "gateway rejected websocket upgrade (HTTP 503): Gateway websocket admission closed"
+  }
+}

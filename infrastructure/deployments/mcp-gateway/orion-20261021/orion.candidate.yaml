@@ -1,0 +1,7 @@
+# CANDIDAT NON DEPLOYE : OAuth et stockage securise a qualifier avant import.
+name: orion
+title: Orion
+description: Connaissances M3 et registres metier, reserve a Codex et OpenClaw Pro.
+type: remote
+remote:
+  url: https://owu.mix3cloud.net/mcp-front/mcp

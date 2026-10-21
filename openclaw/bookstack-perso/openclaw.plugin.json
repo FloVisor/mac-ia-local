@@ -20,7 +20,8 @@
       "bookstack_attachment",
       "bookstack_import",
       "bookstack_conversation",
-      "bookstack_comment"
+      "bookstack_comment",
+      "bookstack_suivi"
     ]
   },
   "configSchema": {

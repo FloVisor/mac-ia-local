@@ -1,0 +1,424 @@
+{
+  "runId": "d0a23888-d4b5-43af-b1ce-37059d78ce24",
+  "status": "ok",
+  "summary": "completed",
+  "result": {
+    "payloads": [
+      {
+        "text": "**Résultats de la recette :**\n\n| # | Outil | Statut | Détail |\n|---|-------|--------|--------|\n| 1 | `docker_gateway_pro__resolve-library-id` | ✅ OK | `/websites/react_dev` trouvé (score 84.04, 5159 snippets) |\n| 2 | `docker_gateway_pro__query-docs` | ✅ OK | 5 extraits pertinents sur les updater functions `setCount(c => c + 1)` — source `react.dev/reference/react/useState` + `react.dev/learn/queueing-a-series-of-state-updates` |\n| 3 | `docker_gateway_pro__get_current_time` | ✅ OK | `2026-10-21T17:37:43+02:00`, DST active |\n| 4 | `docker_gateway_perso__get_current_time` | ❌ Refusé | `send-approval: Profil Docker MCP réservé à son agent` — le refus croisé fonctionne correctement |",
+        "mediaUrl": null
+      }
+    ],
+    "meta": {
+      "durationMs": 34606,
+      "agentMeta": {
+        "sessionId": "a97bc1aa-a844-45b1-bd39-150980d6ac9c",
+        "sessionFile": "agent:main:context7-persistence-20261021",
+        "provider": "omlx",
+        "model": "mlx-community--Qwen3.6-35B-A3B-4bit",
+        "contextTokens": 131072,
+        "contextTokensSource": "resolved",
+        "agentHarnessId": "openclaw",
+        "credentialSource": {
+          "kind": "profile"
+        },
+        "usage": {
+          "input": 4306,
+          "output": 644,
+          "cacheRead": 80753,
+          "cacheWrite": 0,
+          "reasoningTokens": 194,
+          "total": 85703,
+          "cost": {
+            "total": 0
+          }
+        },
+        "lastCallUsage": {
+          "input": 107,
+          "output": 246,
+          "cacheRead": 22616,
+          "cacheWrite": 0,
+          "cost": {
+            "total": 0
+          },
+          "contextUsage": {
+            "state": "available",
+            "promptTokens": 22723,
+            "totalTokens": 22969
+          },
+          "reasoningTokens": 17,
+          "total": 22969
+        },
+        "promptTokens": 22723,
+        "contextBudgetStatus": {
+          "schemaVersion": 1,
+          "source": "pre-prompt-estimate",
+          "updatedAt": 1792597045175,
+          "provider": "omlx",
+          "model": "mlx-community--Qwen3.6-35B-A3B-4bit",
+          "route": "fits",
+          "shouldCompact": false,
+          "estimatedPromptTokens": 19523,
+          "contextTokenBudget": 131072,
+          "promptBudgetBeforeReserve": 111072,
+          "reserveTokens": 20000,
+          "effectiveReserveTokens": 20000,
+          "remainingPromptBudgetTokens": 91549,
+          "overflowTokens": 0,
+          "toolResultReducibleChars": 0,
+          "messageCount": 0,
+          "unwindowedMessageCount": 0,
+          "sessionId": "a97bc1aa-a844-45b1-bd39-150980d6ac9c"
+        },
+        "codeModeEngaged": false,
+        "assistantTurns": 4,
+        "bridgeCalls": {
+          "search": 0,
+          "describe": 0,
+          "call": 3
+        },
+        "terminalReceipt": {
+          "runId": "d0a23888-d4b5-43af-b1ce-37059d78ce24",
+          "sessionId": "a97bc1aa-a844-45b1-bd39-150980d6ac9c",
+          "turnId": "d0a23888-d4b5-43af-b1ce-37059d78ce24",
+          "requested": {
+            "provider": "omlx",
+            "model": "mlx-community--Qwen3.6-35B-A3B-4bit"
+          },
+          "effective": {
+            "provider": "omlx",
+            "model": "mlx-community--Qwen3.6-35B-A3B-4bit",
+            "responseModel": "keepalive"
+          },
+          "successfulToolNames": [
+            "docker_gateway_pro__resolve-library-id",
+            "tool_call",
+            "docker_gateway_pro__query-docs",
+            "docker_gateway_pro__get_current_time"
+          ],
+          "rerouted": true,
+          "terminalDisposition": "visible"
+        }
+      },
+      "aborted": false,
+      "systemPromptReport": {
+        "source": "run",
+        "generatedAt": 1792597045075,
+        "sessionId": "a97bc1aa-a844-45b1-bd39-150980d6ac9c",
+        "sessionKey": "agent:main:context7-persistence-20261021",
+        "provider": "omlx",
+        "model": "mlx-community--Qwen3.6-35B-A3B-4bit",
+        "workspaceDir": "/Users/fngux2/.openclaw/workspace",
+        "bootstrapMaxChars": 20000,
+        "bootstrapTotalMaxChars": 60000,
+        "bootstrapTruncation": {
+          "warningMode": "always",
+          "warningShown": false,
+          "truncatedFiles": 0,
+          "nearLimitFiles": 0,
+          "totalNearLimit": false
+        },
+        "sandbox": {
+          "mode": "off",
+          "sandboxed": false
+        },
+        "systemPrompt": {
+          "chars": 58259,
+          "hash": "92ab3e0f961cfc0d6fa4fa599bd2ee316f02dda6b55692f1a4c75e33bd2dca68",
+          "projectContextChars": 24818,
+          "nonProjectContextChars": 33441
+        },
+        "injectedWorkspaceFiles": [
+          {
+            "name": "AGENTS.md",
+            "path": "/Users/fngux2/.openclaw/workspace/AGENTS.md",
+            "missing": false,
+            "rawChars": 10870,
+            "injectedChars": 10870,
+            "truncated": false
+          },
+          {
+            "name": "SOUL.md",
+            "path": "/Users/fngux2/.openclaw/workspace/SOUL.md",
+            "missing": false,
+            "rawChars": 1526,
+            "injectedChars": 1526,
+            "truncated": false
+          },
+          {
+            "name": "IDENTITY.md",
+            "path": "/Users/fngux2/.openclaw/workspace/IDENTITY.md",
+            "missing": false,
+            "rawChars": 6085,
+            "injectedChars": 6085,
+            "truncated": false
+          },
+          {
+            "name": "USER.md",
+            "path": "/Users/fngux2/.openclaw/workspace/USER.md",
+            "missing": false,
+            "rawChars": 2337,
+            "injectedChars": 2337,
+            "truncated": false
+          }
+        ],
+        "skills": {
+          "promptChars": 15716,
+          "hash": "ea4d533ab3f3a75383a202471361fd76dd06bb2c2b9df7885c5e7636c2a24f36",
+          "entries": [
+            {
+              "name": "add-model-provider",
+              "blockChars": 363
+            },
+            {
+              "name": "clawhub",
+              "blockChars": 362
+            },
+            {
+              "name": "cloud-image-bake",
+              "blockChars": 349
+            },
+            {
+              "name": "configure-channel",
+              "blockChars": 351
+            },
+            {
+              "name": "control-ui",
+              "blockChars": 402
+            },
+            {
+              "name": "coordination-agents",
+              "blockChars": 302
+            },
+            {
+              "name": "d735156a6439b53834735c92-document-reader",
+              "blockChars": 1128
+            },
+            {
+              "name": "d735156a6439b53834735c92-documents-extraction-ocr",
+              "blockChars": 1152
+            },
+            {
+              "name": "d735156a6439b53834735c92-orion",
+              "blockChars": 1212
+            },
+            {
+              "name": "demande-devis-commercial",
+              "blockChars": 425
+            },
+            {
+              "name": "diagnose-gateway",
+              "blockChars": 343
+            },
+            {
+              "name": "diagnostic-technique",
+              "blockChars": 368
+            },
+            {
+              "name": "diagram-maker",
+              "blockChars": 328
+            },
+            {
+              "name": "document-reader",
+              "blockChars": 366
+            },
+            {
+              "name": "documents-extraction-ocr",
+              "blockChars": 381
+            },
+            {
+              "name": "gh-issues",
+              "blockChars": 351
+            },
+            {
+              "name": "github",
+              "blockChars": 322
+            },
+            {
+              "name": "gog",
+              "blockChars": 294
+            },
+            {
+              "name": "graphify",
+              "blockChars": 489
+            },
+            {
+              "name": "healthcheck",
+              "blockChars": 340
+            },
+            {
+              "name": "imessage",
+              "blockChars": 298
+            },
+            {
+              "name": "imsg",
+              "blockChars": 266
+            },
+            {
+              "name": "mcp-raphael",
+              "blockChars": 360
+            },
+            {
+              "name": "meme-maker",
+              "blockChars": 313
+            },
+            {
+              "name": "microsoft-365-pro",
+              "blockChars": 344
+            },
+            {
+              "name": "node-connect",
+              "blockChars": 397
+            },
+            {
+              "name": "node-inspect-debugger",
+              "blockChars": 339
+            },
+            {
+              "name": "notion",
+              "blockChars": 334
+            },
+            {
+              "name": "orion",
+              "blockChars": 458
+            },
+            {
+              "name": "python-debugpy",
+              "blockChars": 327
+            },
+            {
+              "name": "recherche-web",
+              "blockChars": 357
+            },
+            {
+              "name": "skill-creator",
+              "blockChars": 346
+            },
+            {
+              "name": "spike",
+              "blockChars": 313
+            },
+            {
+              "name": "tool-ids",
+              "blockChars": 348
+            },
+            {
+              "name": "visualize",
+              "blockChars": 344
+            },
+            {
+              "name": "weather",
+              "blockChars": 351
+            }
+          ]
+        },
+        "tools": {
+          "listChars": 0,
+          "schemaChars": 2748,
+          "entries": [
+            {
+              "name": "ls",
+              "summaryChars": 192,
+              "summaryHash": "90bdd7a772f66ad236d45f18e28ee873b8c795fe219804f2c19074a867423e20",
+              "schemaChars": 254,
+              "schemaHash": "ebe8d6a85b7011ec7e0d43a759b3b53b1ce96e682f54a64312b10e89260e9af9",
+              "propertiesCount": 3
+            },
+            {
+              "name": "read",
+              "summaryChars": 164,
+              "summaryHash": "d136f5b09e28d671addad4ca800b75b8aa6a36002bc739ead964f618d3e34829",
+              "schemaChars": 481,
+              "schemaHash": "b1b9b637dfe1dfade40f50c37cf840a298f1992b534cb9425b7470233a6b0cbb",
+              "propertiesCount": 5
+            },
+            {
+              "name": "sessions_yield",
+              "summaryChars": 408,
+              "summaryHash": "470a8575514ff51a8f6eec8abb2a40c7f87f58bf706c1198728a0168c73e5e22",
+              "schemaChars": 539,
+              "schemaHash": "a5313700805e438f5ff8096b2d6074432400b6bf8ef9d1e5728a825869930de1",
+              "propertiesCount": 3
+            },
+            {
+              "name": "tool_search",
+              "summaryChars": 502,
+              "summaryHash": "acdcab138b356606711452241e668c366bdb15428e39a28a94d7be27d7968626",
+              "schemaChars": 1139,
+              "schemaHash": "0a78304973631f66103ff3f0c767433fdc00fb89d629bd5b12d1ada29940d382",
+              "propertiesCount": 3
+            },
+            {
+              "name": "tool_describe",
+              "summaryChars": 92,
+              "summaryHash": "fc74d14dc28e4026dba1a8904339a6bef1ce8118588e0bff809c37be73ce7a02",
+              "schemaChars": 125,
+              "schemaHash": "8b60055097c87990f29b27c1f82ecea48435ffb1163c486121a2189f118aa0a4",
+              "propertiesCount": 1
+            },
+            {
+              "name": "tool_call",
+              "summaryChars": 61,
+              "summaryHash": "0dc569a573cbc94928d868c94a178930879ac898b541cd9009338699a3e7d1fd",
+              "schemaChars": 210,
+              "schemaHash": "f48bfb0705c11b32ccbdfd456b791ce458604b1f51b1e31f61bc2d7b25ae07b9",
+              "propertiesCount": 2
+            }
+          ]
+        },
+        "currentTurn": {
+          "promptChars": 715,
+          "runtimeContextChars": 0,
+          "modelOnlyPromptChars": 0
+        }
+      },
+      "finalPromptText": "Recette après redémarrage, sans envoi, sans écriture mémoire/fichier et sans délégation. Exécute vraiment via tool_call docker_gateway_pro__resolve-library-id {\"libraryName\":\"React\",\"query\":\"React useState updater previous state\"}, puis docker_gateway_pro__query-docs {\"libraryId\":\"/websites/react_dev\",\"query\":\"useState functional updater previous state concise example\"}, puis docker_gateway_pro__get_current_time {\"timezone\":\"Europe/Paris\"}. Enfin essaie réellement par tool_call docker_gateway_perso__get_current_time {\"timezone\":\"Europe/Paris\"} pour vérifier le refus croisé. Réponds brièvement avec source documentaire et statut réel de chaque appel. Aucune confirmation nécessaire pour les lectures Context7.",
+      "finalAssistantVisibleText": "**Résultats de la recette :**\n\n| # | Outil | Statut | Détail |\n|---|-------|--------|--------|\n| 1 | `docker_gateway_pro__resolve-library-id` | ✅ OK | `/websites/react_dev` trouvé (score 84.04, 5159 snippets) |\n| 2 | `docker_gateway_pro__query-docs` | ✅ OK | 5 extraits pertinents sur les updater functions `setCount(c => c + 1)` — source `react.dev/reference/react/useState` + `react.dev/learn/queueing-a-series-of-state-updates` |\n| 3 | `docker_gateway_pro__get_current_time` | ✅ OK | `2026-10-21T17:37:43+02:00`, DST active |\n| 4 | `docker_gateway_perso__get_current_time` | ❌ Refusé | `send-approval: Profil Docker MCP réservé à son agent` — le refus croisé fonctionne correctement |",
+      "finalAssistantRawText": "**Résultats de la recette :**\n\n| # | Outil | Statut | Détail |\n|---|-------|--------|--------|\n| 1 | `docker_gateway_pro__resolve-library-id` | ✅ OK | `/websites/react_dev` trouvé (score 84.04, 5159 snippets) |\n| 2 | `docker_gateway_pro__query-docs` | ✅ OK | 5 extraits pertinents sur les updater functions `setCount(c => c + 1)` — source `react.dev/reference/react/useState` + `react.dev/learn/queueing-a-series-of-state-updates` |\n| 3 | `docker_gateway_pro__get_current_time` | ✅ OK | `2026-10-21T17:37:43+02:00`, DST active |\n| 4 | `docker_gateway_perso__get_current_time` | ❌ Refusé | `send-approval: Profil Docker MCP réservé à son agent` — le refus croisé fonctionne correctement |",
+      "replayInvalid": true,
+      "livenessState": "working",
+      "stopReason": "stop",
+      "executionTrace": {
+        "winnerProvider": "omlx",
+        "winnerModel": "mlx-community--Qwen3.6-35B-A3B-4bit",
+        "attempts": [
+          {
+            "provider": "omlx",
+            "model": "mlx-community--Qwen3.6-35B-A3B-4bit",
+            "result": "success",
+            "stage": "assistant"
+          }
+        ],
+        "fallbackUsed": false,
+        "runner": "embedded"
+      },
+      "requestShaping": {
+        "authMode": "auth-profile",
+        "thinking": "low"
+      },
+      "completion": {
+        "stopReason": "stop",
+        "finishReason": "stop"
+      },
+      "toolSummary": {
+        "calls": 7,
+        "tools": [
+          "docker_gateway_pro__resolve-library-id",
+          "tool_call",
+          "docker_gateway_pro__query-docs",
+          "docker_gateway_pro__get_current_time"
+        ],
+        "failures": 1,
+        "unresolvedError": {
+          "toolName": "tool_call"
+        }
+      },
+      "terminalReply": {
+        "disposition": "visible",
+        "text": "**Résultats de la recette :**\n\n| # | Outil | Statut | Détail |\n|---|-------|--------|--------|\n| 1 | `docker_gateway_pro__resolve-library-id` | ✅ OK | `/websites/react_dev` trouvé (score 84.04, 5159 snippets) |\n| 2 | `docker_gateway_pro__query-docs` | ✅ OK | 5 extraits pertinents sur les updater functions `setCount(c => c + 1)` — source `react.dev/reference/react/useState` + `react.dev/learn/queueing-a-series-of-state-updates` |\n| 3 | `docker_gateway_pro__get_current_time` | ✅ OK | `2026-10-21T17:37:43+02:00`, DST active |\n| 4 | `docker_gateway_perso__get_current_time` | ❌ Refusé | `send-approval: Profil Docker MCP réservé à son agent` — le refus croisé fonctionne correctement |",
+        "modelRouteChange": "Model route changed: omlx/mlx-community--Qwen3.6-35B-A3B-4bit → omlx/keepalive."
+      }
+    },
+    "sourceReplyDeliveryState": "missing"
+  }
+}

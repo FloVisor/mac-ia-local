@@ -1,0 +1,57 @@
+{
+  "captured_at": "2026-10-21T06:29:49.328657+00:00",
+  "unit_last_results": {
+    "super-agent-backup.service": "Result=success\nExecMainStatus=0\nActiveState=inactive\n",
+    "traefik-syno-cert-sync.service": "Result=success\nExecMainStatus=0\nActiveState=inactive\n",
+    "super-agent-maintenance.service": "Result=success\nExecMainStatus=0\nActiveState=inactive\n"
+  },
+  "backup_scripts": [
+    {
+      "path": "/srv/docker-local/compose/super-agent/ops/lot5h-backup.sh",
+      "sha256": "3eb3ddb0b54567a972d1cf189d7377e836b0bcc93c4774599ec632d5552bc154",
+      "paths_referenced": [
+        "/srv/docker-local/compose/openwebui/compose.yml",
+        "/srv/docker-local/compose/super-agent",
+        "/srv/docker-local/compose/super-agent/compose.yml",
+        "/srv/docker-shared/mcpo/config/config.json",
+        "/srv/docker-shared/openwebui/data/webui.db",
+        "/srv/docker-shared/super-agent",
+        "/srv/docker-shared/super-agent/backup-keys",
+        "/srv/docker-shared/super-agent/backups",
+        "/srv/docker-shared/super-agent/linked-accounts/linked-accounts.sqlite3",
+        "/srv/docker-shared/super-agent/redis/dump.rdb",
+        "/srv/docker-shared/super-agent/secrets",
+        "/srv/docker-shared/traefik/dynamic/super-agent-oauth.yml"
+      ],
+      "tools": [
+        "pg_dump",
+        "tar",
+        "docker",
+        "redis-cli"
+      ]
+    }
+  ],
+  "old_acme_path": {
+    "exists": true,
+    "resolved": "/srv/docker-local/compose/traefik/acme/acme.json"
+  },
+  "ollama_backend_directive": [
+    "set $ollama_backend http://ollama-tailscale:11434;"
+  ],
+  "ollama_healthcheck": {
+    "test": [
+      "CMD-SHELL",
+      "wget -q -O - http://127.0.0.1:11434/api/version | grep -q '\"version\"'"
+    ],
+    "interval": 30000000000,
+    "timeout": 5000000000,
+    "retries": 3,
+    "recent_exits": [
+      -1,
+      -1,
+      -1,
+      -1,
+      -1
+    ]
+  }
+}

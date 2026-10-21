@@ -1,0 +1,8 @@
+{"profile": "codex", "source": "anonymous", "status": 401}
+{"profile": "codex", "source": "invalid", "status": 401}
+{"profile": "codex", "source": "pro", "status": 401}
+{"profile": "codex", "source": "perso", "status": 401}
+{"profile": "pro", "source": "anonymous", "status": 401}
+{"profile": "pro", "source": "invalid", "status": 401}
+{"profile": "pro", "source": "codex", "status": 401}
+{"profile": "pro", "source": "perso", "status": 401}

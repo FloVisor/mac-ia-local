@@ -2,7 +2,7 @@
 
 ## Objectif
 
-Audit, recette et intégration de **Codex local** (CLI/VS Code/Desktop) : proxy Ollama `/api/codex/v1`, provider vLLM-Metal, MCP `local_llm`, sélecteur d'effort.
+Audit, recette et intégration de **Codex local** (CLI/VS Code/Desktop) : proxy Ollama `/api/codex/v1`, provider vLLM-Metal, MCP de délégation, sélecteur d'effort.
 
 ## Structure
 

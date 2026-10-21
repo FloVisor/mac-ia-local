@@ -1,0 +1,57 @@
+version: '3.8'
+services:
+  api:
+    image: ghcr.io/tashfeenahmed/freellmapi:v0.16.6@sha256:e8df41162f807488ff01309a23f37411e7815c4128db14deb31a00feaa183534
+    entrypoint: ["/bin/sh", "/freellmapi-secret-entrypoint.sh"]
+    command: ["node", "server/dist/index.js"]
+    environment:
+      NODE_ENV: production
+      PORT: '3001'
+      TRUST_PROXY: '172.29.2.2/32'
+      DASHBOARD_ORIGINS: 'https://freellmapi.gangneux.org'
+      FREELLMAPI_COMPRESSION: 'off'
+      IMAGE_NORMALIZE: 'off'
+      RESPONSE_CACHE: 'false'
+      FREELLMAPI_UPDATE_CHECK: 'off'
+    configs:
+      - source: secret_loader
+        target: /freellmapi-secret-entrypoint.sh
+        mode: 0555
+    secrets:
+      - source: encryption_key
+        target: freellmapi_encryption_key
+        mode: 0400
+    volumes:
+      - data:/app/server/data
+    networks:
+      TRAEFIK_BACKEND:
+        aliases: [freellmapi-internal]
+    stop_grace_period: 30s
+    deploy:
+      replicas: 1
+      placement:
+        constraints: [node.hostname == docker-02]
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+      update_config:
+        parallelism: 1
+        order: stop-first
+        failure_action: pause
+      rollback_config:
+        parallelism: 1
+        order: stop-first
+networks:
+  TRAEFIK_BACKEND:
+    external: true
+volumes:
+  data:
+    external: true
+    name: freellmapi_data
+configs:
+  secret_loader:
+    file: ./secret-entrypoint.sh
+secrets:
+  encryption_key:
+    external: true
+    name: freellmapi_encryption_key_v1

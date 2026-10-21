@@ -1,0 +1,1 @@
+{"id":"litellm-compat","name":"LiteLLM long reset evidence","version":"1.0.0","providers":["litellm-free-pro","litellm-free-perso"],"activation":{"onStartup":true},"configSchema":{"type":"object","properties":{},"additionalProperties":false}}

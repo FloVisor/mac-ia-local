@@ -1,0 +1,8 @@
+name: serena
+title: Serena read-only repositories
+type: server
+description: Read-only semantic analysis, explicit repository and isolated Serena per call.
+image: local/serena-reader:2.1.0-5e4f5cd
+volumes:
+  - /srv/docker-local/serena/repositories:/repositories:ro
+  - /srv/docker-local/serena/state:/state:rw

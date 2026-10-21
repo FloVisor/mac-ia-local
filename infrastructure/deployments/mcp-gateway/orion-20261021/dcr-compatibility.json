@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-21T16:13:30.022098+00:00",
+  "http_status": 400,
+  "request": {
+    "client_name": "MCP Gateway - orion-codex",
+    "redirect_uris": [
+      "https://mcp.docker.com/oauth/callback"
+    ],
+    "token_endpoint_auth_method": "none",
+    "grant_types": [
+      "authorization_code",
+      "refresh_token"
+    ],
+    "response_types": [
+      "code"
+    ],
+    "client_uri": "https://github.com/docker/mcp-gateway",
+    "software_id": "mcp-gateway",
+    "software_version": "1.0.0",
+    "contacts": [
+      "support@docker.com"
+    ],
+    "scope": "kb:read tags:read registry:read"
+  },
+  "response": {
+    "error": "invalid_redirect_uri",
+    "error_description": "Redirection refus\u00e9e. Admises : http://127.0.0.1|localhost:<port>/\u2026 ou une URI HTTPS d\u00e9clar\u00e9e par l'instance. Refus\u00e9es : https://mcp.docker.com/oauth/callback"
+  },
+  "client_id_present": false,
+  "client_secret_present": false
+}

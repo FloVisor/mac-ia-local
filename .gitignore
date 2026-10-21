@@ -37,3 +37,6 @@ openclaw/bookstack-perso/node_modules/
 
 # Binaire compilé de l'outil perso-contacts
 openclaw/perso-famille-contacts/contacts-tool/build/
+
+# Graphify: per-worktree generated local graph
+/graphify-out/

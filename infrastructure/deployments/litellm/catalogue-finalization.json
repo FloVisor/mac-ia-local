@@ -1,0 +1,310 @@
+{
+  "created": [
+    "free-groq/qwen3.8-27b",
+    "free-groq/gpt-oss-120b",
+    "free-openrouter/dots-3-note-preview:free",
+    "free-openrouter/north-mini-code:free",
+    "free-mistral/ministral-8b-2512",
+    "free-mistral/codestral-2508",
+    "free/task-fast",
+    "free/task-coding",
+    "free/task-reasoning",
+    "free/task-long-context"
+  ],
+  "catalogue": [
+    {
+      "model_name": "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit",
+      "litellm_params": {
+        "api_base": "http://ollama-tailscale:8000/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "litellm_credential_name": "local-omlx-auth",
+        "model": "openai/mlx-community--Qwen3.6-35B-A3B-4bit"
+      },
+      "model_info": {
+        "id": "17720d29-9da3-4888-aef8-f6db0cc5bd96",
+        "blocked": false,
+        "mode": "chat",
+        "backend": "local-omlx",
+        "access_groups": [
+          "local-omlx"
+        ]
+      }
+    },
+    {
+      "model_name": "local-ollama/embeddinggemma:latest",
+      "litellm_params": {
+        "api_base": "http://172.29.2.27:11434",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "ollama/embeddinggemma:latest"
+      },
+      "model_info": {
+        "id": "96001682-bd49-4729-be82-3b1f84871396",
+        "blocked": false,
+        "mode": "embedding",
+        "backend": "local-ollama",
+        "access_groups": [
+          "local-ollama"
+        ]
+      }
+    },
+    {
+      "model_name": "local-ollama/qwen3:4b-instruct",
+      "litellm_params": {
+        "api_base": "http://172.29.2.27:11434",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "ollama_chat/qwen3:4b-instruct"
+      },
+      "model_info": {
+        "id": "867c15c5-d096-4f1e-b5ac-3781a56d6083",
+        "blocked": false,
+        "mode": "chat",
+        "backend": "local-ollama",
+        "access_groups": [
+          "local-ollama"
+        ]
+      }
+    },
+    {
+      "model_name": "local-ollama/muse-glimmer:30b-mlx",
+      "litellm_params": {
+        "api_base": "http://172.29.2.27:11434",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "ollama_chat/muse-glimmer:30b-mlx"
+      },
+      "model_info": {
+        "id": "a673aa77-7c29-4da8-a5ad-49d844847f97",
+        "blocked": true,
+        "mode": "chat",
+        "backend": "local-ollama",
+        "access_groups": [
+          "local-ollama"
+        ]
+      }
+    },
+    {
+      "model_name": "free-groq/qwen3.8-27b",
+      "litellm_params": {
+        "api_base": "http://freellmapi_api:3001/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "litellm_credential_name": "freellmapi-internal",
+        "model": "openai/groq:qwen/qwen3.8-27b"
+      },
+      "model_info": {
+        "id": "ceb9e83e-8d7d-4adf-bb98-713f0269a714",
+        "blocked": false,
+        "mode": "chat",
+        "backend": "freellmapi",
+        "access_groups": [
+          "FREE"
+        ],
+        "qualification": "Backend short generation verified previously; tools/context depend on member; no maximum context qualified"
+      }
+    },
+    {
+      "model_name": "free-groq/gpt-oss-120b",
+      "litellm_params": {
+        "api_base": "http://freellmapi_api:3001/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "litellm_credential_name": "freellmapi-internal",
+        "model": "openai/groq:openai/gpt-oss-120b"
+      },
+      "model_info": {
+        "id": "5f6a6cab-0fb2-42de-8ccf-b9ab7bdeb847",
+        "blocked": false,
+        "mode": "chat",
+        "backend": "freellmapi",
+        "access_groups": [
+          "FREE"
+        ],
+        "qualification": "Backend short generation verified previously; tools/context depend on member; no maximum context qualified"
+      }
+    },
+    {
+      "model_name": "free-openrouter/dots-3-note-preview:free",
+      "litellm_params": {
+        "api_base": "http://freellmapi_api:3001/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "litellm_credential_name": "freellmapi-internal",
+        "model": "openai/openrouter:dots-studio/dots-3-note-preview:free"
+      },
+      "model_info": {
+        "id": "1c139296-9121-43c4-9f52-180f3fed0fbc",
+        "blocked": false,
+        "mode": "chat",
+        "backend": "freellmapi",
+        "access_groups": [
+          "FREE"
+        ],
+        "qualification": "Backend short generation verified previously; tools/context depend on member; no maximum context qualified"
+      }
+    },
+    {
+      "model_name": "free-openrouter/north-mini-code:free",
+      "litellm_params": {
+        "api_base": "http://freellmapi_api:3001/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "litellm_credential_name": "freellmapi-internal",
+        "model": "openai/openrouter:cohere/north-mini-code:free"
+      },
+      "model_info": {
+        "id": "d1664e80-2ac1-4d50-9934-45395f9343ab",
+        "blocked": false,
+        "mode": "chat",
+        "backend": "freellmapi",
+        "access_groups": [
+          "FREE"
+        ],
+        "qualification": "Backend short generation verified previously; tools/context depend on member; no maximum context qualified"
+      }
+    },
+    {
+      "model_name": "free-mistral/ministral-8b-2512",
+      "litellm_params": {
+        "api_base": "http://freellmapi_api:3001/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "litellm_credential_name": "freellmapi-internal",
+        "model": "openai/mistral:ministral-8b-2512"
+      },
+      "model_info": {
+        "id": "1e5399c3-5ebd-4f11-aab1-70904d039812",
+        "blocked": false,
+        "mode": "chat",
+        "backend": "freellmapi",
+        "access_groups": [
+          "FREE"
+        ],
+        "qualification": "Backend short generation verified previously; tools/context depend on member; no maximum context qualified"
+      }
+    },
+    {
+      "model_name": "free-mistral/codestral-2508",
+      "litellm_params": {
+        "api_base": "http://freellmapi_api:3001/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "litellm_credential_name": "freellmapi-internal",
+        "model": "openai/mistral:codestral-2508"
+      },
+      "model_info": {
+        "id": "d1df72fb-685e-4707-9556-a0b1f72a144a",
+        "blocked": false,
+        "mode": "chat",
+        "backend": "freellmapi",
+        "access_groups": [
+          "FREE"
+        ],
+        "qualification": "Backend short generation verified previously; tools/context depend on member; no maximum context qualified"
+      }
+    },
+    {
+      "model_name": "free/task-fast",
+      "litellm_params": {
+        "api_base": "http://freellmapi_api:3001/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "litellm_credential_name": "freellmapi-internal",
+        "model": "openai/auto:task-fast"
+      },
+      "model_info": {
+        "id": "635fe818-7e9c-469f-8e6b-c9d287a88306",
+        "blocked": false,
+        "mode": "chat",
+        "backend": "freellmapi",
+        "access_groups": [
+          "FREE"
+        ],
+        "qualification": "Backend short generation verified previously; tools/context depend on member; no maximum context qualified"
+      }
+    },
+    {
+      "model_name": "free/task-coding",
+      "litellm_params": {
+        "api_base": "http://freellmapi_api:3001/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "litellm_credential_name": "freellmapi-internal",
+        "model": "openai/auto:task-coding"
+      },
+      "model_info": {
+        "id": "f453831c-06ef-45d5-903b-01035662b3ab",
+        "blocked": false,
+        "mode": "chat",
+        "backend": "freellmapi",
+        "access_groups": [
+          "FREE"
+        ],
+        "qualification": "Backend short generation verified previously; tools/context depend on member; no maximum context qualified"
+      }
+    },
+    {
+      "model_name": "free/task-reasoning",
+      "litellm_params": {
+        "api_base": "http://freellmapi_api:3001/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "litellm_credential_name": "freellmapi-internal",
+        "model": "openai/auto:task-reasoning"
+      },
+      "model_info": {
+        "id": "b4c5ab74-78d1-4267-9e46-80465f2dca4f",
+        "blocked": false,
+        "mode": "chat",
+        "backend": "freellmapi",
+        "access_groups": [
+          "FREE"
+        ],
+        "qualification": "Backend short generation verified previously; tools/context depend on member; no maximum context qualified"
+      }
+    },
+    {
+      "model_name": "free/task-long-context",
+      "litellm_params": {
+        "api_base": "http://freellmapi_api:3001/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "litellm_credential_name": "freellmapi-internal",
+        "model": "openai/auto:task-long-context"
+      },
+      "model_info": {
+        "id": "5fba1d6c-70ba-4ded-9549-e5720857e373",
+        "blocked": false,
+        "mode": "chat",
+        "backend": "freellmapi",
+        "access_groups": [
+          "FREE"
+        ],
+        "qualification": "Backend short generation verified previously; tools/context depend on member; no maximum context qualified"
+      }
+    }
+  ],
+  "model_mapping_verified": true,
+  "local_preservation": true,
+  "client_key_count": 0,
+  "health": {
+    "status": "healthy",
+    "db": "connected"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "upstream": "https://github.com/Baumus/openclaw-microsoft-graph-plugin",
+  "tag": "v3.14.1",
+  "commit": "aea4e0ce0b66522f598b23cb51151be3420fb442",
+  "localContract": "send-approval-exact-v1-once",
+  "builtSha256": "3f2f0dbb5ccc2be265b4ca44ad0bc0a9f1cafaa0f343d78d3206fb904a988c5d"
+}

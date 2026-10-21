@@ -1,0 +1,7 @@
+{
+  "status": "FAIL_OBSERVED",
+  "readiness": 503,
+  "db_admin_login": 500,
+  "postgres_service_update": "completed",
+  "note": "ancienne validation remplac\u00e9e par le r\u00e9sultat r\u00e9ellement observ\u00e9 ; diagnostic de reconnexion en cours"
+}

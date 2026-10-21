@@ -1,0 +1,27 @@
+
+ RUN  v5.0.2 /Users/fngux2/Workspaces/mac-ia-local/artifacts/send-approval-graph-3.14.1
+
+ ❯ src/hook-composition.integration.test.ts (8 tests | 1 failed) 102ms
+   ❯ OpenClaw host before_tool_call composition (8)
+     × binds the exact warning snapshot when an earlier hook rewrites mark_read to send_draft 55ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/hook-composition.integration.test.ts > OpenClaw host before_tool_call composition > binds the exact warning snapshot when an earlier hook rewrites mark_read to send_draft
+AssertionError: expected [ 'allow-once', 'deny' ] to include 'allow-always'
+ ❯ src/hook-composition.integration.test.ts:106:53
+    104|     expectApprovalMatchesFinal("outlook_mail_write", result, original);
+    105|     expect(result.requireApproval.description).toContain("Action: mark…
+    106|     expect(result.requireApproval.allowedDecisions).toContain("allow-a…
+       |                                                     ^
+    107|     expect(classifyApproval("outlook_mail_write", result.params)).toBe…
+    108|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 13 passed (14)
+   Start at  22:34:46
+   Duration  963ms (import 44%, tests 41%, transform 15%)
+

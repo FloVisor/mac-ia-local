@@ -1,0 +1,36 @@
+[agents/tools] plugin approval gateway request failed; blocking tool call: Error: SIMULATED_TRANSPORT_ERROR
+[agents/tools] before_tool_call hook failed: tool=gmail_send toolCallId=af2a39bf-7bd3-4b26-b2ab-41689f424b9b error=Error: TEST_HOOK_FAILURE
+✔ installed runtime decision allow-once (6.362791ms)
+✔ installed runtime decision deny (0.423625ms)
+✔ installed runtime decision timeout (0.211417ms)
+✔ installed runtime decision cancelled (0.153916ms)
+✔ installed runtime decision undefined (0.150042ms)
+✔ installed runtime decision allow-always (0.162917ms)
+✔ installed runtime decision bogus (0.20025ms)
+✔ installed runtime transport error blocks tool (14.506084ms)
+✔ installed runtime freezes args and demands fresh approval for changed action (0.516834ms)
+✔ installed runtime rejects lower-priority parameter rewrite (0.260708ms)
+✔ installed runtime lower-priority veto and hook exception both block (8.738959ms)
+✔ all shell commands and unqualified execution paths fail closed (0.602167ms)
+✔ dedicated reads do not ask; Graph/BookStack remain separated (0.117458ms)
+✔ strict Gmail read argv: query is data, no flags/injection/control-flow (0.288792ms)
+✔ attachment read destination is generated inside own workspace (4.068125ms)
+✔ native grants bind agent/session/id/content and are consumable once (1.59775ms)
+✔ Gmail MIME binds body/recipients/attachment bytes, transport neutralized (1.453459ms)
+✔ memory exception respects canonical paths, relative paths, own workspace and symlinks (1.356958ms)
+✔ file_change approval protects exact preimage, native outside writes blocked (10.160875ms)
+✔ deletions of memory always require approval; trash/delete/archive distinguished (0.809917ms)
+✔ controlled system commands are fixed argv and are never run during qualification (0.270959ms)
+✔ known outgoing messages remain single-call gated, remote draft send remains blocked (0.110667ms)
+✔ iMessage transport is neutralized and exactly bound; no shell or fallback (0.203084ms)
+✔ all automatic channel sends are cancelled and direct plugin writes need a grant (0.302458ms)
+✔ grant remains bound across duplicate module loads, but cannot be reused (0.915042ms)
+✔ hard links cannot extend own memory exception (0.580583ms)
+ℹ tests 26
+ℹ suites 0
+ℹ pass 26
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1032.111541

@@ -1,0 +1,26 @@
+{
+  "backup": "/Users/fngux2/.openclaw/backups-send-approval-20261020-220331",
+  "integrity": "ok",
+  "files": {
+    "openclaw.json": {
+      "bytes": 29538,
+      "sha256": "56b1453dc53abb5733200f36eb425a29125582a441095856741d0c2462d4e2db"
+    },
+    "openclaw-state.sqlite": {
+      "bytes": 8445952,
+      "sha256": "dc689ff6b568be2db0117555ec9b157ffde65c27f73c2a5a31747cd64d7b1fd3"
+    },
+    "exec_approvals_config.json": {
+      "bytes": 5231,
+      "sha256": "06721c337ef577a7d4765b67d6e1f69bf09313305a1d05e04cf6f9f7777cddd8"
+    },
+    "openclaw-state.sqlite-wal": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "openclaw-state.sqlite-shm": {
+      "bytes": 32768,
+      "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb"
+    }
+  }
+}

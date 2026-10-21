@@ -1,0 +1,3 @@
+[mcp_servers.llm-router]
+command = "/opt/homebrew/opt/python@3.14/bin/python3.14"
+args = ["/Users/fngux2/Workspaces/mac-ia-local/mcp/llm-router/router.py", "--config", "/Users/fngux2/.config/llm-router/codex.json"]

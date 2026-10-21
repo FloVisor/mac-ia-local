@@ -1,0 +1,28 @@
+[agents/tools] plugin approval gateway request failed; blocking tool call: Error: SIMULATED_TRANSPORT_ERROR
+[agents/tools] before_tool_call hook failed: tool=exec toolCallId=0bda6fa8-d0ff-4004-8a02-a4fecc910f29 error=Error: TEST_HOOK_FAILURE
+✔ installed runtime decision allow-once (5.180625ms)
+✔ installed runtime decision deny (0.317083ms)
+✔ installed runtime decision timeout (0.176583ms)
+✔ installed runtime decision cancelled (0.162625ms)
+✔ installed runtime decision undefined (0.168625ms)
+✔ installed runtime decision allow-always (0.15925ms)
+✔ installed runtime decision bogus (0.13975ms)
+✔ installed runtime transport error blocks tool (13.600958ms)
+✔ installed runtime freezes args and demands fresh approval for changed action (0.463375ms)
+✔ installed runtime rejects lower-priority parameter rewrite (0.234292ms)
+✔ installed runtime lower-priority veto and hook exception both block (9.130292ms)
+✔ gmail: complete native single-call approval (1.1175ms)
+✔ sms: complete native single-call approval (0.563083ms)
+✔ message: complete native single-call approval (0.079292ms)
+✔ Pro/Perso separation, unknown identity (0.089333ms)
+✔ draft preparation and unrelated tools are unchanged (0.073875ms)
+✔ mutable input, aliases, shell wrappers, attachments and oversized previews fail closed (0.179708ms)
+✔ quoted literal metacharacters are data; unmatched quotes are rejected (0.112459ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1007.491958

@@ -1,0 +1,34 @@
+[agents/tools] plugin approval gateway request failed; blocking tool call: Error: SIMULATED_TRANSPORT_ERROR
+[agents/tools] before_tool_call hook failed: tool=gmail_send toolCallId=9d9cc764-554a-4d1a-a648-81d631ff1fea error=Error: TEST_HOOK_FAILURE
+✔ installed runtime decision allow-once (5.330458ms)
+✔ installed runtime decision deny (0.308084ms)
+✔ installed runtime decision timeout (0.191667ms)
+✔ installed runtime decision cancelled (0.166708ms)
+✔ installed runtime decision undefined (0.16775ms)
+✔ installed runtime decision allow-always (0.275208ms)
+✔ installed runtime decision bogus (0.2655ms)
+✔ installed runtime transport error blocks tool (13.695292ms)
+✔ installed runtime freezes args and demands fresh approval for changed action (0.525292ms)
+✔ installed runtime rejects lower-priority parameter rewrite (0.2775ms)
+✔ installed runtime lower-priority veto and hook exception both block (10.237667ms)
+✔ all shell commands and unqualified execution paths fail closed (0.582042ms)
+✔ dedicated reads do not ask; Graph/BookStack remain separated (0.131625ms)
+✔ strict Gmail read argv: query is data, no flags/injection/control-flow (0.309042ms)
+✔ attachment read destination is generated inside own workspace (3.00075ms)
+✔ native grants bind agent/session/id/content and are consumable once (1.345041ms)
+✔ Gmail MIME binds body/recipients/attachment bytes, transport neutralized (1.614375ms)
+✔ memory exception respects canonical paths, relative paths, own workspace and symlinks (1.376583ms)
+✔ file_change approval protects exact preimage, native outside writes blocked (10.935709ms)
+✔ deletions of memory always require approval; trash/delete/archive distinguished (0.868375ms)
+✔ controlled system commands are fixed argv and are never run during qualification (0.372875ms)
+✔ known outgoing messages remain single-call gated, remote draft send remains blocked (0.176167ms)
+✔ iMessage transport is neutralized and exactly bound; no shell or fallback (0.285667ms)
+✔ all automatic channel sends are cancelled and direct plugin writes need a grant (0.389542ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1053.452584

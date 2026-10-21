@@ -1,5 +1,6 @@
 import { buildTools } from "./lib/tools.js";
 import { buildCommentTool } from "./lib/tool-comments.js";
+import { buildSuiviTool } from "./lib/tool-suivi.js";
 
 export default {
   id: "bookstack-perso",
@@ -15,7 +16,7 @@ export default {
   },
   register(api) {
     const stateDir = api.runtime?.stateDir ?? process.env.OPENCLAW_STATE_DIR ?? `${process.env.HOME}/.openclaw`;
-    const tools = [...buildTools(api), buildCommentTool(api, stateDir)];
+    const tools = [...buildTools(api), buildCommentTool(api, stateDir), buildSuiviTool(api)];
     for (const tool of tools) {
       api.registerTool((ctx) => ({
         name: tool.name,

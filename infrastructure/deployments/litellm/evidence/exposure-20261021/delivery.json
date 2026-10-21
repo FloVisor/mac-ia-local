@@ -1,0 +1,10 @@
+{
+  "remote_files_match_sources": {
+    "/srv/docker-shared/traefik/dynamic/litellm.yml": true,
+    "/srv/docker-local/compose/litellm/README.md": true,
+    "/srv/docker-local/compose/freellmapi/README.md": true,
+    "/srv/docker-local/compose/freellmapi/dns-internal.zone": true
+  },
+  "commit_push": false,
+  "applications_changed": false
+}

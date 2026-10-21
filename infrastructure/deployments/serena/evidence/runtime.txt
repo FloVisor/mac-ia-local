@@ -1,0 +1,1 @@
+/suspicious_feynman memory=2147483648 nanocpus=1000000000 security=["no-new-privileges"] mounts=[{"Destination":"/repositories","Mode":"ro","Propagation":"rprivate","RW":false,"Source":"/srv/docker-local/serena/repositories","Type":"bind"},{"Destination":"/state","Mode":"rw","Propagation":"rprivate","RW":true,"Source":"/srv/docker-local/serena/state","Type":"bind"}]

@@ -129,6 +129,7 @@ ps aux | grep -E "llama-server|EngineCore"   # RSS Ollama ; vLLM vit en wired GP
 17. [15-local-llm-mcp-delegation-policy.md](15-local-llm-mcp-delegation-policy.md) — **MCP local_llm : politique de délégation automatique proposée (diff, non appliquée, 2026-10-17)**
 18. [16-model-effort-selector.md](16-model-effort-selector.md) — **sélecteur d'effort Codex : règle des ≥3 niveaux, procédure et pièges (keep_alive 30m + correctif qwen3.6:35b-coding, 2026-10-17)**
 19. [17-local-llm-mcp-ctx-128k.md](17-local-llm-mcp-ctx-128k.md) — **MCP local_llm : garde de contexte relevée 32K → 128K sur oMLX (2026-10-19)**
+20. [20-llm-router-p3a.md](20-llm-router-p3a.md) — **P3-A PARTIAL : adaptateur LiteLLM DIRECT actif, catalogue Desktop, raisonnement Qwen et rollback ; limites Ollama/cloud détaillées (2026-10-21)**.
 
 ## MCP local_llm (2026-10-17, garde 128K le 2026-10-19)
 

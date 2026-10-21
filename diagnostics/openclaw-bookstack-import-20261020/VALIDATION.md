@@ -138,3 +138,100 @@ Validation des garde-fous : `scope=book` → `invalid_scope` ; `corpus=bad` →
 `invalid_corpus` ; `attachmentId` comme `filePath` → `invalid_file_path` ;
 `bookstack_page {id:47}` → OK. Tests : `node --test test/extract.test.mjs`
 (3/3), `python3 -m unittest test_calcul` (2/2).
+
+## 7. `pageId` ignoré en mode import (2026-10-20)
+
+Session « Fiche d'appartement présentation stockée »
+(`2c4b157b-51e9-4d7f-bb6e-f316277c6cec`, agent `perso`).
+
+Demande : « Ajoute la fiche de l'appartement dans l'activité Vars dans la page
+présentation stocké en MD ». Le modèle a correctement résolu l'activité
+(`7f13522c…`, livre 36) et la page cible (`bookstack_search` → page 37
+« Présentation »), puis appelé :
+
+```json
+bookstack_import { activityId, pageId: 37, filePath: "media://inbound/…", title: "…" }
+```
+
+Résultat : **page 50 créée dans le chapitre 38 « Documents »**, page 37 intacte
+(révision 1). Le modèle a ensuite rationalisé (« comme prévu par le protocole
+d'import ») au lieu de signaler l'écart.
+
+### Cause
+
+`pageId` était déclaré dans le schéma de `bookstack_import` mais lu uniquement
+dans la branche `action === "reextract"`. En mode `import`, la destination était
+forcée à `params.chapterId ?? activity.documentsChapterId` puis `POST /pages`.
+Paramètre accepté, validé, puis silencieusement ignoré — cas n°4 de la règle
+d'or du dépôt (bug outil, pas bug modèle). Aucun outil ne permettait d'écrire
+dans une page existante : `update_page` remplaçait le Markdown sans fusion.
+
+### Correctifs
+
+| Correctif | Emplacement |
+|---|---|
+| `pageId` hors `reextract` → `pageId_requires_reextract` | `lib/tools.js` |
+| `targetPageId` : extraction ajoutée dans une page existante, sans suppression | `lib/tools.js` |
+| `confirm=true` exigé si la cible n'est pas une page d'extraction | `lib/tools.js` |
+| `target_outside_activity` si la cible est hors du livre | `lib/tools.js` |
+| `destination: { pageId, chapterId, created }` dans le retour | `lib/tools.js` |
+| `update_page` : `mode` `append` / `section` / `edit` / `replace` | `lib/tools.js` |
+| Helpers Markdown purs (`appendExtraction`, `mergeExtraction`, `replaceSection`, `applyEdit`, `headingsOf`) | `lib/markdown.js` |
+| Règle document vs synthèse + modes d'édition | `workspace-perso/AGENTS.md`, skill `perso-bookstack` |
+
+`mergeExtraction` ne détruit plus une page sans marqueurs : il ajoute le bloc à
+la suite au lieu de reconstruire la page.
+
+### Validation réelle (livre 36, page de test supprimée après coup)
+
+| Cas | Résultat |
+|---|---|
+| `bookstack_import { pageId: 37 }` | `pageId_requires_reextract` |
+| `targetPageId` sur page non-extraction, sans `confirm` | `confirmation_required` + aperçu + titres |
+| `targetPageId` + `confirm=true` | `created: false`, contenu humain conservé, 1 bloc |
+| Second import sur la même page | idempotent : 1 bloc, contenu humain intact |
+| `update_page mode=append` | ajout sans suppression |
+| `update_page mode=section` (section absente) | `section_not_found` + titres disponibles |
+| `update_page mode=section` (section présente) | corps remplacé, suite intacte |
+| `update_page mode=edit` (texte ambigu) | `ambiguous_text` + nombre d'occurrences |
+| `update_page mode=edit` (texte unique) | remplacement exact |
+
+Tests : `node --test test/*.test.mjs` → 15/15 (dont 12 nouveaux sur
+`lib/markdown.js`).
+
+### Reste à faire
+
+- Remise en état du livre 36 : la page 50 reste dans `Documents`. Fusion dans la
+  page 37 ou conservation comme page dédiée = décision utilisateur.
+- Redémarrer franchement le gateway (`openclaw gateway stop --force`) pour
+  charger le plugin modifié.
+
+## 8. Remise en état du livre 36 (2026-10-20)
+
+Décision utilisateur : fusionner la fiche dans `Présentation` et supprimer le
+chapitre `Documents`.
+
+| Action | Résultat |
+|---|---|
+| `bookstack_import { targetPageId: 37, confirm: true }` | `created: false`, page 37 révision 2 |
+| Contenu humain de la page 37 | conservé (`# Appartement VARS` + phrase de synthèse) |
+| Bloc d'extraction | 1 seul, 4 771 caractères OCR (14 pages) |
+| Pièce jointe | id 22 sur la page 37 |
+| Page 50 supprimée | 404 (pièce jointe 14 supprimée avec elle) |
+| Chapitre 38 `Documents` supprimé | 404 |
+
+Registre local : `documentsChapterId` passé à `null` (sauvegarde
+`registry.json.bak-pre-docs-chapter-20261020`). `createActivity` respecte
+désormais `documentsChapterId: null` comme « chapitre supprimé volontairement »
+et ne le recrée plus — vérifié par un `bookstack_activity create` idempotent
+(aucun chapitre recréé).
+
+État final du livre 36 : `Présentation` (page racine), `Notes`, `Financement`,
+`Assurance`, `Co propriété`.
+
+### Incident annexe : 404 globale sur l'API
+
+Entre 14:20 et 14:30, tous les endpoints de lecture renvoyaient `data: []` /
+404 alors que les écritures fonctionnaient. Cause : autorisations BookStack
+révoquées côté interface (corrigées par l'utilisateur). Aucune perte de données.
+Le watcher a enregistré `totalPages: 0` pendant l'intervalle, sans conséquence.

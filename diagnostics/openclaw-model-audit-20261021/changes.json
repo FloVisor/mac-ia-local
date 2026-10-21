@@ -1,0 +1,314 @@
+[
+  {
+    "provider": "litellm-free-pro",
+    "id": "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      8192
+    ]
+  },
+  {
+    "provider": "litellm-free-pro",
+    "id": "free-groq/qwen3.8-27b",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      2048
+    ]
+  },
+  {
+    "provider": "litellm-free-pro",
+    "id": "free-groq/gpt-oss-120b",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      2048
+    ]
+  },
+  {
+    "provider": "litellm-free-pro",
+    "id": "free-openrouter/dots-3-note-preview:free",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      8192
+    ]
+  },
+  {
+    "provider": "litellm-free-pro",
+    "id": "free-openrouter/north-mini-code:free",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      8192
+    ]
+  },
+  {
+    "provider": "litellm-free-pro",
+    "id": "free-mistral/codestral-2508",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      128000,
+      2048
+    ]
+  },
+  {
+    "provider": "litellm-free-pro",
+    "id": "free/task-fast",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      2048
+    ]
+  },
+  {
+    "provider": "litellm-free-pro",
+    "id": "free/task-coding",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      128000,
+      2048
+    ]
+  },
+  {
+    "provider": "litellm-free-pro",
+    "id": "free/task-reasoning",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      2048
+    ]
+  },
+  {
+    "provider": "litellm-free-pro",
+    "id": "free/task-long-context",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      2048
+    ]
+  },
+  {
+    "provider": "litellm-paid-pro",
+    "id": "paid-openrouter/deepseek-v4.1-flash-1017",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      8192
+    ]
+  },
+  {
+    "provider": "litellm-paid-pro",
+    "id": "paid-openrouter/glm-5.3",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      8192
+    ]
+  },
+  {
+    "provider": "litellm-paid-pro",
+    "id": "paid/task-advanced",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      8192
+    ]
+  },
+  {
+    "provider": "litellm-free-perso",
+    "id": "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      8192
+    ]
+  },
+  {
+    "provider": "litellm-free-perso",
+    "id": "free-groq/qwen3.8-27b",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      2048
+    ]
+  },
+  {
+    "provider": "litellm-free-perso",
+    "id": "free-groq/gpt-oss-120b",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      2048
+    ]
+  },
+  {
+    "provider": "litellm-free-perso",
+    "id": "free-openrouter/dots-3-note-preview:free",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      8192
+    ]
+  },
+  {
+    "provider": "litellm-free-perso",
+    "id": "free-openrouter/north-mini-code:free",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      8192
+    ]
+  },
+  {
+    "provider": "litellm-free-perso",
+    "id": "free-mistral/codestral-2508",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      128000,
+      2048
+    ]
+  },
+  {
+    "provider": "litellm-free-perso",
+    "id": "free/task-fast",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      2048
+    ]
+  },
+  {
+    "provider": "litellm-free-perso",
+    "id": "free/task-coding",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      128000,
+      2048
+    ]
+  },
+  {
+    "provider": "litellm-free-perso",
+    "id": "free/task-reasoning",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      2048
+    ]
+  },
+  {
+    "provider": "litellm-free-perso",
+    "id": "free/task-long-context",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      2048
+    ]
+  },
+  {
+    "provider": "litellm-paid-perso",
+    "id": "paid-openrouter/deepseek-v4.1-flash-1017",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      8192
+    ]
+  },
+  {
+    "provider": "litellm-paid-perso",
+    "id": "paid-openrouter/glm-5.3",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      8192
+    ]
+  },
+  {
+    "provider": "litellm-paid-perso",
+    "id": "paid/task-advanced",
+    "before": [
+      8192,
+      2048
+    ],
+    "after": [
+      131072,
+      8192
+    ]
+  }
+]

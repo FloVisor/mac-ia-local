@@ -1,0 +1,230 @@
+{
+  "origin": "untrusted overlay; forged private X-Forwarded-For",
+  "tests": [
+    {
+      "scope": "public_api",
+      "method": "GET",
+      "path": "/v1/models",
+      "auth": "absent",
+      "expected": 401,
+      "status": 401
+    },
+    {
+      "scope": "public_api",
+      "method": "GET",
+      "path": "/v1/models",
+      "auth": "wrong",
+      "expected": 401,
+      "status": 401
+    },
+    {
+      "scope": "public_api",
+      "method": "POST",
+      "path": "/v1/chat/completions",
+      "auth": "absent",
+      "expected": 401,
+      "status": 401
+    },
+    {
+      "scope": "public_api",
+      "method": "POST",
+      "path": "/v1/chat/completions",
+      "auth": "wrong",
+      "expected": 401,
+      "status": 401
+    },
+    {
+      "scope": "public_api",
+      "method": "POST",
+      "path": "/v1/responses",
+      "auth": "absent",
+      "expected": 401,
+      "status": 401
+    },
+    {
+      "scope": "public_api",
+      "method": "POST",
+      "path": "/v1/responses",
+      "auth": "wrong",
+      "expected": 401,
+      "status": 401
+    },
+    {
+      "scope": "private_fallback",
+      "method": "GET",
+      "path": "/ui/",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "POST",
+      "path": "/v2/login",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "GET",
+      "path": "/credentials",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "GET",
+      "path": "/user/list",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "POST",
+      "path": "/user/new",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "POST",
+      "path": "/key/generate",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "POST",
+      "path": "/model/new",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "GET",
+      "path": "/global/spend/logs",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "GET",
+      "path": "/health/readiness",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "GET",
+      "path": "/metrics",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "GET",
+      "path": "/openapi.json",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "POST",
+      "path": "/v1/models",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "GET",
+      "path": "/v1/chat/completions",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "GET",
+      "path": "/v1/responses",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "HEAD",
+      "path": "/v1/models",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "OPTIONS",
+      "path": "/v1/chat/completions",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "POST",
+      "path": "/v1/embeddings",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "GET",
+      "path": "/v1/models/",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "POST",
+      "path": "/chat/completions",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "GET",
+      "path": "/models",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "POST",
+      "path": "/v1/unknown",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "private_fallback",
+      "method": "GET",
+      "path": "/v1/models/../key/generate",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "freellmapi_private",
+      "method": "GET",
+      "path": "/",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "freellmapi_private",
+      "method": "GET",
+      "path": "/api/ping",
+      "expected": 403,
+      "status": 403
+    },
+    {
+      "scope": "freellmapi_private",
+      "method": "GET",
+      "path": "/v1/models",
+      "expected": 403,
+      "status": 403
+    }
+  ],
+  "pass": true,
+  "external_internet": "NOT_RUN"
+}

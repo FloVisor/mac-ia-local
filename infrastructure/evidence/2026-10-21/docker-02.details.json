@@ -1,0 +1,1014 @@
+{
+  "captured_at": "2026-10-21T06:28:21.550036+00:00",
+  "hostname": "docker-02",
+  "mount_metadata": [
+    {
+      "path": "/srv/docker-local/docker/volumes",
+      "realpath": "/srv/docker-local/docker/volumes",
+      "symlink": false,
+      "mode": "0o701",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/bookstack/app",
+      "realpath": "/srv/docker-shared/bookstack/app",
+      "symlink": false,
+      "mode": "0o750",
+      "uid": 1000,
+      "gid": 1000,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/bookstack/mariadb",
+      "realpath": "/srv/docker-shared/bookstack/mariadb",
+      "symlink": false,
+      "mode": "0o750",
+      "uid": 999,
+      "gid": 999,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/bookstack/secrets/app_key",
+      "realpath": "/srv/docker-shared/bookstack/secrets/app_key",
+      "symlink": false,
+      "mode": "0o444",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 51,
+      "is_directory": false
+    },
+    {
+      "path": "/srv/docker-shared/bookstack/secrets/db_password",
+      "realpath": "/srv/docker-shared/bookstack/secrets/db_password",
+      "symlink": false,
+      "mode": "0o444",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 64,
+      "is_directory": false
+    },
+    {
+      "path": "/srv/docker-shared/bookstack/secrets/db_root_password",
+      "realpath": "/srv/docker-shared/bookstack/secrets/db_root_password",
+      "symlink": false,
+      "mode": "0o444",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 65,
+      "is_directory": false
+    },
+    {
+      "path": "/srv/docker-shared/minecraft/data",
+      "realpath": "/srv/docker-shared/minecraft/data",
+      "symlink": false,
+      "mode": "0o755",
+      "uid": 1000,
+      "gid": 1000,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/qbittorrent/config",
+      "realpath": "/srv/docker-shared/qbittorrent/config",
+      "symlink": false,
+      "mode": "0o750",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/ratiomaster/config",
+      "realpath": "/srv/docker-shared/ratiomaster/config",
+      "symlink": false,
+      "mode": "0o750",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/ratiomaster/torrents",
+      "realpath": "/srv/docker-shared/ratiomaster/torrents",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 1024,
+      "gid": 100,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/traefik/acme/acme.json",
+      "realpath": "/srv/docker-shared/traefik/acme/acme.json",
+      "symlink": false,
+      "mode": "0o600",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 16031,
+      "is_directory": false
+    },
+    {
+      "path": "/srv/docker-shared/traefik/dynamic",
+      "realpath": "/srv/docker-shared/traefik/dynamic",
+      "symlink": false,
+      "mode": "0o700",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/traefik/secrets/ovh_application_key",
+      "realpath": "/srv/docker-shared/traefik/secrets/ovh_application_key",
+      "symlink": false,
+      "mode": "0o600",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 16,
+      "is_directory": false
+    },
+    {
+      "path": "/srv/docker-shared/traefik/secrets/ovh_application_secret",
+      "realpath": "/srv/docker-shared/traefik/secrets/ovh_application_secret",
+      "symlink": false,
+      "mode": "0o600",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 32,
+      "is_directory": false
+    },
+    {
+      "path": "/srv/docker-shared/traefik/secrets/ovh_consumer_key",
+      "realpath": "/srv/docker-shared/traefik/secrets/ovh_consumer_key",
+      "symlink": false,
+      "mode": "0o600",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 32,
+      "is_directory": false
+    },
+    {
+      "path": "/srv/media/Films",
+      "realpath": "/srv/media/Films",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 34596,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/media/Series",
+      "realpath": "/srv/media/Series",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 1066,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/media/TEMP",
+      "realpath": "/srv/media/TEMP",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 878,
+      "is_directory": true
+    },
+    {
+      "path": "/var/run/docker.sock",
+      "realpath": "/run/docker.sock",
+      "symlink": false,
+      "mode": "0o660",
+      "uid": 0,
+      "gid": 989,
+      "bytes": 0,
+      "is_directory": false
+    }
+  ],
+  "traefik_static_arguments": [
+    "--log.level=INFO",
+    "--entryPoints.web.address=:80",
+    "--entryPoints.websecure.address=:443",
+    "--entryPoints.minecraft.address=:25565/tcp",
+    "--entryPoints.health.address=:8082",
+    "--ping=true",
+    "--ping.entryPoint=health",
+    "--providers.file.directory=/etc/traefik/dynamic",
+    "--providers.file.watch=true",
+    "--certificatesresolvers.le.acme.email=florian@gangneux.org",
+    "--certificatesresolvers.le.acme.storage=/acme/acme.json",
+    "--certificatesresolvers.le.acme.dnschallenge=true",
+    "--certificatesresolvers.le.acme.dnschallenge.provider=ovh",
+    "--certificatesresolvers.le.acme.dnschallenge.resolvers=1.1.1.1:53,8.8.8.8:53"
+  ],
+  "runtime_command_summary": [
+    {
+      "container": "/BookStack",
+      "executable": null,
+      "argument_count": 0,
+      "entrypoint_present": true
+    },
+    {
+      "container": "/BookStackDB",
+      "executable": "mariadbd",
+      "argument_count": 1,
+      "entrypoint_present": true
+    },
+    {
+      "container": "/Traefik",
+      "executable": "--log.level=INFO",
+      "argument_count": 14,
+      "entrypoint_present": true
+    },
+    {
+      "container": "/avahi_reflector.1.qhh4btwznq4zz0pt5s1ot2hxi",
+      "executable": "avahi-daemon",
+      "argument_count": 3,
+      "entrypoint_present": false
+    },
+    {
+      "container": "/qBittorrent",
+      "executable": null,
+      "argument_count": 0,
+      "entrypoint_present": true
+    },
+    {
+      "container": "/Minecraft",
+      "executable": "java",
+      "argument_count": 6,
+      "entrypoint_present": true
+    },
+    {
+      "container": "/RatioMaster",
+      "executable": null,
+      "argument_count": 0,
+      "entrypoint_present": true
+    },
+    {
+      "container": "/portainer_agent.r91yes4cho1ppyerywtmrr170.is9ubmw5xaab84xxphve3exhz",
+      "executable": null,
+      "argument_count": 0,
+      "entrypoint_present": true
+    },
+    {
+      "container": "/WG-Companion-Relay",
+      "executable": "socat",
+      "argument_count": 1,
+      "entrypoint_present": true
+    }
+  ],
+  "keepalived_without_authentication": "global_defs {\n    router_id docker-02\n    enable_script_security\n    script_user root\n}\n\nvrrp_script chk_docker {\n    script \"/usr/local/sbin/check-docker.sh\"\n    interval 10\n    timeout 4\n    fall 2\n    rise 2\n    weight -60\n}\n\n\n# BEGIN WG_ROUTER_HA\n\nvrrp_script chk_wg_router_prereq {\n    script \"/usr/local/sbin/check-wg-router-prereq.sh\"\n    interval 60\n    timeout 5\n    fall 3\n    rise 2\n}\n\nvrrp_instance VI_WG_ROUTER {\n    state BACKUP\n    interface ens18\n\n    virtual_router_id 204\n    priority 140\n    advert_int 1\n\n\n    nopreempt\n    unicast_src_ip 192.168.201.22\n\n    unicast_peer {\n        192.168.201.21\n        192.168.201.23\n    }\n\n    \nvirtual_ipaddress {\n        192.168.201.30/24 dev ens18\n    }\n\n    virtual_ipaddress_excluded {\n        2a01:e0a:8ce:68c1::30/64 dev ens18\n    }\n\n\n    track_interface {\n        ens21\n        ens22\n    }\n\n    track_script {\n        chk_docker\n        chk_wg_router_prereq\n    }\n\n    notify_master \"/usr/local/sbin/wg-router-ha.sh master\"\n    notify_backup \"/usr/local/sbin/wg-router-ha.sh backup\"\n    notify_fault  \"/usr/local/sbin/wg-router-ha.sh fault\"\n    notify_stop   \"/usr/local/sbin/wg-router-ha.sh stop\"\n}\n\n# END WG_ROUTER_HA\n\n# BEGIN QBITTORRENT_HA\n\nvrrp_script chk_qbittorrent_prereq {\n    script \"/usr/local/sbin/check-qbittorrent-prereq.sh\"\n    interval 60\n    timeout 4\n    fall 2\n    rise 2\n}\n\nvrrp_instance VI_QBITTORRENT {\n    state BACKUP\n    interface ens18\n\n    version 3\n    virtual_router_id 205\n    priority 140\n    advert_int 1\n\n    nopreempt\n    no_virtual_ipaddress\n\n    unicast_src_ip 192.168.201.22\n\n    unicast_peer {\n        192.168.201.21\n        192.168.201.23\n    }\n\n    check_unicast_src\n\n    track_interface {\n        ens20\n    }\n\n    track_script {\n        chk_qbittorrent_prereq\n    }\n\n    notify_master \"/usr/local/sbin/qbittorrent-ha.sh master\"\n    notify_backup \"/usr/local/sbin/qbittorrent-ha.sh backup\"\n    notify_fault  \"/usr/local/sbin/qbittorrent-ha.sh fault\"\n    notify_stop   \"/usr/local/sbin/qbittorrent-ha.sh stop\"\n}\n\n# END QBITTORRENT_HA\n\n# BEGIN RATIOMASTER_HA\n\nvrrp_script chk_ratiomaster_prereq {\n    script \"/usr/local/sbin/check-ratiomaster-prereq.sh\"\n    interval 60\n    timeout 4\n    fall 2\n    rise 2\n}\n\nvrrp_instance VI_RATIOMASTER {\n    state BACKUP\n    interface ens18\n\n    version 3\n    virtual_router_id 206\n    priority 150\n    advert_int 1\n\n    nopreempt\n    no_virtual_ipaddress\n\n    unicast_src_ip 192.168.201.22\n\n    unicast_peer {\n        192.168.201.21\n        192.168.201.23\n    }\n\n    check_unicast_src\n\n    track_interface {\n        ens20\n    }\n\n    track_script {\n        chk_ratiomaster_prereq\n    }\n\n    notify_master \"/usr/local/sbin/ratiomaster-ha.sh master\"\n    notify_backup \"/usr/local/sbin/ratiomaster-ha.sh backup\"\n    notify_fault  \"/usr/local/sbin/ratiomaster-ha.sh fault\"\n    notify_stop   \"/usr/local/sbin/ratiomaster-ha.sh stop\"\n}\n\n# END RATIOMASTER_HA\n\n# BEGIN TRAEFIK_HA\n\nvrrp_script chk_traefik_prereq {\n    script \"/usr/local/sbin/check-traefik-prereq.sh\"\n    interval 30\n    timeout 5\n    fall 2\n    rise 2\n}\n\nvrrp_instance VI_TRAEFIK {\n    state BACKUP\n    interface ens18\n\n    version 3\n    virtual_router_id 210\n    priority 140\n    advert_int 1\n\n    nopreempt\n    no_virtual_ipaddress\n\n    unicast_src_ip 192.168.201.22\n\n    unicast_peer {\n        192.168.201.21\n        192.168.201.23\n    }\n\n    check_unicast_src\n\n    track_interface {\n        ens20\n    }\n\n    track_script {\n        chk_traefik_prereq\n    }\n\n    notify_master \"/usr/local/sbin/traefik-ha.sh master\"\n    notify_backup \"/usr/local/sbin/traefik-ha.sh backup\"\n    notify_fault  \"/usr/local/sbin/traefik-ha.sh fault\"\n    notify_stop   \"/usr/local/sbin/traefik-ha.sh stop\"\n}\n\n# END TRAEFIK_HA",
+  "scripts": [
+    {
+      "path": "/usr/local/sbin/check-docker.sh",
+      "realpath": "/usr/local/sbin/check-docker.sh",
+      "symlink": false,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 95,
+      "is_directory": false,
+      "sha256": "a1d10cf6c08254d10753fb1a94f0c238e75d5c904a052e99e276f4aa4ab9676a",
+      "functions": [],
+      "tools_referenced": [
+        "docker",
+        "timeout"
+      ],
+      "paths_referenced": [],
+      "compose_actions": [],
+      "ssh_present": false,
+      "flock_present": false,
+      "note": "Static indicators only, not proof of execution or fencing"
+    },
+    {
+      "path": "/usr/local/sbin/check-qbittorrent-prereq.sh",
+      "realpath": "/usr/local/sbin/check-qbittorrent-prereq.sh",
+      "symlink": false,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 1982,
+      "is_directory": false,
+      "sha256": "2466dfb0bcde91e4ed50e32bbbd46c4a7240389eac739a575a59afb74b7c52ed",
+      "functions": [],
+      "tools_referenced": [
+        "docker",
+        "findmnt",
+        "timeout"
+      ],
+      "paths_referenced": [
+        "/srv/docker-local/compose/qbittorrent",
+        "/srv/docker-shared/qbittorrent/config",
+        "/srv/media/Films",
+        "/srv/media/Series",
+        "/srv/media/TEMP"
+      ],
+      "compose_actions": [],
+      "ssh_present": false,
+      "flock_present": false,
+      "note": "Static indicators only, not proof of execution or fencing"
+    },
+    {
+      "path": "/usr/local/sbin/check-ratiomaster-prereq.sh",
+      "realpath": "/usr/local/sbin/check-ratiomaster-prereq.sh",
+      "symlink": false,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 1461,
+      "is_directory": false,
+      "sha256": "44df54badae4fd25bfe5a0a33666501e1d9798649a05f7c467c7dac326200264",
+      "functions": [],
+      "tools_referenced": [
+        "docker",
+        "findmnt",
+        "timeout"
+      ],
+      "paths_referenced": [
+        "/srv/docker-local/compose/ratiomaster",
+        "/srv/docker-shared/ratiomaster/config",
+        "/srv/docker-shared/ratiomaster/torrents"
+      ],
+      "compose_actions": [],
+      "ssh_present": false,
+      "flock_present": false,
+      "note": "Static indicators only, not proof of execution or fencing"
+    },
+    {
+      "path": "/usr/local/sbin/check-traefik-prereq.sh",
+      "realpath": "/usr/local/sbin/check-traefik-prereq.sh",
+      "symlink": false,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 1837,
+      "is_directory": false,
+      "sha256": "c1daf2def39fc4c282f9dfd02bbbf6d4dd8a1c6a9fa6de8cdae5e83be93d5e68",
+      "functions": [
+        "fail"
+      ],
+      "tools_referenced": [
+        "curl",
+        "docker"
+      ],
+      "paths_referenced": [
+        "/srv/docker-local/compose/traefik"
+      ],
+      "compose_actions": [
+        "up"
+      ],
+      "ssh_present": false,
+      "flock_present": false,
+      "note": "Static indicators only, not proof of execution or fencing"
+    },
+    {
+      "path": "/usr/local/sbin/check-wg-router-prereq.sh",
+      "realpath": "/usr/local/sbin/check-wg-router-prereq.sh",
+      "symlink": false,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 1035,
+      "is_directory": false,
+      "sha256": "10337d4dcbbd4c2ab3366c731736768ef416fdf6af83b5a997dc5cb9e0ad3a7d",
+      "functions": [],
+      "tools_referenced": [
+        "docker",
+        "findmnt",
+        "timeout"
+      ],
+      "paths_referenced": [
+        "/srv/docker-local/compose/wg-router",
+        "/srv/docker-shared/wg-router/gluetun"
+      ],
+      "compose_actions": [],
+      "ssh_present": false,
+      "flock_present": false,
+      "note": "Static indicators only, not proof of execution or fencing"
+    },
+    {
+      "path": "/usr/local/sbin/qbittorrent-ha.sh",
+      "realpath": "/usr/local/sbin/qbittorrent-ha.sh",
+      "symlink": false,
+      "mode": "0o750",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 3407,
+      "is_directory": false,
+      "sha256": "855b1f03751a01582fbfff1d97798fcdcf4328417a5c82734eda26fd1d5316c8",
+      "functions": [
+        "log",
+        "wait_qbittorrent",
+        "refresh_network"
+      ],
+      "tools_referenced": [
+        "curl",
+        "docker",
+        "flock",
+        "timeout"
+      ],
+      "paths_referenced": [
+        "/run/lock/qbittorrent-ha.lock",
+        "/srv/docker-local/compose/qbittorrent",
+        "/usr/local/sbin/check-qbittorrent-prereq.sh"
+      ],
+      "compose_actions": [
+        "down",
+        "rm",
+        "stop",
+        "up"
+      ],
+      "ssh_present": false,
+      "flock_present": true,
+      "note": "Static indicators only, not proof of execution or fencing"
+    },
+    {
+      "path": "/usr/local/sbin/ratiomaster-ha.sh",
+      "realpath": "/usr/local/sbin/ratiomaster-ha.sh",
+      "symlink": false,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 2346,
+      "is_directory": false,
+      "sha256": "10fea3b434891044cba53a2d1f088eaf210884376a539368a60ffeef196686fc",
+      "functions": [
+        "log"
+      ],
+      "tools_referenced": [
+        "curl",
+        "docker",
+        "flock",
+        "timeout"
+      ],
+      "paths_referenced": [
+        "/run/lock/ratiomaster-ha.lock",
+        "/srv/docker-local/compose/ratiomaster",
+        "/usr/local/sbin/check-ratiomaster-prereq.sh"
+      ],
+      "compose_actions": [
+        "down",
+        "rm",
+        "stop",
+        "up"
+      ],
+      "ssh_present": false,
+      "flock_present": true,
+      "note": "Static indicators only, not proof of execution or fencing"
+    },
+    {
+      "path": "/usr/local/sbin/traefik-ha.sh",
+      "realpath": "/usr/local/sbin/traefik-ha.sh",
+      "symlink": false,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 3807,
+      "is_directory": false,
+      "sha256": "d8c42a569646084ae462c1b377e370e3df8383266c115d5f13d7363ca6f58c8d",
+      "functions": [
+        "log",
+        "wait_traefik",
+        "refresh_network"
+      ],
+      "tools_referenced": [
+        "curl",
+        "docker",
+        "flock",
+        "timeout"
+      ],
+      "paths_referenced": [
+        "/run/lock/traefik-ha.lock",
+        "/srv/docker-local/compose/traefik",
+        "/usr/local/sbin/check-traefik-prereq.sh"
+      ],
+      "compose_actions": [
+        "down",
+        "rm",
+        "stop",
+        "up"
+      ],
+      "ssh_present": false,
+      "flock_present": true,
+      "note": "Static indicators only, not proof of execution or fencing"
+    },
+    {
+      "path": "/usr/local/sbin/traefik-syno-cert-sync.sh",
+      "realpath": "/usr/local/sbin/traefik-syno-cert-sync.sh",
+      "symlink": false,
+      "mode": "0o700",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 7579,
+      "is_directory": false,
+      "sha256": "322316edecbef0b99845d50afc667bb9365bf6b5d6ec65cec81a87455480f5fd",
+      "functions": [
+        "cleanup"
+      ],
+      "tools_referenced": [
+        "docker",
+        "flock",
+        "ssh"
+      ],
+      "paths_referenced": [
+        "/root/.ssh/traefik-syno-sync",
+        "/run/lock/traefik-syno-cert-sync.lock",
+        "/srv/docker-local/compose/traefik/acme/acme.json"
+      ],
+      "compose_actions": [
+        "rm"
+      ],
+      "ssh_present": true,
+      "flock_present": true,
+      "note": "Static indicators only, not proof of execution or fencing"
+    },
+    {
+      "path": "/usr/local/sbin/wg-router-ha.sh",
+      "realpath": "/usr/local/sbin/wg-router-ha.sh",
+      "symlink": false,
+      "mode": "0o750",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4589,
+      "is_directory": false,
+      "sha256": "4490164fe764641691a6be50a28621826c47a1947d580935ff54e3a3fb01e873",
+      "functions": [
+        "log",
+        "wait_router"
+      ],
+      "tools_referenced": [
+        "docker",
+        "findmnt",
+        "flock",
+        "timeout"
+      ],
+      "paths_referenced": [
+        "/run/lock/wg-router-ha.lock",
+        "/srv/docker-local/compose/wg-admin",
+        "/srv/docker-local/compose/wg-router",
+        "/srv/docker-shared/wg-router/gluetun"
+      ],
+      "compose_actions": [
+        "down",
+        "rm",
+        "stop",
+        "up"
+      ],
+      "ssh_present": false,
+      "flock_present": true,
+      "note": "Static indicators only, not proof of execution or fencing"
+    }
+  ],
+  "custom_units": {
+    "/etc/systemd/system/bookstack-backup.service": {
+      "sha256": "89f316c1a461b12625426cfb588048a700da3d3e5a19b481d09317db7ad33771",
+      "settings": [
+        "Description=Sauvegarde BookStack et MariaDB",
+        "Requires=docker.service",
+        "After=docker.service",
+        "Type=oneshot",
+        "User=root",
+        "Group=root"
+      ],
+      "executables": [
+        "/srv/docker-local/compose/bookstack/backup.sh"
+      ]
+    },
+    "/etc/systemd/system/traefik-syno-cert-sync.service": {
+      "sha256": "52640064b3a62a2b95d59ba2f17a4f0b6ec1184f517ec7fa6832a14e87aeb5dc",
+      "settings": [
+        "Description=Synchronisation certificat wildcard Traefik vers Synology",
+        "After=network-online.target docker.service",
+        "Wants=network-online.target",
+        "Type=oneshot"
+      ],
+      "executables": [
+        "/usr/local/sbin/traefik-syno-cert-sync.sh"
+      ]
+    },
+    "/etc/systemd/system/bookstack-backup.timer": {
+      "sha256": "b5b4b11ee8b9e21606fa911d24fca0489b4f7d0b5a4c0f34f0df435b2a985344",
+      "settings": [
+        "Description=Sauvegarde quotidienne BookStack",
+        "OnCalendar=*-*-* 03:30:00",
+        "Persistent=true"
+      ],
+      "executables": []
+    },
+    "/etc/systemd/system/traefik-syno-cert-sync.timer": {
+      "sha256": "41a26bca9ef0b02206f5e0b4e60250d6ea34735831ab7ccc4ea29be0159f1f98",
+      "settings": [
+        "Description=Verification certificat Traefik pour Synology",
+        "OnCalendar=hourly",
+        "Persistent=true",
+        "RandomizedDelaySec=2min"
+      ],
+      "executables": []
+    }
+  },
+  "daemon_configuration": {
+    "data-root": "/srv/docker-local/docker"
+  },
+  "interfaces_configuration": [
+    "source /etc/network/interfaces.d/*",
+    "auto lo",
+    "iface lo inet loopback",
+    "allow-hotplug ens18",
+    "iface ens18 inet static",
+    "        address 192.168.201.22",
+    "        netmask 255.255.255.0",
+    "        gateway 192.168.201.1",
+    "iface ens18 inet6 static",
+    "        address 2a01:e0a:8ce:68c1::22/64",
+    "        gateway 2a01:e0a:8ce:68c1::1",
+    "auto ens19",
+    "iface ens19 inet static",
+    "        address 10.168.201.22/24",
+    "\tmtu 9000"
+  ],
+  "firewall": {
+    "tables": [
+      {
+        "family": "ip",
+        "name": "nat"
+      },
+      {
+        "family": "ip",
+        "name": "filter"
+      },
+      {
+        "family": "ip6",
+        "name": "nat"
+      },
+      {
+        "family": "ip6",
+        "name": "filter"
+      },
+      {
+        "family": "ip",
+        "name": "raw"
+      }
+    ],
+    "chains": [
+      {
+        "family": "ip",
+        "table": "nat",
+        "name": "DOCKER"
+      },
+      {
+        "family": "ip",
+        "table": "nat",
+        "name": "PREROUTING",
+        "type": "nat",
+        "hook": "prerouting",
+        "policy": "accept",
+        "prio": -100
+      },
+      {
+        "family": "ip",
+        "table": "nat",
+        "name": "OUTPUT",
+        "type": "nat",
+        "hook": "output",
+        "policy": "accept",
+        "prio": -100
+      },
+      {
+        "family": "ip",
+        "table": "nat",
+        "name": "POSTROUTING",
+        "type": "nat",
+        "hook": "postrouting",
+        "policy": "accept",
+        "prio": 100
+      },
+      {
+        "family": "ip",
+        "table": "filter",
+        "name": "DOCKER"
+      },
+      {
+        "family": "ip",
+        "table": "filter",
+        "name": "DOCKER-FORWARD"
+      },
+      {
+        "family": "ip",
+        "table": "filter",
+        "name": "DOCKER-BRIDGE"
+      },
+      {
+        "family": "ip",
+        "table": "filter",
+        "name": "DOCKER-CT"
+      },
+      {
+        "family": "ip",
+        "table": "filter",
+        "name": "DOCKER-INTERNAL"
+      },
+      {
+        "family": "ip",
+        "table": "filter",
+        "name": "FORWARD",
+        "type": "filter",
+        "hook": "forward",
+        "policy": "drop",
+        "prio": 0
+      },
+      {
+        "family": "ip",
+        "table": "filter",
+        "name": "DOCKER-USER"
+      },
+      {
+        "family": "ip6",
+        "table": "nat",
+        "name": "DOCKER"
+      },
+      {
+        "family": "ip6",
+        "table": "nat",
+        "name": "PREROUTING",
+        "type": "nat",
+        "hook": "prerouting",
+        "policy": "accept",
+        "prio": -100
+      },
+      {
+        "family": "ip6",
+        "table": "nat",
+        "name": "OUTPUT",
+        "type": "nat",
+        "hook": "output",
+        "policy": "accept",
+        "prio": -100
+      },
+      {
+        "family": "ip6",
+        "table": "filter",
+        "name": "DOCKER"
+      },
+      {
+        "family": "ip6",
+        "table": "filter",
+        "name": "DOCKER-FORWARD"
+      },
+      {
+        "family": "ip6",
+        "table": "filter",
+        "name": "DOCKER-BRIDGE"
+      },
+      {
+        "family": "ip6",
+        "table": "filter",
+        "name": "DOCKER-CT"
+      },
+      {
+        "family": "ip6",
+        "table": "filter",
+        "name": "DOCKER-INTERNAL"
+      },
+      {
+        "family": "ip6",
+        "table": "filter",
+        "name": "FORWARD",
+        "type": "filter",
+        "hook": "forward",
+        "policy": "accept",
+        "prio": 0
+      },
+      {
+        "family": "ip6",
+        "table": "filter",
+        "name": "DOCKER-USER"
+      },
+      {
+        "family": "ip",
+        "table": "raw",
+        "name": "PREROUTING",
+        "type": "filter",
+        "hook": "prerouting",
+        "policy": "accept",
+        "prio": -300
+      }
+    ],
+    "rule_count": 41
+  },
+  "networking_status": "Result=success\nExecMainStatus=0\nActiveState=active\nSubState=exited",
+  "ollama_proxy_configuration": {
+    "path": "/srv/docker-shared/ollama-proxy/nginx.conf",
+    "sha256": "4fa1a8f498b056fa709cb7b7c9e1826418969e4191b6ffd3c3a30e3375cc1cc0",
+    "directives": [
+      "resolver 127.0.0.11 ipv6=off valid=10s;",
+      "listen 11434;",
+      "location / {",
+      "proxy_pass $ollama_backend;",
+      "proxy_buffering off;",
+      "proxy_connect_timeout 10s;",
+      "proxy_read_timeout 3600s;",
+      "proxy_send_timeout 3600s;"
+    ]
+  },
+  "shared_top_level": [
+    {
+      "path": "/srv/docker-shared/bookstack",
+      "realpath": "/srv/docker-shared/bookstack",
+      "symlink": false,
+      "mode": "0o700",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/diun",
+      "realpath": "/srv/docker-shared/diun",
+      "symlink": false,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/homeassistant",
+      "realpath": "/srv/docker-shared/homeassistant",
+      "symlink": false,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/homepage",
+      "realpath": "/srv/docker-shared/homepage",
+      "symlink": false,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/lost+found",
+      "realpath": "/srv/docker-shared/lost+found",
+      "symlink": false,
+      "mode": "0o700",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 16384,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/mcpo",
+      "realpath": "/srv/docker-shared/mcpo",
+      "symlink": false,
+      "mode": "0o700",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/minecraft",
+      "realpath": "/srv/docker-shared/minecraft",
+      "symlink": false,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/n8n",
+      "realpath": "/srv/docker-shared/n8n",
+      "symlink": false,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/ollama-proxy",
+      "realpath": "/srv/docker-shared/ollama-proxy",
+      "symlink": false,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/open-webui",
+      "realpath": "/srv/docker-shared/open-webui",
+      "symlink": false,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/openwebui",
+      "realpath": "/srv/docker-shared/openwebui",
+      "symlink": false,
+      "mode": "0o700",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/portainer",
+      "realpath": "/srv/docker-shared/portainer",
+      "symlink": false,
+      "mode": "0o700",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/qbittorrent",
+      "realpath": "/srv/docker-shared/qbittorrent",
+      "symlink": false,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/ratiomaster",
+      "realpath": "/srv/docker-shared/ratiomaster",
+      "symlink": false,
+      "mode": "0o750",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/shared-secrets",
+      "realpath": "/srv/docker-shared/shared-secrets",
+      "symlink": false,
+      "mode": "0o700",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/super-agent",
+      "realpath": "/srv/docker-shared/super-agent",
+      "symlink": false,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/traefik",
+      "realpath": "/srv/docker-shared/traefik",
+      "symlink": false,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/wg-admin",
+      "realpath": "/srv/docker-shared/wg-admin",
+      "symlink": false,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    },
+    {
+      "path": "/srv/docker-shared/wg-router",
+      "realpath": "/srv/docker-shared/wg-router",
+      "symlink": false,
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 4096,
+      "is_directory": true
+    }
+  ],
+  "errors": []
+}

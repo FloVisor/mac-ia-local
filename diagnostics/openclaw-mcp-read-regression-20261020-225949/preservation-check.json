@@ -1,0 +1,14 @@
+{
+  "configChangedPaths": [
+    ".agents.entries.main.tools.deny",
+    ".tools.alsoAllow"
+  ],
+  "profile": "coding",
+  "agentRoutingPreserved": true,
+  "persoDenyUnchanged": true,
+  "graphConfigUnchanged": true,
+  "graphBundleStillQualified": true,
+  "runtimeFilesModifiedByThisFix": false,
+  "workspacesOrHistoriesModifiedByThisFix": false,
+  "directDatabaseWrites": false
+}

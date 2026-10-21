@@ -1,0 +1,58 @@
+[
+  {
+    "time": "2026-10-21T16:44:04.343+02:00",
+    "message": "[model-fetch] response provider=litellm-free-perso api=openai-completions model=free-mistral/ministral-8b-2512 status=429 elapsedMs=322 dispatcher=reused contentType=application/json"
+  },
+  {
+    "time": "2026-10-21T16:44:04.406+02:00",
+    "message": "transient same-model retry 1/9 for litellm-free-perso/free-mistral/ministral-8b-2512 reason=rate_limit: delayMs=955"
+  },
+  {
+    "time": "2026-10-21T16:44:05.645+02:00",
+    "message": "[model-fetch] response provider=litellm-free-perso api=openai-completions model=free-mistral/ministral-8b-2512 status=429 elapsedMs=212 dispatcher=reused contentType=application/json"
+  },
+  {
+    "time": "2026-10-21T16:44:05.663+02:00",
+    "message": "transient same-model retry 2/9 for litellm-free-perso/free-mistral/ministral-8b-2512 reason=rate_limit: delayMs=2430"
+  },
+  {
+    "time": "2026-10-21T16:44:08.394+02:00",
+    "message": "[model-fetch] response provider=litellm-free-perso api=openai-completions model=free-mistral/ministral-8b-2512 status=429 elapsedMs=211 dispatcher=reused contentType=application/json"
+  },
+  {
+    "time": "2026-10-21T16:44:08.408+02:00",
+    "message": "transient same-model retry 3/9 for litellm-free-perso/free-mistral/ministral-8b-2512 reason=rate_limit: delayMs=4077"
+  },
+  {
+    "time": "2026-10-21T16:44:12.835+02:00",
+    "message": "[model-fetch] response provider=litellm-free-perso api=openai-completions model=free-mistral/ministral-8b-2512 status=429 elapsedMs=282 dispatcher=reused contentType=application/json"
+  },
+  {
+    "time": "2026-10-21T16:44:12.856+02:00",
+    "message": "transient same-model retry 4/9 for litellm-free-perso/free-mistral/ministral-8b-2512 reason=rate_limit: delayMs=11651"
+  },
+  {
+    "time": "2026-10-21T16:44:26.587+02:00",
+    "message": "[model-fetch] response provider=litellm-free-perso api=openai-completions model=free-mistral/ministral-8b-2512 status=429 elapsedMs=208 dispatcher=reused contentType=application/json"
+  },
+  {
+    "time": "2026-10-21T16:44:26.613+02:00",
+    "message": "transient same-model retry 5/9 for litellm-free-perso/free-mistral/ministral-8b-2512 reason=rate_limit: delayMs=15990"
+  },
+  {
+    "time": "2026-10-21T16:44:42.954+02:00",
+    "message": "[model-fetch] response provider=litellm-free-perso api=openai-completions model=free-mistral/ministral-8b-2512 status=429 elapsedMs=280 dispatcher=reused contentType=application/json"
+  },
+  {
+    "time": "2026-10-21T16:44:42.970+02:00",
+    "message": "transient same-model retry 6/9 for litellm-free-perso/free-mistral/ministral-8b-2512 reason=rate_limit: delayMs=15224"
+  },
+  {
+    "time": "2026-10-21T16:45:00.367+02:00",
+    "message": "[model-fetch] response provider=litellm-free-perso api=openai-completions model=free-mistral/ministral-8b-2512 status=429 elapsedMs=235 dispatcher=reused contentType=application/json"
+  },
+  {
+    "time": "2026-10-21T16:45:00.389+02:00",
+    "message": "transient same-model retry 7/9 for litellm-free-perso/free-mistral/ministral-8b-2512 reason=rate_limit: delayMs=30000"
+  }
+]

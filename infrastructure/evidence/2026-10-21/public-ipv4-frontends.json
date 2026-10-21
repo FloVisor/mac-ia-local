@@ -1,0 +1,54 @@
+{
+  "captured_at": "2026-10-21T06:31:37.868162+00:00",
+  "source": "Mac normal DNS, curl -4 HEAD, no redirect",
+  "probes": [
+    {
+      "domain": "bookstack.gangneux.org",
+      "exit": 28,
+      "http_code": 0,
+      "remote_ip": "",
+      "ssl_verify_result": 0,
+      "error": "curl: (28) Connection timed out after 8005 milliseconds"
+    },
+    {
+      "domain": "home.gangneux.org",
+      "exit": 28,
+      "http_code": 0,
+      "remote_ip": "",
+      "ssl_verify_result": 0,
+      "error": "curl: (28) Connection timed out after 8002 milliseconds"
+    },
+    {
+      "domain": "homeassistant.gangneux.org",
+      "exit": 28,
+      "http_code": 0,
+      "remote_ip": "",
+      "ssl_verify_result": 0,
+      "error": "curl: (28) Connection timed out after 8004 milliseconds"
+    },
+    {
+      "domain": "nas.gangneux.org",
+      "exit": 28,
+      "http_code": 0,
+      "remote_ip": "",
+      "ssl_verify_result": 0,
+      "error": "curl: (28) Connection timed out after 8005 milliseconds"
+    },
+    {
+      "domain": "owui.gangneux.org",
+      "exit": 28,
+      "http_code": 0,
+      "remote_ip": "",
+      "ssl_verify_result": 0,
+      "error": "curl: (28) Connection timed out after 8006 milliseconds"
+    },
+    {
+      "domain": "portainer.gangneux.org",
+      "exit": 28,
+      "http_code": 0,
+      "remote_ip": "",
+      "ssl_verify_result": 0,
+      "error": "curl: (28) Connection timed out after 8006 milliseconds"
+    }
+  ]
+}

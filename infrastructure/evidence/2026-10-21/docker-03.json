@@ -1,0 +1,5564 @@
+{
+  "host": {
+    "hostname": "docker-03",
+    "captured_at": "2026-10-21T06:26:27.798247+00:00",
+    "os_release": "PRETTY_NAME=\"Debian GNU/Linux 13 (trixie)\"\nNAME=\"Debian GNU/Linux\"\nVERSION_ID=\"13\"\nVERSION=\"13 (trixie)\"\nVERSION_CODENAME=trixie\nDEBIAN_VERSION_FULL=13.6\nID=debian\nHOME_URL=\"https://www.debian.org/\"\nSUPPORT_URL=\"https://www.debian.org/support\"\nBUG_REPORT_URL=\"https://bugs.debian.org/\"\n",
+    "kernel": "6.12.107+deb13-amd64",
+    "uptime": "08:26:27 up 35 days, 20:35,  1 user,  load average: 0.22, 0.19, 0.12",
+    "memory": "total        used        free      shared  buff/cache   available\nMem:     16776425472   934744064   481476608      393216 15710842880 15841681408\nSwap:     2185228288   136486912  2048741376",
+    "cpu": {
+      "lscpu": [
+        {
+          "field": "Architecture:",
+          "data": "x86_64"
+        },
+        {
+          "field": "CPU op-mode(s):",
+          "data": "32-bit, 64-bit"
+        },
+        {
+          "field": "Address sizes:",
+          "data": "46 bits physical, 48 bits virtual"
+        },
+        {
+          "field": "Byte Order:",
+          "data": "Little Endian"
+        },
+        {
+          "field": "CPU(s):",
+          "data": "4"
+        },
+        {
+          "field": "On-line CPU(s) list:",
+          "data": "0-3"
+        },
+        {
+          "field": "Vendor ID:",
+          "data": "GenuineIntel"
+        },
+        {
+          "field": "Model name:",
+          "data": "Intel(R) Xeon(R) CPU E5-2630 v4 @ 2.20GHz"
+        },
+        {
+          "field": "CPU family:",
+          "data": "6"
+        },
+        {
+          "field": "Model:",
+          "data": "79"
+        },
+        {
+          "field": "Thread(s) per core:",
+          "data": "1"
+        },
+        {
+          "field": "Core(s) per socket:",
+          "data": "4"
+        },
+        {
+          "field": "Socket(s):",
+          "data": "1"
+        },
+        {
+          "field": "Stepping:",
+          "data": "1"
+        },
+        {
+          "field": "BogoMIPS:",
+          "data": "4394.90"
+        },
+        {
+          "field": "Flags:",
+          "data": "fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch cpuid_fault pti ssbd ibrs ibpb stibp tpr_shadow flexpriority ept vpid ept_ad fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 erms invpcid rtm rdseed adx smap xsaveopt arat vnmi umip md_clear flush_l1d arch_capabilities"
+        },
+        {
+          "field": "Virtualization:",
+          "data": "VT-x"
+        },
+        {
+          "field": "Hypervisor vendor:",
+          "data": "KVM"
+        },
+        {
+          "field": "Virtualization type:",
+          "data": "full"
+        },
+        {
+          "field": "L1d cache:",
+          "data": "128 KiB (4 instances)"
+        },
+        {
+          "field": "L1i cache:",
+          "data": "128 KiB (4 instances)"
+        },
+        {
+          "field": "L2 cache:",
+          "data": "16 MiB (4 instances)"
+        },
+        {
+          "field": "L3 cache:",
+          "data": "16 MiB (1 instance)"
+        },
+        {
+          "field": "NUMA node(s):",
+          "data": "1"
+        },
+        {
+          "field": "NUMA node0 CPU(s):",
+          "data": "0-3"
+        },
+        {
+          "field": "Vulnerability Gather data sampling:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Indirect target selection:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Itlb multihit:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability L1tf:",
+          "data": "Mitigation; PTE Inversion; VMX conditional cache flushes, SMT disabled"
+        },
+        {
+          "field": "Vulnerability Mds:",
+          "data": "Mitigation; Clear CPU buffers; SMT Host state unknown"
+        },
+        {
+          "field": "Vulnerability Meltdown:",
+          "data": "Mitigation; PTI"
+        },
+        {
+          "field": "Vulnerability Mmio stale data:",
+          "data": "Mitigation; Clear CPU buffers; SMT Host state unknown"
+        },
+        {
+          "field": "Vulnerability Reg file data sampling:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Retbleed:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Spec rstack overflow:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Spec store bypass:",
+          "data": "Mitigation; Speculative Store Bypass disabled via prctl"
+        },
+        {
+          "field": "Vulnerability Spectre v1:",
+          "data": "Mitigation; usercopy/swapgs barriers and __user pointer sanitization"
+        },
+        {
+          "field": "Vulnerability Spectre v2:",
+          "data": "Mitigation; Retpolines; IBPB conditional; IBRS_FW; STIBP disabled; RSB filling; PBRSB-eIBRS Not affected; BHI Retpoline"
+        },
+        {
+          "field": "Vulnerability Srbds:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Tsa:",
+          "data": "Not affected"
+        },
+        {
+          "field": "Vulnerability Tsx async abort:",
+          "data": "Mitigation; Clear CPU buffers; SMT Host state unknown"
+        },
+        {
+          "field": "Vulnerability Vmscape:",
+          "data": "Not affected"
+        }
+      ]
+    },
+    "filesystems": {
+      "filesystems": [
+        {
+          "target": "/",
+          "source": "/dev/mapper/DOCKER--03--vg-root",
+          "fstype": "ext4",
+          "options": "rw,relatime,errors=remount-ro",
+          "children": [
+            {
+              "target": "/sys",
+              "source": "sysfs",
+              "fstype": "sysfs",
+              "options": "rw,nosuid,nodev,noexec,relatime",
+              "children": [
+                {
+                  "target": "/sys/kernel/security",
+                  "source": "securityfs",
+                  "fstype": "securityfs",
+                  "options": "rw,nosuid,nodev,noexec,relatime"
+                },
+                {
+                  "target": "/sys/fs/cgroup",
+                  "source": "cgroup2",
+                  "fstype": "cgroup2",
+                  "options": "rw,nosuid,nodev,noexec,relatime,nsdelegate,memory_recursiveprot"
+                },
+                {
+                  "target": "/sys/fs/pstore",
+                  "source": "pstore",
+                  "fstype": "pstore",
+                  "options": "rw,nosuid,nodev,noexec,relatime"
+                },
+                {
+                  "target": "/sys/fs/bpf",
+                  "source": "bpf",
+                  "fstype": "bpf",
+                  "options": "rw,nosuid,nodev,noexec,relatime,mode=700"
+                },
+                {
+                  "target": "/sys/kernel/debug",
+                  "source": "debugfs",
+                  "fstype": "debugfs",
+                  "options": "rw,nosuid,nodev,noexec,relatime"
+                },
+                {
+                  "target": "/sys/kernel/tracing",
+                  "source": "tracefs",
+                  "fstype": "tracefs",
+                  "options": "rw,nosuid,nodev,noexec,relatime"
+                },
+                {
+                  "target": "/sys/fs/fuse/connections",
+                  "source": "fusectl",
+                  "fstype": "fusectl",
+                  "options": "rw,nosuid,nodev,noexec,relatime"
+                },
+                {
+                  "target": "/sys/kernel/config",
+                  "source": "configfs",
+                  "fstype": "configfs",
+                  "options": "rw,nosuid,nodev,noexec,relatime"
+                }
+              ]
+            },
+            {
+              "target": "/proc",
+              "source": "proc",
+              "fstype": "proc",
+              "options": "rw,nosuid,nodev,noexec,relatime",
+              "children": [
+                {
+                  "target": "/proc/sys/fs/binfmt_misc",
+                  "source": "systemd-1",
+                  "fstype": "autofs",
+                  "options": "rw,relatime,fd=41,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=4233",
+                  "children": [
+                    {
+                      "target": "/proc/sys/fs/binfmt_misc",
+                      "source": "binfmt_misc",
+                      "fstype": "binfmt_misc",
+                      "options": "rw,nosuid,nodev,noexec,relatime"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "target": "/dev",
+              "source": "udev",
+              "fstype": "devtmpfs",
+              "options": "rw,nosuid,relatime,size=8162060k,nr_inodes=2040515,mode=755,inode64",
+              "children": [
+                {
+                  "target": "/dev/pts",
+                  "source": "devpts",
+                  "fstype": "devpts",
+                  "options": "rw,nosuid,noexec,relatime,gid=5,mode=600,ptmxmode=000"
+                },
+                {
+                  "target": "/dev/shm",
+                  "source": "tmpfs",
+                  "fstype": "tmpfs",
+                  "options": "rw,nosuid,nodev,inode64"
+                },
+                {
+                  "target": "/dev/mqueue",
+                  "source": "mqueue",
+                  "fstype": "mqueue",
+                  "options": "rw,nosuid,nodev,noexec,relatime"
+                },
+                {
+                  "target": "/dev/hugepages",
+                  "source": "hugetlbfs",
+                  "fstype": "hugetlbfs",
+                  "options": "rw,nosuid,nodev,relatime,pagesize=2M"
+                }
+              ]
+            },
+            {
+              "target": "/run",
+              "source": "tmpfs",
+              "fstype": "tmpfs",
+              "options": "rw,nosuid,nodev,noexec,relatime,size=1638324k,mode=755,inode64",
+              "children": [
+                {
+                  "target": "/run/lock",
+                  "source": "tmpfs",
+                  "fstype": "tmpfs",
+                  "options": "rw,nosuid,nodev,noexec,relatime,size=5120k,inode64"
+                },
+                {
+                  "target": "/run/user/0",
+                  "source": "tmpfs",
+                  "fstype": "tmpfs",
+                  "options": "rw,nosuid,nodev,relatime,size=1638320k,nr_inodes=409580,mode=700,inode64"
+                },
+                {
+                  "target": "/run/credentials/systemd-journald.service",
+                  "source": "tmpfs",
+                  "fstype": "tmpfs",
+                  "options": "ro,nosuid,nodev,noexec,relatime,nosymfollow,size=1024k,nr_inodes=1024,mode=700,inode64,noswap"
+                },
+                {
+                  "target": "/run/rpc_pipefs",
+                  "source": "sunrpc",
+                  "fstype": "rpc_pipefs",
+                  "options": "rw,relatime"
+                },
+                {
+                  "target": "/run/docker/netns/e80daf5a318f",
+                  "source": "nsfs[net:[4026532679]]",
+                  "fstype": "nsfs",
+                  "options": "rw"
+                },
+                {
+                  "target": "/run/docker/netns/ingress_sbox",
+                  "source": "nsfs[net:[4026532870]]",
+                  "fstype": "nsfs",
+                  "options": "rw"
+                },
+                {
+                  "target": "/run/docker/netns/1-m09xcte0rh",
+                  "source": "nsfs[net:[4026532951]]",
+                  "fstype": "nsfs",
+                  "options": "rw"
+                },
+                {
+                  "target": "/run/docker/netns/6ec2bc9e20d4",
+                  "source": "nsfs[net:[4026533338]]",
+                  "fstype": "nsfs",
+                  "options": "rw"
+                },
+                {
+                  "target": "/run/docker/netns/lb_d3a6rlxzy",
+                  "source": "nsfs[net:[4026533070]]",
+                  "fstype": "nsfs",
+                  "options": "rw"
+                },
+                {
+                  "target": "/run/docker/netns/1-d3a6rlxzyt",
+                  "source": "nsfs[net:[4026533155]]",
+                  "fstype": "nsfs",
+                  "options": "rw"
+                },
+                {
+                  "target": "/run/docker/netns/e3c61e36c19f",
+                  "source": "nsfs[net:[4026533055]]",
+                  "fstype": "nsfs",
+                  "options": "rw"
+                },
+                {
+                  "target": "/run/credentials/getty@tty1.service",
+                  "source": "tmpfs",
+                  "fstype": "tmpfs",
+                  "options": "ro,nosuid,nodev,noexec,relatime,nosymfollow,size=1024k,nr_inodes=1024,mode=700,inode64,noswap"
+                },
+                {
+                  "target": "/run/docker/netns/e060395e7afb",
+                  "source": "nsfs[net:[4026533431]]",
+                  "fstype": "nsfs",
+                  "options": "rw"
+                },
+                {
+                  "target": "/run/docker/netns/lb_ffxnc9xcj",
+                  "source": "nsfs[net:[4026533509]]",
+                  "fstype": "nsfs",
+                  "options": "rw"
+                },
+                {
+                  "target": "/run/docker/netns/1-ffxnc9xcjg",
+                  "source": "nsfs[net:[4026533601]]",
+                  "fstype": "nsfs",
+                  "options": "rw"
+                },
+                {
+                  "target": "/run/docker/netns/953ba3e6e49a",
+                  "source": "nsfs[net:[4026533700]]",
+                  "fstype": "nsfs",
+                  "options": "rw"
+                }
+              ]
+            },
+            {
+              "target": "/tmp",
+              "source": "tmpfs",
+              "fstype": "tmpfs",
+              "options": "rw,nosuid,nodev,size=8191616k,nr_inodes=1048576,inode64"
+            },
+            {
+              "target": "/boot",
+              "source": "/dev/sda1",
+              "fstype": "ext4",
+              "options": "rw,relatime"
+            },
+            {
+              "target": "/srv/docker-local",
+              "source": "/dev/mapper/docker--cache--vg-docker--local",
+              "fstype": "ext4",
+              "options": "rw,noatime",
+              "children": [
+                {
+                  "target": "/srv/docker-local/docker/rootfs/overlayfs/209439b0362c546e5a0419774e55ebf148b72c311451bf598dd0544ea4c7dce8",
+                  "source": "overlay",
+                  "fstype": "overlay",
+                  "options": "rw,relatime,lowerdir=/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/128/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/23/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/22/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/21/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/20/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/14/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/13/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/10/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/9/fs,upperdir=/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/129/fs,workdir=/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/129/work"
+                },
+                {
+                  "target": "/srv/docker-local/docker/rootfs/overlayfs/6d145cb9c49adf24a45d269ece581eea31db88dca8420dcb492a72d9b4813a95",
+                  "source": "overlay",
+                  "fstype": "overlay",
+                  "options": "rw,relatime,lowerdir=/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/139/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/138/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/30/fs,upperdir=/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/140/fs,workdir=/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/140/work"
+                },
+                {
+                  "target": "/srv/docker-local/docker/rootfs/overlayfs/de74c385d705deec72354b9b89e5e37643d1d0eabadf8e8fa44719482e9420bd",
+                  "source": "overlay",
+                  "fstype": "overlay",
+                  "options": "rw,relatime,lowerdir=/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/132/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/17/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/16/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/15/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/12/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/11/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/10/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/9/fs,upperdir=/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/133/fs,workdir=/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/133/work"
+                },
+                {
+                  "target": "/srv/docker-local/docker/volumes/portainer_data/_data",
+                  "source": "192.168.201.39:/srv/docker-shared/portainer",
+                  "fstype": "nfs4",
+                  "options": "rw,relatime,vers=4.1,rsize=1048576,wsize=1048576,namlen=255,hard,proto=tcp,timeo=600,retrans=2,sec=sys,clientaddr=192.168.201.23,local_lock=none,addr=192.168.201.39"
+                },
+                {
+                  "target": "/srv/docker-local/docker/rootfs/overlayfs/2b64448f9290bd7fbd58c1fdcbabdc58bd9de7b44cdc84f0688bf20d8da90e1b",
+                  "source": "overlay",
+                  "fstype": "overlay",
+                  "options": "rw,relatime,lowerdir=/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/169/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/166/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/165/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/164/fs,upperdir=/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/170/fs,workdir=/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/170/work"
+                },
+                {
+                  "target": "/srv/docker-local/docker/rootfs/overlayfs/5685c0d3ab9c3753f9cbec1ee6261016295b9407a557154ef93f8f137b700140",
+                  "source": "overlay",
+                  "fstype": "overlay",
+                  "options": "rw,relatime,lowerdir=/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/186/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/179/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/178/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/177/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/176/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/175/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/174/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/173/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/172/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/171/fs:/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/30/fs,upperdir=/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/187/fs,workdir=/srv/docker-local/containerd/io.containerd.snapshotter.v1.overlayfs/snapshots/187/work"
+                }
+              ]
+            },
+            {
+              "target": "/srv/media/Films",
+              "source": "systemd-1",
+              "fstype": "autofs",
+              "options": "rw,relatime,fd=66,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=3939",
+              "children": [
+                {
+                  "target": "/srv/media/Films",
+                  "source": "GAN-NAS-720-01.gangneux.org:/volume2/Films",
+                  "fstype": "nfs4",
+                  "options": "rw,noatime,vers=4.1,rsize=131072,wsize=131072,namlen=255,hard,proto=tcp6,timeo=600,retrans=2,sec=sys,clientaddr=2a01:e0a:8ce:68c1::23,local_lock=none,addr=2a01:e0a:8ce:68c1::61"
+                }
+              ]
+            },
+            {
+              "target": "/srv/media/Series",
+              "source": "systemd-1",
+              "fstype": "autofs",
+              "options": "rw,relatime,fd=68,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=3942",
+              "children": [
+                {
+                  "target": "/srv/media/Series",
+                  "source": "GAN-NAS-720-01.gangneux.org:/volume2/Series",
+                  "fstype": "nfs4",
+                  "options": "rw,noatime,vers=4.1,rsize=131072,wsize=131072,namlen=255,hard,proto=tcp6,timeo=600,retrans=2,sec=sys,clientaddr=2a01:e0a:8ce:68c1::23,local_lock=none,addr=2a01:e0a:8ce:68c1::61"
+                }
+              ]
+            },
+            {
+              "target": "/srv/media/TEMP",
+              "source": "systemd-1",
+              "fstype": "autofs",
+              "options": "rw,relatime,fd=69,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=3945",
+              "children": [
+                {
+                  "target": "/srv/media/TEMP",
+                  "source": "GAN-NAS-720-01.gangneux.org:/volume2/TEMP",
+                  "fstype": "nfs4",
+                  "options": "rw,noatime,vers=4.1,rsize=131072,wsize=131072,namlen=255,hard,proto=tcp6,timeo=600,retrans=2,sec=sys,clientaddr=2a01:e0a:8ce:68c1::23,local_lock=none,addr=2a01:e0a:8ce:68c1::61"
+                }
+              ]
+            },
+            {
+              "target": "/srv/docker-shared",
+              "source": "docker-shared",
+              "fstype": "virtiofs",
+              "options": "rw,relatime"
+            }
+          ]
+        }
+      ]
+    },
+    "disk_usage": "Filesystem                                  Type      Size  Used Avail Use% Mounted on\nudev                                        devtmpfs  7.8G     0  7.8G   0% /dev\ntmpfs                                       tmpfs     1.6G  1.3M  1.6G   1% /run\n/dev/mapper/DOCKER--03--vg-root             ext4       37G  1.8G   33G   6% /\ntmpfs                                       tmpfs     7.9G     0  7.9G   0% /dev/shm\ntmpfs                                       tmpfs     5.0M     0  5.0M   0% /run/lock\ntmpfs                                       tmpfs     1.0M     0  1.0M   0% /run/credentials/systemd-journald.service\ntmpfs                                       tmpfs     7.9G     0  7.9G   0% /tmp\n/dev/sda1                                   ext4      943M  139M  740M  16% /boot\n/dev/mapper/docker--cache--vg-docker--local ext4       93G  9.0G   84G  10% /srv/docker-local\ntmpfs                                       tmpfs     1.0M     0  1.0M   0% /run/credentials/getty@tty1.service\noverlay                                     overlay    93G  9.0G   84G  10% /srv/docker-local/docker/rootfs/overlayfs/209439b0362c546e5a0419774e55ebf148b72c311451bf598dd0544ea4c7dce8\ndocker-shared                               virtiofs  196G  5.4G  181G   3% /srv/docker-shared\nGAN-NAS-720-01.gangneux.org:/volume2/Films  nfs4       11T  7.8T  3.2T  72% /srv/media/Films\nGAN-NAS-720-01.gangneux.org:/volume2/Series nfs4       11T  7.8T  3.2T  72% /srv/media/Series\nGAN-NAS-720-01.gangneux.org:/volume2/TEMP   nfs4       11T  7.8T  3.2T  72% /srv/media/TEMP\noverlay                                     overlay    93G  9.0G   84G  10% /srv/docker-local/docker/rootfs/overlayfs/de74c385d705deec72354b9b89e5e37643d1d0eabadf8e8fa44719482e9420bd\n192.168.201.39:/srv/docker-shared/portainer nfs4      196G  5.4G  181G   3% /srv/docker-local/docker/volumes/portainer_data/_data\noverlay                                     overlay    93G  9.0G   84G  10% /srv/docker-local/docker/rootfs/overlayfs/6d145cb9c49adf24a45d269ece581eea31db88dca8420dcb492a72d9b4813a95\noverlay                                     overlay    93G  9.0G   84G  10% /srv/docker-local/docker/rootfs/overlayfs/2b64448f9290bd7fbd58c1fdcbabdc58bd9de7b44cdc84f0688bf20d8da90e1b\noverlay                                     overlay    93G  9.0G   84G  10% /srv/docker-local/docker/rootfs/overlayfs/5685c0d3ab9c3753f9cbec1ee6261016295b9407a557154ef93f8f137b700140\ntmpfs                                       tmpfs     1.6G  8.0K  1.6G   1% /run/user/0",
+    "addresses": [
+      {
+        "ifindex": 1,
+        "ifname": "lo",
+        "flags": [
+          "LOOPBACK",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 65536,
+        "qdisc": "noqueue",
+        "operstate": "UNKNOWN",
+        "group": "default",
+        "txqlen": 1000,
+        "link_type": "loopback",
+        "address": "00:00:00:00:00:00",
+        "broadcast": "00:00:00:00:00:00",
+        "addr_info": [
+          {
+            "family": "inet",
+            "local": "127.0.0.1",
+            "prefixlen": 8,
+            "scope": "host",
+            "label": "lo",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          },
+          {
+            "family": "inet6",
+            "local": "::1",
+            "prefixlen": 128,
+            "scope": "host",
+            "noprefixroute": true,
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      },
+      {
+        "ifindex": 2,
+        "ifname": "ens18",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "qdisc": "fq_codel",
+        "operstate": "UP",
+        "group": "default",
+        "txqlen": 1000,
+        "link_type": "ether",
+        "address": "bc:24:11:f0:35:71",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "altnames": [
+          "enp6s18",
+          "enxbc2411f03571"
+        ],
+        "addr_info": [
+          {
+            "family": "inet",
+            "local": "192.168.201.23",
+            "prefixlen": 24,
+            "broadcast": "192.168.201.255",
+            "scope": "global",
+            "label": "ens18",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          },
+          {
+            "family": "inet6",
+            "local": "2a01:e0a:8ce:68c1::23",
+            "prefixlen": 64,
+            "scope": "global",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          },
+          {
+            "family": "inet6",
+            "local": "fe80::be24:11ff:fef0:3571",
+            "prefixlen": 64,
+            "scope": "link",
+            "protocol": "kernel_ll",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      },
+      {
+        "ifindex": 3,
+        "ifname": "ens19",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 9000,
+        "qdisc": "fq_codel",
+        "operstate": "UP",
+        "group": "default",
+        "txqlen": 1000,
+        "link_type": "ether",
+        "address": "bc:24:11:93:c7:40",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "altnames": [
+          "enp6s19",
+          "enxbc241193c740"
+        ],
+        "addr_info": [
+          {
+            "family": "inet",
+            "local": "10.168.201.23",
+            "prefixlen": 24,
+            "broadcast": "10.168.201.255",
+            "scope": "global",
+            "label": "ens19",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          },
+          {
+            "family": "inet6",
+            "local": "fe80::be24:11ff:fe93:c740",
+            "prefixlen": 64,
+            "scope": "link",
+            "protocol": "kernel_ll",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      },
+      {
+        "ifindex": 4,
+        "ifname": "ens20",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "qdisc": "fq_codel",
+        "operstate": "UP",
+        "group": "default",
+        "txqlen": 1000,
+        "link_type": "ether",
+        "address": "bc:24:11:88:ff:4f",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "altnames": [
+          "enp6s20",
+          "enxbc241188ff4f"
+        ],
+        "addr_info": [
+          {
+            "family": "inet6",
+            "local": "fe80::be24:11ff:fe88:ff4f",
+            "prefixlen": 64,
+            "scope": "link",
+            "protocol": "kernel_ll",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      },
+      {
+        "ifindex": 5,
+        "ifname": "ens21",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "qdisc": "fq_codel",
+        "operstate": "UP",
+        "group": "default",
+        "txqlen": 1000,
+        "link_type": "ether",
+        "address": "bc:24:11:c8:e6:b6",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "altnames": [
+          "enp6s21",
+          "enxbc2411c8e6b6"
+        ],
+        "addr_info": [
+          {
+            "family": "inet6",
+            "local": "fe80::be24:11ff:fec8:e6b6",
+            "prefixlen": 64,
+            "scope": "link",
+            "protocol": "kernel_ll",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      },
+      {
+        "ifindex": 6,
+        "ifname": "ens22",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "qdisc": "fq_codel",
+        "operstate": "UP",
+        "group": "default",
+        "txqlen": 1000,
+        "link_type": "ether",
+        "address": "bc:24:11:07:4e:81",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "altnames": [
+          "enp6s22",
+          "enxbc2411074e81"
+        ],
+        "addr_info": [
+          {
+            "family": "inet6",
+            "local": "2a01:e0a:8ce:68c0:be24:11ff:fe07:4e81",
+            "prefixlen": 64,
+            "scope": "global",
+            "dynamic": true,
+            "mngtmpaddr": true,
+            "protocol": "kernel_ra",
+            "valid_life_time": 86083,
+            "preferred_life_time": 86083
+          },
+          {
+            "family": "inet6",
+            "local": "fe80::be24:11ff:fe07:4e81",
+            "prefixlen": 64,
+            "scope": "link",
+            "protocol": "kernel_ll",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      },
+      {
+        "ifindex": 7,
+        "ifname": "ens23",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "qdisc": "fq_codel",
+        "operstate": "UP",
+        "group": "default",
+        "txqlen": 1000,
+        "link_type": "ether",
+        "address": "bc:24:11:b9:af:b4",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "altnames": [
+          "enp6s23",
+          "enxbc2411b9afb4"
+        ],
+        "addr_info": [
+          {
+            "family": "inet6",
+            "local": "fe80::be24:11ff:feb9:afb4",
+            "prefixlen": 64,
+            "scope": "link",
+            "protocol": "kernel_ll",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      },
+      {
+        "ifindex": 8,
+        "ifname": "br-44129ce84eb6",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "qdisc": "noqueue",
+        "operstate": "UP",
+        "group": "default",
+        "link_type": "ether",
+        "address": "22:8b:da:e0:88:3d",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "addr_info": [
+          {
+            "family": "inet",
+            "local": "172.31.204.1",
+            "prefixlen": 24,
+            "broadcast": "172.31.204.255",
+            "scope": "global",
+            "label": "br-44129ce84eb6",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          },
+          {
+            "family": "inet6",
+            "local": "fe80::208b:daff:fee0:883d",
+            "prefixlen": 64,
+            "scope": "link",
+            "protocol": "kernel_ll",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      },
+      {
+        "ifindex": 9,
+        "ifname": "docker_gwbridge",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "qdisc": "noqueue",
+        "operstate": "UP",
+        "group": "default",
+        "link_type": "ether",
+        "address": "fa:42:f7:50:3a:93",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "addr_info": [
+          {
+            "family": "inet",
+            "local": "172.18.0.1",
+            "prefixlen": 16,
+            "broadcast": "172.18.255.255",
+            "scope": "global",
+            "label": "docker_gwbridge",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          },
+          {
+            "family": "inet6",
+            "local": "fe80::f842:f7ff:fe50:3a93",
+            "prefixlen": 64,
+            "scope": "link",
+            "protocol": "kernel_ll",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      },
+      {
+        "ifindex": 10,
+        "ifname": "docker0",
+        "flags": [
+          "NO-CARRIER",
+          "BROADCAST",
+          "MULTICAST",
+          "UP"
+        ],
+        "mtu": 1500,
+        "qdisc": "noqueue",
+        "operstate": "DOWN",
+        "group": "default",
+        "link_type": "ether",
+        "address": "2a:7a:43:19:a7:1f",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "addr_info": [
+          {
+            "family": "inet",
+            "local": "172.17.0.1",
+            "prefixlen": 16,
+            "broadcast": "172.17.255.255",
+            "scope": "global",
+            "label": "docker0",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      },
+      {
+        "ifindex": 21,
+        "link_index": 20,
+        "ifname": "vethe0c2d40",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "qdisc": "noqueue",
+        "master": "docker_gwbridge",
+        "operstate": "UP",
+        "group": "default",
+        "link_type": "ether",
+        "address": "fa:28:e6:80:16:88",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "link_netnsid": 3,
+        "addr_info": [
+          {
+            "family": "inet6",
+            "local": "fe80::f828:e6ff:fe80:1688",
+            "prefixlen": 64,
+            "scope": "link",
+            "protocol": "kernel_ll",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      },
+      {
+        "ifindex": 30,
+        "link_index": 29,
+        "ifname": "vetha104066",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "qdisc": "noqueue",
+        "master": "docker_gwbridge",
+        "operstate": "UP",
+        "group": "default",
+        "link_type": "ether",
+        "address": "da:0c:2f:24:c7:0b",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "link_netnsid": 0,
+        "addr_info": [
+          {
+            "family": "inet6",
+            "local": "fe80::d80c:2fff:fe24:c70b",
+            "prefixlen": 64,
+            "scope": "link",
+            "protocol": "kernel_ll",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      },
+      {
+        "ifindex": 35,
+        "link_index": 34,
+        "ifname": "vethb51b29c",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "qdisc": "noqueue",
+        "master": "docker_gwbridge",
+        "operstate": "UP",
+        "group": "default",
+        "link_type": "ether",
+        "address": "b2:9e:b5:bd:87:51",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "link_netnsid": 6,
+        "addr_info": [
+          {
+            "family": "inet6",
+            "local": "fe80::b09e:b5ff:febd:8751",
+            "prefixlen": 64,
+            "scope": "link",
+            "protocol": "kernel_ll",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      },
+      {
+        "ifindex": 38,
+        "link_index": 2,
+        "ifname": "veth74ba21b",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "qdisc": "noqueue",
+        "master": "br-44129ce84eb6",
+        "operstate": "UP",
+        "group": "default",
+        "link_type": "ether",
+        "address": "7a:3f:17:9a:d6:30",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "link_netnsid": 7,
+        "addr_info": [
+          {
+            "family": "inet6",
+            "local": "fe80::783f:17ff:fe9a:d630",
+            "prefixlen": 64,
+            "scope": "link",
+            "protocol": "kernel_ll",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      },
+      {
+        "ifindex": 71,
+        "link_index": 70,
+        "ifname": "vethf989848",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "qdisc": "noqueue",
+        "master": "docker_gwbridge",
+        "operstate": "UP",
+        "group": "default",
+        "link_type": "ether",
+        "address": "12:b1:8d:8d:70:3a",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "link_netnsid": 10,
+        "addr_info": [
+          {
+            "family": "inet6",
+            "local": "fe80::10b1:8dff:fe8d:703a",
+            "prefixlen": 64,
+            "scope": "link",
+            "protocol": "kernel_ll",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      },
+      {
+        "ifindex": 91,
+        "link_index": 90,
+        "ifname": "veth5b16773",
+        "flags": [
+          "BROADCAST",
+          "MULTICAST",
+          "UP",
+          "LOWER_UP"
+        ],
+        "mtu": 1500,
+        "qdisc": "noqueue",
+        "master": "docker_gwbridge",
+        "operstate": "UP",
+        "group": "default",
+        "link_type": "ether",
+        "address": "2e:cf:9d:64:6d:11",
+        "broadcast": "ff:ff:ff:ff:ff:ff",
+        "link_netnsid": 11,
+        "addr_info": [
+          {
+            "family": "inet6",
+            "local": "fe80::2ccf:9dff:fe64:6d11",
+            "prefixlen": 64,
+            "scope": "link",
+            "protocol": "kernel_ll",
+            "valid_life_time": 4294967295,
+            "preferred_life_time": 4294967295
+          }
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "dst": "default",
+        "gateway": "192.168.201.1",
+        "dev": "ens18",
+        "flags": [
+          "onlink"
+        ]
+      },
+      {
+        "dst": "10.168.201.0/24",
+        "dev": "ens19",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "10.168.201.23",
+        "flags": []
+      },
+      {
+        "dst": "172.17.0.0/16",
+        "dev": "docker0",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "172.17.0.1",
+        "flags": [
+          "linkdown"
+        ]
+      },
+      {
+        "dst": "172.18.0.0/16",
+        "dev": "docker_gwbridge",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "172.18.0.1",
+        "flags": []
+      },
+      {
+        "dst": "172.31.204.0/24",
+        "dev": "br-44129ce84eb6",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "172.31.204.1",
+        "flags": []
+      },
+      {
+        "dst": "192.168.201.0/24",
+        "dev": "ens18",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "192.168.201.23",
+        "flags": []
+      },
+      {
+        "type": "local",
+        "dst": "10.168.201.23",
+        "dev": "ens19",
+        "table": "local",
+        "protocol": "kernel",
+        "scope": "host",
+        "prefsrc": "10.168.201.23",
+        "flags": []
+      },
+      {
+        "type": "broadcast",
+        "dst": "10.168.201.255",
+        "dev": "ens19",
+        "table": "local",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "10.168.201.23",
+        "flags": []
+      },
+      {
+        "type": "local",
+        "dst": "127.0.0.0/8",
+        "dev": "lo",
+        "table": "local",
+        "protocol": "kernel",
+        "scope": "host",
+        "prefsrc": "127.0.0.1",
+        "flags": []
+      },
+      {
+        "type": "local",
+        "dst": "127.0.0.1",
+        "dev": "lo",
+        "table": "local",
+        "protocol": "kernel",
+        "scope": "host",
+        "prefsrc": "127.0.0.1",
+        "flags": []
+      },
+      {
+        "type": "broadcast",
+        "dst": "127.255.255.255",
+        "dev": "lo",
+        "table": "local",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "127.0.0.1",
+        "flags": []
+      },
+      {
+        "type": "local",
+        "dst": "172.17.0.1",
+        "dev": "docker0",
+        "table": "local",
+        "protocol": "kernel",
+        "scope": "host",
+        "prefsrc": "172.17.0.1",
+        "flags": []
+      },
+      {
+        "type": "broadcast",
+        "dst": "172.17.255.255",
+        "dev": "docker0",
+        "table": "local",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "172.17.0.1",
+        "flags": [
+          "linkdown"
+        ]
+      },
+      {
+        "type": "local",
+        "dst": "172.18.0.1",
+        "dev": "docker_gwbridge",
+        "table": "local",
+        "protocol": "kernel",
+        "scope": "host",
+        "prefsrc": "172.18.0.1",
+        "flags": []
+      },
+      {
+        "type": "broadcast",
+        "dst": "172.18.255.255",
+        "dev": "docker_gwbridge",
+        "table": "local",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "172.18.0.1",
+        "flags": []
+      },
+      {
+        "type": "local",
+        "dst": "172.31.204.1",
+        "dev": "br-44129ce84eb6",
+        "table": "local",
+        "protocol": "kernel",
+        "scope": "host",
+        "prefsrc": "172.31.204.1",
+        "flags": []
+      },
+      {
+        "type": "broadcast",
+        "dst": "172.31.204.255",
+        "dev": "br-44129ce84eb6",
+        "table": "local",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "172.31.204.1",
+        "flags": []
+      },
+      {
+        "type": "local",
+        "dst": "192.168.201.23",
+        "dev": "ens18",
+        "table": "local",
+        "protocol": "kernel",
+        "scope": "host",
+        "prefsrc": "192.168.201.23",
+        "flags": []
+      },
+      {
+        "type": "broadcast",
+        "dst": "192.168.201.255",
+        "dev": "ens18",
+        "table": "local",
+        "protocol": "kernel",
+        "scope": "link",
+        "prefsrc": "192.168.201.23",
+        "flags": []
+      },
+      {
+        "dst": "2a01:e0a:8ce:68c0::/64",
+        "dev": "ens22",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "expires": 86082,
+        "pref": "medium"
+      },
+      {
+        "dst": "2a01:e0a:8ce:68c1::/64",
+        "dev": "ens18",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "2a01:e0a:8ce:68c2::/64",
+        "dev": "ens23",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "expires": 86032,
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "ens18",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "ens20",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "ens21",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "ens22",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "ens19",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "ens23",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "br-44129ce84eb6",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "vethe0c2d40",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "docker_gwbridge",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "vetha104066",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "vethb51b29c",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "veth74ba21b",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "vethf989848",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "veth5b16773",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "default",
+        "gateway": "2a01:e0a:8ce:68c1::1",
+        "dev": "ens18",
+        "metric": 1024,
+        "flags": [
+          "onlink"
+        ],
+        "pref": "medium"
+      },
+      {
+        "dst": "default",
+        "gateway": "fe80::be24:11ff:fee1:85b2",
+        "dev": "ens23",
+        "protocol": "ra",
+        "metric": 1024,
+        "flags": [],
+        "expires": 1432,
+        "metrics": [
+          {
+            "hoplimit": 64
+          }
+        ],
+        "pref": "medium"
+      },
+      {
+        "dst": "default",
+        "gateway": "fe80::f6ca:e5ff:fe48:6626",
+        "dev": "ens22",
+        "protocol": "ra",
+        "metric": 1024,
+        "flags": [],
+        "expires": 1482,
+        "metrics": [
+          {
+            "hoplimit": 64
+          }
+        ],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "::1",
+        "dev": "lo",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "2a01:e0a:8ce:68c0:be24:11ff:fe07:4e81",
+        "dev": "ens22",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "2a01:e0a:8ce:68c1::23",
+        "dev": "ens18",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::10b1:8dff:fe8d:703a",
+        "dev": "vethf989848",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::208b:daff:fee0:883d",
+        "dev": "br-44129ce84eb6",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::2ccf:9dff:fe64:6d11",
+        "dev": "veth5b16773",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::783f:17ff:fe9a:d630",
+        "dev": "veth74ba21b",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::b09e:b5ff:febd:8751",
+        "dev": "vethb51b29c",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::be24:11ff:fe07:4e81",
+        "dev": "ens22",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::be24:11ff:fe88:ff4f",
+        "dev": "ens20",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::be24:11ff:fe93:c740",
+        "dev": "ens19",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::be24:11ff:feb9:afb4",
+        "dev": "ens23",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::be24:11ff:fec8:e6b6",
+        "dev": "ens21",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::be24:11ff:fef0:3571",
+        "dev": "ens18",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::d80c:2fff:fe24:c70b",
+        "dev": "vetha104066",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::f828:e6ff:fe80:1688",
+        "dev": "vethe0c2d40",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::f842:f7ff:fe50:3a93",
+        "dev": "docker_gwbridge",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "ens18",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "ens20",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "ens21",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "ens22",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "ens19",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "ens23",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "br-44129ce84eb6",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "vethe0c2d40",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "docker_gwbridge",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "vetha104066",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "vethb51b29c",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "veth74ba21b",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "vethf989848",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "veth5b16773",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      }
+    ],
+    "routes6": [
+      {
+        "dst": "2a01:e0a:8ce:68c0::/64",
+        "dev": "ens22",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "expires": 86082,
+        "pref": "medium"
+      },
+      {
+        "dst": "2a01:e0a:8ce:68c1::/64",
+        "dev": "ens18",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "2a01:e0a:8ce:68c2::/64",
+        "dev": "ens23",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "expires": 86032,
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "ens18",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "ens20",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "ens21",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "ens22",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "ens19",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "ens23",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "br-44129ce84eb6",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "vethe0c2d40",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "docker_gwbridge",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "vetha104066",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "vethb51b29c",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "veth74ba21b",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "vethf989848",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "fe80::/64",
+        "dev": "veth5b16773",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "dst": "default",
+        "gateway": "2a01:e0a:8ce:68c1::1",
+        "dev": "ens18",
+        "metric": 1024,
+        "flags": [
+          "onlink"
+        ],
+        "pref": "medium"
+      },
+      {
+        "dst": "default",
+        "gateway": "fe80::be24:11ff:fee1:85b2",
+        "dev": "ens23",
+        "protocol": "ra",
+        "metric": 1024,
+        "flags": [],
+        "expires": 1432,
+        "metrics": [
+          {
+            "hoplimit": 64
+          }
+        ],
+        "pref": "medium"
+      },
+      {
+        "dst": "default",
+        "gateway": "fe80::f6ca:e5ff:fe48:6626",
+        "dev": "ens22",
+        "protocol": "ra",
+        "metric": 1024,
+        "flags": [],
+        "expires": 1482,
+        "metrics": [
+          {
+            "hoplimit": 64
+          }
+        ],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "::1",
+        "dev": "lo",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "2a01:e0a:8ce:68c0:be24:11ff:fe07:4e81",
+        "dev": "ens22",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "2a01:e0a:8ce:68c1::23",
+        "dev": "ens18",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::10b1:8dff:fe8d:703a",
+        "dev": "vethf989848",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::208b:daff:fee0:883d",
+        "dev": "br-44129ce84eb6",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::2ccf:9dff:fe64:6d11",
+        "dev": "veth5b16773",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::783f:17ff:fe9a:d630",
+        "dev": "veth74ba21b",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::b09e:b5ff:febd:8751",
+        "dev": "vethb51b29c",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::be24:11ff:fe07:4e81",
+        "dev": "ens22",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::be24:11ff:fe88:ff4f",
+        "dev": "ens20",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::be24:11ff:fe93:c740",
+        "dev": "ens19",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::be24:11ff:feb9:afb4",
+        "dev": "ens23",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::be24:11ff:fec8:e6b6",
+        "dev": "ens21",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::be24:11ff:fef0:3571",
+        "dev": "ens18",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::d80c:2fff:fe24:c70b",
+        "dev": "vetha104066",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::f828:e6ff:fe80:1688",
+        "dev": "vethe0c2d40",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "local",
+        "dst": "fe80::f842:f7ff:fe50:3a93",
+        "dev": "docker_gwbridge",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 0,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "ens18",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "ens20",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "ens21",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "ens22",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "ens19",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "ens23",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "br-44129ce84eb6",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "vethe0c2d40",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "docker_gwbridge",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "vetha104066",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "vethb51b29c",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "veth74ba21b",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "vethf989848",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      },
+      {
+        "type": "multicast",
+        "dst": "ff00::/8",
+        "dev": "veth5b16773",
+        "table": "local",
+        "protocol": "kernel",
+        "metric": 256,
+        "flags": [],
+        "pref": "medium"
+      }
+    ],
+    "listeners": "Netid State  Recv-Q Send-Q  Local Address:Port  Peer Address:PortProcess                                                   \nudp   UNCONN 0      0             0.0.0.0:4789       0.0.0.0:*                                                             \nudp   UNCONN 0      0      192.168.201.23:7946       0.0.0.0:*    users:((\"dockerd\",pid=1173,fd=58))                       \nudp   UNCONN 0      0             0.0.0.0:111        0.0.0.0:*    users:((\"rpcbind\",pid=574,fd=5),(\"systemd\",pid=1,fd=156))\nudp   UNCONN 0      0                [::]:111           [::]:*    users:((\"rpcbind\",pid=574,fd=7),(\"systemd\",pid=1,fd=159))\ntcp   LISTEN 0      128           0.0.0.0:22         0.0.0.0:*    users:((\"sshd\",pid=1010,fd=6))                           \ntcp   LISTEN 0      4096          0.0.0.0:111        0.0.0.0:*    users:((\"rpcbind\",pid=574,fd=4),(\"systemd\",pid=1,fd=155))\ntcp   LISTEN 0      4096        127.0.0.1:35121      0.0.0.0:*    users:((\"containerd\",pid=994,fd=13))                     \ntcp   LISTEN 0      4096          0.0.0.0:9443       0.0.0.0:*    users:((\"docker-proxy\",pid=68253,fd=8))                  \ntcp   LISTEN 0      4096   192.168.201.23:2377       0.0.0.0:*    users:((\"dockerd\",pid=1173,fd=35))                       \ntcp   LISTEN 0      4096   192.168.201.23:7946       0.0.0.0:*    users:((\"dockerd\",pid=1173,fd=57))                       \ntcp   LISTEN 0      128              [::]:22            [::]:*    users:((\"sshd\",pid=1010,fd=7))                           \ntcp   LISTEN 0      4096             [::]:111           [::]:*    users:((\"rpcbind\",pid=574,fd=6),(\"systemd\",pid=1,fd=158))\ntcp   LISTEN 0      4096             [::]:9443          [::]:*    users:((\"docker-proxy\",pid=68261,fd=8))",
+    "failed_units": "UNIT               LOAD   ACTIVE SUB    DESCRIPTION\nnetworking.service loaded failed failed Raise network interfaces\n\nLegend: LOAD   → Reflects whether the unit definition was properly loaded.\n        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.\n        SUB    → The low-level unit activation state, values depend on unit type.\n\n1 loaded units listed.",
+    "timers": "NEXT                             LEFT LAST                               PASSED UNIT                         ACTIVATES\nWed 2026-10-21 09:00:56 CEST    34min Wed 2026-10-21 08:01:35 CEST    24min ago traefik-syno-cert-sync.timer traefik-syno-cert-sync.service\nWed 2026-10-21 09:32:44 CEST  1h 6min Tue 2026-10-20 22:57:36 CEST       9h ago apt-daily.timer              apt-daily.service\nWed 2026-10-21 12:06:36 CEST 3h 40min Tue 2026-10-20 12:06:36 CEST      20h ago systemd-tmpfiles-clean.timer systemd-tmpfiles-clean.service\nThu 2026-10-22 00:00:00 CEST      15h Wed 2026-10-21 00:00:05 CEST       8h ago dpkg-db-backup.timer         dpkg-db-backup.service\nThu 2026-10-22 00:50:27 CEST      16h Wed 2026-10-21 00:37:37 CEST       7h ago logrotate.timer              logrotate.service\nThu 2026-10-22 06:25:00 CEST      21h Wed 2026-10-21 06:48:37 CEST 1h 37min ago apt-daily-upgrade.timer      apt-daily-upgrade.service\nThu 2026-10-22 06:42:26 CEST      22h Wed 2026-10-21 00:36:52 CEST       7h ago man-db.timer                 man-db.service\nSun 2026-10-25 03:10:38 CET    3 days Sun 2026-10-18 03:11:05 CEST   3 days ago e2scrub_all.timer            e2scrub_all.service\nMon 2026-10-26 01:17:55 CET    4 days Mon 2026-10-19 01:26:05 CEST   2 days ago fstrim.timer                 fstrim.service\n\n9 timers listed.",
+    "sshd": "port 22\naddressfamily any\nlistenaddress [::]:22\nlistenaddress 0.0.0.0:22\nusepam yes\npamservicename sshd\nlogingracetime 120\nx11displayoffset 10\nmaxauthtries 6\nmaxsessions 10\nclientaliveinterval 0\nclientalivecountmax 3\nrequiredrsasize 1024\nstreamlocalbindmask 0177\nunusedconnectiontimeout none\npermitrootlogin yes\nignorerhosts yes\nignoreuserknownhosts no\nhostbasedauthentication no\nhostbasedusesnamefrompacketonly no\npubkeyauthentication yes\nkerberosauthentication no\nkerberosorlocalpasswd yes\nkerberosticketcleanup yes\ngssapiauthentication no\ngssapicleanupcredentials yes\ngssapikeyexchange no\ngssapistrictacceptorcheck yes\ngssapistorecredentialsonrekey no\ngssapikexalgorithms gss-group14-sha256-,gss-group16-sha512-,gss-nistp256-sha256-,gss-curve25519-sha256-,gss-group14-sha1-,gss-gex-sha1-\npasswordauthentication yes\nkbdinteractiveauthentication no\nprintmotd no\nprintlastlog yes\nx11forwarding yes\nx11uselocalhost yes\npermittty yes\npermituserrc yes\nstrictmodes yes\ntcpkeepalive yes\npermitemptypasswords no\ncompression yes\ngatewayports no\nusedns no\nallowtcpforwarding yes\nallowagentforwarding yes\ndisableforwarding no\nallowstreamlocalforwarding yes\nstreamlocalbindunlink no\nfingerprinthash SHA256\nexposeauthinfo no\nrefuseconnection no\ndebianbanner yes\npidfile /run/sshd.pid\nmodulifile /etc/ssh/moduli\nxauthlocation /usr/bin/xauth\nciphers chacha20-poly1305@openssh.com,aes128-gcm@openssh.com,aes256-gcm@openssh.com,aes128-ctr,aes192-ctr,aes256-ctr\nmacs umac-64-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-256-etm@openssh.com,hmac-sha2-512-etm@openssh.com,hmac-sha1-etm@openssh.com,umac-64@openssh.com,umac-128@openssh.com,hmac-sha2-256,hmac-sha2-512,hmac-sha1\nbanner none\nforcecommand none\nchrootdirectory none\ntrustedusercakeys none\nrevokedkeys none\nsecuritykeyprovider internal\nauthorizedprincipalsfile none\nversionaddendum none\nauthorizedkeyscommand none\nauthorizedkeyscommanduser none\nauthorizedprincipalscommand none\nauthorizedprincipalscommanduser none\nhostkeyagent none\nkexalgorithms mlkem768x25519-sha256,sntrup761x25519-sha512,sntrup761x25519-sha512@openssh.com,curve25519-sha256,curve25519-sha256@libssh.org,ecdh-sha2-nistp256,ecdh-sha2-nistp384,ecdh-sha2-nistp521\ncasignaturealgorithms ssh-ed25519,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ssh-ed25519@openssh.com,sk-ecdsa-sha2-nistp256@openssh.com,rsa-sha2-512,rsa-sha2-256\nhostbasedacceptedalgorithms ssh-ed25519-cert-v01@openssh.com,ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,sk-ssh-ed25519-cert-v01@openssh.com,sk-ecdsa-sha2-nistp256-cert-v01@openssh.com,rsa-sha2-512-cert-v01@openssh.com,rsa-sha2-256-cert-v01@openssh.com,ssh-ed25519,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ssh-ed25519@openssh.com,sk-ecdsa-sha2-nistp256@openssh.com,rsa-sha2-512,rsa-sha2-256\nhostkeyalgorithms ssh-ed25519-cert-v01@openssh.com,ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,sk-ssh-ed25519-cert-v01@openssh.com,sk-ecdsa-sha2-nistp256-cert-v01@openssh.com,rsa-sha2-512-cert-v01@openssh.com,rsa-sha2-256-cert-v01@openssh.com,ssh-ed25519,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ssh-ed25519@openssh.com,sk-ecdsa-sha2-nistp256@openssh.com,rsa-sha2-512,rsa-sha2-256\npubkeyacceptedalgorithms ssh-ed25519-cert-v01@openssh.com,ecdsa-sha2-nistp256-cert-v01@openssh.com,ecdsa-sha2-nistp384-cert-v01@openssh.com,ecdsa-sha2-nistp521-cert-v01@openssh.com,sk-ssh-ed25519-cert-v01@openssh.com,sk-ecdsa-sha2-nistp256-cert-v01@openssh.com,rsa-sha2-512-cert-v01@openssh.com,rsa-sha2-256-cert-v01@openssh.com,ssh-ed25519,ecdsa-sha2-nistp256,ecdsa-sha2-nistp384,ecdsa-sha2-nistp521,sk-ssh-ed25519@openssh.com,sk-ecdsa-sha2-nistp256@openssh.com,rsa-sha2-512,rsa-sha2-256\nsshdsessionpath /usr/lib/openssh/sshd-session\nsshdauthpath /usr/lib/openssh/sshd-auth\npersourcepenaltyexemptlist none\nloglevel INFO\nsyslogfacility AUTH\nauthorizedkeysfile .ssh/authorized_keys .ssh/authorized_keys2\nhostkey /etc/ssh/ssh_host_rsa_key\nhostkey /etc/ssh/ssh_host_ecdsa_key\nhostkey /etc/ssh/ssh_host_ed25519_key\nacceptenv LANG\nacceptenv LC_*\nacceptenv COLORTERM\nacceptenv NO_COLOR\nauthenticationmethods any\nchanneltimeout none\nsubsystem sftp /usr/lib/openssh/sftp-server\nmaxstartups 10:30:100\npersourcemaxstartups none\npersourcenetblocksize 32:128\npermittunnel no\nipqos ef cs1\nrekeylimit 0 0\npermitopen any\npermitlisten any\npermituserenvironment no\npubkeyauthoptions none\npersourcepenalties crash:90 authfail:5 noauth:1 grace-exceeded:10 refuseconnection:10 max:600 min:15 max-sources4:65536 max-sources6:65536 overflow:permissive overflow6:permissive"
+  },
+  "docker": {
+    "info": {
+      "ServerVersion": "29.8.0",
+      "DockerRootDir": "/srv/docker-local/docker",
+      "Driver": "overlayfs",
+      "CgroupDriver": "systemd",
+      "CgroupVersion": "2",
+      "LiveRestoreEnabled": false,
+      "SecurityOptions": [
+        "name=apparmor,profile=default",
+        "name=seccomp,profile=builtin",
+        "name=cgroupns"
+      ],
+      "LoggingDriver": "json-file",
+      "NCPU": 4,
+      "MemTotal": 16776425472,
+      "Swarm": {
+        "NodeID": "xcxurj56mv1u238bnskyjlld9",
+        "NodeAddr": "192.168.201.23",
+        "LocalNodeState": "active",
+        "ControlAvailable": true,
+        "Error": "",
+        "RemoteManagers": [
+          {
+            "NodeID": "xcxurj56mv1u238bnskyjlld9",
+            "Addr": "192.168.201.23:2377"
+          },
+          {
+            "NodeID": "9koqx4hnjemcqzhf2amsn104m",
+            "Addr": "192.168.201.21:2377"
+          },
+          {
+            "NodeID": "r91yes4cho1ppyerywtmrr170",
+            "Addr": "192.168.201.22:2377"
+          }
+        ],
+        "Nodes": 3,
+        "Managers": 3,
+        "Cluster": {
+          "ID": "9igt34gfmmd4bnv6gmi7x461m",
+          "Version": {
+            "Index": 4935
+          },
+          "CreatedAt": "2026-09-09T20:32:15.331638309Z",
+          "UpdatedAt": "2026-10-21T02:16:20.71018487Z",
+          "Spec": {
+            "Name": "default",
+            "Labels": {},
+            "Orchestration": {
+              "TaskHistoryRetentionLimit": 5
+            },
+            "Raft": {
+              "SnapshotInterval": 10000,
+              "KeepOldSnapshots": 0,
+              "LogEntriesForSlowFollowers": 500,
+              "ElectionTick": 10,
+              "HeartbeatTick": 1
+            },
+            "Dispatcher": {
+              "HeartbeatPeriod": 5000000000
+            },
+            "CAConfig": {
+              "NodeCertExpiry": 7776000000000000
+            },
+            "TaskDefaults": {},
+            "EncryptionConfig": {
+              "AutoLockManagers": false
+            }
+          },
+          "TLSInfo": {
+            "TrustRoot": "-----BEGIN CERTIFICATE-----\nMIIBajCCARCgAwIBAgIUAYPUC208dr3Ew0MgWqbXXSzojgwwCgYIKoZIzj0EAwIw\nEzERMA8GA1UEAxMIc3dhcm0tY2EwHhcNMjYwOTA5MjAyNzAwWhcNNDYwOTA0MjAy\nNzAwWjATMREwDwYDVQQDEwhzd2FybS1jYTBZMBMGByqGSM49AgEGCCqGSM49AwEH\nA0IABG0TYB1QqnVhI8m1TxAFWLWMMZufN1EA3V02NzLqg0QbpNei8iSsbcDhDs2p\nDHhlhDcno8xVi0dw1YA+dClOxeujQjBAMA4GA1UdDwEB/wQEAwIBBjAPBgNVHRMB\nAf8EBTADAQH/MB0GA1UdDgQWBBS94czUGH0yCodluaGtOsHlj3G7XzAKBggqhkjO\nPQQDAgNIADBFAiEA+XPDC0x2vQGiLZIvar4MJrX0wl0TR1+HWx7wnIwaAMUCIBR7\nar2tgU15A1zpUeP8JJ9RTMha4fLGpoq6gMhjISLY\n-----END CERTIFICATE-----\n",
+            "CertIssuerSubject": "MBMxETAPBgNVBAMTCHN3YXJtLWNh",
+            "CertIssuerPublicKey": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEbRNgHVCqdWEjybVPEAVYtYwxm583UQDdXTY3MuqDRBuk16LyJKxtwOEOzakMeGWENyejzFWLR3DVgD50KU7F6w=="
+          },
+          "RootRotationInProgress": false,
+          "DefaultAddrPool": [
+            "172.29.0.0/16"
+          ],
+          "SubnetSize": 24,
+          "DataPathPort": 4789
+        }
+      },
+      "Containers": 5,
+      "ContainersRunning": 5,
+      "ContainersStopped": 0,
+      "Warnings": null
+    },
+    "containers": [
+      {
+        "Id": "5685c0d3ab9c3753f9cbec1ee6261016295b9407a557154ef93f8f137b700140",
+        "Name": "/Homepage",
+        "Created": "2026-09-16T19:42:23.032791486Z",
+        "Image": "sha256:f820276654539cdc2cf0169f28188d135919a7984fad76d83d8d5ff1383f3705",
+        "RestartCount": 0,
+        "Mounts": [
+          {
+            "Type": "bind",
+            "Source": "/srv/docker-shared/homepage/config",
+            "Destination": "/app/config",
+            "Mode": "rw",
+            "RW": true,
+            "Propagation": "rprivate"
+          }
+        ],
+        "state": {
+          "Status": "running",
+          "Running": true,
+          "Paused": false,
+          "Restarting": false,
+          "OOMKilled": false,
+          "Dead": false,
+          "Pid": 1146242,
+          "ExitCode": 0,
+          "StartedAt": "2026-09-16T19:42:23.599617003Z",
+          "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "health": {
+          "Status": "healthy",
+          "FailingStreak": 0
+        },
+        "config": {
+          "Image": "ghcr.io/gethomepage/homepage:v2.3.0",
+          "User": "root",
+          "ExposedPorts": {
+            "3000/tcp": {}
+          },
+          "WorkingDir": "/app",
+          "environment_keys_only": [
+            "HOMEPAGE_AUTH_ENABLED",
+            "HOMEPAGE_AUTH_SECRET",
+            "HOMEPAGE_AUTH_PASSWORD",
+            "HOMEPAGE_EXTERNAL_URL",
+            "HOMEPAGE_ALLOWED_HOSTS",
+            "PATH",
+            "NODE_VERSION",
+            "YARN_VERSION",
+            "NODE_ENV",
+            "HOSTNAME",
+            "PORT"
+          ],
+          "healthcheck_present": true,
+          "labels": {
+            "com.docker.compose.config-hash": "79754d3068d01bd0af35a70c9f6a2169becfc2de96fcdc7964e1895af0260aaf",
+            "com.docker.compose.container-number": "1",
+            "com.docker.compose.depends_on": "",
+            "com.docker.compose.image": "sha256:913a68a2fb4527334b7dd881d1cd21e9535bf97d9d2e13144b13ef46ad72caa8",
+            "com.docker.compose.oneoff": "False",
+            "com.docker.compose.project": "homepage",
+            "com.docker.compose.project.config_files": "/srv/docker-local/compose/homepage/compose.yml",
+            "com.docker.compose.project.working_dir": "/srv/docker-local/compose/homepage",
+            "com.docker.compose.replace": "Homepage",
+            "com.docker.compose.service": "homepage",
+            "com.docker.compose.version": "5.5.1"
+          }
+        },
+        "host_config": {
+          "RestartPolicy": {
+            "Name": "unless-stopped",
+            "MaximumRetryCount": 0
+          },
+          "NetworkMode": "TRAEFIK_BACKEND",
+          "PortBindings": {},
+          "Privileged": false,
+          "ReadonlyRootfs": false,
+          "CapAdd": null,
+          "CapDrop": null,
+          "SecurityOpt": null,
+          "Devices": null,
+          "DeviceRequests": null,
+          "PidMode": "",
+          "IpcMode": "private",
+          "Memory": 0,
+          "MemorySwap": 0,
+          "NanoCpus": 0,
+          "CpuShares": 0,
+          "PidsLimit": null,
+          "Ulimits": null,
+          "LogConfig": {
+            "Type": "json-file",
+            "Config": {}
+          },
+          "Dns": null,
+          "ExtraHosts": []
+        },
+        "network": {
+          "Ports": {
+            "3000/tcp": null
+          },
+          "Networks": {
+            "TRAEFIK_BACKEND": {
+              "IPAMConfig": {
+                "IPv4Address": "172.29.2.24"
+              },
+              "Links": null,
+              "Aliases": [
+                "Homepage",
+                "homepage",
+                "homepage"
+              ],
+              "DriverOpts": null,
+              "GwPriority": 0,
+              "NetworkID": "ffxnc9xcjgp1l17q1k467t0do",
+              "EndpointID": "8afccd099b3c71899cbbf7be86d07de180d582447e3fdc30edafd6f97353d1c0",
+              "Gateway": "",
+              "IPAddress": "172.29.2.24",
+              "MacAddress": "02:42:ac:1d:02:18",
+              "IPPrefixLen": 24,
+              "IPv6Gateway": "",
+              "GlobalIPv6Address": "",
+              "GlobalIPv6PrefixLen": 0,
+              "DNSNames": [
+                "Homepage",
+                "homepage",
+                "5685c0d3ab9c"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "Id": "2b64448f9290bd7fbd58c1fdcbabdc58bd9de7b44cdc84f0688bf20d8da90e1b",
+        "Name": "/DIUN",
+        "Created": "2026-09-16T19:15:08.499671519Z",
+        "Image": "sha256:e324b793eb32dfb7f74d3a39421ebf090141caaadee69b8f78da63112408ee25",
+        "RestartCount": 0,
+        "Mounts": [
+          {
+            "Type": "bind",
+            "Source": "/srv/docker-shared/diun/data",
+            "Destination": "/data",
+            "Mode": "rw",
+            "RW": true,
+            "Propagation": "rprivate"
+          },
+          {
+            "Type": "bind",
+            "Source": "/srv/docker-shared/diun/config/custom-images.yml",
+            "Destination": "/config/custom-images.yml",
+            "Mode": "ro",
+            "RW": false,
+            "Propagation": "rprivate"
+          },
+          {
+            "Type": "bind",
+            "Source": "/srv/docker-shared/diun/config/diun.yml",
+            "Destination": "/config/diun.yml",
+            "Mode": "ro",
+            "RW": false,
+            "Propagation": "rprivate"
+          },
+          {
+            "Type": "bind",
+            "Source": "/var/run/docker.sock",
+            "Destination": "/var/run/docker.sock",
+            "Mode": "rw",
+            "RW": true,
+            "Propagation": "rprivate"
+          }
+        ],
+        "state": {
+          "Status": "running",
+          "Running": true,
+          "Paused": false,
+          "Restarting": false,
+          "OOMKilled": false,
+          "Dead": false,
+          "Pid": 1130294,
+          "ExitCode": 0,
+          "StartedAt": "2026-09-16T19:22:21.68514036Z",
+          "FinishedAt": "2026-09-16T19:22:21.445080245Z"
+        },
+        "health": {
+          "Status": "healthy",
+          "FailingStreak": 0
+        },
+        "config": {
+          "Image": "crazymax/diun:latest",
+          "User": "",
+          "WorkingDir": "/",
+          "environment_keys_only": [
+            "TZ",
+            "CONFIG",
+            "LOG_LEVEL",
+            "LOG_JSON",
+            "GRPC_AUTHORITY",
+            "PATH",
+            "PROFILER_PATH",
+            "DIUN_DB_PATH"
+          ],
+          "healthcheck_present": true,
+          "labels": {
+            "com.docker.compose.config-hash": "43d6f08e4efe3453728398402754068321e5f3ac0c8307c03f322241076a6ad3",
+            "com.docker.compose.container-number": "1",
+            "com.docker.compose.depends_on": "",
+            "com.docker.compose.image": "sha256:e97e39c38d079633b2e0b9b381659ba3d48bbfa99265419346e59fd3acb61c1f",
+            "com.docker.compose.oneoff": "False",
+            "com.docker.compose.project": "diun",
+            "com.docker.compose.project.config_files": "/srv/docker-local/compose/diun/compose.yml",
+            "com.docker.compose.project.working_dir": "/srv/docker-local/compose/diun",
+            "com.docker.compose.replace": "DIUN",
+            "com.docker.compose.service": "diun",
+            "com.docker.compose.version": "5.5.1"
+          }
+        },
+        "host_config": {
+          "RestartPolicy": {
+            "Name": "unless-stopped",
+            "MaximumRetryCount": 0
+          },
+          "NetworkMode": "TRAEFIK_BACKEND",
+          "PortBindings": {},
+          "Privileged": false,
+          "ReadonlyRootfs": false,
+          "CapAdd": null,
+          "CapDrop": null,
+          "SecurityOpt": null,
+          "Devices": null,
+          "DeviceRequests": null,
+          "PidMode": "",
+          "IpcMode": "private",
+          "Memory": 0,
+          "MemorySwap": 0,
+          "NanoCpus": 0,
+          "CpuShares": 0,
+          "PidsLimit": null,
+          "Ulimits": null,
+          "LogConfig": {
+            "Type": "json-file",
+            "Config": {}
+          },
+          "Dns": null,
+          "ExtraHosts": []
+        },
+        "network": {
+          "Ports": {},
+          "Networks": {
+            "TRAEFIK_BACKEND": {
+              "IPAMConfig": {
+                "IPv4Address": "172.29.2.17"
+              },
+              "Links": null,
+              "Aliases": [
+                "DIUN",
+                "diun",
+                "diun"
+              ],
+              "DriverOpts": null,
+              "GwPriority": 0,
+              "NetworkID": "ffxnc9xcjgp1l17q1k467t0do",
+              "EndpointID": "3acffc02b82633187b6839e9e4c6fe7e7c1cc0a68c6f3ce37a7c3a2a03fdc35b",
+              "Gateway": "",
+              "IPAddress": "172.29.2.17",
+              "MacAddress": "02:42:ac:1d:02:11",
+              "IPPrefixLen": 24,
+              "IPv6Gateway": "",
+              "GlobalIPv6Address": "",
+              "GlobalIPv6PrefixLen": 0,
+              "DNSNames": [
+                "DIUN",
+                "diun",
+                "2b64448f9290"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "Id": "6d145cb9c49adf24a45d269ece581eea31db88dca8420dcb492a72d9b4813a95",
+        "Name": "/WG-Companion-Relay",
+        "Created": "2026-09-15T15:02:32.121794199Z",
+        "Image": "sha256:c5a091e1e735a90aa941a5828529dbe6c6157407a8047a9aa473faa133361b82",
+        "RestartCount": 0,
+        "Mounts": [],
+        "state": {
+          "Status": "running",
+          "Running": true,
+          "Paused": false,
+          "Restarting": false,
+          "OOMKilled": false,
+          "Dead": false,
+          "Pid": 185353,
+          "ExitCode": 0,
+          "StartedAt": "2026-09-15T15:02:32.196161404Z",
+          "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "health": {},
+        "config": {
+          "Image": "alpine/socat:1.8.1.3",
+          "User": "",
+          "WorkingDir": "/",
+          "environment_keys_only": [
+            "PATH"
+          ],
+          "healthcheck_present": false,
+          "labels": {
+            "com.docker.compose.config-hash": "406388eee268f1f38bdf5839d1a983266652e651fd02955727d009c4f4e67fec",
+            "com.docker.compose.container-number": "1",
+            "com.docker.compose.depends_on": "",
+            "com.docker.compose.image": "sha256:a281501e8164fbd5e16b8a210778088403c7a0fbfcc957984bcc82122e51eea2",
+            "com.docker.compose.oneoff": "False",
+            "com.docker.compose.project": "wg-relay",
+            "com.docker.compose.project.config_files": "/srv/docker-local/compose/wg-relay/compose.yml",
+            "com.docker.compose.project.working_dir": "/srv/docker-local/compose/wg-relay",
+            "com.docker.compose.service": "relay",
+            "com.docker.compose.version": "5.5.1"
+          }
+        },
+        "host_config": {
+          "RestartPolicy": {
+            "Name": "unless-stopped",
+            "MaximumRetryCount": 0
+          },
+          "NetworkMode": "WG_Internal",
+          "PortBindings": {},
+          "Privileged": false,
+          "ReadonlyRootfs": false,
+          "CapAdd": null,
+          "CapDrop": null,
+          "SecurityOpt": null,
+          "Devices": null,
+          "DeviceRequests": null,
+          "PidMode": "",
+          "IpcMode": "private",
+          "Memory": 0,
+          "MemorySwap": 0,
+          "NanoCpus": 0,
+          "CpuShares": 0,
+          "PidsLimit": null,
+          "Ulimits": null,
+          "LogConfig": {
+            "Type": "json-file",
+            "Config": {}
+          },
+          "Dns": null,
+          "ExtraHosts": []
+        },
+        "network": {
+          "Ports": {},
+          "Networks": {
+            "WG_Internal": {
+              "IPAMConfig": {
+                "IPv4Address": "172.31.204.5"
+              },
+              "Links": null,
+              "Aliases": [
+                "WG-Companion-Relay",
+                "relay"
+              ],
+              "DriverOpts": null,
+              "GwPriority": 0,
+              "NetworkID": "44129ce84eb6247ec3581874e6e9e3411b946f6a56696f135a852caae119f1e2",
+              "EndpointID": "507b48e00bc912a53e6e81fe321c8d7260c36f82cc16a33a69c875e189311937",
+              "Gateway": "172.31.204.1",
+              "IPAddress": "172.31.204.5",
+              "MacAddress": "0e:db:83:68:8f:58",
+              "IPPrefixLen": 24,
+              "IPv6Gateway": "",
+              "GlobalIPv6Address": "",
+              "GlobalIPv6PrefixLen": 0,
+              "DNSNames": [
+                "WG-Companion-Relay",
+                "relay",
+                "6d145cb9c49a"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "Id": "de74c385d705deec72354b9b89e5e37643d1d0eabadf8e8fa44719482e9420bd",
+        "Name": "/portainer_portainer.1.na8qxtnuocqhnbimb3jeokesl",
+        "Created": "2026-09-15T11:39:01.149326533Z",
+        "Image": "sha256:511f3f06c96fe3b993ebeaafde311c1959cae73a7ef825dba6397d51b450dffa",
+        "RestartCount": 0,
+        "Mounts": [
+          {
+            "Type": "volume",
+            "Name": "portainer_data",
+            "Source": "/srv/docker-local/docker/volumes/portainer_data/_data",
+            "Destination": "/data",
+            "Driver": "local",
+            "Mode": "z",
+            "RW": true,
+            "Propagation": ""
+          }
+        ],
+        "state": {
+          "Status": "running",
+          "Running": true,
+          "Paused": false,
+          "Restarting": false,
+          "OOMKilled": false,
+          "Dead": false,
+          "Pid": 68042,
+          "ExitCode": 0,
+          "StartedAt": "2026-09-15T11:39:01.348159302Z",
+          "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "health": {},
+        "config": {
+          "Image": "portainer/portainer-ce:lts@sha256:511f3f06c96fe3b993ebeaafde311c1959cae73a7ef825dba6397d51b450dffa",
+          "User": "",
+          "ExposedPorts": {
+            "8000/tcp": {},
+            "9000/tcp": {},
+            "9443/tcp": {}
+          },
+          "WorkingDir": "/",
+          "environment_keys_only": [
+            "PATH"
+          ],
+          "healthcheck_present": false,
+          "labels": {
+            "com.docker.swarm.node.id": "xcxurj56mv1u238bnskyjlld9",
+            "com.docker.swarm.service.id": "zbb79x37m0dz3jt5gabi89wkk",
+            "com.docker.swarm.service.name": "portainer_portainer",
+            "com.docker.swarm.task": "",
+            "com.docker.swarm.task.id": "na8qxtnuocqhnbimb3jeokesl",
+            "com.docker.swarm.task.name": "portainer_portainer.1.na8qxtnuocqhnbimb3jeokesl"
+          }
+        },
+        "host_config": {
+          "RestartPolicy": {
+            "Name": "no",
+            "MaximumRetryCount": 0
+          },
+          "NetworkMode": "bridge",
+          "PortBindings": {},
+          "Privileged": false,
+          "ReadonlyRootfs": false,
+          "CapAdd": null,
+          "CapDrop": null,
+          "SecurityOpt": null,
+          "Devices": null,
+          "DeviceRequests": null,
+          "PidMode": "",
+          "IpcMode": "private",
+          "Memory": 0,
+          "MemorySwap": 0,
+          "NanoCpus": 0,
+          "CpuShares": 0,
+          "PidsLimit": null,
+          "Ulimits": [],
+          "LogConfig": {
+            "Type": "json-file",
+            "Config": {}
+          },
+          "Dns": null,
+          "ExtraHosts": null
+        },
+        "network": {
+          "Ports": {
+            "8000/tcp": null,
+            "9000/tcp": null,
+            "9443/tcp": null
+          },
+          "Networks": {
+            "ingress": {
+              "IPAMConfig": {
+                "IPv4Address": "172.29.0.9"
+              },
+              "Links": null,
+              "Aliases": null,
+              "DriverOpts": null,
+              "GwPriority": 0,
+              "NetworkID": "m09xcte0rhe2k1e1qk355nksx",
+              "EndpointID": "22dba56f944f5f8b279fc430b1208aa47454607f28a35a34800375b2f1d31487",
+              "Gateway": "",
+              "IPAddress": "172.29.0.9",
+              "MacAddress": "02:42:ac:1d:00:09",
+              "IPPrefixLen": 24,
+              "IPv6Gateway": "",
+              "GlobalIPv6Address": "",
+              "GlobalIPv6PrefixLen": 0,
+              "DNSNames": [
+                "portainer_portainer.1.na8qxtnuocqhnbimb3jeokesl",
+                "de74c385d705"
+              ]
+            },
+            "portainer_agent_network": {
+              "IPAMConfig": {
+                "IPv4Address": "172.29.1.17"
+              },
+              "Links": null,
+              "Aliases": null,
+              "DriverOpts": null,
+              "GwPriority": 0,
+              "NetworkID": "d3a6rlxzytuu0cv4w5i2lck79",
+              "EndpointID": "8b33da2ffb3e081762ad4ec1054a09823a685e4376bf85b48311b61318d2425b",
+              "Gateway": "",
+              "IPAddress": "172.29.1.17",
+              "MacAddress": "02:42:ac:1d:01:11",
+              "IPPrefixLen": 24,
+              "IPv6Gateway": "",
+              "GlobalIPv6Address": "",
+              "GlobalIPv6PrefixLen": 0,
+              "DNSNames": [
+                "portainer_portainer.1.na8qxtnuocqhnbimb3jeokesl",
+                "de74c385d705"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "Id": "209439b0362c546e5a0419774e55ebf148b72c311451bf598dd0544ea4c7dce8",
+        "Name": "/portainer_agent.xcxurj56mv1u238bnskyjlld9.twbarixu8071jjjq507e8xbvu",
+        "Created": "2026-09-15T09:51:32.447106586Z",
+        "Image": "sha256:d63bfe57a106070fa5c0e73de0758f33aea018ed3cb6c8610c6663a4ac3a82ba",
+        "RestartCount": 0,
+        "Mounts": [
+          {
+            "Type": "bind",
+            "Source": "/var/run/docker.sock",
+            "Destination": "/var/run/docker.sock",
+            "Mode": "",
+            "RW": true,
+            "Propagation": "rprivate"
+          },
+          {
+            "Type": "bind",
+            "Source": "/srv/docker-local/docker/volumes",
+            "Destination": "/var/lib/docker/volumes",
+            "Mode": "",
+            "RW": true,
+            "Propagation": "rslave"
+          }
+        ],
+        "state": {
+          "Status": "running",
+          "Running": true,
+          "Paused": false,
+          "Restarting": false,
+          "OOMKilled": false,
+          "Dead": false,
+          "Pid": 2560,
+          "ExitCode": 0,
+          "StartedAt": "2026-09-15T09:51:37.138569391Z",
+          "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "health": {},
+        "config": {
+          "Image": "portainer/agent:lts@sha256:d63bfe57a106070fa5c0e73de0758f33aea018ed3cb6c8610c6663a4ac3a82ba",
+          "User": "",
+          "WorkingDir": "/app",
+          "environment_keys_only": [
+            "PATH"
+          ],
+          "healthcheck_present": false,
+          "labels": {
+            "com.docker.swarm.node.id": "xcxurj56mv1u238bnskyjlld9",
+            "com.docker.swarm.service.id": "vwfaeqb7fvkritamdexvzx7y7",
+            "com.docker.swarm.service.name": "portainer_agent",
+            "com.docker.swarm.task": "",
+            "com.docker.swarm.task.id": "twbarixu8071jjjq507e8xbvu",
+            "com.docker.swarm.task.name": "portainer_agent.xcxurj56mv1u238bnskyjlld9.twbarixu8071jjjq507e8xbvu"
+          }
+        },
+        "host_config": {
+          "RestartPolicy": {
+            "Name": "no",
+            "MaximumRetryCount": 0
+          },
+          "NetworkMode": "bridge",
+          "PortBindings": {},
+          "Privileged": false,
+          "ReadonlyRootfs": false,
+          "CapAdd": null,
+          "CapDrop": null,
+          "SecurityOpt": null,
+          "Devices": null,
+          "DeviceRequests": null,
+          "PidMode": "",
+          "IpcMode": "private",
+          "Memory": 0,
+          "MemorySwap": 0,
+          "NanoCpus": 0,
+          "CpuShares": 0,
+          "PidsLimit": null,
+          "Ulimits": [],
+          "LogConfig": {
+            "Type": "json-file",
+            "Config": {}
+          },
+          "Dns": null,
+          "ExtraHosts": null
+        },
+        "network": {
+          "Ports": {},
+          "Networks": {
+            "portainer_agent_network": {
+              "IPAMConfig": {
+                "IPv4Address": "172.29.1.12"
+              },
+              "Links": null,
+              "Aliases": null,
+              "DriverOpts": null,
+              "GwPriority": 0,
+              "NetworkID": "d3a6rlxzytuu0cv4w5i2lck79",
+              "EndpointID": "c1adf740fde2a0d2b9abc9763c513e112b94e6070baacd7999eda4b63249ac93",
+              "Gateway": "",
+              "IPAddress": "172.29.1.12",
+              "MacAddress": "02:42:ac:1d:01:0c",
+              "IPPrefixLen": 24,
+              "IPv6Gateway": "",
+              "GlobalIPv6Address": "",
+              "GlobalIPv6PrefixLen": 0,
+              "DNSNames": [
+                "portainer_agent.xcxurj56mv1u238bnskyjlld9.twbarixu8071jjjq507e8xbvu",
+                "209439b0362c"
+              ]
+            }
+          }
+        }
+      }
+    ],
+    "networks": [
+      {
+        "Name": "DMZ",
+        "Id": "b8874a73118f02d9d152e68455b0901b7178883f1cfa44719aa9cea9533a08ab",
+        "Created": "2026-09-13T14:28:12.040830599+02:00",
+        "Scope": "local",
+        "Driver": "macvlan",
+        "EnableIPv4": true,
+        "EnableIPv6": true,
+        "IPAM": {
+          "Driver": "default",
+          "Options": {},
+          "Config": [
+            {
+              "Subnet": "192.168.205.0/24",
+              "Gateway": "192.168.205.1"
+            },
+            {
+              "Subnet": "2a01:e0a:8ce:68c5::/64",
+              "Gateway": "2a01:e0a:8ce:68c5::1"
+            }
+          ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+          "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {
+          "parent": "ens20"
+        },
+        "Labels": {},
+        "Containers": {},
+        "Status": {
+          "IPAM": {
+            "Subnets": {
+              "192.168.205.0/24": {
+                "IPsInUse": 3,
+                "DynamicIPsAvailable": 253
+              },
+              "2a01:e0a:8ce:68c5::/64": {
+                "IPsInUse": 2,
+                "DynamicIPsAvailable": 18446744073709551614
+              }
+            }
+          }
+        }
+      },
+      {
+        "Name": "FAMILLE_SWARM",
+        "Id": "k7fu7vlpyya62typb30ul3487",
+        "Created": "2026-09-13T19:41:51.038994438Z",
+        "Scope": "swarm",
+        "Driver": "macvlan",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+          "Driver": "",
+          "Options": null,
+          "Config": []
+        },
+        "Internal": false,
+        "Attachable": true,
+        "Ingress": false,
+        "ConfigFrom": {
+          "Network": "FAMILLE_SWARM_CFG"
+        },
+        "ConfigOnly": false,
+        "Options": null,
+        "Labels": null,
+        "Containers": {},
+        "Status": {
+          "IPAM": {}
+        }
+      },
+      {
+        "Name": "FAMILLE_SWARM_CFG",
+        "Id": "3ed8040f8fbb7d272be8403cb989d1eb9c367dbe3039048c81f36a337dfd2acf",
+        "Created": "2026-09-13T21:37:32.498125244+02:00",
+        "Scope": "local",
+        "Driver": "null",
+        "EnableIPv4": true,
+        "EnableIPv6": true,
+        "IPAM": {
+          "Driver": "default",
+          "Options": {},
+          "Config": null
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+          "Network": ""
+        },
+        "ConfigOnly": true,
+        "Options": {
+          "macvlan_mode": "bridge",
+          "parent": "ens18"
+        },
+        "Labels": {},
+        "Containers": {},
+        "Status": {
+          "IPAM": {}
+        }
+      },
+      {
+        "Name": "PRO_SWARM",
+        "Id": "pcjgm48848c046ig5kogljnu8",
+        "Created": "2026-09-13T19:41:54.430764133Z",
+        "Scope": "swarm",
+        "Driver": "macvlan",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+          "Driver": "",
+          "Options": null,
+          "Config": []
+        },
+        "Internal": false,
+        "Attachable": true,
+        "Ingress": false,
+        "ConfigFrom": {
+          "Network": "PRO_SWARM_CFG"
+        },
+        "ConfigOnly": false,
+        "Options": null,
+        "Labels": null,
+        "Containers": {},
+        "Status": {
+          "IPAM": {}
+        }
+      },
+      {
+        "Name": "PRO_SWARM_CFG",
+        "Id": "450bb88e9306f79c96eda9c74cdaa2fbf931713790c2b7165ad0ee1c8ba2d246",
+        "Created": "2026-09-13T21:37:35.728593576+02:00",
+        "Scope": "local",
+        "Driver": "null",
+        "EnableIPv4": true,
+        "EnableIPv6": true,
+        "IPAM": {
+          "Driver": "default",
+          "Options": {},
+          "Config": null
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+          "Network": ""
+        },
+        "ConfigOnly": true,
+        "Options": {
+          "macvlan_mode": "bridge",
+          "parent": "ens23"
+        },
+        "Labels": {},
+        "Containers": {},
+        "Status": {
+          "IPAM": {}
+        }
+      },
+      {
+        "Name": "TRAEFIK_BACKEND",
+        "Id": "ffxnc9xcjgp1l17q1k467t0do",
+        "Created": "2026-09-16T21:22:22.118718184+02:00",
+        "Scope": "swarm",
+        "Driver": "overlay",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+          "Driver": "default",
+          "Options": null,
+          "Config": [
+            {
+              "Subnet": "172.29.2.0/24",
+              "Gateway": "172.29.2.1"
+            }
+          ]
+        },
+        "Internal": false,
+        "Attachable": true,
+        "Ingress": false,
+        "ConfigFrom": {
+          "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {
+          "com.docker.network.driver.overlay.vxlanid_list": "4097"
+        },
+        "Labels": {},
+        "Peers": [
+          {
+            "Name": "a2e563d90142",
+            "IP": "192.168.201.22"
+          },
+          {
+            "Name": "3cb866accb85",
+            "IP": "192.168.201.23"
+          },
+          {
+            "Name": "85317e537c2a",
+            "IP": "192.168.201.21"
+          }
+        ],
+        "Containers": {
+          "2b64448f9290bd7fbd58c1fdcbabdc58bd9de7b44cdc84f0688bf20d8da90e1b": {
+            "Name": "DIUN",
+            "EndpointID": "3acffc02b82633187b6839e9e4c6fe7e7c1cc0a68c6f3ce37a7c3a2a03fdc35b",
+            "MacAddress": "02:42:ac:1d:02:11",
+            "IPv4Address": "172.29.2.17/24",
+            "IPv6Address": ""
+          },
+          "5685c0d3ab9c3753f9cbec1ee6261016295b9407a557154ef93f8f137b700140": {
+            "Name": "Homepage",
+            "EndpointID": "8afccd099b3c71899cbbf7be86d07de180d582447e3fdc30edafd6f97353d1c0",
+            "MacAddress": "02:42:ac:1d:02:18",
+            "IPv4Address": "172.29.2.24/24",
+            "IPv6Address": ""
+          },
+          "lb-TRAEFIK_BACKEND": {
+            "Name": "TRAEFIK_BACKEND-endpoint",
+            "EndpointID": "4a6320fd1eed4e5062e1b32fd79a07a3cae49e17b7a1afba64937f4c62d69983",
+            "MacAddress": "02:42:ac:1d:02:12",
+            "IPv4Address": "172.29.2.18/24",
+            "IPv6Address": ""
+          }
+        },
+        "Status": {
+          "IPAM": {
+            "Subnets": {
+              "172.29.2.0/24": {
+                "IPsInUse": 21,
+                "DynamicIPsAvailable": 235
+              }
+            }
+          }
+        }
+      },
+      {
+        "Name": "WAN",
+        "Id": "af3c21b0194d22fdbd65960b287fcc43c76d470f5bf9d16c3aa2651cf461e566",
+        "Created": "2026-09-13T10:51:27.942054696+02:00",
+        "Scope": "local",
+        "Driver": "macvlan",
+        "EnableIPv4": true,
+        "EnableIPv6": true,
+        "IPAM": {
+          "Driver": "default",
+          "Options": {},
+          "Config": [
+            {
+              "Subnet": "192.168.200.0/24",
+              "Gateway": "192.168.200.254"
+            },
+            {
+              "Subnet": "2a01:e0a:8ce:68c0::/64",
+              "Gateway": "2a01:e0a:8ce:68c0::1"
+            }
+          ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+          "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {
+          "parent": "ens22"
+        },
+        "Labels": {},
+        "Containers": {},
+        "Status": {
+          "IPAM": {
+            "Subnets": {
+              "192.168.200.0/24": {
+                "IPsInUse": 3,
+                "DynamicIPsAvailable": 253
+              },
+              "2a01:e0a:8ce:68c0::/64": {
+                "IPsInUse": 2,
+                "DynamicIPsAvailable": 18446744073709551614
+              }
+            }
+          }
+        }
+      },
+      {
+        "Name": "WG_Internal",
+        "Id": "44129ce84eb6247ec3581874e6e9e3411b946f6a56696f135a852caae119f1e2",
+        "Created": "2026-09-13T11:34:44.2100085+02:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+          "Driver": "default",
+          "Options": {},
+          "Config": [
+            {
+              "Subnet": "172.31.204.0/24",
+              "Gateway": "172.31.204.1"
+            }
+          ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+          "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {},
+        "Labels": {},
+        "Containers": {
+          "6d145cb9c49adf24a45d269ece581eea31db88dca8420dcb492a72d9b4813a95": {
+            "Name": "WG-Companion-Relay",
+            "EndpointID": "507b48e00bc912a53e6e81fe321c8d7260c36f82cc16a33a69c875e189311937",
+            "MacAddress": "0e:db:83:68:8f:58",
+            "IPv4Address": "172.31.204.5/24",
+            "IPv6Address": ""
+          }
+        },
+        "Status": {
+          "IPAM": {
+            "Subnets": {
+              "172.31.204.0/24": {
+                "IPsInUse": 4,
+                "DynamicIPsAvailable": 252
+              }
+            }
+          }
+        }
+      },
+      {
+        "Name": "WG_Transit",
+        "Id": "eb565074c8ad408dac650a2f08f6e4276084418f3f3591fbd27dc34b1e8b2c9f",
+        "Created": "2026-09-13T10:51:27.991491511+02:00",
+        "Scope": "local",
+        "Driver": "macvlan",
+        "EnableIPv4": true,
+        "EnableIPv6": true,
+        "IPAM": {
+          "Driver": "default",
+          "Options": {},
+          "Config": [
+            {
+              "Subnet": "192.168.204.0/24"
+            },
+            {
+              "Subnet": "2a01:e0a:8ce:68c4::/64"
+            }
+          ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+          "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {
+          "parent": "ens21"
+        },
+        "Labels": {},
+        "Containers": {},
+        "Status": {
+          "IPAM": {
+            "Subnets": {
+              "192.168.204.0/24": {
+                "IPsInUse": 2,
+                "DynamicIPsAvailable": 254
+              },
+              "2a01:e0a:8ce:68c4::/64": {
+                "IPsInUse": 1,
+                "DynamicIPsAvailable": 18446744073709551615
+              }
+            }
+          }
+        }
+      },
+      {
+        "Name": "bridge",
+        "Id": "897ba606c11e5a94e3e08c993ab31378e812fccba7ab7a2179ff3c05ee97f2cc",
+        "Created": "2026-09-15T11:51:24.897599995+02:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+          "Driver": "default",
+          "Options": null,
+          "Config": [
+            {
+              "Subnet": "172.17.0.0/16",
+              "Gateway": "172.17.0.1"
+            }
+          ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+          "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {
+          "com.docker.network.bridge.default_bridge": "true",
+          "com.docker.network.bridge.enable_icc": "true",
+          "com.docker.network.bridge.enable_ip_masquerade": "true",
+          "com.docker.network.bridge.host_binding_ipv4": "0.0.0.0",
+          "com.docker.network.bridge.name": "docker0",
+          "com.docker.network.driver.mtu": "1500"
+        },
+        "Labels": {},
+        "Containers": {},
+        "Status": {
+          "IPAM": {
+            "Subnets": {
+              "172.17.0.0/16": {
+                "IPsInUse": 3,
+                "DynamicIPsAvailable": 65533
+              }
+            }
+          }
+        }
+      },
+      {
+        "Name": "docker_gwbridge",
+        "Id": "eb4ac4f9e2ed6dcb40c43675415c5a76f78fac9d930bf21afb771b0eb133265b",
+        "Created": "2026-09-09T22:25:25.873112284+02:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+          "Driver": "default",
+          "Options": null,
+          "Config": [
+            {
+              "Subnet": "172.18.0.0/16",
+              "Gateway": "172.18.0.1"
+            }
+          ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+          "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {
+          "com.docker.network.bridge.enable_icc": "false",
+          "com.docker.network.bridge.enable_ip_masquerade": "true",
+          "com.docker.network.bridge.name": "docker_gwbridge"
+        },
+        "Labels": {},
+        "Containers": {
+          "209439b0362c546e5a0419774e55ebf148b72c311451bf598dd0544ea4c7dce8": {
+            "Name": "gateway_e80daf5a318f",
+            "EndpointID": "fc88eaf50e6bdc1d396834746bf5935eb55dc915f55e3cde06c9ac4add725ad9",
+            "MacAddress": "06:a0:8a:a0:23:5e",
+            "IPv4Address": "172.18.0.3/16",
+            "IPv6Address": ""
+          },
+          "2b64448f9290bd7fbd58c1fdcbabdc58bd9de7b44cdc84f0688bf20d8da90e1b": {
+            "Name": "gateway_e060395e7afb",
+            "EndpointID": "5e73becb0b4775d98e9e1342e7ea4e5f4cb1c01328e4679c355a4d143909db5d",
+            "MacAddress": "da:7d:60:e1:58:a2",
+            "IPv4Address": "172.18.0.5/16",
+            "IPv6Address": ""
+          },
+          "5685c0d3ab9c3753f9cbec1ee6261016295b9407a557154ef93f8f137b700140": {
+            "Name": "gateway_953ba3e6e49a",
+            "EndpointID": "cf0d1d7ac35c11bbc98be8bfeba7f4503752fa1293fe335b4b56806a0490cc62",
+            "MacAddress": "92:a8:e2:7d:58:53",
+            "IPv4Address": "172.18.0.6/16",
+            "IPv6Address": ""
+          },
+          "de74c385d705deec72354b9b89e5e37643d1d0eabadf8e8fa44719482e9420bd": {
+            "Name": "gateway_e3c61e36c19f",
+            "EndpointID": "f51fdfb95263980e18149cfeec97ba9fba25e7d9351330a8b4e6ac7f462a2848",
+            "MacAddress": "fe:fe:4e:82:cd:d7",
+            "IPv4Address": "172.18.0.4/16",
+            "IPv6Address": ""
+          },
+          "ingress-sbox": {
+            "Name": "gateway_ingress-sbox",
+            "EndpointID": "4a2f8b7c483c82b4de5ce3c0f635761780dad96ddd1be84742122beb285ec070",
+            "MacAddress": "82:51:4e:28:20:c4",
+            "IPv4Address": "172.18.0.2/16",
+            "IPv6Address": ""
+          }
+        },
+        "Status": {
+          "IPAM": {
+            "Subnets": {
+              "172.18.0.0/16": {
+                "IPsInUse": 8,
+                "DynamicIPsAvailable": 65528
+              }
+            }
+          }
+        }
+      },
+      {
+        "Name": "host",
+        "Id": "1f46850bd9b67ad148cd67d01be5262483fa134205cde05fdf27b7f31e190afd",
+        "Created": "2026-09-09T22:22:51.364897554+02:00",
+        "Scope": "local",
+        "Driver": "host",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+          "Driver": "default",
+          "Options": null,
+          "Config": null
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+          "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {},
+        "Labels": {},
+        "Containers": {},
+        "Status": {
+          "IPAM": {}
+        }
+      },
+      {
+        "Name": "ingress",
+        "Id": "m09xcte0rhe2k1e1qk355nksx",
+        "Created": "2026-09-15T11:51:27.598709044+02:00",
+        "Scope": "swarm",
+        "Driver": "overlay",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+          "Driver": "default",
+          "Options": null,
+          "Config": [
+            {
+              "Subnet": "172.29.0.0/24",
+              "Gateway": "172.29.0.1"
+            }
+          ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": true,
+        "ConfigFrom": {
+          "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {
+          "com.docker.network.driver.mtu": "1550",
+          "com.docker.network.driver.overlay.vxlanid_list": "4100"
+        },
+        "Labels": {},
+        "Peers": [
+          {
+            "Name": "a2e563d90142",
+            "IP": "192.168.201.22"
+          },
+          {
+            "Name": "3cb866accb85",
+            "IP": "192.168.201.23"
+          },
+          {
+            "Name": "85317e537c2a",
+            "IP": "192.168.201.21"
+          }
+        ],
+        "Containers": {
+          "de74c385d705deec72354b9b89e5e37643d1d0eabadf8e8fa44719482e9420bd": {
+            "Name": "portainer_portainer.1.na8qxtnuocqhnbimb3jeokesl",
+            "EndpointID": "22dba56f944f5f8b279fc430b1208aa47454607f28a35a34800375b2f1d31487",
+            "MacAddress": "02:42:ac:1d:00:09",
+            "IPv4Address": "172.29.0.9/24",
+            "IPv6Address": ""
+          },
+          "ingress-sbox": {
+            "Name": "ingress-endpoint",
+            "EndpointID": "80ffb10fb5f3936ab745af921ded9618076d9eda83324e0565180d60c676c93d",
+            "MacAddress": "02:42:ac:1d:00:04",
+            "IPv4Address": "172.29.0.4/24",
+            "IPv6Address": ""
+          }
+        },
+        "Status": {
+          "IPAM": {
+            "Subnets": {
+              "172.29.0.0/24": {
+                "IPsInUse": 8,
+                "DynamicIPsAvailable": 248
+              }
+            }
+          }
+        }
+      },
+      {
+        "Name": "none",
+        "Id": "17b1805f9fd8f4cd3779944a30a4d1818b5b8b291c94f816277ecd618f7e2f40",
+        "Created": "2026-09-09T22:22:51.360302853+02:00",
+        "Scope": "local",
+        "Driver": "null",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+          "Driver": "default",
+          "Options": null,
+          "Config": null
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+          "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {},
+        "Labels": {},
+        "Containers": {},
+        "Status": {
+          "IPAM": {}
+        }
+      },
+      {
+        "Name": "portainer_agent_network",
+        "Id": "d3a6rlxzytuu0cv4w5i2lck79",
+        "Created": "2026-09-15T11:51:32.188399341+02:00",
+        "Scope": "swarm",
+        "Driver": "overlay",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+          "Driver": "default",
+          "Options": null,
+          "Config": [
+            {
+              "Subnet": "172.29.1.0/24",
+              "Gateway": "172.29.1.1"
+            }
+          ]
+        },
+        "Internal": false,
+        "Attachable": true,
+        "Ingress": false,
+        "ConfigFrom": {
+          "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {
+          "com.docker.network.driver.mtu": "1550",
+          "com.docker.network.driver.overlay.vxlanid_list": "4101"
+        },
+        "Labels": {},
+        "Peers": [
+          {
+            "Name": "a2e563d90142",
+            "IP": "192.168.201.22"
+          },
+          {
+            "Name": "3cb866accb85",
+            "IP": "192.168.201.23"
+          },
+          {
+            "Name": "85317e537c2a",
+            "IP": "192.168.201.21"
+          }
+        ],
+        "Containers": {
+          "209439b0362c546e5a0419774e55ebf148b72c311451bf598dd0544ea4c7dce8": {
+            "Name": "portainer_agent.xcxurj56mv1u238bnskyjlld9.twbarixu8071jjjq507e8xbvu",
+            "EndpointID": "c1adf740fde2a0d2b9abc9763c513e112b94e6070baacd7999eda4b63249ac93",
+            "MacAddress": "02:42:ac:1d:01:0c",
+            "IPv4Address": "172.29.1.12/24",
+            "IPv6Address": ""
+          },
+          "de74c385d705deec72354b9b89e5e37643d1d0eabadf8e8fa44719482e9420bd": {
+            "Name": "portainer_portainer.1.na8qxtnuocqhnbimb3jeokesl",
+            "EndpointID": "8b33da2ffb3e081762ad4ec1054a09823a685e4376bf85b48311b61318d2425b",
+            "MacAddress": "02:42:ac:1d:01:11",
+            "IPv4Address": "172.29.1.17/24",
+            "IPv6Address": ""
+          },
+          "lb-portainer_agent_network": {
+            "Name": "portainer_agent_network-endpoint",
+            "EndpointID": "47d35dba74c8380dcff35b439124668a394795252f1a99a12639660b7d97f8bc",
+            "MacAddress": "02:42:ac:1d:01:0d",
+            "IPv4Address": "172.29.1.13/24",
+            "IPv6Address": ""
+          }
+        },
+        "Status": {
+          "IPAM": {
+            "Subnets": {
+              "172.29.1.0/24": {
+                "IPsInUse": 12,
+                "DynamicIPsAvailable": 244
+              }
+            }
+          }
+        }
+      }
+    ],
+    "volumes": [
+      {
+        "CreatedAt": "2026-09-15T13:36:49+02:00",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/srv/docker-local/docker/volumes/portainer_data/_data",
+        "Name": "portainer_data",
+        "Options": {
+          "device": ":/srv/docker-shared/portainer",
+          "o": "addr=192.168.201.39,nfsvers=4.1,rw,hard,timeo=600,retrans=2",
+          "type": "nfs"
+        },
+        "Scope": "local"
+      }
+    ],
+    "images": [
+      {
+        "Id": "sha256:0bdd62839cf14af50514431ab09ab858f09a6b08eb03c734f5707aeb1a91e8c0",
+        "RepoTags": [
+          "ghcr.io/aerya/gluetun-companion:latest"
+        ],
+        "RepoDigests": [
+          "ghcr.io/aerya/gluetun-companion@sha256:0bdd62839cf14af50514431ab09ab858f09a6b08eb03c734f5707aeb1a91e8c0"
+        ],
+        "Created": "2026-08-30T06:09:23.245734256Z",
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 343387925
+      },
+      {
+        "Id": "sha256:14358309a308569c32bdc37e2e0e9694be33a9d99e68afb0f5ff33cc1f695dce",
+        "RepoTags": [
+          "alpine:3.22",
+          "alpine:3.22@sha256:14358309a308569c32bdc37e2e0e9694be33a9d99e68afb0f5ff33cc1f695dce"
+        ],
+        "RepoDigests": [
+          "alpine@sha256:14358309a308569c32bdc37e2e0e9694be33a9d99e68afb0f5ff33cc1f695dce",
+          "alpine:3.22@sha256:14358309a308569c32bdc37e2e0e9694be33a9d99e68afb0f5ff33cc1f695dce"
+        ],
+        "Created": "2026-06-22T19:20:21.712285437Z",
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 12747180
+      },
+      {
+        "Id": "sha256:1a5bf4b4820a879cdf8d93d7ef0d2d963af56670c9ebff8981860b6804ebc8ab",
+        "RepoTags": [
+          "qmcgaw/gluetun:v3.41.1"
+        ],
+        "RepoDigests": [
+          "qmcgaw/gluetun@sha256:1a5bf4b4820a879cdf8d93d7ef0d2d963af56670c9ebff8981860b6804ebc8ab"
+        ],
+        "Created": "2026-02-11T14:25:19.138172226Z",
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 60400510
+      },
+      {
+        "Id": "sha256:1f5038b54f06c3e18422902cf00ba21803d1c97805aae032e5e6673d532d3459",
+        "RepoTags": [
+          "tecnativa/docker-socket-proxy:latest"
+        ],
+        "RepoDigests": [
+          "tecnativa/docker-socket-proxy@sha256:1f5038b54f06c3e18422902cf00ba21803d1c97805aae032e5e6673d532d3459"
+        ],
+        "Created": "2026-07-27T09:28:37.570257436Z",
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 65743865
+      },
+      {
+        "Id": "sha256:511f3f06c96fe3b993ebeaafde311c1959cae73a7ef825dba6397d51b450dffa",
+        "RepoTags": [
+          "portainer/portainer-ce:lts@sha256:511f3f06c96fe3b993ebeaafde311c1959cae73a7ef825dba6397d51b450dffa"
+        ],
+        "RepoDigests": [
+          "portainer/portainer-ce:lts@sha256:511f3f06c96fe3b993ebeaafde311c1959cae73a7ef825dba6397d51b450dffa"
+        ],
+        "Created": "2026-08-27T04:31:38.558172055Z",
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 200334538
+      },
+      {
+        "Id": "sha256:58adaa4e8dca9c988bae2aba4ab3434a0bb2da16bbe3f92dec39ec7785166777",
+        "RepoTags": [
+          "curlimages/curl:latest"
+        ],
+        "RepoDigests": [
+          "curlimages/curl@sha256:58adaa4e8dca9c988bae2aba4ab3434a0bb2da16bbe3f92dec39ec7785166777"
+        ],
+        "Created": "2026-09-02T09:04:12.639677132Z",
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 35427433
+      },
+      {
+        "Id": "sha256:5dd0d3e6e255913fc30f90b9f2b1d359cc2cbdb48090cc4b65f1676e203243cc",
+        "RepoTags": [
+          "hello-world:latest"
+        ],
+        "RepoDigests": [
+          "hello-world@sha256:5dd0d3e6e255913fc30f90b9f2b1d359cc2cbdb48090cc4b65f1676e203243cc"
+        ],
+        "Created": "2026-03-23T21:33:59.562202219Z",
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 20399
+      },
+      {
+        "Id": "sha256:6c2087ad7a4780691a985346c100e4a148f8c43e882afc349ede10d9ae589d21",
+        "RepoTags": [
+          "local/ratiomaster:1.1.0"
+        ],
+        "RepoDigests": [
+          "local/ratiomaster@sha256:6c2087ad7a4780691a985346c100e4a148f8c43e882afc349ede10d9ae589d21"
+        ],
+        "Created": "2026-09-13T15:50:52.490043982+02:00",
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 1029124638
+      },
+      {
+        "Id": "sha256:8b6c99b6ca50c84843c3029ca15ff09f7e4781214659f7b54f3be288906a68fb",
+        "RepoTags": [
+          "local/avahi-reflector:1.0"
+        ],
+        "RepoDigests": [
+          "local/avahi-reflector@sha256:8b6c99b6ca50c84843c3029ca15ff09f7e4781214659f7b54f3be288906a68fb"
+        ],
+        "Created": "2026-09-13T21:44:19.283739767+02:00",
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 132889334
+      },
+      {
+        "Id": "sha256:8d48fa8c619caadfb103f04efea8747e2a2762d6c7551690919cffb987e61cee",
+        "RepoTags": [
+          "lscr.io/linuxserver/qbittorrent:5.2.3_v2.0.14-ls475"
+        ],
+        "RepoDigests": [
+          "lscr.io/linuxserver/qbittorrent@sha256:8d48fa8c619caadfb103f04efea8747e2a2762d6c7551690919cffb987e61cee"
+        ],
+        "Created": "2026-09-06T11:32:10.951360606Z",
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 333893004
+      },
+      {
+        "Id": "sha256:a1bc133af84ee6505fe2c266d9805b7c75b780dfdc188edfee3b11e8f3cd8efe",
+        "RepoTags": [
+          "ghcr.io/home-assistant/home-assistant:2026.9.2"
+        ],
+        "RepoDigests": [
+          "ghcr.io/home-assistant/home-assistant@sha256:a1bc133af84ee6505fe2c266d9805b7c75b780dfdc188edfee3b11e8f3cd8efe"
+        ],
+        "Created": "2026-09-11T19:46:43.850311957Z",
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 3428507710
+      },
+      {
+        "Id": "sha256:c5a091e1e735a90aa941a5828529dbe6c6157407a8047a9aa473faa133361b82",
+        "RepoTags": [
+          "alpine/socat:1.8.1.3"
+        ],
+        "RepoDigests": [
+          "alpine/socat@sha256:c5a091e1e735a90aa941a5828529dbe6c6157407a8047a9aa473faa133361b82"
+        ],
+        "Created": "2026-09-12T03:05:27.215357767Z",
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 23539972
+      },
+      {
+        "Id": "sha256:d63bfe57a106070fa5c0e73de0758f33aea018ed3cb6c8610c6663a4ac3a82ba",
+        "RepoTags": [
+          "portainer/agent:lts@sha256:d63bfe57a106070fa5c0e73de0758f33aea018ed3cb6c8610c6663a4ac3a82ba"
+        ],
+        "RepoDigests": [
+          "portainer/agent:lts@sha256:d63bfe57a106070fa5c0e73de0758f33aea018ed3cb6c8610c6663a4ac3a82ba"
+        ],
+        "Created": "2026-08-27T04:31:01.578957679Z",
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 202539448
+      },
+      {
+        "Id": "sha256:e324b793eb32dfb7f74d3a39421ebf090141caaadee69b8f78da63112408ee25",
+        "RepoTags": [
+          "crazymax/diun:latest"
+        ],
+        "RepoDigests": [
+          "crazymax/diun@sha256:e324b793eb32dfb7f74d3a39421ebf090141caaadee69b8f78da63112408ee25"
+        ],
+        "Created": "2026-05-30T18:54:06.476545469Z",
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 85624959
+      },
+      {
+        "Id": "sha256:f820276654539cdc2cf0169f28188d135919a7984fad76d83d8d5ff1383f3705",
+        "RepoTags": [
+          "ghcr.io/gethomepage/homepage:v2.3.0"
+        ],
+        "RepoDigests": [
+          "ghcr.io/gethomepage/homepage@sha256:f820276654539cdc2cf0169f28188d135919a7984fad76d83d8d5ff1383f3705"
+        ],
+        "Created": "2026-09-09T21:55:48.870331426Z",
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 363317762
+      },
+      {
+        "Id": "sha256:f86a2cab1b5c649070c49f883c743dd32d8485a56e3368c5f93b9e91f1e91259",
+        "RepoTags": [
+          "traefik:v3.7.13"
+        ],
+        "RepoDigests": [
+          "traefik@sha256:f86a2cab1b5c649070c49f883c743dd32d8485a56e3368c5f93b9e91f1e91259"
+        ],
+        "Created": "2026-09-04T19:14:29.931928449Z",
+        "Architecture": "amd64",
+        "Os": "linux",
+        "Size": 252421709
+      }
+    ],
+    "nodes": [
+      {
+        "ID": "9koqx4hnjemcqzhf2amsn104m",
+        "Version": {
+          "Index": 4859
+        },
+        "CreatedAt": "2026-09-09T20:32:15.331666082Z",
+        "UpdatedAt": "2026-09-27T14:16:23.868470634Z",
+        "Spec": {
+          "Labels": {},
+          "Role": "manager",
+          "Availability": "active"
+        },
+        "Description": {
+          "Hostname": "docker-01",
+          "Platform": {
+            "Architecture": "x86_64",
+            "OS": "linux"
+          },
+          "Resources": {
+            "NanoCPUs": 4000000000,
+            "MemoryBytes": 16776425472
+          },
+          "Engine": {
+            "EngineVersion": "29.8.0",
+            "Plugins": [
+              {
+                "Type": "Log",
+                "Name": "awslogs"
+              },
+              {
+                "Type": "Log",
+                "Name": "fluentd"
+              },
+              {
+                "Type": "Log",
+                "Name": "gcplogs"
+              },
+              {
+                "Type": "Log",
+                "Name": "gelf"
+              },
+              {
+                "Type": "Log",
+                "Name": "journald"
+              },
+              {
+                "Type": "Log",
+                "Name": "json-file"
+              },
+              {
+                "Type": "Log",
+                "Name": "local"
+              },
+              {
+                "Type": "Log",
+                "Name": "splunk"
+              },
+              {
+                "Type": "Log",
+                "Name": "syslog"
+              },
+              {
+                "Type": "Network",
+                "Name": "bridge"
+              },
+              {
+                "Type": "Network",
+                "Name": "host"
+              },
+              {
+                "Type": "Network",
+                "Name": "ipvlan"
+              },
+              {
+                "Type": "Network",
+                "Name": "macvlan"
+              },
+              {
+                "Type": "Network",
+                "Name": "null"
+              },
+              {
+                "Type": "Network",
+                "Name": "overlay"
+              },
+              {
+                "Type": "Volume",
+                "Name": "local"
+              }
+            ]
+          },
+          "TLSInfo": {
+            "TrustRoot": "-----BEGIN CERTIFICATE-----\nMIIBajCCARCgAwIBAgIUAYPUC208dr3Ew0MgWqbXXSzojgwwCgYIKoZIzj0EAwIw\nEzERMA8GA1UEAxMIc3dhcm0tY2EwHhcNMjYwOTA5MjAyNzAwWhcNNDYwOTA0MjAy\nNzAwWjATMREwDwYDVQQDEwhzd2FybS1jYTBZMBMGByqGSM49AgEGCCqGSM49AwEH\nA0IABG0TYB1QqnVhI8m1TxAFWLWMMZufN1EA3V02NzLqg0QbpNei8iSsbcDhDs2p\nDHhlhDcno8xVi0dw1YA+dClOxeujQjBAMA4GA1UdDwEB/wQEAwIBBjAPBgNVHRMB\nAf8EBTADAQH/MB0GA1UdDgQWBBS94czUGH0yCodluaGtOsHlj3G7XzAKBggqhkjO\nPQQDAgNIADBFAiEA+XPDC0x2vQGiLZIvar4MJrX0wl0TR1+HWx7wnIwaAMUCIBR7\nar2tgU15A1zpUeP8JJ9RTMha4fLGpoq6gMhjISLY\n-----END CERTIFICATE-----\n",
+            "CertIssuerSubject": "MBMxETAPBgNVBAMTCHN3YXJtLWNh",
+            "CertIssuerPublicKey": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEbRNgHVCqdWEjybVPEAVYtYwxm583UQDdXTY3MuqDRBuk16LyJKxtwOEOzakMeGWENyejzFWLR3DVgD50KU7F6w=="
+          }
+        },
+        "Status": {
+          "State": "ready",
+          "Addr": "192.168.201.21"
+        },
+        "ManagerStatus": {
+          "Reachability": "reachable",
+          "Addr": "192.168.201.21:2377"
+        }
+      },
+      {
+        "ID": "r91yes4cho1ppyerywtmrr170",
+        "Version": {
+          "Index": 4869
+        },
+        "CreatedAt": "2026-09-09T20:33:03.741890311Z",
+        "UpdatedAt": "2026-09-27T14:16:26.814670339Z",
+        "Spec": {
+          "Labels": {},
+          "Role": "manager",
+          "Availability": "active"
+        },
+        "Description": {
+          "Hostname": "docker-02",
+          "Platform": {
+            "Architecture": "x86_64",
+            "OS": "linux"
+          },
+          "Resources": {
+            "NanoCPUs": 4000000000,
+            "MemoryBytes": 16776429568
+          },
+          "Engine": {
+            "EngineVersion": "29.8.0",
+            "Plugins": [
+              {
+                "Type": "Log",
+                "Name": "awslogs"
+              },
+              {
+                "Type": "Log",
+                "Name": "fluentd"
+              },
+              {
+                "Type": "Log",
+                "Name": "gcplogs"
+              },
+              {
+                "Type": "Log",
+                "Name": "gelf"
+              },
+              {
+                "Type": "Log",
+                "Name": "journald"
+              },
+              {
+                "Type": "Log",
+                "Name": "json-file"
+              },
+              {
+                "Type": "Log",
+                "Name": "local"
+              },
+              {
+                "Type": "Log",
+                "Name": "splunk"
+              },
+              {
+                "Type": "Log",
+                "Name": "syslog"
+              },
+              {
+                "Type": "Network",
+                "Name": "bridge"
+              },
+              {
+                "Type": "Network",
+                "Name": "host"
+              },
+              {
+                "Type": "Network",
+                "Name": "ipvlan"
+              },
+              {
+                "Type": "Network",
+                "Name": "macvlan"
+              },
+              {
+                "Type": "Network",
+                "Name": "null"
+              },
+              {
+                "Type": "Network",
+                "Name": "overlay"
+              },
+              {
+                "Type": "Volume",
+                "Name": "local"
+              }
+            ]
+          },
+          "TLSInfo": {
+            "TrustRoot": "-----BEGIN CERTIFICATE-----\nMIIBajCCARCgAwIBAgIUAYPUC208dr3Ew0MgWqbXXSzojgwwCgYIKoZIzj0EAwIw\nEzERMA8GA1UEAxMIc3dhcm0tY2EwHhcNMjYwOTA5MjAyNzAwWhcNNDYwOTA0MjAy\nNzAwWjATMREwDwYDVQQDEwhzd2FybS1jYTBZMBMGByqGSM49AgEGCCqGSM49AwEH\nA0IABG0TYB1QqnVhI8m1TxAFWLWMMZufN1EA3V02NzLqg0QbpNei8iSsbcDhDs2p\nDHhlhDcno8xVi0dw1YA+dClOxeujQjBAMA4GA1UdDwEB/wQEAwIBBjAPBgNVHRMB\nAf8EBTADAQH/MB0GA1UdDgQWBBS94czUGH0yCodluaGtOsHlj3G7XzAKBggqhkjO\nPQQDAgNIADBFAiEA+XPDC0x2vQGiLZIvar4MJrX0wl0TR1+HWx7wnIwaAMUCIBR7\nar2tgU15A1zpUeP8JJ9RTMha4fLGpoq6gMhjISLY\n-----END CERTIFICATE-----\n",
+            "CertIssuerSubject": "MBMxETAPBgNVBAMTCHN3YXJtLWNh",
+            "CertIssuerPublicKey": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEbRNgHVCqdWEjybVPEAVYtYwxm583UQDdXTY3MuqDRBuk16LyJKxtwOEOzakMeGWENyejzFWLR3DVgD50KU7F6w=="
+          }
+        },
+        "Status": {
+          "State": "ready",
+          "Addr": "192.168.201.22"
+        },
+        "ManagerStatus": {
+          "Reachability": "reachable",
+          "Addr": "192.168.201.22:2377"
+        }
+      },
+      {
+        "ID": "xcxurj56mv1u238bnskyjlld9",
+        "Version": {
+          "Index": 4857
+        },
+        "CreatedAt": "2026-09-09T20:33:20.8284842Z",
+        "UpdatedAt": "2026-09-27T14:16:21.137115206Z",
+        "Spec": {
+          "Labels": {},
+          "Role": "manager",
+          "Availability": "active"
+        },
+        "Description": {
+          "Hostname": "docker-03",
+          "Platform": {
+            "Architecture": "x86_64",
+            "OS": "linux"
+          },
+          "Resources": {
+            "NanoCPUs": 4000000000,
+            "MemoryBytes": 16776425472
+          },
+          "Engine": {
+            "EngineVersion": "29.8.0",
+            "Plugins": [
+              {
+                "Type": "Log",
+                "Name": "awslogs"
+              },
+              {
+                "Type": "Log",
+                "Name": "fluentd"
+              },
+              {
+                "Type": "Log",
+                "Name": "gcplogs"
+              },
+              {
+                "Type": "Log",
+                "Name": "gelf"
+              },
+              {
+                "Type": "Log",
+                "Name": "journald"
+              },
+              {
+                "Type": "Log",
+                "Name": "json-file"
+              },
+              {
+                "Type": "Log",
+                "Name": "local"
+              },
+              {
+                "Type": "Log",
+                "Name": "splunk"
+              },
+              {
+                "Type": "Log",
+                "Name": "syslog"
+              },
+              {
+                "Type": "Network",
+                "Name": "bridge"
+              },
+              {
+                "Type": "Network",
+                "Name": "host"
+              },
+              {
+                "Type": "Network",
+                "Name": "ipvlan"
+              },
+              {
+                "Type": "Network",
+                "Name": "macvlan"
+              },
+              {
+                "Type": "Network",
+                "Name": "null"
+              },
+              {
+                "Type": "Network",
+                "Name": "overlay"
+              },
+              {
+                "Type": "Volume",
+                "Name": "local"
+              }
+            ]
+          },
+          "TLSInfo": {
+            "TrustRoot": "-----BEGIN CERTIFICATE-----\nMIIBajCCARCgAwIBAgIUAYPUC208dr3Ew0MgWqbXXSzojgwwCgYIKoZIzj0EAwIw\nEzERMA8GA1UEAxMIc3dhcm0tY2EwHhcNMjYwOTA5MjAyNzAwWhcNNDYwOTA0MjAy\nNzAwWjATMREwDwYDVQQDEwhzd2FybS1jYTBZMBMGByqGSM49AgEGCCqGSM49AwEH\nA0IABG0TYB1QqnVhI8m1TxAFWLWMMZufN1EA3V02NzLqg0QbpNei8iSsbcDhDs2p\nDHhlhDcno8xVi0dw1YA+dClOxeujQjBAMA4GA1UdDwEB/wQEAwIBBjAPBgNVHRMB\nAf8EBTADAQH/MB0GA1UdDgQWBBS94czUGH0yCodluaGtOsHlj3G7XzAKBggqhkjO\nPQQDAgNIADBFAiEA+XPDC0x2vQGiLZIvar4MJrX0wl0TR1+HWx7wnIwaAMUCIBR7\nar2tgU15A1zpUeP8JJ9RTMha4fLGpoq6gMhjISLY\n-----END CERTIFICATE-----\n",
+            "CertIssuerSubject": "MBMxETAPBgNVBAMTCHN3YXJtLWNh",
+            "CertIssuerPublicKey": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEbRNgHVCqdWEjybVPEAVYtYwxm583UQDdXTY3MuqDRBuk16LyJKxtwOEOzakMeGWENyejzFWLR3DVgD50KU7F6w=="
+          }
+        },
+        "Status": {
+          "State": "ready",
+          "Addr": "192.168.201.23"
+        },
+        "ManagerStatus": {
+          "Leader": true,
+          "Reachability": "reachable",
+          "Addr": "192.168.201.23:2377"
+        }
+      }
+    ],
+    "services": [
+      {
+        "ID": "l8fgcur6mr7qydnrlzp79vi92",
+        "name": "avahi_reflector",
+        "mode": {
+          "Replicated": {
+            "Replicas": 1
+          }
+        },
+        "task": {
+          "Resources": {},
+          "RestartPolicy": {
+            "Condition": "any",
+            "Delay": 5000000000,
+            "MaxAttempts": 0
+          },
+          "Placement": {},
+          "Networks": [
+            {
+              "Target": "k7fu7vlpyya62typb30ul3487",
+              "Aliases": [
+                "reflector"
+              ]
+            },
+            {
+              "Target": "pcjgm48848c046ig5kogljnu8",
+              "Aliases": [
+                "reflector"
+              ]
+            }
+          ],
+          "container": {
+            "Image": "local/avahi-reflector:1.0"
+          }
+        },
+        "endpoint": {
+          "Spec": {}
+        },
+        "update": {
+          "UpdateConfig": {
+            "Parallelism": 1,
+            "FailureAction": "pause",
+            "Monitor": 5000000000,
+            "MaxFailureRatio": 0,
+            "Order": "stop-first"
+          },
+          "RollbackConfig": {
+            "Parallelism": 1,
+            "FailureAction": "pause",
+            "Monitor": 5000000000,
+            "MaxFailureRatio": 0,
+            "Order": "stop-first"
+          }
+        },
+        "tasks": "{\"CurrentState\":\"Running 3 weeks ago\",\"DesiredState\":\"Running\",\"Error\":\"\",\"ID\":\"qhh4btwznq4zz0pt5s1ot2hxi\",\"Image\":\"local/avahi-reflector:1.0\",\"Name\":\"avahi_reflector.1\",\"Node\":\"docker-02\",\"Ports\":\"\"}\n{\"CurrentState\":\"Shutdown 3 weeks ago\",\"DesiredState\":\"Shutdown\",\"Error\":\"\",\"ID\":\"sr8xasobsqrkoue6wsseqdfmk\",\"Image\":\"local/avahi-reflector:1.0\",\"Name\":\"avahi_reflector.1\",\"Node\":\"docker-01\",\"Ports\":\"\"}\n{\"CurrentState\":\"Shutdown 5 weeks ago\",\"DesiredState\":\"Shutdown\",\"Error\":\"\",\"ID\":\"o9s93z3bad6ijnjesybfa6j8k\",\"Image\":\"local/avahi-reflector:1.0\",\"Name\":\"avahi_reflector.1\",\"Node\":\"docker-02\",\"Ports\":\"\"}"
+      },
+      {
+        "ID": "vwfaeqb7fvkritamdexvzx7y7",
+        "name": "portainer_agent",
+        "mode": {
+          "Global": {}
+        },
+        "task": {
+          "Resources": {},
+          "RestartPolicy": {
+            "Condition": "any",
+            "Delay": 5000000000,
+            "MaxAttempts": 0
+          },
+          "Placement": {
+            "Constraints": [
+              "node.platform.os == linux"
+            ],
+            "Platforms": [
+              {
+                "Architecture": "amd64",
+                "OS": "linux"
+              },
+              {
+                "Architecture": "arm64",
+                "OS": "linux"
+              },
+              {
+                "OS": "linux"
+              },
+              {
+                "Architecture": "ppc64le",
+                "OS": "linux"
+              },
+              {
+                "Architecture": "amd64",
+                "OS": "windows"
+              }
+            ]
+          },
+          "Networks": [
+            {
+              "Target": "d3a6rlxzytuu0cv4w5i2lck79",
+              "Aliases": [
+                "agent"
+              ]
+            }
+          ],
+          "container": {
+            "Image": "portainer/agent:lts@sha256:d63bfe57a106070fa5c0e73de0758f33aea018ed3cb6c8610c6663a4ac3a82ba",
+            "Mounts": [
+              {
+                "Type": "bind",
+                "Source": "/var/run/docker.sock",
+                "Target": "/var/run/docker.sock"
+              },
+              {
+                "Type": "bind",
+                "Source": "/srv/docker-local/docker/volumes",
+                "Target": "/var/lib/docker/volumes"
+              }
+            ]
+          }
+        },
+        "endpoint": {
+          "Spec": {
+            "Mode": "vip"
+          },
+          "VirtualIPs": [
+            {
+              "NetworkID": "d3a6rlxzytuu0cv4w5i2lck79",
+              "Addr": "172.29.1.5/24"
+            }
+          ]
+        },
+        "update": {
+          "UpdateConfig": {
+            "Parallelism": 1,
+            "FailureAction": "pause",
+            "Monitor": 5000000000,
+            "MaxFailureRatio": 0,
+            "Order": "stop-first"
+          },
+          "RollbackConfig": {
+            "Parallelism": 1,
+            "FailureAction": "pause",
+            "Monitor": 5000000000,
+            "MaxFailureRatio": 0,
+            "Order": "stop-first"
+          }
+        },
+        "tasks": "{\"CurrentState\":\"Running 3 weeks ago\",\"DesiredState\":\"Running\",\"Error\":\"\",\"ID\":\"r01ccrq6arylc59btgouvnkd7\",\"Image\":\"portainer/agent:lts@sha256:d63bfe57a106070fa5c0e73de0758f33aea018ed3cb6c8610c6663a4ac3a82ba\",\"Name\":\"portainer_agent.9koqx4hnjemcqzhf2amsn104m\",\"Node\":\"docker-01\",\"Ports\":\"\"}\n{\"CurrentState\":\"Shutdown 3 weeks ago\",\"DesiredState\":\"Shutdown\",\"Error\":\"\",\"ID\":\"b1gt9gt686hcudatmvqycpinn\",\"Image\":\"portainer/agent:lts@sha256:d63bfe57a106070fa5c0e73de0758f33aea018ed3cb6c8610c6663a4ac3a82ba\",\"Name\":\"portainer_agent.9koqx4hnjemcqzhf2amsn104m\",\"Node\":\"docker-01\",\"Ports\":\"\"}\n{\"CurrentState\":\"Shutdown 3 weeks ago\",\"DesiredState\":\"Shutdown\",\"Error\":\"\",\"ID\":\"94tlk4iba01tc27q3w1eifm8u\",\"Image\":\"portainer/agent:lts@sha256:d63bfe57a106070fa5c0e73de0758f33aea018ed3cb6c8610c6663a4ac3a82ba\",\"Name\":\"portainer_agent.9koqx4hnjemcqzhf2amsn104m\",\"Node\":\"docker-01\",\"Ports\":\"\"}\n{\"CurrentState\":\"Rejected 5 weeks ago\",\"DesiredState\":\"Shutdown\",\"Error\":\"\\\"cannot create a swarm scoped network when swarm is not active\\\"\",\"ID\":\"op6mpd8vi57gig6q9vrgq0zee\",\"Image\":\"portainer/agent:lts@sha256:d63bfe57a106070fa5c0e73de0758f33aea018ed3cb6c8610c6663a4ac3a82ba\",\"Name\":\"portainer_agent.9koqx4hnjemcqzhf2amsn104m\",\"Node\":\"docker-01\",\"Ports\":\"\"}\n{\"CurrentState\":\"Shutdown 5 weeks ago\",\"DesiredState\":\"Shutdown\",\"Error\":\"\",\"ID\":\"nbwfh45ub4zz3dhci04dwdvl6\",\"Image\":\"portainer/agent:lts@sha256:d63bfe57a106070fa5c0e73de0758f33aea018ed3cb6c8610c6663a4ac3a82ba\",\"Name\":\"portainer_agent.9koqx4hnjemcqzhf2amsn104m\",\"Node\":\"docker-01\",\"Ports\":\"\"}\n{\"CurrentState\":\"Running 3 weeks ago\",\"DesiredState\":\"Running\",\"Error\":\"\",\"ID\":\"is9ubmw5xaab84xxphve3exhz\",\"Image\":\"portainer/agent:lts@sha256:d63bfe57a106070fa5c0e73de0758f33aea018ed3cb6c8610c6663a4ac3a82ba\",\"Name\":\"portainer_agent.r91yes4cho1ppyerywtmrr170\",\"Node\":\"docker-02\",\"Ports\":\"\"}\n{\"CurrentState\":\"Rejected 5 weeks ago\",\"DesiredState\":\"Shutdown\",\"Error\":\"\\\"cannot create a swarm scoped network when swarm is not active\\\"\",\"ID\":\"zoosjkuv3bz7g1kljm3qurjyi\",\"Image\":\"portainer/agent:lts@sha256:d63bfe57a106070fa5c0e73de0758f33aea018ed3cb6c8610c6663a4ac3a82ba\",\"Name\":\"portainer_agent.r91yes4cho1ppyerywtmrr170\",\"Node\":\"docker-02\",\"Ports\":\"\"}\n{\"CurrentState\":\"Rejected 5 weeks ago\",\"DesiredState\":\"Shutdown\",\"Error\":\"\\\"cannot create a swarm scoped network when swarm is not active\\\"\",\"ID\":\"lpeqwikzs1rivfnbt64qdqjrv\",\"Image\":\"portainer/agent:lts@sha256:d63bfe57a106070fa5c0e73de0758f33aea018ed3cb6c8610c6663a4ac3a82ba\",\"Name\":\"portainer_agent.r91yes4cho1ppyerywtmrr170\",\"Node\":\"docker-02\",\"Ports\":\"\"}\n{\"CurrentState\":\"Shutdown 5 weeks ago\",\"DesiredState\":\"Shutdown\",\"Error\":\"\",\"ID\":\"qzqosveri3ilqgmmk3rxhacin\",\"Image\":\"portainer/agent:lts@sha256:d63bfe57a106070fa5c0e73de0758f33aea018ed3cb6c8610c6663a4ac3a82ba\",\"Name\":\"portainer_agent.r91yes4cho1ppyerywtmrr170\",\"Node\":\"docker-02\",\"Ports\":\"\"}\n{\"CurrentState\":\"Running 3 weeks ago\",\"DesiredState\":\"Running\",\"Error\":\"\",\"ID\":\"twbarixu8071jjjq507e8xbvu\",\"Image\":\"portainer/agent:lts@sha256:d63bfe57a106070fa5c0e73de0758f33aea018ed3cb6c8610c6663a4ac3a82ba\",\"Name\":\"portainer_agent.xcxurj56mv1u238bnskyjlld9\",\"Node\":\"docker-03\",\"Ports\":\"\"}\n{\"CurrentState\":\"Rejected 5 weeks ago\",\"DesiredState\":\"Shutdown\",\"Error\":\"\\\"cannot create a swarm scoped network when swarm is not active\\\"\",\"ID\":\"ok3vgqqjngaoptckqs5t04adk\",\"Image\":\"portainer/agent:lts@sha256:d63bfe57a106070fa5c0e73de0758f33aea018ed3cb6c8610c6663a4ac3a82ba\",\"Name\":\"portainer_agent.xcxurj56mv1u238bnskyjlld9\",\"Node\":\"docker-03\",\"Ports\":\"\"}\n{\"CurrentState\":\"Rejected 5 weeks ago\",\"DesiredState\":\"Shutdown\",\"Error\":\"\\\"cannot create a swarm scoped network when swarm is not active\\\"\",\"ID\":\"7unka95k4iqep6sublw8qics6\",\"Image\":\"portainer/agent:lts@sha256:d63bfe57a106070fa5c0e73de0758f33aea018ed3cb6c8610c6663a4ac3a82ba\",\"Name\":\"portainer_agent.xcxurj56mv1u238bnskyjlld9\",\"Node\":\"docker-03\",\"Ports\":\"\"}\n{\"CurrentState\":\"Shutdown 5 weeks ago\",\"DesiredState\":\"Shutdown\",\"Error\":\"\",\"ID\":\"cr5gowiksa9bwiv4vcwcl0oks\",\"Image\":\"portainer/agent:lts@sha256:d63bfe57a106070fa5c0e73de0758f33aea018ed3cb6c8610c6663a4ac3a82ba\",\"Name\":\"portainer_agent.xcxurj56mv1u238bnskyjlld9\",\"Node\":\"docker-03\",\"Ports\":\"\"}"
+      },
+      {
+        "ID": "zbb79x37m0dz3jt5gabi89wkk",
+        "name": "portainer_portainer",
+        "mode": {
+          "Replicated": {
+            "Replicas": 1
+          }
+        },
+        "task": {
+          "Resources": {},
+          "RestartPolicy": {
+            "Condition": "any",
+            "Delay": 5000000000,
+            "MaxAttempts": 0
+          },
+          "Placement": {
+            "Constraints": [
+              "node.role == manager"
+            ],
+            "Platforms": [
+              {
+                "Architecture": "amd64",
+                "OS": "linux"
+              },
+              {
+                "Architecture": "arm64",
+                "OS": "linux"
+              },
+              {
+                "OS": "linux"
+              },
+              {
+                "Architecture": "ppc64le",
+                "OS": "linux"
+              },
+              {
+                "Architecture": "amd64",
+                "OS": "windows"
+              }
+            ]
+          },
+          "Networks": [
+            {
+              "Target": "d3a6rlxzytuu0cv4w5i2lck79",
+              "Aliases": [
+                "portainer"
+              ]
+            }
+          ],
+          "container": {
+            "Image": "portainer/portainer-ce:lts@sha256:511f3f06c96fe3b993ebeaafde311c1959cae73a7ef825dba6397d51b450dffa",
+            "Mounts": [
+              {
+                "Type": "volume",
+                "Source": "portainer_data",
+                "Target": "/data",
+                "VolumeOptions": {
+                  "NoCopy": true
+                }
+              }
+            ]
+          }
+        },
+        "endpoint": {
+          "Spec": {
+            "Mode": "vip",
+            "Ports": [
+              {
+                "Protocol": "tcp",
+                "TargetPort": 9443,
+                "PublishedPort": 9443,
+                "PublishMode": "ingress"
+              }
+            ]
+          },
+          "Ports": [
+            {
+              "Protocol": "tcp",
+              "TargetPort": 9443,
+              "PublishedPort": 9443,
+              "PublishMode": "ingress"
+            }
+          ],
+          "VirtualIPs": [
+            {
+              "NetworkID": "m09xcte0rhe2k1e1qk355nksx",
+              "Addr": "172.29.0.2/24"
+            },
+            {
+              "NetworkID": "d3a6rlxzytuu0cv4w5i2lck79",
+              "Addr": "172.29.1.2/24"
+            }
+          ]
+        },
+        "update": {
+          "UpdateConfig": {
+            "Parallelism": 1,
+            "FailureAction": "pause",
+            "Monitor": 5000000000,
+            "MaxFailureRatio": 0,
+            "Order": "stop-first"
+          },
+          "RollbackConfig": {
+            "Parallelism": 1,
+            "FailureAction": "pause",
+            "Monitor": 5000000000,
+            "MaxFailureRatio": 0,
+            "Order": "stop-first"
+          }
+        },
+        "tasks": "{\"CurrentState\":\"Running 3 weeks ago\",\"DesiredState\":\"Running\",\"Error\":\"\",\"ID\":\"na8qxtnuocqhnbimb3jeokesl\",\"Image\":\"portainer/portainer-ce:lts@sha256:511f3f06c96fe3b993ebeaafde311c1959cae73a7ef825dba6397d51b450dffa\",\"Name\":\"portainer_portainer.1\",\"Node\":\"docker-03\",\"Ports\":\"\"}"
+      }
+    ],
+    "secrets_metadata": "",
+    "configs_metadata": "",
+    "compose": [
+      {
+        "path": "/srv/docker-local/compose/diun/compose.yml",
+        "sha256": "fd37659f7c519a852f640275cfeb59817a488fd69bd6f019c941aea04bf3fe1d",
+        "configuration": {
+          "services": {
+            "diun": {
+              "image": "crazymax/diun:latest",
+              "container_name": "DIUN",
+              "restart": "unless-stopped",
+              "volumes": [
+                "/srv/docker-shared/diun/data:/data",
+                "/srv/docker-shared/diun/config/diun.yml:/config/diun.yml:ro",
+                "/srv/docker-shared/diun/config/custom-images.yml:/config/custom-images.yml:ro",
+                "/var/run/docker.sock:/var/run/docker.sock"
+              ],
+              "networks": {
+                "TRAEFIK_BACKEND": {
+                  "aliases": [
+                    "diun"
+                  ]
+                }
+              },
+              "environment_keys_only": [
+                "TZ",
+                "CONFIG",
+                "LOG_LEVEL",
+                "LOG_JSON",
+                "GRPC_AUTHORITY"
+              ],
+              "healthcheck_present": true,
+              "command_present": true,
+              "entrypoint_present": false,
+              "traefik_labels": {}
+            }
+          },
+          "networks": {
+            "TRAEFIK_BACKEND": {
+              "external": true,
+              "name": "TRAEFIK_BACKEND"
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-local/compose/homeassistant/compose.yml",
+        "sha256": "6e47141d2944e88571bff0d98aa0f5bfc65923002aca02d6b6f7ecc81c1c8400",
+        "configuration": {
+          "services": {
+            "homeassistant": {
+              "image": "ghcr.io/home-assistant/home-assistant:2026.9.2",
+              "container_name": "HomeAssistant",
+              "restart": "unless-stopped",
+              "volumes": [
+                "/srv/docker-shared/homeassistant/config:/config",
+                "/etc/localtime:/etc/localtime:ro",
+                "/run/dbus:/run/dbus:ro"
+              ],
+              "networks": {
+                "default": {},
+                "TRAEFIK_BACKEND": {
+                  "aliases": [
+                    "homeassistant"
+                  ]
+                }
+              },
+              "privileged": true,
+              "environment_keys_only": [
+                "TZ"
+              ],
+              "healthcheck_present": false,
+              "command_present": false,
+              "entrypoint_present": false,
+              "traefik_labels": {}
+            }
+          },
+          "networks": {
+            "default": {
+              "driver": "bridge"
+            },
+            "TRAEFIK_BACKEND": {
+              "name": "TRAEFIK_BACKEND",
+              "external": true
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-local/compose/homepage/compose.yml",
+        "sha256": "4f2fb8e3f2e5eab7a7d6eea35b80175e10675646228cd10a098db37c358e63a2",
+        "configuration": {
+          "services": {
+            "homepage": {
+              "image": "ghcr.io/gethomepage/homepage:v2.3.0",
+              "container_name": "Homepage",
+              "restart": "unless-stopped",
+              "volumes": [
+                "/srv/docker-shared/homepage/config:/app/config"
+              ],
+              "networks": {
+                "TRAEFIK_BACKEND": {
+                  "aliases": [
+                    "homepage"
+                  ]
+                }
+              },
+              "env_file": [
+                "/srv/docker-shared/homepage/.env"
+              ],
+              "environment_keys_only": [
+                "HOMEPAGE_ALLOWED_HOSTS"
+              ],
+              "healthcheck_present": false,
+              "command_present": false,
+              "entrypoint_present": false,
+              "traefik_labels": {}
+            }
+          },
+          "networks": {
+            "TRAEFIK_BACKEND": {
+              "external": true,
+              "name": "TRAEFIK_BACKEND"
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-local/compose/qbittorrent/compose.yml",
+        "sha256": "3eaebafdf624e5f249689744935be0193e277302e76350d2906d42915a86a5a4",
+        "configuration": {
+          "services": {
+            "qbittorrent": {
+              "image": "lscr.io/linuxserver/qbittorrent:5.2.3_v2.0.14-ls475",
+              "container_name": "qBittorrent",
+              "volumes": [
+                "/srv/docker-shared/qbittorrent/config:/config",
+                "/srv/media/Films:/volume2/Films",
+                "/srv/media/Series:/volume2/Series",
+                "/srv/media/TEMP:/volume2/TEMP"
+              ],
+              "networks": {
+                "DMZ": {
+                  "ipv4_address": "192.168.205.40",
+                  "ipv6_address": "2a01:e0a:8ce:68c5::40"
+                }
+              },
+              "environment_keys_only": [
+                "PUID",
+                "PGID",
+                "TZ",
+                "WEBUI_PORT",
+                "TORRENTING_PORT"
+              ],
+              "healthcheck_present": false,
+              "command_present": false,
+              "entrypoint_present": false,
+              "traefik_labels": {}
+            }
+          },
+          "networks": {
+            "DMZ": {
+              "external": true,
+              "name": "DMZ"
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-local/compose/ratiomaster/compose.yml",
+        "sha256": "98143909ead313980f225069f18a8b711f4a29a1cc822106161ead2d0635dbad",
+        "configuration": {
+          "services": {
+            "ratiomaster": {
+              "image": "local/ratiomaster:1.1.0",
+              "container_name": "RatioMaster",
+              "volumes": [
+                "/srv/docker-shared/ratiomaster/config:/root/.config/RatioMaster.NET",
+                "/srv/docker-shared/ratiomaster/torrents:/torrents:ro"
+              ],
+              "networks": {
+                "DMZ": {
+                  "ipv4_address": "192.168.205.41",
+                  "ipv6_address": "2a01:e0a:8ce:68c5::41"
+                }
+              },
+              "environment_keys_only": [
+                "TZ",
+                "HOME",
+                "DISPLAY"
+              ],
+              "healthcheck_present": false,
+              "command_present": false,
+              "entrypoint_present": false,
+              "traefik_labels": {}
+            }
+          },
+          "networks": {
+            "DMZ": {
+              "external": true,
+              "name": "DMZ"
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-local/compose/traefik/compose.yml",
+        "sha256": "28c5f54141f3fcf8e35f868be5e0539e9c1a4bc4086b057f8110248d7d3449c4",
+        "configuration": {
+          "services": {
+            "traefik": {
+              "image": "traefik:v3.7.13",
+              "container_name": "Traefik",
+              "restart": "no",
+              "volumes": [
+                "/srv/docker-shared/traefik/dynamic:/etc/traefik/dynamic:ro",
+                "/srv/docker-shared/traefik/acme/acme.json:/acme/acme.json",
+                "/srv/docker-shared/traefik/secrets/ovh_application_key:/run/secrets/ovh_application_key:ro",
+                "/srv/docker-shared/traefik/secrets/ovh_application_secret:/run/secrets/ovh_application_secret:ro",
+                "/srv/docker-shared/traefik/secrets/ovh_consumer_key:/run/secrets/ovh_consumer_key:ro"
+              ],
+              "networks": {
+                "DMZ": {
+                  "ipv4_address": "192.168.205.10",
+                  "ipv6_address": "2a01:e0a:8ce:68c5::10",
+                  "gw_priority": 1
+                },
+                "TRAEFIK_BACKEND": {
+                  "aliases": [
+                    "traefik"
+                  ],
+                  "gw_priority": 0
+                }
+              },
+              "environment_keys_only": [
+                "OVH_ENDPOINT",
+                "OVH_APPLICATION_KEY_FILE",
+                "OVH_APPLICATION_SECRET_FILE",
+                "OVH_CONSUMER_KEY_FILE"
+              ],
+              "healthcheck_present": false,
+              "command_present": true,
+              "entrypoint_present": false,
+              "traefik_labels": {}
+            }
+          },
+          "networks": {
+            "DMZ": {
+              "external": true,
+              "name": "DMZ"
+            },
+            "TRAEFIK_BACKEND": {
+              "name": "TRAEFIK_BACKEND",
+              "external": true
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-local/compose/wg-admin/compose.yml",
+        "sha256": "01bca7c7713457f89edc5376934af66778ab044a24508dfb8ad408ca48bd787b",
+        "configuration": {
+          "services": {
+            "socket-proxy": {
+              "image": "tecnativa/docker-socket-proxy:latest",
+              "container_name": "WG-Socket-Proxy",
+              "restart": "on-failure:5",
+              "volumes": [
+                "/var/run/docker.sock:/var/run/docker.sock:ro"
+              ],
+              "networks": {
+                "WG_Internal": {
+                  "ipv4_address": "172.31.204.3"
+                }
+              },
+              "environment_keys_only": [
+                "CONTAINERS",
+                "EVENTS",
+                "EXEC",
+                "IMAGES",
+                "NETWORKS",
+                "VOLUMES",
+                "POST",
+                "DELETE"
+              ],
+              "healthcheck_present": false,
+              "command_present": false,
+              "entrypoint_present": false,
+              "traefik_labels": {}
+            },
+            "companion": {
+              "image": "ghcr.io/aerya/gluetun-companion:latest",
+              "container_name": "WG-Companion",
+              "restart": "on-failure:5",
+              "ports": [
+                "${COMPANION_BIND_IPV4}:8765:8765/tcp",
+                "[${COMPANION_BIND_IPV6}]:8765:8765/tcp"
+              ],
+              "volumes": [
+                "/srv/docker-shared/wg-admin/companion:/data",
+                "/srv/docker-local/compose/wg-router:/srv/docker-local/compose/wg-router:rw",
+                "/srv/docker-shared/wg-router/gluetun:/gluetun:ro"
+              ],
+              "networks": {
+                "WG_Internal": {
+                  "ipv4_address": "172.31.204.4"
+                }
+              },
+              "depends_on": [
+                "socket-proxy"
+              ],
+              "environment_keys_only": [
+                "TZ",
+                "SECRET_KEY",
+                "DATA_DIR",
+                "GLUETUN_HOST",
+                "GLUETUN_PROXY_PORT",
+                "GLUETUN_CONTAINER",
+                "COMPOSE_DIR",
+                "DOCKER_HOST"
+              ],
+              "healthcheck_present": false,
+              "command_present": false,
+              "entrypoint_present": false,
+              "traefik_labels": {}
+            }
+          },
+          "networks": {
+            "WG_Internal": {
+              "external": true,
+              "name": "WG_Internal"
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-local/compose/wg-relay/compose.yml",
+        "sha256": "0d075324697c668c0d9128ae469e1dd87d00beb6eb53a56c79b080dd3c6c439a",
+        "configuration": {
+          "services": {
+            "relay": {
+              "image": "alpine/socat:1.8.1.3",
+              "container_name": "WG-Companion-Relay",
+              "restart": "unless-stopped",
+              "networks": {
+                "WG_Internal": {
+                  "ipv4_address": "172.31.204.5"
+                }
+              },
+              "environment_keys_only": [],
+              "healthcheck_present": false,
+              "command_present": true,
+              "entrypoint_present": true,
+              "traefik_labels": {}
+            }
+          },
+          "networks": {
+            "WG_Internal": {
+              "external": true,
+              "name": "WG_Internal"
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-local/compose/wg-router/compose.yml",
+        "sha256": "cacfd04e4f3d3d6c7eb96e932434613681779daa9f87f52ef3d6f35106c4d12c",
+        "configuration": {
+          "services": {
+            "gluetun": {
+              "image": "qmcgaw/gluetun:v3.41.1",
+              "container_name": "WG-Router",
+              "restart": "on-failure:5",
+              "volumes": [
+                "/srv/docker-shared/wg-router/gluetun:/gluetun",
+                "./iptables/post-rules.txt:/iptables/post-rules.txt:ro"
+              ],
+              "networks": {
+                "WAN": {
+                  "interface_name": "wan0",
+                  "ipv4_address": "192.168.200.30",
+                  "ipv6_address": "2a01:e0a:8ce:68c0::30",
+                  "mac_address": "02:00:00:c8:00:30",
+                  "gw_priority": 100
+                },
+                "WG_Transit": {
+                  "interface_name": "transit0",
+                  "ipv4_address": "192.168.204.30",
+                  "ipv6_address": "2a01:e0a:8ce:68c4::30",
+                  "mac_address": "02:00:00:cc:00:30"
+                },
+                "WG_Internal": {
+                  "interface_name": "admin0",
+                  "ipv4_address": "172.31.204.2"
+                }
+              },
+              "cap_add": [
+                "NET_ADMIN"
+              ],
+              "devices": [
+                "/dev/net/tun:/dev/net/tun"
+              ],
+              "secrets": [
+                "wireguard_private_key"
+              ],
+              "environment_keys_only": [
+                "TZ",
+                "VPN_SERVICE_PROVIDER",
+                "VPN_TYPE",
+                "WIREGUARD_PRIVATE_KEY_SECRETFILE",
+                "WIREGUARD_ADDRESSES",
+                "WIREGUARD_ALLOWED_IPS",
+                "WIREGUARD_PERSISTENT_KEEPALIVE_INTERVAL",
+                "SERVER_COUNTRIES",
+                "PORT_FORWARD_ONLY",
+                "VPN_PORT_FORWARDING",
+                "VPN_PORT_FORWARDING_PORTS_COUNT",
+                "DNS_UPSTREAM_RESOLVER_TYPE",
+                "DNS_UPSTREAM_RESOLVERS",
+                "DNS_UPSTREAM_IPV6",
+                "BLOCK_MALICIOUS",
+                "BLOCK_ADS",
+                "BLOCK_SURVEILLANCE",
+                "FIREWALL_OUTBOUND_SUBNETS",
+                "HTTP_CONTROL_SERVER_ADDRESS",
+                "HTTP_CONTROL_SERVER_AUTH_DEFAULT_ROLE",
+                "HTTPPROXY",
+                "HTTPPROXY_LISTENING_ADDRESS",
+                "HTTPPROXY_LOG"
+              ],
+              "healthcheck_present": false,
+              "command_present": false,
+              "entrypoint_present": false,
+              "traefik_labels": {}
+            }
+          },
+          "networks": {
+            "WAN": {
+              "external": true,
+              "name": "WAN"
+            },
+            "WG_Transit": {
+              "external": true,
+              "name": "WG_Transit"
+            },
+            "WG_Internal": {
+              "external": true,
+              "name": "WG_Internal"
+            }
+          },
+          "secrets": {
+            "wireguard_private_key": "[REDACTED]"
+          }
+        }
+      }
+    ],
+    "traefik": [
+      {
+        "path": "/srv/docker-shared/traefik/dynamic/access-policies.yml",
+        "sha256": "a0eedeffcce230ee229fd81fce8d4d2cf80a5ff2af92180f58c85f87cc0a856a",
+        "configuration": {
+          "http": {
+            "middlewares": {
+              "private-networks": {
+                "ipAllowList": {
+                  "sourceRange": [
+                    "192.168.200.0/21",
+                    "2a01:e0a:8ce:68c0::/61",
+                    "fd72:6a3c:9e10:100::/64"
+                  ]
+                }
+              },
+              "CORP": {
+                "ipAllowList": {
+                  "sourceRange": [
+                    "192.168.200.0/21",
+                    "2a01:e0a:8ce:68c0::/61",
+                    "fd72:6a3c:9e10:100::/64",
+                    "2001:41d0:35c:d600::217/128",
+                    "51.178.1.217/32",
+                    "91.216.22.0/24",
+                    "185.133.83.0/24",
+                    "2001:67c:11c8::/48",
+                    "88.218.14.80/28"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-shared/traefik/dynamic/acme-bootstrap.yml",
+        "sha256": "94b5d27e7474fc63796d43d1b81016e6b2a36ea242500e13866f3bc1fa1f7d13",
+        "configuration": {
+          "http": {
+            "routers": {
+              "acme-bootstrap": {
+                "rule": "Host(`acme-bootstrap.gangneux.org`)",
+                "entryPoints": [
+                  "websecure"
+                ],
+                "service": "acme-bootstrap",
+                "tls": {
+                  "certResolver": "le",
+                  "domains": [
+                    {
+                      "main": "gangneux.org",
+                      "sans": [
+                        "*.gangneux.org"
+                      ]
+                    }
+                  ]
+                }
+              }
+            },
+            "services": {
+              "acme-bootstrap": {
+                "loadBalancer": {
+                  "servers": [
+                    {
+                      "url": "http://127.0.0.1:65535"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-shared/traefik/dynamic/bookstack.yml",
+        "sha256": "9e870c8432527e7cfd2a9ba033065701acd73bf54e8f9c4011222f4238f942af",
+        "configuration": {
+          "http": {
+            "routers": {
+              "bookstack": {
+                "rule": "Host(`bookstack.gangneux.org`)",
+                "entryPoints": [
+                  "websecure"
+                ],
+                "service": "bookstack",
+                "tls": {}
+              }
+            },
+            "services": {
+              "bookstack": {
+                "loadBalancer": {
+                  "servers": [
+                    {
+                      "url": "http://bookstack:80"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-shared/traefik/dynamic/diun.yml",
+        "sha256": "e257deff8df579b2f0eff4d3c1611f63fc14ddaf9d4351dbf38b28d6c06ad288",
+        "configuration": {
+          "http": {
+            "routers": {
+              "diun": {
+                "rule": "Host(`diun.gangneux.org`)",
+                "entryPoints": [
+                  "websecure"
+                ],
+                "middlewares": [
+                  "private-networks@file"
+                ],
+                "service": "diun",
+                "tls": {}
+              }
+            },
+            "services": {
+              "diun": {
+                "loadBalancer": {
+                  "servers": [
+                    {
+                      "url": "http://diun:9090"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-shared/traefik/dynamic/dns.yml",
+        "sha256": "974f5c18457966fea68c095c2e685895a6b0f4ddc7f7de5f0a94c1fa114072b8",
+        "configuration": {
+          "http": {
+            "routers": {
+              "dns": {
+                "rule": "Host(`dns.gangneux.org`)",
+                "entryPoints": [
+                  "websecure"
+                ],
+                "middlewares": [
+                  "private-networks@file"
+                ],
+                "service": "technitium-dns",
+                "tls": {}
+              }
+            },
+            "services": {
+              "technitium-dns": {
+                "loadBalancer": {
+                  "passHostHeader": true,
+                  "healthCheck": {
+                    "path": "/",
+                    "interval": "10s",
+                    "timeout": "3s"
+                  },
+                  "servers": [
+                    {
+                      "url": "http://192.168.201.33:5380"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-shared/traefik/dynamic/gluetun.yml",
+        "sha256": "aa129163b5e5f197d5282cf1eecd3786b0e92fa4a1b194fb610fb4ccab4da247",
+        "configuration": {
+          "http": {
+            "routers": {
+              "gluetun": {
+                "rule": "Host(`gluetun.gangneux.org`)",
+                "entryPoints": [
+                  "websecure"
+                ],
+                "middlewares": [
+                  "private-networks@file"
+                ],
+                "service": "gluetun",
+                "tls": {}
+              }
+            },
+            "services": {
+              "gluetun": {
+                "loadBalancer": {
+                  "passHostHeader": true,
+                  "healthCheck": {
+                    "path": "/",
+                    "interval": "5s",
+                    "timeout": "2s",
+                    "followRedirects": false
+                  },
+                  "servers": [
+                    {
+                      "url": "http://192.168.201.21:8765"
+                    },
+                    {
+                      "url": "http://[2a01:e0a:8ce:68c1::21]:8765"
+                    },
+                    {
+                      "url": "http://192.168.201.22:8765"
+                    },
+                    {
+                      "url": "http://[2a01:e0a:8ce:68c1::22]:8765"
+                    },
+                    {
+                      "url": "http://192.168.201.23:8765"
+                    },
+                    {
+                      "url": "http://[2a01:e0a:8ce:68c1::23]:8765"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-shared/traefik/dynamic/homeassistant.yml",
+        "sha256": "3d5b60b6c073b29109ef39106c3a71491b5df0d549a35648dafaa4daf0a5b847",
+        "configuration": {
+          "http": {
+            "routers": {
+              "homeassistant": {
+                "rule": "Host(`homeassistant.gangneux.org`)",
+                "entryPoints": [
+                  "websecure"
+                ],
+                "middlewares": [
+                  "private-networks@file"
+                ],
+                "service": "homeassistant",
+                "tls": {}
+              }
+            },
+            "services": {
+              "homeassistant": {
+                "loadBalancer": {
+                  "passHostHeader": true,
+                  "servers": [
+                    {
+                      "url": "http://homeassistant:8123"
+                    }
+                  ],
+                  "healthCheck": {
+                    "path": "/",
+                    "interval": "10s",
+                    "timeout": "3s"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-shared/traefik/dynamic/homepage.yml",
+        "sha256": "ddafcfe95dc54b7f45123f71507ae424d083a7eb599b6cab36a62d4e24e137ec",
+        "configuration": {
+          "http": {
+            "routers": {
+              "homepage": {
+                "rule": "Host(`home.gangneux.org`)",
+                "entryPoints": [
+                  "websecure"
+                ],
+                "service": "homepage",
+                "tls": {}
+              }
+            },
+            "services": {
+              "homepage": {
+                "loadBalancer": {
+                  "servers": [
+                    {
+                      "url": "http://homepage:3000"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-shared/traefik/dynamic/minecraft.yml",
+        "sha256": "72be492457805b4530d2d879e3def80a404b10cd0cb68a4f4761b7fb5536f049",
+        "configuration": {
+          "tcp": {
+            "routers": {
+              "minecraft": {
+                "entryPoints": [
+                  "minecraft"
+                ],
+                "rule": "HostSNI(`*`)",
+                "service": "minecraft"
+              }
+            },
+            "services": {
+              "minecraft": {
+                "loadBalancer": {
+                  "servers": [
+                    {
+                      "address": "172.29.2.11:25565"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-shared/traefik/dynamic/n8n.yml",
+        "sha256": "053a208d91ff131b89245ee1ad5b7602f4d1a246da82ce0aff6c1809f3dd13a2",
+        "configuration": {
+          "http": {
+            "routers": {
+              "n8n": {
+                "rule": "Host(`n8n.gangneux.org`)",
+                "entryPoints": [
+                  "websecure"
+                ],
+                "service": "n8n",
+                "middlewares": [
+                  "CORP@file"
+                ],
+                "tls": {}
+              }
+            },
+            "services": {
+              "n8n": {
+                "loadBalancer": {
+                  "passHostHeader": true,
+                  "servers": [
+                    {
+                      "url": "http://n8n:5678"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-shared/traefik/dynamic/nas.yml",
+        "sha256": "c028cb26236e9f7bf71877e72f8e8c165120e26aee8aba3faa5df38153cfbf29",
+        "configuration": {
+          "http": {
+            "routers": {
+              "nas": {
+                "rule": "Host(`nas.gangneux.org`)",
+                "entryPoints": [
+                  "websecure"
+                ],
+                "service": "nas",
+                "tls": {}
+              }
+            },
+            "services": {
+              "nas": {
+                "loadBalancer": {
+                  "passHostHeader": false,
+                  "serversTransport": "nas-transport",
+                  "servers": [
+                    {
+                      "url": "https://192.168.201.61:5001"
+                    },
+                    {
+                      "url": "https://[2a01:e0a:8ce:68c1::61]:5001"
+                    }
+                  ]
+                }
+              }
+            },
+            "serversTransports": {
+              "nas-transport": {
+                "serverName": "gan-nas-720-01.gangneux.org"
+              }
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-shared/traefik/dynamic/openwebui.yml",
+        "sha256": "0a4bef0449043cbd9a92d6a5bf80b377c17c1500639f5478b1b620ec0eb5599d",
+        "configuration": {
+          "http": {
+            "routers": {
+              "openwebui": {
+                "rule": "Host(`owui.gangneux.org`)",
+                "entryPoints": [
+                  "websecure"
+                ],
+                "service": "openwebui",
+                "tls": {}
+              }
+            },
+            "services": {
+              "openwebui": {
+                "loadBalancer": {
+                  "passHostHeader": true,
+                  "servers": [
+                    {
+                      "url": "http://openwebui:8080"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-shared/traefik/dynamic/portainer.yml",
+        "sha256": "be7ec68eb0ff8ea776bc8d9abee2f2b3ccfb5bb4161f8f863a64ac482b81b298",
+        "configuration": {
+          "http": {
+            "serversTransports": {
+              "portainer-tls": {
+                "insecureSkipVerify": true
+              }
+            },
+            "routers": {
+              "portainer": {
+                "rule": "Host(`portainer.gangneux.org`)",
+                "entryPoints": [
+                  "websecure"
+                ],
+                "middlewares": [
+                  "private-networks@file"
+                ],
+                "service": "portainer",
+                "tls": {}
+              }
+            },
+            "services": {
+              "portainer": {
+                "loadBalancer": {
+                  "passHostHeader": true,
+                  "serversTransport": "portainer-tls@file",
+                  "healthCheck": {
+                    "path": "/api/status",
+                    "interval": "10s",
+                    "timeout": "3s"
+                  },
+                  "servers": [
+                    {
+                      "url": "https://192.168.201.21:9443"
+                    },
+                    {
+                      "url": "https://[2a01:e0a:8ce:68c1::21]:9443"
+                    },
+                    {
+                      "url": "https://192.168.201.22:9443"
+                    },
+                    {
+                      "url": "https://[2a01:e0a:8ce:68c1::22]:9443"
+                    },
+                    {
+                      "url": "https://192.168.201.23:9443"
+                    },
+                    {
+                      "url": "https://[2a01:e0a:8ce:68c1::23]:9443"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-shared/traefik/dynamic/qbittorrent.yml",
+        "sha256": "30f1f2bfaadf1024661494b5dd6cc9ebb04bbe18b43b057e4160ca7d60cf6542",
+        "configuration": {
+          "http": {
+            "routers": {
+              "qbittorrent": {
+                "rule": "Host(`qbittorrent.gangneux.org`)",
+                "entryPoints": [
+                  "websecure"
+                ],
+                "middlewares": [
+                  "private-networks@file"
+                ],
+                "service": "qbittorrent",
+                "tls": {}
+              }
+            },
+            "services": {
+              "qbittorrent": {
+                "loadBalancer": {
+                  "passHostHeader": true,
+                  "healthCheck": {
+                    "path": "/",
+                    "interval": "10s",
+                    "timeout": "3s"
+                  },
+                  "servers": [
+                    {
+                      "url": "http://192.168.205.40:8080"
+                    },
+                    {
+                      "url": "http://[2a01:e0a:8ce:68c5::40]:8080"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "path": "/srv/docker-shared/traefik/dynamic/super-agent-oauth.yml",
+        "sha256": "e6426bfa7c83985d56ea70102cfb6f9028f125ebe97576b87c6885a2adde76d3",
+        "configuration": {
+          "http": {
+            "routers": {
+              "super-agent-oauth": {
+                "rule": "Host(`auth.gangneux.org`) && (PathPrefix(`/oauth/microsoft/authorize/`) || Path(`/oauth/microsoft/callback`) || PathPrefix(`/oauth/google/authorize/`) || Path(`/oauth/google/callback`))",
+                "entryPoints": [
+                  "websecure"
+                ],
+                "service": "super-agent-oauth",
+                "tls": {}
+              }
+            },
+            "services": {
+              "super-agent-oauth": {
+                "loadBalancer": {
+                  "servers": [
+                    {
+                      "url": "http://provider-gateway:8081"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    ],
+    "keepalived_active": "active",
+    "keepalived": {
+      "path": "/etc/keepalived/keepalived.conf",
+      "sha256": "4eaae1a723ed0c5d1ab1ac607482f66fb1917286a38a285917ee7bfab7c9474d",
+      "structure": [
+        "vrrp_script chk_docker {",
+        "vrrp_script chk_wg_router_prereq {",
+        "vrrp_instance VI_WG_ROUTER {",
+        "state BACKUP",
+        "interface ens18",
+        "virtual_router_id 204",
+        "priority 130",
+        "advert_int 1",
+        "nopreempt",
+        "unicast_src_ip 192.168.201.23",
+        "unicast_peer {",
+        "192.168.201.21",
+        "192.168.201.22",
+        "virtual_ipaddress {",
+        "192.168.201.30/24 dev ens18",
+        "2a01:e0a:8ce:68c1::30/64 dev ens18",
+        "track_script {",
+        "vrrp_script chk_qbittorrent_prereq {",
+        "vrrp_instance VI_QBITTORRENT {",
+        "state BACKUP",
+        "interface ens18",
+        "virtual_router_id 205",
+        "priority 150",
+        "advert_int 1",
+        "nopreempt",
+        "no_virtual_ipaddress",
+        "unicast_src_ip 192.168.201.23",
+        "unicast_peer {",
+        "192.168.201.21",
+        "192.168.201.22",
+        "track_script {",
+        "vrrp_script chk_ratiomaster_prereq {",
+        "vrrp_instance VI_RATIOMASTER {",
+        "state BACKUP",
+        "interface ens18",
+        "virtual_router_id 206",
+        "priority 140",
+        "advert_int 1",
+        "nopreempt",
+        "no_virtual_ipaddress",
+        "unicast_src_ip 192.168.201.23",
+        "unicast_peer {",
+        "192.168.201.21",
+        "192.168.201.22",
+        "track_script {",
+        "vrrp_script chk_traefik_prereq {",
+        "vrrp_instance VI_TRAEFIK {",
+        "state BACKUP",
+        "interface ens18",
+        "virtual_router_id 210",
+        "priority 130",
+        "advert_int 1",
+        "nopreempt",
+        "no_virtual_ipaddress",
+        "unicast_src_ip 192.168.201.23",
+        "unicast_peer {",
+        "192.168.201.21",
+        "192.168.201.22",
+        "track_script {"
+      ]
+    },
+    "firewall_tables": "table ip nat\ntable ip filter\ntable ip6 nat\ntable ip6 filter\ntable ip raw"
+  },
+  "errors": []
+}

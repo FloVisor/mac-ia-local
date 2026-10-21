@@ -1,0 +1,258 @@
+{
+  "version": "3.8",
+  "services": {
+    "codex": {
+      "image": "docker/mcp-gateway@sha256:f5a679a05fc39022a046167bef92aeeb01bcd59485ad27843ae5227db7950688",
+      "entrypoint": [
+        "/bin/sh",
+        "/gateway-entrypoint.sh"
+      ],
+      "command": [
+        "--profile",
+        "codex",
+        "--transport",
+        "streaming",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8080",
+        "--cpus",
+        "1",
+        "--memory",
+        "2Gb",
+        "--verbose=false",
+        "--log-calls=true",
+        "--watch=false"
+      ],
+      "volumes": [
+        "codex_state:/root/.docker",
+        "/var/run/docker.sock:/var/run/docker.sock",
+        "/srv/docker-local/compose/mcp-gateway/catalog:/root/.docker/mcp/catalogs/official:ro"
+      ],
+      "configs": [
+        {
+          "source": "loader",
+          "target": "/gateway-entrypoint.sh",
+          "mode": 365
+        }
+      ],
+      "secrets": [
+        {
+          "source": "codex_token",
+          "target": "gateway_token"
+        }
+      ],
+      "networks": [
+        "TRAEFIK_BACKEND"
+      ],
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "stop_grace_period": "30s",
+      "deploy": {
+        "replicas": 1,
+        "placement": {
+          "constraints": [
+            "node.hostname == docker-02"
+          ]
+        },
+        "restart_policy": {
+          "condition": "on-failure",
+          "delay": "10s"
+        },
+        "update_config": {
+          "order": "stop-first",
+          "failure_action": "pause"
+        }
+      },
+      "environment": {
+        "MCP_GATEWAY_DOCKER_BIND_ALLOWED_PATHS": "/srv/docker-local/serena/repositories",
+        "MCP_GATEWAY_DOCKER_BIND_ALLOW_WRITABLE_PATHS": "/srv/docker-local/serena/state"
+      }
+    },
+    "pro": {
+      "image": "docker/mcp-gateway@sha256:f5a679a05fc39022a046167bef92aeeb01bcd59485ad27843ae5227db7950688",
+      "entrypoint": [
+        "/bin/sh",
+        "/gateway-entrypoint.sh"
+      ],
+      "command": [
+        "--profile",
+        "pro",
+        "--transport",
+        "streaming",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8080",
+        "--cpus",
+        "1",
+        "--memory",
+        "2Gb",
+        "--verbose=false",
+        "--log-calls=true",
+        "--watch=false"
+      ],
+      "volumes": [
+        "pro_state:/root/.docker",
+        "/var/run/docker.sock:/var/run/docker.sock",
+        "/srv/docker-local/compose/mcp-gateway/catalog:/root/.docker/mcp/catalogs/official:ro"
+      ],
+      "configs": [
+        {
+          "source": "loader",
+          "target": "/gateway-entrypoint.sh",
+          "mode": 365
+        }
+      ],
+      "secrets": [
+        {
+          "source": "pro_token",
+          "target": "gateway_token"
+        }
+      ],
+      "networks": [
+        "TRAEFIK_BACKEND"
+      ],
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "stop_grace_period": "30s",
+      "deploy": {
+        "replicas": 1,
+        "placement": {
+          "constraints": [
+            "node.hostname == docker-02"
+          ]
+        },
+        "restart_policy": {
+          "condition": "on-failure",
+          "delay": "10s"
+        },
+        "update_config": {
+          "order": "stop-first",
+          "failure_action": "pause"
+        }
+      },
+      "environment": {
+        "MCP_GATEWAY_DOCKER_BIND_ALLOWED_PATHS": "/srv/docker-local/serena/repositories",
+        "MCP_GATEWAY_DOCKER_BIND_ALLOW_WRITABLE_PATHS": "/srv/docker-local/serena/state"
+      }
+    },
+    "perso": {
+      "image": "docker/mcp-gateway@sha256:f5a679a05fc39022a046167bef92aeeb01bcd59485ad27843ae5227db7950688",
+      "entrypoint": [
+        "/bin/sh",
+        "/gateway-entrypoint.sh"
+      ],
+      "command": [
+        "--profile",
+        "perso",
+        "--transport",
+        "streaming",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8080",
+        "--cpus",
+        "0",
+        "--memory",
+        "0",
+        "--verbose=false",
+        "--log-calls=true",
+        "--watch=false"
+      ],
+      "volumes": [
+        "perso_state:/root/.docker",
+        "/var/run/docker.sock:/var/run/docker.sock",
+        "/srv/docker-local/compose/mcp-gateway/catalog:/root/.docker/mcp/catalogs/official:ro"
+      ],
+      "configs": [
+        {
+          "source": "loader",
+          "target": "/gateway-entrypoint.sh",
+          "mode": 365
+        }
+      ],
+      "secrets": [
+        {
+          "source": "perso_token",
+          "target": "gateway_token"
+        }
+      ],
+      "networks": [
+        "TRAEFIK_BACKEND"
+      ],
+      "logging": {
+        "driver": "json-file",
+        "options": {
+          "max-size": "10m",
+          "max-file": "3"
+        }
+      },
+      "stop_grace_period": "30s",
+      "deploy": {
+        "replicas": 1,
+        "placement": {
+          "constraints": [
+            "node.hostname == docker-02"
+          ]
+        },
+        "restart_policy": {
+          "condition": "on-failure",
+          "delay": "10s"
+        },
+        "update_config": {
+          "order": "stop-first",
+          "failure_action": "pause"
+        }
+      }
+    }
+  },
+  "networks": {
+    "TRAEFIK_BACKEND": {
+      "external": true
+    }
+  },
+  "volumes": {
+    "codex_state": {
+      "external": true,
+      "name": "mcp_gateway_codex"
+    },
+    "pro_state": {
+      "external": true,
+      "name": "mcp_gateway_pro"
+    },
+    "perso_state": {
+      "external": true,
+      "name": "mcp_gateway_perso"
+    }
+  },
+  "configs": {
+    "loader": {
+      "file": "./secret-entrypoint.sh"
+    }
+  },
+  "secrets": {
+    "codex_token": {
+      "external": true,
+      "name": "mcp_gateway_codex_token_v1"
+    },
+    "pro_token": {
+      "external": true,
+      "name": "mcp_gateway_pro_token_v1"
+    },
+    "perso_token": {
+      "external": true,
+      "name": "mcp_gateway_perso_token_v1"
+    }
+  }
+}

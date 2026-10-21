@@ -1,0 +1,55 @@
+{
+  "profiles": {
+    "codex": {
+      "profile_export_unchanged": true,
+      "catalog_unchanged": true
+    },
+    "pro": {
+      "profile_export_unchanged": true,
+      "catalog_unchanged": true
+    },
+    "perso": {
+      "profile_export_unchanged": true,
+      "catalog_unchanged": true
+    }
+  },
+  "existing_services": {
+    "avahi_reflector": {
+      "same_id": true,
+      "same_image": true,
+      "replicas_before": "1/1",
+      "replicas_after": "1/1"
+    },
+    "freellmapi_api": {
+      "same_id": true,
+      "same_image": true,
+      "replicas_before": "1/1",
+      "replicas_after": "1/1"
+    },
+    "litellm_gateway": {
+      "same_id": true,
+      "same_image": true,
+      "replicas_before": "1/1",
+      "replicas_after": "1/1"
+    },
+    "litellm_postgres": {
+      "same_id": true,
+      "same_image": true,
+      "replicas_before": "1/1",
+      "replicas_after": "1/1"
+    },
+    "portainer_agent": {
+      "same_id": true,
+      "same_image": true,
+      "replicas_before": "3/3",
+      "replicas_after": "3/3"
+    },
+    "portainer_portainer": {
+      "same_id": true,
+      "same_image": true,
+      "replicas_before": "1/1",
+      "replicas_after": "1/1"
+    }
+  },
+  "no_live_time_containers": true
+}

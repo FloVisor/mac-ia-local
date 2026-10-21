@@ -1,0 +1,66 @@
+{
+  "status": "prepared_not_issued",
+  "reason": "Catalogues LOCAL/FREE préparés ; aucune distribution de clé autorisée durant mission 1.",
+  "identities": {
+    "codex": {
+      "key_type": "llm_api",
+      "issuance": "deferred",
+      "model_policy": "liste explicite à approuver"
+    },
+    "mcp-delegate": {
+      "key_type": "llm_api",
+      "issuance": "deferred",
+      "model_policy": "local-only ; aucun fallback Cloud"
+    },
+    "openclaw-pro": {
+      "key_type": "llm_api",
+      "issuance": "deferred",
+      "model_policy": "local-only ; aucun fallback Cloud"
+    },
+    "openclaw-perso": {
+      "key_type": "llm_api",
+      "issuance": "deferred",
+      "model_policy": "liste explicite à approuver"
+    },
+    "mcp-delegate-cloud-approved": {
+      "key_type": "llm_api",
+      "issuance": "deferred",
+      "model_policy": "Cloud gratuit explicitement approuvé, séparé des tâches confidentielles"
+    }
+  },
+  "applications_modified": false,
+  "master_key_for_clients": false,
+  "policies": {
+    "LOCAL": [
+      "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit",
+      "local-ollama/qwen3:4b-instruct",
+      "local-ollama/embeddinggemma:latest"
+    ],
+    "FREE": [
+      "free-groq/qwen3.8-27b",
+      "free-groq/gpt-oss-120b",
+      "free-openrouter/dots-3-note-preview:free",
+      "free-openrouter/north-mini-code:free",
+      "free-mistral/ministral-8b-2512",
+      "free-mistral/codestral-2508",
+      "free/task-fast",
+      "free/task-coding",
+      "free/task-reasoning",
+      "free/task-long-context"
+    ],
+    "PAID": {
+      "team_id": "paid-openrouter-shared",
+      "blocked": false,
+      "models": [
+        "paid-openrouter/deepseek-v4.1-flash-1017",
+        "paid-openrouter/glm-5.3",
+        "paid/task-advanced"
+      ],
+      "max_budget_usd": 40,
+      "budget_duration": "1mo",
+      "client_assignment": null,
+      "provider_key_policy": "Clé existante conservée sur instruction utilisateur ; plafond fournisseur inchangé ; budget partagé LiteLLM",
+      "approval_policy": "Confirmation par futur MCP ; aucune clé cliente émise"
+    }
+  }
+}

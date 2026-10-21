@@ -2,6 +2,7 @@ import { randomUUID } from "node:crypto";
 import { BookStackClient } from "./http.js";
 import { ActivityRegistry } from "./registry.js";
 import * as gw from "./gateway.js";
+import { SUIVI_PAGE } from "./suivi.js";
 
 export const PRESENTATION_PAGE = "Présentation";
 export const DOCUMENTS_CHAPTER = "Documents";
@@ -96,6 +97,8 @@ export async function createActivity({ client, registry, baseUrl, name, descript
   for (const chapterName of [DOCUMENTS_CHAPTER, NOTES_CHAPTER]) {
     const key = chapterName === DOCUMENTS_CHAPTER ? "documentsChapterId" : "notesChapterId";
     if (activity[key]) continue;
+    // `documentsChapterId: null` explicite = chapitre Documents supprimé volontairement.
+    if (chapterName === DOCUMENTS_CHAPTER && activity.documentsChapterId === null) continue;
     const chapter = await client.post("/chapters", {
       book_id: activity.bookId,
       name: chapterName,
@@ -107,6 +110,13 @@ export async function createActivity({ client, registry, baseUrl, name, descript
     activity[key] = chapter.id;
     await registry.upsertActivity(activity);
     steps.push({ step: `chapter:${chapterName}`, ok: true, chapterId: chapter.id });
+  }
+
+  // Page Suivi à la racine (idempotente, jamais de doublon).
+  if (!activity.suiviPageId) {
+    const suivi = await ensureSuiviPage({ client, registry, activity, baseUrl });
+    activity = suivi.activity;
+    steps.push({ step: "suivi", ok: true, pageId: suivi.page.id, created: suivi.created });
   }
 
   // Conversation group (native sidebar group).
@@ -170,4 +180,54 @@ export async function resolveActivityForSession({ registry, sessionKey, group })
 
 export function clientFor(config) {
   return new BookStackClient(config);
+}
+
+/**
+ * Garantit la présence de la page « Suivi » à la racine du livre.
+ *
+ * Idempotent : réutilise l'identifiant enregistré, sinon retrouve une page
+ * racine nommée « Suivi », sinon la crée. Ne supprime jamais de doublon :
+ * en cas d'ambiguïté, la première page racine est réutilisée et l'anomalie est
+ * signalée dans le retour.
+ */
+export async function ensureSuiviPage({ client, registry, activity, baseUrl, create = true }) {
+  const bookId = activity.bookId;
+
+  if (activity.suiviPageId) {
+    const page = await client.get(`/pages/${activity.suiviPageId}`).catch(() => null);
+    if (page && page.book_id === bookId) {
+      return { page, created: false, source: "registry", activity };
+    }
+  }
+
+  const book = await client.get(`/books/${bookId}`);
+  const rootPages = (book.contents ?? []).filter((item) => item.type === "page");
+  const matches = rootPages.filter((p) => String(p.name ?? "").trim().toLowerCase() === SUIVI_PAGE.toLowerCase());
+
+  if (matches.length > 0) {
+    const page = await client.get(`/pages/${matches[0].id}`);
+    activity.suiviPageId = page.id;
+    await registry.upsertActivity(activity);
+    return {
+      page,
+      created: false,
+      source: "book",
+      activity,
+      ...(matches.length > 1
+        ? { warning: `${matches.length} pages « Suivi » à la racine ; la page ${page.id} est utilisée, aucune suppression automatique.` }
+        : {}),
+    };
+  }
+
+  if (!create) return { page: null, created: false, source: "absent", activity };
+
+  const page = await client.post("/pages", {
+    book_id: bookId,
+    name: SUIVI_PAGE,
+    markdown: `# Suivi — ${activity.name}\n`,
+    tags: [{ name: "openclaw-role", value: "suivi" }],
+  });
+  activity.suiviPageId = page.id;
+  await registry.upsertActivity(activity);
+  return { page, created: true, source: "created", activity };
 }

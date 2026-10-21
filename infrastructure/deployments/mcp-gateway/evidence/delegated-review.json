@@ -1,0 +1,15 @@
+{
+  "task_id": "a36bf3eb-a210-4a62-bbda-5d1a09696fb4",
+  "tool": "mcp__llm_router__submit",
+  "state": "completed",
+  "requested_model": "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit",
+  "parent_session": null,
+  "provider_model_confirmation": "not returned by result; no independent provider model identity claimed",
+  "scope": "Documentary review of verified deployment facts; no secrets submitted",
+  "native_review": "Rejected unsupported assertions about promised security/compliance/monitoring and unencrypted Swarm secrets; rejected token-prefix logging and claims of encryption changes not performed. Shared socket/network and plaintext root-only recovery files already documented. No infrastructure changes from delegated suggestions.",
+  "earlier_task": {
+    "task_id": "09efc115-3ba5-4070-bd2d-e94164cbcf89",
+    "state": "failed",
+    "error": "truncated_or_invalid_completion"
+  }
+}

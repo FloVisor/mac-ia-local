@@ -1,0 +1,133 @@
+[
+  {
+    "repository": "FloVisor/XITHI-Infrastructure-Ops",
+    "group": "primary",
+    "branch": "main",
+    "pull": true,
+    "private": true,
+    "path": "/srv/docker-local/serena/repositories/primary/FloVisor/XITHI-Infrastructure-Ops",
+    "cloned": true,
+    "sha": "d2f9c0aec87717d8ef73e48613e2590fde97ad2e"
+  },
+  {
+    "repository": "FloVisor/nodectra",
+    "group": "primary",
+    "branch": "main",
+    "pull": true,
+    "private": true,
+    "path": "/srv/docker-local/serena/repositories/primary/FloVisor/nodectra",
+    "cloned": true,
+    "sha": "ae39f5845de6e52cd95201402a93fec717321b9d"
+  },
+  {
+    "repository": "FloVisor/Plateforme-CaaS-XITHI",
+    "group": "primary",
+    "branch": "main",
+    "pull": true,
+    "private": true,
+    "path": "/srv/docker-local/serena/repositories/primary/FloVisor/Plateforme-CaaS-XITHI",
+    "cloned": true,
+    "sha": "14e7988433e1b1d7f3f89145a9b7cbb649b5c8de"
+  },
+  {
+    "repository": "FloVisor/Plateforme-SD-WAN-XITHI",
+    "group": "primary",
+    "branch": "main",
+    "pull": true,
+    "private": true,
+    "path": "/srv/docker-local/serena/repositories/primary/FloVisor/Plateforme-SD-WAN-XITHI",
+    "cloned": true,
+    "sha": "1e0f650b63b4f3cd3bef9aaa4437bb4ce4027cc0"
+  },
+  {
+    "repository": "FloVisor/mac-ia-local",
+    "group": "primary",
+    "branch": "main",
+    "pull": true,
+    "private": false,
+    "path": "/srv/docker-local/serena/repositories/primary/FloVisor/mac-ia-local",
+    "cloned": true,
+    "sha": "366df4d41ae13f84647efbb6170de584828005d6"
+  },
+  {
+    "repository": "FloVisor/super-agent",
+    "group": "primary",
+    "branch": "migration/candidate-0.8.0-no-deploy",
+    "pull": true,
+    "private": true,
+    "path": "/srv/docker-local/serena/repositories/primary/FloVisor/super-agent",
+    "cloned": true,
+    "sha": "b83d006606669e00919f1a09c6d51969ee8a56ed"
+  },
+  {
+    "repository": "FloVisor/post-activation-validation",
+    "group": "primary",
+    "branch": "main",
+    "pull": true,
+    "private": true,
+    "path": "/srv/docker-local/serena/repositories/primary/FloVisor/post-activation-validation",
+    "cloned": true,
+    "sha": null,
+    "empty": true
+  },
+  {
+    "repository": "rldet9/m3-si-mixtrio-kit",
+    "group": "secondary",
+    "branch": "main",
+    "pull": true,
+    "private": true,
+    "path": "/srv/docker-local/serena/repositories/secondary/rldet9/m3-si-mixtrio-kit",
+    "cloned": true,
+    "sha": "5a0349a6922f53016beda5ab463825e71a5e8868"
+  },
+  {
+    "repository": "rldet9/n8n-nodes-advanced",
+    "group": "secondary",
+    "branch": "master",
+    "pull": true,
+    "private": true,
+    "path": "/srv/docker-local/serena/repositories/secondary/rldet9/n8n-nodes-advanced",
+    "cloned": false,
+    "sha": null
+  },
+  {
+    "repository": "rldet9/m3-si-xithi",
+    "group": "secondary",
+    "branch": "main",
+    "pull": true,
+    "private": true,
+    "path": "/srv/docker-local/serena/repositories/secondary/rldet9/m3-si-xithi",
+    "cloned": false,
+    "sha": null
+  },
+  {
+    "repository": "rldet9/m3-orionai-patterns",
+    "group": "secondary",
+    "branch": "main",
+    "pull": true,
+    "private": true,
+    "path": "/srv/docker-local/serena/repositories/secondary/rldet9/m3-orionai-patterns",
+    "cloned": false,
+    "sha": null
+  },
+  {
+    "repository": "rldet9/m3-workspace",
+    "group": "secondary",
+    "branch": "main",
+    "pull": true,
+    "private": true,
+    "path": "/srv/docker-local/serena/repositories/secondary/rldet9/m3-workspace",
+    "cloned": false,
+    "sha": null
+  },
+  {
+    "repository": "xithi-fr/AlerteSmiden",
+    "group": "secondary",
+    "branch": "main",
+    "pull": true,
+    "private": true,
+    "path": "/srv/docker-local/serena/repositories/secondary/xithi-fr/AlerteSmiden",
+    "cloned": false,
+    "sha": null
+  }
+]

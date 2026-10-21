@@ -1,0 +1,41 @@
+✔ Contacts use read-only argv without shell and preserve Perso scope (1.070208ms)
+✔ Orion discovery and Outline reads, direct and deferred, need no approval (0.173333ms)
+✔ exec_tool reads require a real matching contract result in same session (0.201834ms)
+✔ deferred actual get_contract result works; fabricated nested params do not (0.097333ms)
+✔ wrapper cannot bypass sender gates or side-effect refusals (0.629916ms)
+[agents/tools] plugin approval gateway request failed; blocking tool call: Error: SIMULATED_TRANSPORT_ERROR
+[agents/tools] before_tool_call hook failed: tool=gmail_send toolCallId=b49bb507-cbe4-4b9c-8532-b85748db70d5 error=Error: TEST_HOOK_FAILURE
+✔ installed runtime decision allow-once (4.708416ms)
+✔ installed runtime decision deny (0.307666ms)
+✔ installed runtime decision timeout (0.186625ms)
+✔ installed runtime decision cancelled (0.162ms)
+✔ installed runtime decision undefined (0.176916ms)
+✔ installed runtime decision allow-always (0.166958ms)
+✔ installed runtime decision bogus (0.177417ms)
+✔ installed runtime transport error blocks tool (13.014417ms)
+✔ installed runtime freezes args and demands fresh approval for changed action (0.503667ms)
+✔ installed runtime rejects lower-priority parameter rewrite (0.273417ms)
+✔ installed runtime lower-priority veto and hook exception both block (8.871833ms)
+✔ all shell commands and unqualified execution paths fail closed (0.60925ms)
+✔ dedicated reads do not ask; Graph/BookStack remain separated (0.12625ms)
+✔ strict Gmail read argv: query is data, no flags/injection/control-flow (0.268208ms)
+✔ attachment read destination is generated inside own workspace (3.284291ms)
+✔ native grants bind agent/session/id/content and are consumable once (1.294666ms)
+✔ Gmail MIME binds body/recipients/attachment bytes, transport neutralized (1.657792ms)
+✔ memory exception respects canonical paths, relative paths, own workspace and symlinks (1.178917ms)
+✔ file_change approval protects exact preimage, native outside writes blocked (7.73475ms)
+✔ deletions of memory always require approval; trash/delete/archive distinguished (0.933625ms)
+✔ controlled system commands are fixed argv and are never run during qualification (0.298125ms)
+✔ known outgoing messages remain single-call gated, remote draft send remains blocked (0.126292ms)
+✔ iMessage transport is neutralized and exactly bound; no shell or fallback (0.212084ms)
+✔ all automatic channel sends are cancelled and direct plugin writes need a grant (0.308333ms)
+✔ grant remains bound across duplicate module loads, but cannot be reused (0.858708ms)
+✔ hard links cannot extend own memory exception (0.628292ms)
+ℹ tests 31
+ℹ suites 0
+ℹ pass 31
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 664.097875

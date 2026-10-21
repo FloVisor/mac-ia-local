@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "rollback": "/etc/litellm/model-audit-20261021-rollback.json",
+  "routes": [
+    {
+      "alias": "free/task-fast",
+      "params_max_tokens": 2048,
+      "context": 262144,
+      "output": 2048
+    },
+    {
+      "alias": "free/task-coding",
+      "params_max_tokens": 2048,
+      "context": 128000,
+      "output": 2048
+    },
+    {
+      "alias": "free/task-reasoning",
+      "params_max_tokens": 2048,
+      "context": 131072,
+      "output": 2048
+    },
+    {
+      "alias": "free/task-long-context",
+      "params_max_tokens": 2048,
+      "context": 256000,
+      "output": 2048
+    }
+  ]
+}

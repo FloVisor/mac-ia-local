@@ -1,0 +1,102 @@
+{
+  "ok": true,
+  "records": [
+    {
+      "tool": "orion__list_registries",
+      "success": true,
+      "approvalCount": 0,
+      "registryCount": 5
+    },
+    {
+      "tool": "orion__search_tools",
+      "success": true,
+      "approvalCount": 0,
+      "tools": [
+        {
+          "name": "search_glpi_ticket",
+          "access": "read",
+          "registry": "tool_glpi_wrapper"
+        },
+        {
+          "name": "get_glpi_full_ticket",
+          "access": "read",
+          "registry": "tool_glpi_wrapper"
+        },
+        {
+          "name": "change_status_glpi_ticket",
+          "access": "write",
+          "registry": "tool_glpi_wrapper"
+        }
+      ]
+    },
+    {
+      "tool": "orion__get_contract",
+      "success": true,
+      "approvalCount": 0
+    },
+    {
+      "tool": "orion__exec_tool",
+      "success": true,
+      "approvalCount": 0,
+      "responseType": "object",
+      "responseKeys": [
+        "result"
+      ],
+      "responseBytes": 540,
+      "businessResult": [
+        {
+          "1": "SWITCH BAIE PEC",
+          "2": 21577,
+          "4": [
+            "2305",
+            "4514"
+          ],
+          "5": "61",
+          "8": "N2",
+          "12": 2,
+          "15": "2026-10-20 18:03:13",
+          "16": null,
+          "80": "Entité racine > CLIENTS > PÔLE EUROPÉEN DU CHEVAL"
+        },
+        {
+          "1": "RE: Mise à jour PC",
+          "2": 21576,
+          "4": "5125",
+          "5": null,
+          "8": "DC EXPANSION Techniciens",
+          "12": 2,
+          "15": "2026-10-20 17:33:48",
+          "16": null,
+          "80": "Entité racine > CLIENTS > DC EXPANSION > IMPEX"
+        },
+        {
+          "1": "préparation du Mac ",
+          "2": 21575,
+          "4": "4701",
+          "5": "3779",
+          "8": "N1",
+          "12": 2,
+          "15": "2026-10-20 17:25:57",
+          "16": null,
+          "80": "Entité racine > CLIENTS > MIXTRIO > XITHI"
+        }
+      ]
+    },
+    {
+      "test": "perso-native-MCP-deny",
+      "success": true
+    },
+    {
+      "test": "imessage_send-neutralized",
+      "requiresNativeApproval": true,
+      "executed": false
+    },
+    {
+      "test": "gmail_send-neutralized",
+      "requiresNativeApproval": true,
+      "executed": false
+    }
+  ],
+  "readApprovals": 0,
+  "simulatedSendApprovals": 2
+}

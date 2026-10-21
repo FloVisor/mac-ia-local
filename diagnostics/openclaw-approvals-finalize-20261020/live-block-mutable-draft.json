@@ -1,0 +1,8 @@
+{
+  "ok": false,
+  "toolName": "outlook_mail_write",
+  "error": {
+    "code": "not_found",
+    "message": "Tool not available: outlook_mail_write"
+  }
+}

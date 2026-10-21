@@ -1,0 +1,96 @@
+{
+  "agents": {
+    "entries": {
+      "main": {
+        "skills": [
+          "1password",
+          "add-model-provider",
+          "apple-notes",
+          "apple-reminders",
+          "bear-notes",
+          "blogwatcher",
+          "blucli",
+          "camsnap",
+          "clawhub",
+          "cloud-image-bake",
+          "coding-agent",
+          "configure-channel",
+          "context7",
+          "control-ui",
+          "coordination-agents",
+          "demande-devis-commercial",
+          "diagnose-gateway",
+          "diagnostic-technique",
+          "diagram-maker",
+          "document-reader",
+          "documents-extraction-ocr",
+          "eightctl",
+          "gemini",
+          "gh-issues",
+          "gifgrep",
+          "github",
+          "gog",
+          "goplaces",
+          "healthcheck",
+          "himalaya",
+          "imessage",
+          "imsg",
+          "mcp-raphael",
+          "mcporter",
+          "meme-maker",
+          "microsoft-365-pro",
+          "model-usage",
+          "nano-pdf",
+          "node-connect",
+          "node-inspect-debugger",
+          "notion",
+          "obsidian",
+          "openai-whisper",
+          "openai-whisper-api",
+          "openhue",
+          "oracle",
+          "ordercli",
+          "orion",
+          "peekaboo",
+          "python-debugpy",
+          "recherche-web",
+          "sag",
+          "sherpa-onnx-tts",
+          "skill-creator",
+          "songsee",
+          "sonoscli",
+          "spike",
+          "spotify-player",
+          "summarize",
+          "things-mac",
+          "tmux",
+          "tool-ids",
+          "trello",
+          "visualize",
+          "weather",
+          "xurl",
+          "serena"
+        ]
+      }
+    }
+  },
+  "mcp": {
+    "servers": {
+      "docker_gateway_pro": {
+        "toolFilter": {
+          "include": [
+            "convert_time",
+            "get_current_time",
+            "query-docs",
+            "resolve-library-id",
+            "serena_repository_status",
+            "serena_find_symbol",
+            "serena_symbols_overview",
+            "serena_find_references",
+            "serena_search_pattern"
+          ]
+        }
+      }
+    }
+  }
+}
