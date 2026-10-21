@@ -1,0 +1,63 @@
+{
+  "captured_at": "2026-10-21T06:35:20.164101+00:00",
+  "host": "docker-02",
+  "metadata_only": true,
+  "paths": [
+    {
+      "path": "/",
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "directory": true
+    },
+    {
+      "path": "/srv",
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "directory": true
+    },
+    {
+      "path": "/srv/docker-shared",
+      "mode": "0o755",
+      "uid": 0,
+      "gid": 0,
+      "directory": true
+    },
+    {
+      "path": "/srv/docker-shared/bookstack",
+      "mode": "0o700",
+      "uid": 0,
+      "gid": 0,
+      "directory": true
+    },
+    {
+      "path": "/srv/docker-shared/bookstack/secrets",
+      "mode": "0o700",
+      "uid": 0,
+      "gid": 0,
+      "directory": true
+    },
+    {
+      "path": "/srv/docker-shared/bookstack/secrets/app_key",
+      "mode": "0o444",
+      "uid": 0,
+      "gid": 0,
+      "directory": false
+    },
+    {
+      "path": "/srv/docker-shared/bookstack/secrets/db_password",
+      "mode": "0o444",
+      "uid": 0,
+      "gid": 0,
+      "directory": false
+    },
+    {
+      "path": "/srv/docker-shared/bookstack/secrets/db_root_password",
+      "mode": "0o444",
+      "uid": 0,
+      "gid": 0,
+      "directory": false
+    }
+  ]
+}

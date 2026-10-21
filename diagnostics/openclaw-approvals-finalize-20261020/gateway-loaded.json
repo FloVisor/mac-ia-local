@@ -1,0 +1,14 @@
+[
+  {
+    "time": "2026-10-20T22:43:52.128+02:00",
+    "message": "send-approval v0.2.0: file/system/MCP default-deny policy, dedicated Gmail read/send, native per-call approvals"
+  },
+  {
+    "time": "2026-10-20T22:43:57.038+02:00",
+    "message": "http server listening (8 plugins: active-memory, anthropic, bookstack-perso, imessage, memory-core, microsoft-graph, ollama, send-approval; 7.0s)"
+  },
+  {
+    "time": "2026-10-20T22:43:57.133+02:00",
+    "message": "send-approval v0.2.0: file/system/MCP default-deny policy, dedicated Gmail read/send, native per-call approvals"
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "removed": [
+    [
+      "perso",
+      "/opt/homebrew/bin/gog"
+    ],
+    [
+      "perso",
+      "/opt/homebrew/Cellar/gogcli/*/bin/gog"
+    ]
+  ],
+  "exit": 0
+}

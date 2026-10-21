@@ -1,0 +1,19 @@
+{
+  "calls": [
+    {
+      "type": "toolCall",
+      "id": "call_6b5ce327",
+      "name": "read",
+      "arguments": {
+        "path": "/tmp/openclaw-audit-tool-proof-20261021.txt"
+      }
+    }
+  ],
+  "results": [
+    {
+      "toolCallId": "call_6b5ce327",
+      "toolName": "read",
+      "isError": false
+    }
+  ]
+}

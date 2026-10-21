@@ -1,0 +1,14 @@
+{
+  "origin": "docker-02 LAN via HTTPS Traefik; verified TLS/SNI",
+  "admin_login": 200,
+  "role": "proxy_admin",
+  "cookie_secure": true,
+  "cookie_httponly": false,
+  "admin_endpoints": {
+    "/model/info": 200,
+    "/credentials": 200,
+    "/user/list": 200,
+    "/global/spend/logs": 200
+  },
+  "session_logout": 200
+}

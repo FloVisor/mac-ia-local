@@ -1,0 +1,87 @@
+[
+  {
+    "id": 52,
+    "platform": "groq",
+    "modelId": "openai/gpt-oss-120b",
+    "contextWindow": 131072,
+    "rpmLimit": 30,
+    "rpdLimit": 1000,
+    "tpmLimit": 8000,
+    "tpdLimit": 200000,
+    "supportsTools": true,
+    "supportsVision": false,
+    "fallbackEnabled": true,
+    "qualifiedModelId": null
+  },
+  {
+    "id": 306,
+    "platform": "groq",
+    "modelId": "qwen/qwen3.8-27b",
+    "contextWindow": 262144,
+    "rpmLimit": 30,
+    "rpdLimit": 250,
+    "tpmLimit": 8000,
+    "tpdLimit": 200000,
+    "supportsTools": true,
+    "supportsVision": true,
+    "fallbackEnabled": true,
+    "qualifiedModelId": null
+  },
+  {
+    "id": 281,
+    "platform": "mistral",
+    "modelId": "codestral-2508",
+    "contextWindow": 256000,
+    "rpmLimit": 2,
+    "rpdLimit": null,
+    "tpmLimit": 500000,
+    "tpdLimit": null,
+    "supportsTools": true,
+    "supportsVision": false,
+    "fallbackEnabled": true,
+    "qualifiedModelId": null
+  },
+  {
+    "id": 285,
+    "platform": "mistral",
+    "modelId": "ministral-8b-2512",
+    "contextWindow": 262144,
+    "rpmLimit": 2,
+    "rpdLimit": null,
+    "tpmLimit": 500000,
+    "tpdLimit": null,
+    "supportsTools": true,
+    "supportsVision": true,
+    "fallbackEnabled": true,
+    "qualifiedModelId": null
+  },
+  {
+    "id": 161,
+    "platform": "openrouter",
+    "modelId": "cohere/north-mini-code:free",
+    "contextWindow": 256000,
+    "rpmLimit": 20,
+    "rpdLimit": 50,
+    "tpmLimit": null,
+    "tpdLimit": null,
+    "supportsTools": true,
+    "supportsVision": false,
+    "fallbackEnabled": true,
+    "qualifiedModelId": null
+  },
+  {
+    "id": 276,
+    "platform": "openrouter",
+    "modelId": "dots-studio/dots-3-note-preview:free",
+    "contextWindow": 512000,
+    "rpmLimit": 20,
+    "rpdLimit": 50,
+    "tpmLimit": null,
+    "tpdLimit": null,
+    "supportsTools": true,
+    "supportsVision": true,
+    "fallbackEnabled": true,
+    "qualifiedModelId": null
+  }
+]
+

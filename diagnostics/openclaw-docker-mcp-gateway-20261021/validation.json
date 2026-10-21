@@ -1,0 +1,513 @@
+{
+  "date": "2026-10-21",
+  "codex": {
+    "cli": {
+      "initial": {
+        "inventory": [
+          {
+            "name": "docker-mcp-gateway",
+            "runtimeStatus": "connected",
+            "pluginId": null,
+            "httpOrigin": "https://mcp-gateway.gangneux.org",
+            "serverInfo": {
+              "name": "Docker AI MCP Gateway",
+              "title": null,
+              "version": "2.0.1",
+              "description": null,
+              "icons": null,
+              "websiteUrl": null
+            },
+            "serverCapabilities": {
+              "logging": {},
+              "prompts": {
+                "listChanged": true
+              },
+              "resources": {
+                "subscribe": true,
+                "listChanged": true
+              },
+              "tools": {
+                "listChanged": true
+              }
+            },
+            "tools": {
+              "convert_time": {
+                "name": "convert_time",
+                "description": "Convert time between timezones",
+                "inputSchema": {
+                  "properties": {
+                    "source_timezone": {
+                      "description": "Source IANA timezone name (e.g., 'America/New_York', 'Europe/London'). Use 'UTC' as local timezone if no source timezone provided by the user.",
+                      "type": "string"
+                    },
+                    "target_timezone": {
+                      "description": "Target IANA timezone name (e.g., 'Asia/Tokyo', 'America/San_Francisco'). Use 'UTC' as local timezone if no target timezone provided by the user.",
+                      "type": "string"
+                    },
+                    "time": {
+                      "description": "Time to convert in 24-hour format (HH:MM)",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "source_timezone",
+                    "time",
+                    "target_timezone"
+                  ],
+                  "type": "object"
+                }
+              },
+              "get_current_time": {
+                "name": "get_current_time",
+                "description": "Get current time in a specific timezones",
+                "inputSchema": {
+                  "properties": {
+                    "timezone": {
+                      "description": "IANA timezone name (e.g., 'America/New_York', 'Europe/London'). Use 'UTC' as local timezone if no timezone provided by the user.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "timezone"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "toolsError": null,
+            "resources": [],
+            "resourceTemplates": [],
+            "authStatus": "unknown"
+          }
+        ],
+        "time_call": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\n  \"timezone\": \"Europe/Paris\",\n  \"datetime\": \"2026-10-21T17:17:29+02:00\",\n  \"is_dst\": true\n}"
+            }
+          ]
+        },
+        "model_turns": 0
+      },
+      "new_process": {
+        "inventory": [
+          {
+            "name": "docker-mcp-gateway",
+            "runtimeStatus": "connected",
+            "pluginId": null,
+            "httpOrigin": "https://mcp-gateway.gangneux.org",
+            "serverInfo": {
+              "name": "Docker AI MCP Gateway",
+              "title": null,
+              "version": "2.0.1",
+              "description": null,
+              "icons": null,
+              "websiteUrl": null
+            },
+            "serverCapabilities": {
+              "logging": {},
+              "prompts": {
+                "listChanged": true
+              },
+              "resources": {
+                "subscribe": true,
+                "listChanged": true
+              },
+              "tools": {
+                "listChanged": true
+              }
+            },
+            "tools": {
+              "convert_time": {
+                "name": "convert_time",
+                "description": "Convert time between timezones",
+                "inputSchema": {
+                  "properties": {
+                    "source_timezone": {
+                      "description": "Source IANA timezone name (e.g., 'America/New_York', 'Europe/London'). Use 'UTC' as local timezone if no source timezone provided by the user.",
+                      "type": "string"
+                    },
+                    "target_timezone": {
+                      "description": "Target IANA timezone name (e.g., 'Asia/Tokyo', 'America/San_Francisco'). Use 'UTC' as local timezone if no target timezone provided by the user.",
+                      "type": "string"
+                    },
+                    "time": {
+                      "description": "Time to convert in 24-hour format (HH:MM)",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "source_timezone",
+                    "time",
+                    "target_timezone"
+                  ],
+                  "type": "object"
+                }
+              },
+              "get_current_time": {
+                "name": "get_current_time",
+                "description": "Get current time in a specific timezones",
+                "inputSchema": {
+                  "properties": {
+                    "timezone": {
+                      "description": "IANA timezone name (e.g., 'America/New_York', 'Europe/London'). Use 'UTC' as local timezone if no timezone provided by the user.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "timezone"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "toolsError": null,
+            "resources": [],
+            "resourceTemplates": [],
+            "authStatus": "unknown"
+          }
+        ],
+        "time_call": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\n  \"timezone\": \"Europe/Paris\",\n  \"datetime\": \"2026-10-21T17:21:44+02:00\",\n  \"is_dst\": true\n}"
+            }
+          ]
+        },
+        "model_turns": 0
+      }
+    },
+    "desktop-binary": {
+      "initial": {
+        "inventory": [
+          {
+            "name": "docker-mcp-gateway",
+            "runtimeStatus": "connected",
+            "pluginId": null,
+            "httpOrigin": "https://mcp-gateway.gangneux.org",
+            "serverInfo": {
+              "name": "Docker AI MCP Gateway",
+              "title": null,
+              "version": "2.0.1",
+              "description": null,
+              "icons": null,
+              "websiteUrl": null
+            },
+            "serverCapabilities": {
+              "logging": {},
+              "prompts": {
+                "listChanged": true
+              },
+              "resources": {
+                "subscribe": true,
+                "listChanged": true
+              },
+              "tools": {
+                "listChanged": true
+              }
+            },
+            "tools": {
+              "convert_time": {
+                "name": "convert_time",
+                "description": "Convert time between timezones",
+                "inputSchema": {
+                  "properties": {
+                    "source_timezone": {
+                      "description": "Source IANA timezone name (e.g., 'America/New_York', 'Europe/London'). Use 'UTC' as local timezone if no source timezone provided by the user.",
+                      "type": "string"
+                    },
+                    "target_timezone": {
+                      "description": "Target IANA timezone name (e.g., 'Asia/Tokyo', 'America/San_Francisco'). Use 'UTC' as local timezone if no target timezone provided by the user.",
+                      "type": "string"
+                    },
+                    "time": {
+                      "description": "Time to convert in 24-hour format (HH:MM)",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "source_timezone",
+                    "time",
+                    "target_timezone"
+                  ],
+                  "type": "object"
+                }
+              },
+              "get_current_time": {
+                "name": "get_current_time",
+                "description": "Get current time in a specific timezones",
+                "inputSchema": {
+                  "properties": {
+                    "timezone": {
+                      "description": "IANA timezone name (e.g., 'America/New_York', 'Europe/London'). Use 'UTC' as local timezone if no timezone provided by the user.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "timezone"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "toolsError": null,
+            "resources": [],
+            "resourceTemplates": [],
+            "authStatus": "unknown"
+          }
+        ],
+        "time_call": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\n  \"timezone\": \"Europe/Paris\",\n  \"datetime\": \"2026-10-21T17:17:32+02:00\",\n  \"is_dst\": true\n}"
+            }
+          ]
+        },
+        "model_turns": 0
+      },
+      "new_process": {
+        "inventory": [
+          {
+            "name": "docker-mcp-gateway",
+            "runtimeStatus": "connected",
+            "pluginId": null,
+            "httpOrigin": "https://mcp-gateway.gangneux.org",
+            "serverInfo": {
+              "name": "Docker AI MCP Gateway",
+              "title": null,
+              "version": "2.0.1",
+              "description": null,
+              "icons": null,
+              "websiteUrl": null
+            },
+            "serverCapabilities": {
+              "logging": {},
+              "prompts": {
+                "listChanged": true
+              },
+              "resources": {
+                "subscribe": true,
+                "listChanged": true
+              },
+              "tools": {
+                "listChanged": true
+              }
+            },
+            "tools": {
+              "get_current_time": {
+                "name": "get_current_time",
+                "description": "Get current time in a specific timezones",
+                "inputSchema": {
+                  "properties": {
+                    "timezone": {
+                      "description": "IANA timezone name (e.g., 'America/New_York', 'Europe/London'). Use 'UTC' as local timezone if no timezone provided by the user.",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "timezone"
+                  ],
+                  "type": "object"
+                }
+              },
+              "convert_time": {
+                "name": "convert_time",
+                "description": "Convert time between timezones",
+                "inputSchema": {
+                  "properties": {
+                    "source_timezone": {
+                      "description": "Source IANA timezone name (e.g., 'America/New_York', 'Europe/London'). Use 'UTC' as local timezone if no source timezone provided by the user.",
+                      "type": "string"
+                    },
+                    "target_timezone": {
+                      "description": "Target IANA timezone name (e.g., 'Asia/Tokyo', 'America/San_Francisco'). Use 'UTC' as local timezone if no target timezone provided by the user.",
+                      "type": "string"
+                    },
+                    "time": {
+                      "description": "Time to convert in 24-hour format (HH:MM)",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "source_timezone",
+                    "time",
+                    "target_timezone"
+                  ],
+                  "type": "object"
+                }
+              }
+            },
+            "toolsError": null,
+            "resources": [],
+            "resourceTemplates": [],
+            "authStatus": "unknown"
+          }
+        ],
+        "time_call": {
+          "content": [
+            {
+              "type": "text",
+              "text": "{\n  \"timezone\": \"Europe/Paris\",\n  \"datetime\": \"2026-10-21T17:21:47+02:00\",\n  \"is_dst\": true\n}"
+            }
+          ]
+        },
+        "model_turns": 0
+      }
+    }
+  },
+  "openclaw": {
+    "pro": {
+      "persistence": "PASS",
+      "provider": "omlx",
+      "cost": {
+        "total": 0
+      },
+      "native_time_results": [
+        {
+          "runId": "fd63bcd9-45a6-48f6-996f-9bc64b65770e",
+          "scopeId": "51ad7da4-64d0-4619-b145-70e9c7d039af",
+          "afterEntryId": "9d35e5a9-33e5-4610-9ba1-943784071780",
+          "startOrder": 0,
+          "parentToolCallId": "call_0525da07",
+          "toolCallId": "tool_call:call_0525da07:docker_gateway_pro__get_current_time:1",
+          "toolName": "docker_gateway_pro__get_current_time",
+          "isError": false,
+          "startedAt": 1792595950440,
+          "timestamp": 1792595952694,
+          "content": [
+            {
+              "type": "text",
+              "text": "{\n  \"timezone\": \"Europe/Paris\",\n  \"datetime\": \"2026-10-21T17:19:12+02:00\",\n  \"is_dst\": true\n}"
+            }
+          ],
+          "type": "toolResult",
+          "role": "toolResult"
+        },
+        {
+          "runId": "882e5e23-4f6d-4b8d-b419-ee2a9afddccd",
+          "scopeId": "2a8d29ee-845b-4a9e-8fea-e67735595cf6",
+          "afterEntryId": "1be3a5ee-00b7-41cd-a013-d546834c42d2",
+          "startOrder": 0,
+          "parentToolCallId": "call_3eb7817c",
+          "toolCallId": "tool_call:call_3eb7817c:docker_gateway_pro__get_current_time:1",
+          "toolName": "docker_gateway_pro__get_current_time",
+          "isError": false,
+          "startedAt": 1792596114474,
+          "timestamp": 1792596116676,
+          "content": [
+            {
+              "type": "text",
+              "text": "{\n  \"timezone\": \"Europe/Paris\",\n  \"datetime\": \"2026-10-21T17:21:56+02:00\",\n  \"is_dst\": true\n}"
+            }
+          ],
+          "type": "toolResult",
+          "role": "toolResult"
+        }
+      ],
+      "terminal_receipt": {
+        "runId": "882e5e23-4f6d-4b8d-b419-ee2a9afddccd",
+        "sessionId": "f821a97c-bd18-4597-baae-b0147d9cb73b",
+        "turnId": "882e5e23-4f6d-4b8d-b419-ee2a9afddccd",
+        "requested": {
+          "provider": "omlx",
+          "model": "mlx-community--Qwen3.6-35B-A3B-4bit"
+        },
+        "effective": {
+          "provider": "omlx",
+          "model": "mlx-community--Qwen3.6-35B-A3B-4bit",
+          "responseModel": "keepalive"
+        },
+        "successfulToolNames": [
+          "docker_gateway_pro__get_current_time",
+          "tool_call"
+        ],
+        "rerouted": true,
+        "terminalDisposition": "visible"
+      }
+    },
+    "perso": {
+      "persistence": "PASS",
+      "provider": "omlx",
+      "cost": {
+        "total": 0
+      },
+      "native_time_results": [
+        {
+          "runId": "7b301dcd-5dea-486c-b7c7-84711c28ee21",
+          "scopeId": "c494a5ef-98cc-493b-a6d0-d67ad1c33d13",
+          "afterEntryId": "4547b565-a461-406d-b51f-0cbd063a9827",
+          "startOrder": 0,
+          "parentToolCallId": "call_7add3cc5",
+          "toolCallId": "tool_call:call_7add3cc5:docker_gateway_perso__get_current_time:1",
+          "toolName": "docker_gateway_perso__get_current_time",
+          "isError": false,
+          "startedAt": 1792596005813,
+          "timestamp": 1792596008022,
+          "content": [
+            {
+              "type": "text",
+              "text": "{\n  \"timezone\": \"Europe/Paris\",\n  \"datetime\": \"2026-10-21T17:20:07+02:00\",\n  \"is_dst\": true\n}"
+            }
+          ],
+          "type": "toolResult",
+          "role": "toolResult"
+        },
+        {
+          "runId": "e10d66db-31c3-4f50-85e9-6241876fd910",
+          "scopeId": "4b0963ea-b94c-400f-a83f-c185163e3447",
+          "afterEntryId": "26b9fcf9-b1b9-4b5e-803f-8ef2283e55a1",
+          "startOrder": 0,
+          "parentToolCallId": "call_b173ae50",
+          "toolCallId": "tool_call:call_b173ae50:docker_gateway_perso__get_current_time:1",
+          "toolName": "docker_gateway_perso__get_current_time",
+          "isError": false,
+          "startedAt": 1792596171709,
+          "timestamp": 1792596173807,
+          "content": [
+            {
+              "type": "text",
+              "text": "{\n  \"timezone\": \"Europe/Paris\",\n  \"datetime\": \"2026-10-21T17:22:53+02:00\",\n  \"is_dst\": true\n}"
+            }
+          ],
+          "type": "toolResult",
+          "role": "toolResult"
+        }
+      ],
+      "terminal_receipt": {
+        "runId": "e10d66db-31c3-4f50-85e9-6241876fd910",
+        "sessionId": "6947a207-ede8-42ff-98fa-0b2dcfaa051a",
+        "turnId": "e10d66db-31c3-4f50-85e9-6241876fd910",
+        "requested": {
+          "provider": "omlx",
+          "model": "mlx-community--Qwen3.6-35B-A3B-4bit"
+        },
+        "effective": {
+          "provider": "omlx",
+          "model": "mlx-community--Qwen3.6-35B-A3B-4bit",
+          "responseModel": "keepalive"
+        },
+        "successfulToolNames": [
+          "docker_gateway_perso__get_current_time",
+          "tool_call"
+        ],
+        "rerouted": true,
+        "terminalDisposition": "visible"
+      }
+    }
+  },
+  "cross_profile_checks": {
+    "pro_to_perso": "Native tool_call error: Profil Docker MCP réservé à son agent",
+    "perso_to_pro": "Native tool_call error: send-approval: Profil Docker MCP réservé à son agent"
+  },
+  "tests": {
+    "protection_pass": 32,
+    "witness_unittest_pass": 2,
+    "pytest": "NOT_RUN: module not installed"
+  },
+  "desktop_ui": "NOT_RUN: current application hosts this active session; bundled engine only validated",
+  "preservation": "Existing MCP entries and all unrelated configuration structurally identical to initial snapshots",
+  "secrets": "Retrieved via verified SSH; private files only; targeted local outputs and logs plus last 100 log lines of each Gateway profile contain no token"
+}

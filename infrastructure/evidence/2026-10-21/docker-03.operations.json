@@ -1,0 +1,14 @@
+{
+  "captured_at": "2026-10-21T06:29:49.930741+00:00",
+  "unit_last_results": {
+    "traefik-syno-cert-sync.service": "Result=success\nExecMainStatus=0\nActiveState=inactive\n"
+  },
+  "backup_scripts": [],
+  "old_acme_path": {
+    "exists": true,
+    "resolved": "/srv/docker-local/compose/traefik/acme/acme.json"
+  },
+  "ollama_backend_directive": [
+    "set $ollama_backend http://ollama-tailscale:11434;"
+  ]
+}

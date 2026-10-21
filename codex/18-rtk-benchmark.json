@@ -1,0 +1,202 @@
+[
+  {
+    "case": "status",
+    "raw_command": [
+      "git",
+      "status"
+    ],
+    "rtk_command": [
+      "rtk",
+      "git",
+      "status"
+    ],
+    "raw": {
+      "bytes": 5952,
+      "tokens_estimate": 1488.0,
+      "ms": 16.08,
+      "exit": 0
+    },
+    "rtk": {
+      "bytes": 4584,
+      "tokens_estimate": 1146.0,
+      "ms": 35.23,
+      "exit": 0
+    },
+    "gain_pct": 22.98
+  },
+  {
+    "case": "diff",
+    "raw_command": [
+      "git",
+      "diff",
+      "--",
+      "AGENTS.md"
+    ],
+    "rtk_command": [
+      "rtk",
+      "git",
+      "diff",
+      "--",
+      "AGENTS.md"
+    ],
+    "raw": {
+      "bytes": 699,
+      "tokens_estimate": 174.75,
+      "ms": 8.63,
+      "exit": 0
+    },
+    "rtk": {
+      "bytes": 679,
+      "tokens_estimate": 169.75,
+      "ms": 20.22,
+      "exit": 0
+    },
+    "gain_pct": 2.86
+  },
+  {
+    "case": "log",
+    "raw_command": [
+      "git",
+      "log",
+      "-5"
+    ],
+    "rtk_command": [
+      "rtk",
+      "git",
+      "log",
+      "-5"
+    ],
+    "raw": {
+      "bytes": 2866,
+      "tokens_estimate": 716.5,
+      "ms": 8.18,
+      "exit": 0
+    },
+    "rtk": {
+      "bytes": 1229,
+      "tokens_estimate": 307.25,
+      "ms": 12.77,
+      "exit": 0
+    },
+    "gain_pct": 57.12
+  },
+  {
+    "case": "rg",
+    "raw_command": [
+      "rg",
+      "-n",
+      "def|assertEqual",
+      "witness-a"
+    ],
+    "rtk_command": [
+      "rtk",
+      "rg",
+      "-n",
+      "def|assertEqual",
+      "witness-a"
+    ],
+    "raw": {
+      "bytes": 409,
+      "tokens_estimate": 102.25,
+      "ms": 8.35,
+      "exit": 0
+    },
+    "rtk": {
+      "bytes": 409,
+      "tokens_estimate": 102.25,
+      "ms": 11.82,
+      "exit": 0
+    },
+    "gain_pct": 0.0
+  },
+  {
+    "case": "ls",
+    "raw_command": [
+      "ls",
+      "-la",
+      "codex"
+    ],
+    "rtk_command": [
+      "rtk",
+      "ls",
+      "-la",
+      "codex"
+    ],
+    "raw": {
+      "bytes": 1938,
+      "tokens_estimate": 484.5,
+      "ms": 9.86,
+      "exit": 0
+    },
+    "rtk": {
+      "bytes": 802,
+      "tokens_estimate": 200.5,
+      "ms": 11.62,
+      "exit": 0
+    },
+    "gain_pct": 58.62
+  },
+  {
+    "case": "tests",
+    "raw_command": [
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "witness-a",
+      "-v"
+    ],
+    "rtk_command": [
+      "rtk",
+      "test",
+      "python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "witness-a",
+      "-v"
+    ],
+    "raw": {
+      "bytes": 230,
+      "tokens_estimate": 57.5,
+      "ms": 37.69,
+      "exit": 0
+    },
+    "rtk": {
+      "bytes": 125,
+      "tokens_estimate": 31.25,
+      "ms": 38.41,
+      "exit": 0
+    },
+    "gain_pct": 45.65
+  },
+  {
+    "case": "logs",
+    "raw_command": [
+      "cat",
+      "diagnostics/openclaw-approvals-finalize-20261020/policy-tests-final.txt"
+    ],
+    "rtk_command": [
+      "rtk",
+      "log",
+      "diagnostics/openclaw-approvals-finalize-20261020/policy-tests-final.txt"
+    ],
+    "raw": {
+      "bytes": 2232,
+      "tokens_estimate": 558.0,
+      "ms": 2.48,
+      "exit": 0
+    },
+    "rtk": {
+      "bytes": 387,
+      "tokens_estimate": 96.75,
+      "ms": 6.55,
+      "exit": 0
+    },
+    "gain_pct": 82.66
+  }
+]

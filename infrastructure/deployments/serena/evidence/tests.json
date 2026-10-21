@@ -1,0 +1,50 @@
+{
+  "mac-symbol": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"repository\": \"FloVisor/mac-ia-local\",\n  \"revision\": \"366df4d41ae13f84647efbb6170de584828005d6\",\n  \"tool\": \"find_symbol\",\n  \"result\": {\n    \"_meta\": null,\n    \"content\": [\n      {\n        \"type\": \"text\",\n        \"text\": \"[{\\\"name_path\\\": \\\"main\\\", \\\"kind\\\": \\\"Function\\\", \\\"relative_path\\\": \\\"mcp/local-llm-mcp/local-llm-mcp.py\\\", \\\"body_location\\\": {\\\"start_line\\\": 235, \\\"end_line\\\": 244}, \\\"body\\\": \\\"def main():\\\\n    log(f\\\\\\\"starting: model={MODEL} base_url={BASE_URL} server=oMLX\\\\\\\")\\\\n    for line in sys.stdin:\\\\n        line = line.strip()\\\\n        if not line:\\\\n            continue\\\\n        try:\\\\n            handle(json.loads(line))\\\\n        except json.JSONDecodeError as e:\\\\n            log(f\\\\\\\"invalid JSON line: {e}\\\\\\\")\\\"}]\",\n        \"annotations\": null,\n        \"_meta\": null\n      }\n    ],\n    \"structuredContent\": {\n      \"result\": \"[{\\\"name_path\\\": \\\"main\\\", \\\"kind\\\": \\\"Function\\\", \\\"relative_path\\\": \\\"mcp/local-llm-mcp/local-llm-mcp.py\\\", \\\"body_location\\\": {\\\"start_line\\\": 235, \\\"end_line\\\": 244}, \\\"body\\\": \\\"def main():\\\\n    log(f\\\\\\\"starting: model={MODEL} base_url={BASE_URL} server=oMLX\\\\\\\")\\\\n    for line in sys.stdin:\\\\n        line = line.strip()\\\\n        if not line:\\\\n            continue\\\\n        try:\\\\n            handle(json.loads(line))\\\\n        except json.JSONDecodeError as e:\\\\n            log(f\\\\\\\"invalid JSON line: {e}\\\\\\\")\\\"}]\"\n    },\n    \"isError\": false,\n    \"resultType\": \"complete\"\n  },\n  \"remote_has_unpushed_mac_changes\": false\n}"
+      }
+    ]
+  },
+  "infra-symbol": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"repository\": \"FloVisor/XITHI-Infrastructure-Ops\",\n  \"revision\": \"d2f9c0aec87717d8ef73e48613e2590fde97ad2e\",\n  \"tool\": \"find_symbol\",\n  \"result\": {\n    \"_meta\": null,\n    \"content\": [\n      {\n        \"type\": \"text\",\n        \"text\": \"[{\\\"name_path\\\": \\\"fingerprint\\\", \\\"kind\\\": \\\"Function\\\", \\\"relative_path\\\": \\\"ansible/scripts/inventory/precompiled.py\\\", \\\"body_location\\\": {\\\"start_line\\\": 93, \\\"end_line\\\": 114}, \\\"body\\\": \\\"def fingerprint(base, include_environment=True, configuration=None):\\\\n    digest = hashlib.sha256()\\\\n    for path in dependencies(base, configuration=configuration):\\\\n        digest.update(str(path).encode()); digest.update(b'\\\\\\\\0')\\\\n        if path.is_symlink():\\\\n            # No silent omission of a dependency outside the qualified source tree.\\\\n            raise CacheError('D\u00e9pendance li\u00e9e non qualifi\u00e9e')\\\\n        if path.is_file():\\\\n            digest.update(path.read_bytes())\\\\n        elif path.is_dir():\\\\n            digest.update(b'directory')\\\\n        else:\\\\n            digest.update(b'absent')\\\\n    # Sign the effective generation context, including implicit CLI defaults.\\\\n    # Raw CLI and UI reads must not evict one another from the private cache.\\\\n    environment = {k: v for k, v in generation_environment(base, os.environ).items() if k.startswith('ANSIBLE_')}\\\\n    environment.update(FAIL_CLOSED_ENV)  # Error handling does not change inventory variables.\\\\n    if include_environment:\\\\n        digest.update(json.dumps(environment, sort_keys=True).encode())\\\\n    digest.update(str(sys.version_info).encode())\\\\n    digest.update(importlib.metadata.version('ansible-core').encode())\\\\n    return digest.hexdigest()\\\"}]\",\n        \"annotations\": null,\n        \"_meta\": null\n      }\n    ],\n    \"structuredContent\": {\n      \"result\": \"[{\\\"name_path\\\": \\\"fingerprint\\\", \\\"kind\\\": \\\"Function\\\", \\\"relative_path\\\": \\\"ansible/scripts/inventory/precompiled.py\\\", \\\"body_location\\\": {\\\"start_line\\\": 93, \\\"end_line\\\": 114}, \\\"body\\\": \\\"def fingerprint(base, include_environment=True, configuration=None):\\\\n    digest = hashlib.sha256()\\\\n    for path in dependencies(base, configuration=configuration):\\\\n        digest.update(str(path).encode()); digest.update(b'\\\\\\\\0')\\\\n        if path.is_symlink():\\\\n            # No silent omission of a dependency outside the qualified source tree.\\\\n            raise CacheError('D\u00e9pendance li\u00e9e non qualifi\u00e9e')\\\\n        if path.is_file():\\\\n            digest.update(path.read_bytes())\\\\n        elif path.is_dir():\\\\n            digest.update(b'directory')\\\\n        else:\\\\n            digest.update(b'absent')\\\\n    # Sign the effective generation context, including implicit CLI defaults.\\\\n    # Raw CLI and UI reads must not evict one another from the private cache.\\\\n    environment = {k: v for k, v in generation_environment(base, os.environ).items() if k.startswith('ANSIBLE_')}\\\\n    environment.update(FAIL_CLOSED_ENV)  # Error handling does not change inventory variables.\\\\n    if include_environment:\\\\n        digest.update(json.dumps(environment, sort_keys=True).encode())\\\\n    digest.update(str(sys.version_info).encode())\\\\n    digest.update(importlib.metadata.version('ansible-core').encode())\\\\n    return digest.hexdigest()\\\"}]\"\n    },\n    \"isError\": false,\n    \"resultType\": \"complete\"\n  },\n  \"remote_has_unpushed_mac_changes\": false\n}"
+      }
+    ]
+  },
+  "mac-references": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"repository\": \"FloVisor/mac-ia-local\",\n  \"revision\": \"366df4d41ae13f84647efbb6170de584828005d6\",\n  \"tool\": \"find_referencing_symbols\",\n  \"result\": {\n    \"_meta\": null,\n    \"content\": [\n      {\n        \"type\": \"text\",\n        \"text\": \"{\\\"mcp/local-llm-mcp/local-llm-mcp.py\\\": {\\\"Variable\\\": [{\\\"name_path\\\": \\\"call_model/count\\\", \\\"body_location\\\": {\\\"start_line\\\": 105, \\\"end_line\\\": 105}, \\\"content_around_reference\\\": \\\"... 104:        return None, f\\\\\\\"Unknown profile '{profile}'. Valid: {', '.join(sorted(PROFILES))}.\\\\\\\"\\\\n  > 105:    count, err = count_task_tokens(task)\\\\n... 106:    if err:\\\"}]}}\",\n        \"annotations\": null,\n        \"_meta\": null\n      }\n    ],\n    \"structuredContent\": {\n      \"result\": \"{\\\"mcp/local-llm-mcp/local-llm-mcp.py\\\": {\\\"Variable\\\": [{\\\"name_path\\\": \\\"call_model/count\\\", \\\"body_location\\\": {\\\"start_line\\\": 105, \\\"end_line\\\": 105}, \\\"content_around_reference\\\": \\\"... 104:        return None, f\\\\\\\"Unknown profile '{profile}'. Valid: {', '.join(sorted(PROFILES))}.\\\\\\\"\\\\n  > 105:    count, err = count_task_tokens(task)\\\\n... 106:    if err:\\\"}]}}\"\n    },\n    \"isError\": false,\n    \"resultType\": \"complete\"\n  },\n  \"remote_has_unpushed_mac_changes\": false\n}"
+      }
+    ]
+  },
+  "secondary-read": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"repository\": \"rldet9/m3-si-mixtrio-kit\",\n  \"revision\": \"5a0349a6922f53016beda5ab463825e71a5e8868\",\n  \"tool\": \"search_for_pattern\",\n  \"result\": {\n    \"_meta\": null,\n    \"content\": [\n      {\n        \"type\": \"text\",\n        \"text\": \"{\\\"tests/n8n-factice.js\\\": [\\\"  >  19:function demarrer() {\\\", \\\"  >  42:\\\\tfunction router(method, chemin, corps) {\\\"]}\",\n        \"annotations\": null,\n        \"_meta\": null\n      }\n    ],\n    \"structuredContent\": {\n      \"result\": \"{\\\"tests/n8n-factice.js\\\": [\\\"  >  19:function demarrer() {\\\", \\\"  >  42:\\\\tfunction router(method, chemin, corps) {\\\"]}\"\n    },\n    \"isError\": false,\n    \"resultType\": \"complete\"\n  },\n  \"remote_has_unpushed_mac_changes\": false\n}"
+      }
+    ]
+  },
+  "time": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"timezone\": \"Europe/Paris\",\n  \"datetime\": \"2026-10-21T20:28:50+02:00\",\n  \"is_dst\": true\n}"
+      }
+    ]
+  },
+  "context7": {
+    "content": [
+      {
+        "type": "text",
+        "text": "Available Libraries:\n\n- Title: Serena\n- Context7-compatible library ID: /oraios/serena\n- Description: a powerful coding agent toolkit providing semantic retrieval and editing capabilities (MCP server & Agno integration)\n- Code Snippets: 1752\n- Source Reputation: High\n- Benchmark Score: 69.78\n----------\n- Title: Serena\n- Context7-compatible library ID: /websites/oraios_github_io_serena\n- Description: Serena is a free and open-source coding agent toolkit that provides IDE-like semantic code retrieval and editing tools to turn any LLM into a powerful agent working directly on your codebase.\n- Code Snippets: 725\n- Source Reputation: High\n- Benchmark Score: 66.78\n----------\n- Title: Serena (DeepWiki)\n- Context7-compatible library ID: /websites/deepwiki_oraios_serena\n- Description: Serena is an LLM-agnostic coding agent toolkit that gives language models IDE-like, symbol-level code understanding via language servers and JetBrains integration.\n- Code Snippets: 712\n- Source Reputation: Medium\n----------\n- Title: Serena Context Server\n- Context7-compatible library ID: /delano/zed-mcp-server-serena\n- Description: A Zed editor extension that integrates Serena, a coding agent toolkit with semantic code analysis, via the Model Context Protocol (MCP).\n- Code Snippets: 382\n- Source Reputation: High\n- Benchmark Score: 50.75\n----------\n- Title: Context Hub Plugin\n- Context7-compatible library ID: /scottrbk/context-hub-plugin\n- Description: A Claude Code plugin that unifies context retrieval by orchestrating Forgetful Memory, Context7 documentation, and Serena symbol analysis into a single workflow.\n- Code Snippets: 411\n- Source Reputation: Medium\n- Benchmark Score: 77.5"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "models": [
+    {
+      "alias": "paid-openrouter/deepseek-v4.1-flash-1017",
+      "target": "openrouter/deepseek/deepseek-v4.1-flash-1017",
+      "blocked": false
+    },
+    {
+      "alias": "paid-openrouter/glm-5.3",
+      "target": "openrouter/z-ai/glm-5.3",
+      "blocked": false
+    },
+    {
+      "alias": "paid/task-advanced",
+      "target": "openrouter/deepseek/deepseek-v4.1-flash-1017",
+      "blocked": false
+    }
+  ],
+  "team": {
+    "team_id": "paid-openrouter-shared",
+    "max_budget": 40.0,
+    "budget_duration": "1mo",
+    "budget_reset_at": "2026-11-01T00:00:00Z",
+    "blocked": false,
+    "spend": 0.0
+  },
+  "active_catalogue_count": 16,
+  "client_key_count": 0,
+  "muse_glimmer_blocked": true,
+  "health": {
+    "status": "healthy",
+    "db": "connected"
+  },
+  "paid_generation": "NOT_TESTED",
+  "approval_policy": "Future MCP; no client credentials issued"
+}

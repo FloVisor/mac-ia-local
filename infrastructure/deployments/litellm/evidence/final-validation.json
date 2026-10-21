@@ -1,0 +1,67 @@
+{
+  "/health/liveliness": 200,
+  "/health/readiness": 200,
+  "/ui/": 200,
+  "ui_js_asset": 200,
+  "/openapi.json": 404,
+  "/redoc": 404,
+  "/docs": 404,
+  "models_without_key": 401,
+  "models_wrong_key": 401,
+  "chat_without_key": 401,
+  "db_admin_login": 200,
+  "admin_role": "proxy_admin",
+  "cookie_secure": true,
+  "cookie_httponly": false,
+  "model_info_status": 200,
+  "configured_model_count": 0,
+  "credential_list_status": 200,
+  "credential_names": [
+    "freellmapi-internal"
+  ],
+  "client_identities": {
+    "codex": {
+      "status": 200,
+      "role": "internal_user"
+    },
+    "mcp-delegate": {
+      "status": 200,
+      "role": "internal_user"
+    },
+    "openclaw-pro": {
+      "status": 200,
+      "role": "internal_user"
+    },
+    "openclaw-perso": {
+      "status": 200,
+      "role": "internal_user"
+    },
+    "mcp-delegate-cloud-approved": {
+      "status": 200,
+      "role": "internal_user"
+    }
+  },
+  "bootstrap_login_disabled": true,
+  "validation_session_logout": 200,
+  "secret_in_gateway_logs": false,
+  "freellmapi_key_in_gateway_logs": false,
+  "synthetic_auth_prompt_in_gateway_logs": false,
+  "litellm_gateway": {
+    "ports": [],
+    "resources": {},
+    "constraints": [
+      "node.hostname == docker-02"
+    ],
+    "update_status": "completed"
+  },
+  "litellm_postgres": {
+    "ports": [],
+    "resources": {},
+    "constraints": [
+      "node.hostname == docker-02"
+    ],
+    "update_status": "completed"
+  },
+  "inference": "NOT_RUN: aucun fournisseur FreeLLMAPI ; oMLX \u00e9coute seulement sur loopback",
+  "browser_ui": "NOT_RUN: aucun navigateur disponible via cua"
+}

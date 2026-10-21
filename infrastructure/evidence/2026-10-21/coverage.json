@@ -1,0 +1,281 @@
+{
+  "containers": [
+    {
+      "host": "docker-01",
+      "id": "4b4ef1db1d0457f3468c53acc85030ae969aba9bf9ecb7f17d012c8b1522166a",
+      "name": "/avahi_reflector.1.sr8xasobsqrkoue6wsseqdfmk",
+      "state": "exited",
+      "document": "containers/avahi-reflector.md"
+    },
+    {
+      "host": "docker-02",
+      "id": "b9741248bb0ab9755eab8de960a14c79c79cb599e25906f374cece7f97fdd75e",
+      "name": "/avahi_reflector.1.qhh4btwznq4zz0pt5s1ot2hxi",
+      "state": "running",
+      "document": "containers/avahi-reflector.md"
+    },
+    {
+      "host": "docker-02",
+      "id": "6e6f6c565d6ffb3c254145ee8f6de9f0282607ae4ae0070d49ab1125d1ac1a84",
+      "name": "/BookStack",
+      "state": "running",
+      "document": "containers/bookstack.md"
+    },
+    {
+      "host": "docker-02",
+      "id": "41f36f10a085fdb0639b79c5bf5bc3e0f2bc43129712bcf9c7d5bc512e83982b",
+      "name": "/BookStackDB",
+      "state": "running",
+      "document": "containers/bookstack.md"
+    },
+    {
+      "host": "docker-03",
+      "id": "2b64448f9290bd7fbd58c1fdcbabdc58bd9de7b44cdc84f0688bf20d8da90e1b",
+      "name": "/DIUN",
+      "state": "running",
+      "document": "containers/diun.md"
+    },
+    {
+      "host": "docker-01",
+      "id": "246a8d73389f86f92803b0e14864468f14c24b85b08d89bcaecd1a4ca6817295",
+      "name": "/HomeAssistant",
+      "state": "running",
+      "document": "containers/homeassistant.md"
+    },
+    {
+      "host": "docker-03",
+      "id": "5685c0d3ab9c3753f9cbec1ee6261016295b9407a557154ef93f8f137b700140",
+      "name": "/Homepage",
+      "state": "running",
+      "document": "containers/homepage.md"
+    },
+    {
+      "host": "docker-02",
+      "id": "e90e7f5f66bb6319ea226fa89db141405424ff73f16747181cca58f9665f6d94",
+      "name": "/Minecraft",
+      "state": "running",
+      "document": "containers/minecraft.md"
+    },
+    {
+      "host": "docker-01",
+      "id": "762acdbcec6e89299e8c62d521adaccbfc6cc9dec892cd265acf23a03c21d379",
+      "name": "/n8n",
+      "state": "running",
+      "document": "containers/n8n.md"
+    },
+    {
+      "host": "docker-01",
+      "id": "102fd90a52b7f30aa7e62a91c6639e26045d999c10550db3c8008bce416fc3da",
+      "name": "/Ollama-Proxy",
+      "state": "running",
+      "document": "containers/ollama-proxy.md"
+    },
+    {
+      "host": "docker-01",
+      "id": "6fbb75cf6bcc8bceb73182138a1faf8dd1b9d27ef8056bab29ed98f5de43f272",
+      "name": "/OpenWebUI",
+      "state": "running",
+      "document": "containers/openwebui.md"
+    },
+    {
+      "host": "docker-01",
+      "id": "e6d3d546589ae929eac327d01f99c419b0db9274468a2d619d096c2996b7cb77",
+      "name": "/MCPO",
+      "state": "running",
+      "document": "containers/openwebui.md"
+    },
+    {
+      "host": "docker-01",
+      "id": "7f018788d72fce2396dee265bc5116e85f266e625a21144e175868d4bb1143c0",
+      "name": "/Tailscale-Ollama",
+      "state": "running",
+      "document": "containers/openwebui.md"
+    },
+    {
+      "host": "docker-01",
+      "id": "abd8efa34bc06ca2d2dbccc0dbae66d8cdd1427bec4f49028e536d3fccc3ab56",
+      "name": "/portainer_agent.9koqx4hnjemcqzhf2amsn104m.r01ccrq6arylc59btgouvnkd7",
+      "state": "running",
+      "document": "containers/portainer-agent.md"
+    },
+    {
+      "host": "docker-01",
+      "id": "39415c50cc5df79842f9e55a6a9d088afa035844c286d20bd4f37ba34f62e34d",
+      "name": "/portainer_agent.9koqx4hnjemcqzhf2amsn104m.b1gt9gt686hcudatmvqycpinn",
+      "state": "exited",
+      "document": "containers/portainer-agent.md"
+    },
+    {
+      "host": "docker-01",
+      "id": "ea6848e3fc4eebc678b3b6b66141d395bb8adacb0592cfa6f4e5d517513462a9",
+      "name": "/portainer_agent.9koqx4hnjemcqzhf2amsn104m.94tlk4iba01tc27q3w1eifm8u",
+      "state": "exited",
+      "document": "containers/portainer-agent.md"
+    },
+    {
+      "host": "docker-01",
+      "id": "b1b748e32da296a2faa68f32ba388156e091fefcebe9af29d679034dd2da1c80",
+      "name": "/portainer_agent.9koqx4hnjemcqzhf2amsn104m.nbwfh45ub4zz3dhci04dwdvl6",
+      "state": "exited",
+      "document": "containers/portainer-agent.md"
+    },
+    {
+      "host": "docker-02",
+      "id": "eec387c0ce43f11b1f06af62fc62f6db62df8e9343cc34a73747e88f6132e3e2",
+      "name": "/portainer_agent.r91yes4cho1ppyerywtmrr170.is9ubmw5xaab84xxphve3exhz",
+      "state": "running",
+      "document": "containers/portainer-agent.md"
+    },
+    {
+      "host": "docker-03",
+      "id": "209439b0362c546e5a0419774e55ebf148b72c311451bf598dd0544ea4c7dce8",
+      "name": "/portainer_agent.xcxurj56mv1u238bnskyjlld9.twbarixu8071jjjq507e8xbvu",
+      "state": "running",
+      "document": "containers/portainer-agent.md"
+    },
+    {
+      "host": "docker-03",
+      "id": "de74c385d705deec72354b9b89e5e37643d1d0eabadf8e8fa44719482e9420bd",
+      "name": "/portainer_portainer.1.na8qxtnuocqhnbimb3jeokesl",
+      "state": "running",
+      "document": "containers/portainer-portainer.md"
+    },
+    {
+      "host": "docker-02",
+      "id": "6b519d426d02eb3466b0247329642da8d2d66c96493f8931bb2a57a94567e7f2",
+      "name": "/qBittorrent",
+      "state": "running",
+      "document": "containers/qbittorrent.md"
+    },
+    {
+      "host": "docker-02",
+      "id": "38197dcb73ce77f4430f4a30065868ebaf8c70597e7237598b5a3b8e1e11531c",
+      "name": "/RatioMaster",
+      "state": "running",
+      "document": "containers/ratiomaster.md"
+    },
+    {
+      "host": "docker-01",
+      "id": "419d2f19bba0f47dc59b451d34a23bb6cf6e2a23b722763e2d44be65a02921a4",
+      "name": "/super-agent-postgres",
+      "state": "running",
+      "document": "containers/super-agent.md"
+    },
+    {
+      "host": "docker-01",
+      "id": "001c3d89afbb657f7cb4a3c7d385c51c8fe768dddf6fc648bfaa514a1e47a24f",
+      "name": "/super-agent-provider-gateway-1",
+      "state": "running",
+      "document": "containers/super-agent.md"
+    },
+    {
+      "host": "docker-01",
+      "id": "ad3ab46f334102ede5b315bf50fe95024a1e8c2e89668b54f1b788e1779dd4e4",
+      "name": "/super-agent",
+      "state": "running",
+      "document": "containers/super-agent.md"
+    },
+    {
+      "host": "docker-01",
+      "id": "8f42e5a7548b0dcaa347f3ef8eac52508b9cc680954a92ead967e4e71c3c4f94",
+      "name": "/super-agent-entra-sync-1",
+      "state": "running",
+      "document": "containers/super-agent.md"
+    },
+    {
+      "host": "docker-01",
+      "id": "271120df35694b5c5872d5603c2a2487c5805f6c893f561811010eb83b39fe4c",
+      "name": "/super-agent-redis",
+      "state": "running",
+      "document": "containers/super-agent.md"
+    },
+    {
+      "host": "docker-02",
+      "id": "1beed98094263d786de4e08ad6308250b21c21bbb25e117715f1a31bb8e5a2de",
+      "name": "/Traefik",
+      "state": "running",
+      "document": "containers/traefik.md"
+    },
+    {
+      "host": "docker-01",
+      "id": "aeaccf66180ed9e59638c1e9b148598d8940dc1c673491bbf3dc84f2e71aecbe",
+      "name": "/WG-Companion",
+      "state": "running",
+      "document": "containers/wg-admin.md"
+    },
+    {
+      "host": "docker-01",
+      "id": "11823062c54e6c24f18a97fc4090871780b485b0c7580addd8acc96629225938",
+      "name": "/WG-Socket-Proxy",
+      "state": "running",
+      "document": "containers/wg-admin.md"
+    },
+    {
+      "host": "docker-01",
+      "id": "00a8ee1a1a3e742dc2d2c60d28a0617b3d4c26882585d1a3935f6788a6c59cbb",
+      "name": "/WG-Companion-Relay",
+      "state": "running",
+      "document": "containers/wg-relay.md"
+    },
+    {
+      "host": "docker-02",
+      "id": "d41d2aa26b50e748b53283759e23165f7dd8587058edc88917a6cd875f3f8b14",
+      "name": "/WG-Companion-Relay",
+      "state": "running",
+      "document": "containers/wg-relay.md"
+    },
+    {
+      "host": "docker-03",
+      "id": "6d145cb9c49adf24a45d269ece581eea31db88dca8420dcb492a72d9b4813a95",
+      "name": "/WG-Companion-Relay",
+      "state": "running",
+      "document": "containers/wg-relay.md"
+    },
+    {
+      "host": "docker-01",
+      "id": "b48f4333f45f70cacb4acef95c7e7b9edce131d23d727e07fa67a58db4c77b59",
+      "name": "/WG-Router-Routes",
+      "state": "running",
+      "document": "containers/wg-router.md"
+    },
+    {
+      "host": "docker-01",
+      "id": "a4cc0dccb7f725c1d7aa7ecda1695bc60223e76431f9cbb6778a82d85ba12da1",
+      "name": "/WG-Router",
+      "state": "running",
+      "document": "containers/wg-router.md"
+    }
+  ],
+  "vm_configurations": [
+    {
+      "vmid": "100",
+      "document": "proxmox.md",
+      "name": "SOPHOS-GW"
+    },
+    {
+      "vmid": "101",
+      "document": "proxmox.md",
+      "name": "TEST"
+    },
+    {
+      "vmid": "102",
+      "document": "proxmox.md",
+      "name": "DOCKER-01"
+    },
+    {
+      "vmid": "103",
+      "document": "proxmox.md",
+      "name": "DOCKER-02"
+    },
+    {
+      "vmid": "104",
+      "document": "proxmox.md",
+      "name": "DOCKER-03"
+    },
+    {
+      "vmid": "105",
+      "document": "proxmox.md",
+      "name": "DNS-01"
+    }
+  ]
+}

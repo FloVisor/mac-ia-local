@@ -1,0 +1,66 @@
+{
+  "filtered_catalogue": {
+    "status": 200,
+    "models": [
+      "free-groq/qwen3.8-27b",
+      "free/task-fast"
+    ]
+  },
+  "denials": {
+    "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit": 403,
+    "local-ollama/muse-glimmer:30b-mlx": 403,
+    "free-mistral/codestral-2508": 403,
+    "paid/task-advanced": 403,
+    "paid-openrouter/glm-5.3": 403
+  },
+  "free-groq/qwen3.8-27b": {
+    "status": 200,
+    "response_model": "free-groq/qwen3.8-27b",
+    "has_content": true,
+    "routed_via": null,
+    "usage": {
+      "completion_tokens": 2,
+      "prompt_tokens": 17,
+      "total_tokens": 19,
+      "queue_time": 0.095478619,
+      "prompt_time": 0.001301119,
+      "completion_time": 0.004084994,
+      "total_time": 0.005386113
+    }
+  },
+  "free/task-fast": {
+    "status": 200,
+    "done": true,
+    "chunks": 21,
+    "has_content": true,
+    "models": [
+      "free/task-fast"
+    ],
+    "routed_via": []
+  },
+  "revocation_status": 200,
+  "final_key_count": 0,
+  "health": {
+    "status": "healthy",
+    "db": "connected"
+  },
+  "upstream_trace": [
+    {
+      "id": 19,
+      "platform": "groq",
+      "model": "qwen/qwen3.8-27b",
+      "attempts": 1,
+      "status": "success",
+      "createdAt": "2026-10-21T09:08:56Z"
+    },
+    {
+      "id": 20,
+      "platform": "openrouter",
+      "model": "dots-studio/dots-3-note-preview:free",
+      "attempts": 1,
+      "status": "success",
+      "createdAt": "2026-10-21T09:08:59Z"
+    }
+  ],
+  "trace_limitation": "LiteLLM response rewrites model to alias and drops _routed_via; correlate native FreeLLMAPI journal by time, source and sequence; requestedModel is null for auto."
+}

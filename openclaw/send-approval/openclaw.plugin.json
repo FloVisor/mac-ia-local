@@ -1,0 +1,20 @@
+{
+  "id": "send-approval",
+  "name": "Send approval",
+  "contracts": {
+    "tools": ["gmail_read", "gmail_send", "imessage_read", "imessage_send", "system_read", "system_action", "file_change", "contacts_read"]
+  },
+  "activation": {
+    "onStartup": true
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "graphExactSha256": {
+        "type": "string",
+        "pattern": "^[a-f0-9]{64}$"
+      }
+    }
+  }
+}

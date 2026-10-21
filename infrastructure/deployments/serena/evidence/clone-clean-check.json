@@ -1,0 +1,34 @@
+[
+  {
+    "repository": "FloVisor/XITHI-Infrastructure-Ops",
+    "clean": true
+  },
+  {
+    "repository": "FloVisor/nodectra",
+    "clean": true
+  },
+  {
+    "repository": "FloVisor/Plateforme-CaaS-XITHI",
+    "clean": true
+  },
+  {
+    "repository": "FloVisor/Plateforme-SD-WAN-XITHI",
+    "clean": true
+  },
+  {
+    "repository": "FloVisor/mac-ia-local",
+    "clean": true
+  },
+  {
+    "repository": "FloVisor/super-agent",
+    "clean": true
+  },
+  {
+    "repository": "FloVisor/post-activation-validation",
+    "clean": true
+  },
+  {
+    "repository": "rldet9/m3-si-mixtrio-kit",
+    "clean": true
+  }
+]

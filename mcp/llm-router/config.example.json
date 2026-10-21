@@ -1,0 +1,23 @@
+{
+  "identity": "isolated-test",
+  "state_dir": "~/.local/state/llm-router/isolated-test",
+  "litellm_url": "https://litellm.gangneux.org/v1",
+  "key_env": "LLM_ROUTER_LITELLM_KEY",
+  "local_url": "http://127.0.0.1:8000/v1",
+  "local_key_env": "LLM_ROUTER_LOCAL_KEY",
+  "isolated_local_only": false,
+  "allow_cloud": false,
+  "catalogue_ttl": 0,
+  "history_limit": 1000,
+  "task_history_limit": 100,
+  "retention_seconds": 86400,
+  "max_pending": 100,
+  "inactivity_timeout": null,
+  "models": {
+    "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit": {
+      "enabled": true, "kind": "chat", "backend": "local",
+      "context": 131072, "verified_capabilities": [],
+      "advertised_capabilities": ["tools", "thinking"]
+    }
+  }
+}

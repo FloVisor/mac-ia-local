@@ -1,0 +1,26 @@
+{
+  "ok": true,
+  "plugins": {
+    "loaded": [
+      "active-memory",
+      "anthropic",
+      "bookstack-perso",
+      "imessage",
+      "memory-core",
+      "microsoft-graph",
+      "ollama",
+      "send-approval"
+    ],
+    "errors": [],
+    "unavailable": []
+  },
+  "configReload": {
+    "hotReloadStatus": "active"
+  },
+  "imessage": {
+    "running": true,
+    "connected": true,
+    "lastError": null,
+    "lastOutboundAt": null
+  }
+}

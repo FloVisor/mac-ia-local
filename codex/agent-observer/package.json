@@ -1,0 +1,11 @@
+{
+  "name":"p3c-agent-observer","displayName":"P3-C — Codex et délégations",
+  "description":"Observabilité locale en lecture seule, complément Agent Standup",
+  "publisher":"local-xithi","version":"0.1.1","engines":{"vscode":"^1.90.0"},
+  "main":"./extension.js","activationEvents":["onView:p3c.activity"],
+  "contributes":{
+    "commands":[{"command":"p3c.refresh","title":"P3-C : Actualiser"},{"command":"p3c.filter","title":"P3-C : Filtrer session, modèle, fournisseur"},{"command":"p3c.details","title":"P3-C : Métadonnées"}],
+    "views":{"explorer":[{"id":"p3c.activity","name":"Codex · agents et délégations"}]},
+    "menus":{"view/title":[{"command":"p3c.filter","when":"view == p3c.activity","group":"navigation"},{"command":"p3c.refresh","when":"view == p3c.activity","group":"navigation"}]}
+  }
+}

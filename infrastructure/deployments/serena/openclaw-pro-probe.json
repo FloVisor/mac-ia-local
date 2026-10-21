@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-10-21T18:30:34.197Z",
+  "servers": {
+    "docker_gateway_pro": {
+      "launch": "https://mcp-gateway.gangneux.org/pro/mcp",
+      "tools": 9,
+      "codexApprovalMode": "auto",
+      "requestTimeoutMs": 60000,
+      "resources": true,
+      "prompts": true,
+      "listChanged": {
+        "tools": true,
+        "resources": true,
+        "prompts": true
+      }
+    }
+  },
+  "tools": [
+    "docker_gateway_pro__convert_time",
+    "docker_gateway_pro__get_current_time",
+    "docker_gateway_pro__query-docs",
+    "docker_gateway_pro__resolve-library-id",
+    "docker_gateway_pro__serena_find_references",
+    "docker_gateway_pro__serena_find_symbol",
+    "docker_gateway_pro__serena_repository_status",
+    "docker_gateway_pro__serena_search_pattern",
+    "docker_gateway_pro__serena_symbols_overview"
+  ],
+  "diagnostics": []
+}

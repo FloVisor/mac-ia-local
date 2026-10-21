@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "toolName": "gmail_read",
+  "output": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"count\": 0,\n  \"has_more\": false,\n  \"nextPageToken\": \"\",\n  \"threads\": []\n}\n"
+      }
+    ]
+  },
+  "source": "plugin"
+}

@@ -1,0 +1,261 @@
+[
+  {
+    "openclaw_id": "omlx/mlx-community--Qwen3.6-35B-A3B-4bit",
+    "endpoint": "http://127.0.0.1:8000/v1",
+    "context": 131072,
+    "output_budget": 8192,
+    "reasoning_declared": true,
+    "params": {}
+  },
+  {
+    "openclaw_id": "ollama/qwen3:4b-instruct",
+    "endpoint": "http://127.0.0.1:11434",
+    "context": 4096,
+    "output_budget": 256,
+    "reasoning_declared": false,
+    "params": {
+      "num_ctx": 4096,
+      "think": false
+    }
+  },
+  {
+    "openclaw_id": "litellm-free-pro/local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 8192,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-pro/local-ollama/qwen3:4b-instruct",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 8192,
+    "output_budget": 2048,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-pro/free-groq/qwen3.8-27b",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 2048,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-pro/free-groq/gpt-oss-120b",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 2048,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-pro/free-openrouter/dots-3-note-preview:free",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 8192,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-pro/free-openrouter/north-mini-code:free",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 8192,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-pro/free-mistral/ministral-8b-2512",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 2048,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-pro/free-mistral/codestral-2508",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 128000,
+    "output_budget": 2048,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-pro/free/task-fast",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 2048,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-pro/free/task-coding",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 128000,
+    "output_budget": 2048,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-pro/free/task-reasoning",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 2048,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-pro/free/task-long-context",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 2048,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-paid-pro/paid-openrouter/deepseek-v4.1-flash-1017",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 8192,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-paid-pro/paid-openrouter/glm-5.3",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 8192,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-paid-pro/paid/task-advanced",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 8192,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-perso/local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 8192,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-perso/local-ollama/qwen3:4b-instruct",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 8192,
+    "output_budget": 2048,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-perso/free-groq/qwen3.8-27b",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 2048,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-perso/free-groq/gpt-oss-120b",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 2048,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-perso/free-openrouter/dots-3-note-preview:free",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 8192,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-perso/free-openrouter/north-mini-code:free",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 8192,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-perso/free-mistral/ministral-8b-2512",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 2048,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-perso/free-mistral/codestral-2508",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 128000,
+    "output_budget": 2048,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-perso/free/task-fast",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 2048,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-perso/free/task-coding",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 128000,
+    "output_budget": 2048,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-perso/free/task-reasoning",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 2048,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-free-perso/free/task-long-context",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 2048,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-paid-perso/paid-openrouter/deepseek-v4.1-flash-1017",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 8192,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-paid-perso/paid-openrouter/glm-5.3",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 8192,
+    "reasoning_declared": false,
+    "params": {}
+  },
+  {
+    "openclaw_id": "litellm-paid-perso/paid/task-advanced",
+    "endpoint": "https://litellm.gangneux.org/v1",
+    "context": 131072,
+    "output_budget": 8192,
+    "reasoning_declared": false,
+    "params": {}
+  }
+]

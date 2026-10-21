@@ -1,0 +1,26 @@
+{
+  "/Users/fngux2/.openclaw/openclaw.json": {
+    "backup": "/Users/fngux2/.openclaw/backups-approvals-finalize-20261020/0-openclaw.json",
+    "sha256": "08311dda398500f6fe87135abaabc692c28f6493273d73e97983914c3ee293be"
+  },
+  "/Users/fngux2/.openclaw/extensions/microsoft-graph/dist/index.js": {
+    "backup": "/Users/fngux2/.openclaw/backups-approvals-finalize-20261020/1-index.js",
+    "sha256": "420b7f9c0875db36416e0134aeea4c6d04e1748af68eb79631c2e2a38ea966df"
+  },
+  "openclaw/send-approval/index.js": {
+    "backup": "/Users/fngux2/.openclaw/backups-approvals-finalize-20261020/2-index.js",
+    "sha256": "1f76525b85beb653635d9164788daa209adfe28e1b229dc300cbb90bd3b5d9bf"
+  },
+  "/Users/fngux2/.openclaw/workspace/AGENTS.md": {
+    "backup": "/Users/fngux2/.openclaw/backups-approvals-finalize-20261020/3-AGENTS.md",
+    "sha256": "e106770fb6dc9b6421a7b3a55b56082a2cdbdea1bf15f85bbcbc1051e24be1ff"
+  },
+  "/Users/fngux2/.openclaw/workspace-perso/AGENTS.md": {
+    "backup": "/Users/fngux2/.openclaw/backups-approvals-finalize-20261020/4-AGENTS.md",
+    "sha256": "05d0da97b106097c1e9725260475b196cd368890a9ee16bfd262f414c51c6f40"
+  },
+  "/Users/fngux2/.openclaw/workspace-perso/skills/gmail-perso/SKILL.md": {
+    "backup": "/Users/fngux2/.openclaw/backups-approvals-finalize-20261020/5-SKILL.md",
+    "sha256": "7243adc35c98a35a7a1eee4f9eb495ef755b24d9cd2dbbebe81efd6bb9a5ca1c"
+  }
+}

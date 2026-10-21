@@ -1,0 +1,37 @@
+{
+  "pro": {
+    "tools": [
+      "convert_time",
+      "get_current_time",
+      "query-docs",
+      "resolve-library-id",
+      "serena_find_references",
+      "serena_find_symbol",
+      "serena_repository_status",
+      "serena_search_pattern",
+      "serena_symbols_overview"
+    ],
+    "time": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"timezone\": \"Europe/Paris\",\n  \"datetime\": \"2026-10-21T20:29:22+02:00\",\n  \"is_dst\": true\n}"
+        }
+      ]
+    }
+  },
+  "perso": {
+    "tools": [
+      "convert_time",
+      "get_current_time"
+    ],
+    "time": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\n  \"timezone\": \"Europe/Paris\",\n  \"datetime\": \"2026-10-21T20:29:25+02:00\",\n  \"is_dst\": true\n}"
+        }
+      ]
+    }
+  }
+}

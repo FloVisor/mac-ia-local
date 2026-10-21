@@ -1,0 +1,37 @@
+{
+  "ok": true,
+  "toolName": "outlook_mail_read",
+  "output": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"ok\":true,\"action\":\"list_folders\",\"items\":[{\"id\":\"AQMkADlhNjVjNmY3LTFhMzgtNGYzZS04NTZjLTQ5MjE3MjNkYzU0NwAuAAADnhdEHGzWIUGsZ_OoI5uWGgEA_8tccrAMrEaQ6YLj1OenNwAFAIofrQAAAA==\",\"displayName\":\"Achat\",\"parentFolderId\":\"AQMkADlhNjVjNmY3LTFhMzgtNGYzZS04NTZjLTQ5MjE3MjNkYzU0NwAuAAADnhdEHGzWIUGsZ_OoI5uWGgEAGVarFZBTG0q0EgESzf-IlQDBh88tvwAAAA==\",\"childFolderCount\":0,\"unreadItemCount\":0,\"totalItemCount\":38,\"isHidden\":false,\"path\":\"Achat\",\"depth\":0}],\"truncated\":true,\"continuation\":\"mgc1_63CjG78WBdl-9mM2gfXK0wUoUjwZhSReGdV1Q6Utf5k\",\"phase\":\"partial\",\"code\":\"partial_results\",\"nextAction\":\"Repeat the same criteria with continuation for the next page.\",\"retrySafety\":\"safe\",\"mutationApplied\":false}"
+      }
+    ],
+    "details": {
+      "ok": true,
+      "action": "list_folders",
+      "items": [
+        {
+          "id": "AQMkADlhNjVjNmY3LTFhMzgtNGYzZS04NTZjLTQ5MjE3MjNkYzU0NwAuAAADnhdEHGzWIUGsZ_OoI5uWGgEA_8tccrAMrEaQ6YLj1OenNwAFAIofrQAAAA==",
+          "displayName": "Achat",
+          "parentFolderId": "AQMkADlhNjVjNmY3LTFhMzgtNGYzZS04NTZjLTQ5MjE3MjNkYzU0NwAuAAADnhdEHGzWIUGsZ_OoI5uWGgEAGVarFZBTG0q0EgESzf-IlQDBh88tvwAAAA==",
+          "childFolderCount": 0,
+          "unreadItemCount": 0,
+          "totalItemCount": 38,
+          "isHidden": false,
+          "path": "Achat",
+          "depth": 0
+        }
+      ],
+      "truncated": true,
+      "continuation": "mgc1_63CjG78WBdl-9mM2gfXK0wUoUjwZhSReGdV1Q6Utf5k",
+      "phase": "partial",
+      "code": "partial_results",
+      "nextAction": "Repeat the same criteria with continuation for the next page.",
+      "retrySafety": "safe",
+      "mutationApplied": false
+    }
+  },
+  "source": "plugin"
+}

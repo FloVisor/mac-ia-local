@@ -1,0 +1,91 @@
+{
+  "http": {
+    "routers": {
+      "mcp-gateway-codex": {
+        "rule": "Host(`mcp-gateway.gangneux.org`) && Path(`/codex/mcp`)",
+        "entryPoints": [
+          "websecure"
+        ],
+        "middlewares": [
+          "mcp-gateway-codex-strip"
+        ],
+        "service": "mcp-gateway-codex",
+        "tls": {}
+      },
+      "mcp-gateway-pro": {
+        "rule": "Host(`mcp-gateway.gangneux.org`) && Path(`/pro/mcp`)",
+        "entryPoints": [
+          "websecure"
+        ],
+        "middlewares": [
+          "mcp-gateway-pro-strip"
+        ],
+        "service": "mcp-gateway-pro",
+        "tls": {}
+      },
+      "mcp-gateway-perso": {
+        "rule": "Host(`mcp-gateway.gangneux.org`) && Path(`/perso/mcp`)",
+        "entryPoints": [
+          "websecure"
+        ],
+        "middlewares": [
+          "mcp-gateway-perso-strip"
+        ],
+        "service": "mcp-gateway-perso",
+        "tls": {}
+      }
+    },
+    "services": {
+      "mcp-gateway-codex": {
+        "loadBalancer": {
+          "servers": [
+            {
+              "url": "http://mcp-gateway_codex:8080"
+            }
+          ]
+        }
+      },
+      "mcp-gateway-pro": {
+        "loadBalancer": {
+          "servers": [
+            {
+              "url": "http://mcp-gateway_pro:8080"
+            }
+          ]
+        }
+      },
+      "mcp-gateway-perso": {
+        "loadBalancer": {
+          "servers": [
+            {
+              "url": "http://mcp-gateway_perso:8080"
+            }
+          ]
+        }
+      }
+    },
+    "middlewares": {
+      "mcp-gateway-codex-strip": {
+        "stripPrefix": {
+          "prefixes": [
+            "/codex"
+          ]
+        }
+      },
+      "mcp-gateway-pro-strip": {
+        "stripPrefix": {
+          "prefixes": [
+            "/pro"
+          ]
+        }
+      },
+      "mcp-gateway-perso-strip": {
+        "stripPrefix": {
+          "prefixes": [
+            "/perso"
+          ]
+        }
+      }
+    }
+  }
+}

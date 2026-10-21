@@ -1,0 +1,124 @@
+{
+  "timestamp": "2026-10-21T15:00:48.034640+00:00",
+  "auth": {
+    "codex": {
+      "anonymous": 401,
+      "invalid": 401,
+      "codex": 200,
+      "pro": 401,
+      "perso": 401
+    },
+    "pro": {
+      "anonymous": 401,
+      "invalid": 401,
+      "codex": 401,
+      "pro": 200,
+      "perso": 401
+    },
+    "perso": {
+      "anonymous": 401,
+      "invalid": 401,
+      "codex": 401,
+      "pro": 401,
+      "perso": 200
+    }
+  },
+  "profiles": {
+    "codex": {
+      "initialize": "PASS",
+      "tools": [
+        "convert_time",
+        "get_current_time"
+      ],
+      "call": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"timezone\": \"Europe/Paris\",\n  \"datetime\": \"2026-10-21T17:00:50+02:00\",\n  \"is_dst\": true\n}"
+          }
+        ]
+      }
+    },
+    "pro": {
+      "initialize": "PASS",
+      "tools": [
+        "convert_time",
+        "get_current_time"
+      ],
+      "call": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"timezone\": \"Europe/Paris\",\n  \"datetime\": \"2026-10-21T17:00:52+02:00\",\n  \"is_dst\": true\n}"
+          }
+        ]
+      }
+    },
+    "perso": {
+      "initialize": "PASS",
+      "tools": [
+        "convert_time",
+        "get_current_time"
+      ],
+      "call": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\n  \"timezone\": \"Europe/Paris\",\n  \"datetime\": \"2026-10-21T17:00:55+02:00\",\n  \"is_dst\": true\n}"
+          }
+        ]
+      }
+    }
+  },
+  "runtime": [
+    {
+      "id": "0bcff6bde938",
+      "profile_call": "codex",
+      "node": "docker-02",
+      "image": "mcp/time@sha256:9c46a918633fb474bf8035e3ee90ebac6bcf2b18ccb00679ac4c179cba0ebfcf",
+      "networks": [
+        "TRAEFIK_BACKEND"
+      ],
+      "memory": 0,
+      "nano_cpus": 0,
+      "cpu_quota": 0,
+      "privileged": false,
+      "no_new_privileges": [
+        "no-new-privileges"
+      ]
+    },
+    {
+      "id": "cdd68fc553aa",
+      "profile_call": "pro",
+      "node": "docker-02",
+      "image": "mcp/time@sha256:9c46a918633fb474bf8035e3ee90ebac6bcf2b18ccb00679ac4c179cba0ebfcf",
+      "networks": [
+        "TRAEFIK_BACKEND"
+      ],
+      "memory": 0,
+      "nano_cpus": 0,
+      "cpu_quota": 0,
+      "privileged": false,
+      "no_new_privileges": [
+        "no-new-privileges"
+      ]
+    },
+    {
+      "id": "7cc4910954f0",
+      "profile_call": "perso",
+      "node": "docker-02",
+      "image": "mcp/time@sha256:9c46a918633fb474bf8035e3ee90ebac6bcf2b18ccb00679ac4c179cba0ebfcf",
+      "networks": [
+        "TRAEFIK_BACKEND"
+      ],
+      "memory": 0,
+      "nano_cpus": 0,
+      "cpu_quota": 0,
+      "privileged": false,
+      "no_new_privileges": [
+        "no-new-privileges"
+      ]
+    }
+  ],
+  "logging": "PASS: call event present, tokens absent"
+}

@@ -1,0 +1,404 @@
+{
+  "captured_at": "2026-10-21T06:28:21.408968+00:00",
+  "hostname": "GAN-PVE-7200-0",
+  "nfs_exports": [
+    "/srv/docker-shared/portainer 192.168.201.21(rw,sync,no_subtree_check,no_root_squash,sec=sys) 192.168.201.22(rw,sync,no_subtree_check,no_root_squash,sec=sys) 192.168.201.23(rw,sync,no_subtree_check,no_root_squash,sec=sys)"
+  ],
+  "snapshots": {
+    "104": [
+      {
+        "description": "",
+        "name": "avantinstall",
+        "snaptime": 1788985294,
+        "vmstate": 0
+      },
+      {
+        "description": "You are here!",
+        "digest": "1e74fe765cccd2f39f18aa47777f7b6fb7f1d7df",
+        "name": "current",
+        "parent": "avantinstall",
+        "running": 1
+      }
+    ],
+    "101": [
+      {
+        "description": "You are here!",
+        "digest": "863edb3d7ae607d9fed2464110a34cdae0529761",
+        "name": "current",
+        "running": 0
+      }
+    ],
+    "105": [
+      {
+        "description": "You are here!",
+        "digest": "9b2e85a894dd43f1d9bb2943f22a389d1a86bc0b",
+        "name": "current",
+        "running": 1
+      }
+    ],
+    "102": [
+      {
+        "description": "",
+        "name": "avantinstall",
+        "snaptime": 1788985303,
+        "vmstate": 0
+      },
+      {
+        "description": "You are here!",
+        "digest": "9306f1e409987bf991f780e6040fb2e37e696b7f",
+        "name": "current",
+        "parent": "avantinstall",
+        "running": 1
+      }
+    ],
+    "103": [
+      {
+        "description": "",
+        "name": "avantinstall",
+        "snaptime": 1788985298,
+        "vmstate": 0
+      },
+      {
+        "description": "You are here!",
+        "digest": "44aef4b350218f60a772295b69320f8322fd8840",
+        "name": "current",
+        "parent": "avantinstall",
+        "running": 1
+      }
+    ],
+    "100": [
+      {
+        "description": "You are here!",
+        "digest": "309a2de67e73b00628bad8b4f5e424b2ca519903",
+        "name": "current",
+        "running": 1
+      }
+    ]
+  },
+  "backup_archive_metadata": [
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-105-2026_10_20-10_17_28.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-105-2026_10_20-10_17_28.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 1259743044,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-104-2026_10_20-10_15_05.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-104-2026_10_20-10_15_05.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 8452826963,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-103-2026_10_20-10_11_30.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-103-2026_10_20-10_11_30.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 6161831332,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-102-2026_10_20-10_02_24.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-102-2026_10_20-10_02_24.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 27733415355,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-100-2026_10_20-10_00_12.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-100-2026_10_20-10_00_12.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 7267569292,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-105-2026_10_19-10_17_16.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-105-2026_10_19-10_17_16.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 1253356076,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-104-2026_10_19-10_14_52.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-104-2026_10_19-10_14_52.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 8476958937,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-103-2026_10_19-10_11_15.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-103-2026_10_19-10_11_15.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 5739415194,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-102-2026_10_19-10_02_16.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-102-2026_10_19-10_02_16.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 27715891380,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-100-2026_10_19-10_00_03.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-100-2026_10_19-10_00_03.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 7338521306,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-105-2026_10_18-10_17_28.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-105-2026_10_18-10_17_28.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 1268561674,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-104-2026_10_18-10_14_58.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-104-2026_10_18-10_14_58.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 8491245051,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-103-2026_10_18-10_11_29.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-103-2026_10_18-10_11_29.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 5730564760,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-102-2026_10_18-10_02_23.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-102-2026_10_18-10_02_23.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 27724602917,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-100-2026_10_18-10_00_10.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-100-2026_10_18-10_00_10.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 7507980272,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-105-2026_10_17-10_16_30.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-105-2026_10_17-10_16_30.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 1292285686,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-104-2026_10_17-10_14_15.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-104-2026_10_17-10_14_15.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 8514392407,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-103-2026_10_17-10_10_54.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-103-2026_10_17-10_10_54.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 5728350482,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-102-2026_10_17-10_02_14.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-102-2026_10_17-10_02_14.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 27713960478,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-100-2026_10_17-10_00_04.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-100-2026_10_17-10_00_04.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 7483981910,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-105-2026_10_16-10_16_39.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-105-2026_10_16-10_16_39.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 1285725784,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-104-2026_10_16-10_14_20.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-104-2026_10_16-10_14_20.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 8532469455,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-103-2026_10_16-10_10_58.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-103-2026_10_16-10_10_58.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 5728215054,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-102-2026_10_16-10_02_23.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-102-2026_10_16-10_02_23.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 27636113286,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-100-2026_10_16-10_00_02.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-100-2026_10_16-10_00_02.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 7395048231,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-105-2026_10_15-10_16_34.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-105-2026_10_15-10_16_34.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 1289008884,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-104-2026_10_15-10_14_13.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-104-2026_10_15-10_14_13.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 8537588714,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-103-2026_10_15-10_10_48.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-103-2026_10_15-10_10_48.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 5728045580,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-102-2026_10_15-10_02_13.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-102-2026_10_15-10_02_13.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 27523189786,
+      "is_directory": false
+    },
+    {
+      "path": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-100-2026_10_15-10_00_04.vma.zst",
+      "realpath": "/mnt/pve/GAN-NAS-720-01/dump/vzdump-qemu-100-2026_10_15-10_00_04.vma.zst",
+      "symlink": false,
+      "mode": "0o777",
+      "uid": 0,
+      "gid": 0,
+      "bytes": 7185233810,
+      "is_directory": false
+    }
+  ],
+  "smart_health": {
+    "sda": "",
+    "sdb": ""
+  },
+  "errors": [
+    {
+      "command": [
+        "smartctl",
+        "-H",
+        "/dev/sda"
+      ],
+      "exit": 2,
+      "stderr": ""
+    },
+    {
+      "command": [
+        "smartctl",
+        "-H",
+        "/dev/sdb"
+      ],
+      "exit": 2,
+      "stderr": ""
+    }
+  ]
+}

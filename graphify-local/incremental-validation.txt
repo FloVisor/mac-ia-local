@@ -1,0 +1,6 @@
+[graphify extract] incremental scan of /private/var/folders/hn/30b288sd72vcwf5f89rfyp042mc1c9/T/graphify-isolation-eqwuxqn6
+[graphify extract] 0 code, 0 docs, 0 papers, 0 images changed; 1 unchanged; 0 deleted
+[graphify extract] wrote /private/var/folders/hn/30b288sd72vcwf5f89rfyp042mc1c9/T/graphify-isolation-eqwuxqn6/graphify-out/graph.json: 3 nodes, 3 edges, 1 communities
+[graphify extract] wrote /private/var/folders/hn/30b288sd72vcwf5f89rfyp042mc1c9/T/graphify-isolation-eqwuxqn6/graphify-out/.graphify_analysis.json
+[graphify extract] incremental summary: 1 files cached/unchanged, 0 re-extracted, 0 deleted
+[graphify extract] next: run `graphify cluster-only /private/var/folders/hn/30b288sd72vcwf5f89rfyp042mc1c9/T/graphify-isolation-eqwuxqn6` to generate GRAPH_REPORT.md and name communities

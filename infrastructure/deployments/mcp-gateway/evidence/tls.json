@@ -1,0 +1,21 @@
+{
+  "checked_from": "Mac, existing network",
+  "host": "mcp-gateway.gangneux.org",
+  "ipv4": {
+    "tls_verify": 0,
+    "anonymous_http": 401
+  },
+  "ipv6": {
+    "tls_verify": 0,
+    "anonymous_http": 401
+  },
+  "admin_path_http": 404,
+  "issuer": "Let's Encrypt YR2",
+  "sans": [
+    "gangneux.org",
+    "*.gangneux.org"
+  ],
+  "not_before": "2026-09-14T19:51:46Z",
+  "not_after": "2026-12-13T19:51:45Z",
+  "external_independent_probe": "NOT_RUN"
+}

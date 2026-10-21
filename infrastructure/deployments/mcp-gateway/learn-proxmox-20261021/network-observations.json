@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-21",
+  "source": "socket.create_connection depuis docker-02, timeout 5 secondes",
+  "port": 8006,
+  "endpoints": {
+    "172.30.240.21": "timed out",
+    "172.30.240.22": "No route to host (errno 113)",
+    "172.30.240.23": "No route to host (errno 113)",
+    "172.30.240.11": "timed out",
+    "172.30.240.12": "timed out",
+    "172.30.240.13": "timed out",
+    "172.30.240.4": "timed out",
+    "172.30.240.5": "timed out",
+    "172.30.240.6": "timed out"
+  },
+  "route": "172.30.240.21 via 192.168.201.1 dev ens18 src 192.168.201.22",
+  "cluster_identity_source": "pvesh get /cluster/status via inventaire actif ansible-01, lectures uniquement",
+  "clusters": {
+    "Nantes": {
+      "name": "CLUSTER-PVE-01",
+      "nodes": [
+        "PVE-A01",
+        "PVE-A02",
+        "PVE-A03",
+        "PVE-B01",
+        "PVE-B02",
+        "PVE-B03"
+      ],
+      "quorate": 1
+    },
+    "Le Mans": {
+      "name": "CLUSTER-PVE-C1",
+      "nodes": [
+        "PVE-C01",
+        "PVE-C02",
+        "PVE-C03"
+      ],
+      "quorate": 1
+    }
+  }
+}

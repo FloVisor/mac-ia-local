@@ -1,0 +1,29 @@
+{
+  "id": "llm-router",
+  "name": "Isolated LLM router",
+  "version": "0.1.0",
+  "activation": {
+    "onStartup": true
+  },
+  "configSchema": {
+    "type": "object",
+    "properties": {
+      "routerPath": {
+        "type": "string",
+        "pattern": "^/"
+      }
+    },
+    "additionalProperties": false
+  },
+  "contracts": {
+    "tools": [
+      "llm_router_submit",
+      "llm_router_delegate",
+      "llm_router_status",
+      "llm_router_result",
+      "llm_router_cancel",
+      "llm_router_activity",
+      "llm_router_catalogue"
+    ]
+  }
+}

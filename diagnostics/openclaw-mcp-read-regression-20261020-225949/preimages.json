@@ -1,0 +1,22 @@
+[
+  {
+    "path": "/Users/fngux2/Workspaces/mac-ia-local/openclaw/send-approval/index.js",
+    "backup": "/Users/fngux2/.openclaw/backups-mcp-read-regression-20261020-225949/0-index.js",
+    "sha256": "2ee03bb0f15291332b214a1dce15d8240438836f1a4fcf5fd1b377523128c2c5"
+  },
+  {
+    "path": "/Users/fngux2/Workspaces/mac-ia-local/openclaw/send-approval/openclaw.plugin.json",
+    "backup": "/Users/fngux2/.openclaw/backups-mcp-read-regression-20261020-225949/1-openclaw.plugin.json",
+    "sha256": "fb34fb893856d33e27c1f87485b7bc2afac6136d4245f96a06de6e85beb83d2a"
+  },
+  {
+    "path": "/Users/fngux2/Workspaces/mac-ia-local/openclaw/send-approval/package.json",
+    "backup": "/Users/fngux2/.openclaw/backups-mcp-read-regression-20261020-225949/2-package.json",
+    "sha256": "0d8a2960cdd0056aa6415fa2cbdd06896268b887f17dc713684cbe11c1640c30"
+  },
+  {
+    "path": "/Users/fngux2/.openclaw/openclaw.json",
+    "backup": "/Users/fngux2/.openclaw/backups-mcp-read-regression-20261020-225949/3-openclaw.json",
+    "sha256": "95cb91434c14433dfc50cdde13d8682e0827357ff2f218a20cbe3152162a1a76"
+  }
+]

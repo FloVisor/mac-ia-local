@@ -9,8 +9,9 @@ Dépôt de maintenance de la configuration IA locale (macOS) : serveur **Ollama*
 Chaque domaine a son `AGENTS.md`, chargé uniquement quand l'agent y travaille :
 
 - [ollama-v0.35.0/](ollama-v0.35.0/) — sources ollama (AGENTS.md local prioritaire dans ce sous-dossier)
-- [codex/](codex/) — audit et recette Codex local (proxy, vLLM-Metal, MCP `local_llm`)
+- [codex/](codex/) — audit et recette Codex local (proxy, vLLM-Metal, MCP de délégation)
 - [openclaw/](openclaw/) — pièges d'intégration OpenClaw + checklist
+- [infrastructure/](infrastructure/) — accès SSH, Proxmox et cluster Docker Swarm ; charger uniquement le domaine utile
 - [perf/](perf/) — tests de performance de l'IA locale (moteurs, fenêtres de contexte)
 
 ## Structure

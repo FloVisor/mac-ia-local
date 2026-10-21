@@ -1,0 +1,207 @@
+{
+  "oauth": {
+    "client": "codex native",
+    "result": "Successfully logged in",
+    "callback": "http://127.0.0.1:54321/callback/<nonce>",
+    "copied_openclaw_credentials": false
+  },
+  "clients": {
+    "cli": {
+      "calls": [
+        {
+          "tool": "list_registries",
+          "isError": false,
+          "response_sha256": "42ed6df0d5be01d2e08f28c72cbf3257b8c96f0380e7d979fd804bf021e81b7e"
+        },
+        {
+          "tool": "search_tools",
+          "isError": false,
+          "response_sha256": "1da58cc6044f95b5c11242b1ab1e14cfcc47b16ec3cdf635a1d14e7554b39ffc"
+        },
+        {
+          "tool": "get_contract",
+          "isError": false,
+          "response_sha256": "7096221ae8feb278d14b6180875602f233817e7990ef270f334f52d2f4886536"
+        },
+        {
+          "tool": "exec_tool",
+          "isError": false,
+          "response_sha256": "7a533fcb9dfbcb6c07d953110ae9b1d6de85341dec0d24832b0d2ccdd0d26797",
+          "session_object_returned": true
+        }
+      ],
+      "skill": {
+        "skill_loaded": "/Users/fngux2/AI/skills/shared/orion/SKILL.md",
+        "bytes": 9713,
+        "sha256": "8935561c4c23b1389af84af1aae8cbfd89efef7200ae5355d90c20048ccec47c"
+      },
+      "model_turns": 0
+    },
+    "desktop_embedded_client": {
+      "calls": [
+        {
+          "tool": "list_registries",
+          "isError": false,
+          "response_sha256": "42ed6df0d5be01d2e08f28c72cbf3257b8c96f0380e7d979fd804bf021e81b7e"
+        },
+        {
+          "tool": "search_tools",
+          "isError": false,
+          "response_sha256": "1da58cc6044f95b5c11242b1ab1e14cfcc47b16ec3cdf635a1d14e7554b39ffc"
+        },
+        {
+          "tool": "get_contract",
+          "isError": false,
+          "response_sha256": "7096221ae8feb278d14b6180875602f233817e7990ef270f334f52d2f4886536"
+        },
+        {
+          "tool": "exec_tool",
+          "isError": false,
+          "response_sha256": "53e29282cb09d30250c6b8b8a4fb74da70b098d1d8e14397f1990b0d8ec99b0f",
+          "session_object_returned": true
+        }
+      ],
+      "skill": {
+        "skill_loaded": "/Users/fngux2/AI/skills/shared/orion/SKILL.md",
+        "bytes": 9713,
+        "sha256": "8935561c4c23b1389af84af1aae8cbfd89efef7200ae5355d90c20048ccec47c"
+      },
+      "model_turns": 0
+    }
+  },
+  "gateway": {
+    "profiles": [
+      {
+        "profile": "codex",
+        "servers": [
+          "time",
+          "context7"
+        ]
+      },
+      {
+        "profile": "pro",
+        "servers": [
+          "time",
+          "context7"
+        ]
+      },
+      {
+        "profile": "perso",
+        "servers": [
+          "time"
+        ]
+      }
+    ],
+    "orion_named_paths": [],
+    "find_stderr": "",
+    "find_exit": 0,
+    "containers_named_orion": [],
+    "swarm_secrets_named_orion": [],
+    "codex_real_calls": [
+      "get_current_time",
+      "resolve-library-id",
+      "query-docs"
+    ],
+    "pro_current_discovery": [
+      "docker_gateway_pro__convert_time",
+      "docker_gateway_pro__get_current_time",
+      "docker_gateway_pro__query-docs",
+      "docker_gateway_pro__resolve-library-id"
+    ],
+    "pro_previous_live_receipts": "../context7-20261021/pro-tool-receipts.json",
+    "deleted_items": []
+  },
+  "exclusions": {
+    "main_skill_orion": true,
+    "perso_skill_orion": false,
+    "perso_context7": false,
+    "perso_orion_deny": true,
+    "perso_pro_gateway_deny": true,
+    "canonical_codex_skill": "/Users/fngux2/AI/skills/shared/orion",
+    "changes_to_openclaw": false
+  },
+  "pro": {
+    "session": "89586ccf-5612-4609-9e0e-9b289493e02b",
+    "model": {
+      "winnerProvider": "omlx",
+      "winnerModel": "mlx-community--Qwen3.6-35B-A3B-4bit",
+      "attempts": [
+        {
+          "provider": "omlx",
+          "model": "mlx-community--Qwen3.6-35B-A3B-4bit",
+          "result": "success",
+          "stage": "assistant"
+        }
+      ],
+      "fallbackUsed": false,
+      "runner": "embedded"
+    },
+    "tool_summary": {
+      "calls": 11,
+      "tools": [
+        "tool_search",
+        "read",
+        "orion__list_registries",
+        "tool_call",
+        "orion__search_tools",
+        "orion__get_contract",
+        "orion__exec_tool"
+      ],
+      "failures": 0
+    },
+    "skill_prompt_entry": [
+      {
+        "name": "orion",
+        "blockChars": 336
+      }
+    ],
+    "calls": [
+      {
+        "skill_read": {
+          "path": "~/AI/skills/shared/orion/SKILL.md"
+        }
+      },
+      {
+        "skill_read": null
+      },
+      {
+        "tool": "orion__list_registries",
+        "input": {},
+        "isError": false,
+        "result_bytes": 3543,
+        "ts": "2026-10-21T16:58:48.625Z"
+      },
+      {
+        "tool": "orion__search_tools",
+        "input": {
+          "query": "GLPI session utilisateur"
+        },
+        "isError": false,
+        "result_bytes": 4314,
+        "ts": "2026-10-21T16:59:02.021Z"
+      },
+      {
+        "tool": "orion__get_contract",
+        "input": {
+          "tool_name": "get_session_glpi",
+          "registry": "tool_glpi_wrapper"
+        },
+        "isError": false,
+        "result_bytes": 1595,
+        "ts": "2026-10-21T16:59:08.595Z"
+      },
+      {
+        "tool": "orion__exec_tool",
+        "input": {
+          "tool_name": "get_session_glpi",
+          "params": {},
+          "registry": "tool_glpi_wrapper"
+        },
+        "isError": false,
+        "result_bytes": 138,
+        "ts": "2026-10-21T16:59:17.865Z"
+      }
+    ],
+    "response_export_redacted": true
+  }
+}

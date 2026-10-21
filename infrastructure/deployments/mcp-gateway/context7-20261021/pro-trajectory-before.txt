@@ -1,0 +1,25 @@
+15:35:41Z session.started  agent:main:context7-validatio… session started
+15:35:41Z trace.metadata   agent:main:context7-validatio…
+15:35:41Z context.compiled agent:main:context7-validatio… context compiled (64 tools)
+15:35:41Z prompt.submitted agent:main:context7-validatio… prompt submitted
+15:35:58Z tool.call        agent:main:context7-validatio… tool_search {...redacted...}
+15:35:58Z tool.result      agent:main:context7-validatio… tool_search ok
+15:36:03Z tool.call        agent:main:context7-validatio… tool_call {...redacted...}
+15:36:03Z tool.result      agent:main:context7-validatio… tool_call error
+15:36:03Z tool.call        agent:main:context7-validatio… tool_call {...redacted...}
+15:36:03Z tool.call        agent:main:context7-validatio… docker_gateway_pro__get_current_time {...redacted...}
+15:36:05Z tool.result      agent:main:context7-validatio… docker_gateway_pro__get_current_time ok
+15:36:05Z tool.result      agent:main:context7-validatio… tool_call ok
+15:36:09Z tool.call        agent:main:context7-validatio… tool_describe {...redacted...}
+15:36:09Z tool.result      agent:main:context7-validatio… tool_describe ok
+15:36:13Z tool.call        agent:main:context7-validatio… tool_call {...redacted...}
+15:36:13Z tool.call        agent:main:context7-validatio… docker_gateway_pro__resolve-library-id {...redacted...}
+15:36:15Z tool.result      agent:main:context7-validatio… docker_gateway_pro__resolve-library-id ok
+15:36:15Z tool.result      agent:main:context7-validatio… tool_call ok
+15:36:20Z tool.call        agent:main:context7-validatio… tool_call {...redacted...}
+15:36:20Z tool.call        agent:main:context7-validatio… docker_gateway_pro__query-docs {...redacted...}
+15:36:21Z tool.result      agent:main:context7-validatio… docker_gateway_pro__query-docs ok
+15:36:21Z tool.result      agent:main:context7-validatio… tool_call ok
+15:36:33Z model.completed  agent:main:context7-validatio… omlx/mlx-community--Qwen3.6-35B-A3B-4bit done
+15:36:33Z trace.artifacts  agent:main:context7-validatio…
+15:36:33Z session.ended    agent:main:context7-validatio… success

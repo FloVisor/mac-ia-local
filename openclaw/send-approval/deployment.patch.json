@@ -1,0 +1,93 @@
+{
+  "tools": {
+    "alsoAllow": [
+      "exec",
+      "microsoft-graph",
+      "orion__*",
+      "outline__*",
+      "message",
+      "web_fetch",
+      "sessions_send",
+      "sessions_list",
+      "session_status",
+      "bookstack_*",
+      "read",
+      "gmail_read",
+      "gmail_send",
+      "imessage_read",
+      "imessage_send",
+      "system_read",
+      "system_action",
+      "file_change"
+    ],
+    "deny": [
+      "exec",
+      "process",
+      "code_execution",
+      "write",
+      "edit",
+      "apply_patch",
+      "message"
+    ]
+  },
+  "plugins": {
+    "entries": {
+      "send-approval": {
+        "config": {
+          "graphExactSha256": "3f2f0dbb5ccc2be265b4ca44ad0bc0a9f1cafaa0f343d78d3206fb904a988c5d"
+        }
+      },
+      "microsoft-graph": {
+        "config": {
+          "warningApprovalsRequired": true
+        }
+      }
+    }
+  },
+  "gateway": {
+    "tools": {
+      "deny": [
+        "exec",
+        "process",
+        "code_execution",
+        "write",
+        "edit",
+        "apply_patch",
+        "message",
+        "tool_call",
+        "gmail_send",
+        "imessage_send",
+        "system_action",
+        "file_change",
+        "bookstack_activity",
+        "bookstack_structure",
+        "bookstack_attachment",
+        "bookstack_import",
+        "bookstack_comment",
+        "bookstack_suivi",
+        "bookstack_conversation",
+        "outlook_mail_write",
+        "outlook_calendar_write",
+        "microsoft_todo_write",
+        "onedrive_upload",
+        "onedrive_update",
+        "onedrive_create_folder",
+        "onedrive_delete",
+        "onedrive_metadata_update"
+      ]
+    }
+  },
+  "agents": {
+    "entries": {
+      "main": {
+        "tools": {
+          "deny": [
+            "bookstack_*",
+            "gmail_read",
+            "gmail_send"
+          ]
+        }
+      }
+    }
+  }
+}

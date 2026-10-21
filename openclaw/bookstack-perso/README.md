@@ -13,13 +13,14 @@ les associations.
 | Outil | Rôle |
 |---|---|
 | `bookstack_activity` | activités : list, search, create, open, rename, archive, unarchive, delete, export, status |
-| `bookstack_structure` | arborescence, chapitres, pages, déplacement, suppression |
+| `bookstack_structure` | arborescence, chapitres, pages, déplacement, suppression ; `update_page` avec `mode` append/section/edit/replace |
 | `bookstack_search` | recherche dans le livre de l'activité (ou globale) |
 | `bookstack_page` | lecture d'une page avec budget de caractères, pièces jointes |
 | `bookstack_attachment` | ajout, téléchargement, suppression de pièces jointes |
-| `bookstack_import` | import : original + extraction/OCR + page de provenance ; `reextract` préserve les notes humaines |
+| `bookstack_import` | import : original + extraction/OCR + page de provenance ; `targetPageId` complète une page existante ; `reextract` préserve les notes humaines |
 | `bookstack_conversation` | conversations du groupe : list, create, move, bind, unbind |
 | `bookstack_comment` | commentaires natifs : list, read, create, reply, update, archive, unarchive, delete, search, sync, thread |
+| `bookstack_suivi` | page `Suivi` à la racine du livre : read, ensure, add_event, set_deadlines, set_situation, replace |
 
 ## Configuration
 
@@ -75,6 +76,17 @@ commentaires (détection des suppressions incluse). Journal :
 un index lexical local, reconstructible et sans moteur vectoriel, les couvre.
 Pagination explicite (`page`, `commentOffset`, `nextOffset`), sans plafond
 global caché.
+
+## Suivi d'activité
+
+Chaque activité possède une page `Suivi` à la racine du livre (hors chapitre),
+créée par `bookstack_activity` `create` ou `bookstack_suivi` `ensure`. Elle
+contient *Situation actuelle*, *Échéances et points en attente* et
+*Chronologie*. Les événements sont identifiés par un id stable
+(`gmail:<messageId>`, `bookstack:page:<id>`, `doc:<sha256>`) : rejouer une
+source ne crée pas de doublon. Les ajouts humains et les sections inconnues
+sont préservés. Un bilan ordinaire se répond depuis `bookstack_suivi` `read`
+sans aucun accès à la messagerie.
 
 ## Retour arrière
 

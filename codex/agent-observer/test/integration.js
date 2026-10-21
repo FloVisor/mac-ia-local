@@ -1,0 +1,26 @@
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const vscode=require('vscode');
+exports.run=async()=>{
+ const ext=vscode.extensions.getExtension('local-xithi.p3c-agent-observer');
+ assert(ext,'extension found');
+ const api=await ext.activate();
+ await vscode.commands.executeCommand('p3c.activity.focus');
+ const deadline=Date.now()+15000;
+ while(!api.snapshot().length && Date.now()<deadline) await new Promise(r=>setTimeout(r,100));
+ const nodes=api.snapshot();assert(nodes.length>0,'real nodes loaded');
+ const native=nodes.filter(n=>n.kind==='native_subagent');assert.equal(native.length,3);
+ const task=nodes.find(n=>n.task_id==='1e595a8e-9e9d-4553-8d18-7d38fee4949f');assert(task);assert.equal(task.state,'failed');assert.equal(task.actual_model,null);assert.equal(task.usage.total_tokens,37);
+ const tree=api.forest(nodes);assert(tree.children.get(task.parent).some(n=>n.id===task.id));
+ for(const n of native)assert(tree.children.get(n.parent).some(x=>x.id===n.id));
+ assert.equal(new Set(nodes.map(n=>n.id)).size,nodes.length);
+ const item=api.provider.getTreeItem(task);assert(item.description.includes('failed'));assert.equal(item.command.command,'p3c.details');
+ await vscode.commands.executeCommand('p3c.details',task);assert(vscode.window.activeTextEditor.document.getText().includes('objective_quality_failed'));
+ const filtered=api.forest(nodes,'local-omlx');assert(filtered.roots.length>0);assert(filtered.children.get(task.parent).some(n=>n.id===task.id));
+ const cyclic=api.forest([{id:'a',parent:'b'},{id:'b',parent:'a'}]);assert.equal(cyclic.roots.length,2);
+ const standup=vscode.extensions.getExtension('doublegeste.agent-standup');assert(standup);await standup.activate();assert(standup.isActive);
+ const cmds=await vscode.commands.getCommands(true);assert(cmds.includes('agentStandup.open'));
+ const result={status:'PASS',nodes:nodes.length,native_subagents:native.length,router_task:task.task_id,parent:task.parent,tree:true,filter:true,details:true,standup_active:standup.isActive,standup_version:standup.packageJSON.version};
+ fs.writeFileSync(path.join(__dirname,'../../..','artifacts','p3c-host-validation.json'),JSON.stringify(result,null,2));
+};

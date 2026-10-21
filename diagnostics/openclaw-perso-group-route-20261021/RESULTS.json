@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-21",
+  "status": "PARTIAL_GUI_CONFIRMATION_PENDING",
+  "targetedTests": [
+    {
+      "test": "two Perso folders with global Pro; loader, submit guard, sidebar isolation",
+      "status": "PASS"
+    },
+    {
+      "test": "Pro cannot resolve a Perso folder",
+      "status": "PASS"
+    },
+    {
+      "test": "global selection changes do not invalidate the other route",
+      "status": "PASS"
+    },
+    {
+      "test": "retry invalidation purges cache and reloads list plus defaults",
+      "status": "PASS"
+    },
+    {
+      "test": "failure stays closed within Perso; no Pro fallback",
+      "status": "PASS"
+    },
+    {
+      "test": "recovery after unavailable",
+      "status": "PASS"
+    },
+    {
+      "test": "concurrent Pro/Perso and delayed response isolated",
+      "status": "PASS"
+    },
+    {
+      "test": "missing identity fails closed",
+      "status": "PASS"
+    },
+    {
+      "test": "retry paths wired and actual submit guard blocks changed identity",
+      "status": "PASS"
+    },
+    {
+      "test": "Gateway epoch change reloads scoped cache",
+      "status": "PASS"
+    }
+  ],
+  "liveNativeRoute": {
+    "status": "PASS",
+    "source": "deployed UI loader and guard with native live Gateway RPC; not GUI rendering",
+    "results": [
+      {
+        "agent": "perso",
+        "globalSelection": "main",
+        "groupStatus": "resolved",
+        "submitRoutePending": false
+      },
+      {
+        "agent": "main",
+        "groupStatus": "missing",
+        "submitRoutePending": true
+      },
+      {
+        "agent": "perso",
+        "globalSelection": "main",
+        "groupStatus": "resolved",
+        "submitRoutePending": false
+      },
+      {
+        "agent": "main",
+        "groupStatus": "missing",
+        "submitRoutePending": true
+      }
+    ],
+    "calls": [
+      {
+        "method": "sessions.groups.list",
+        "agentId": "perso"
+      },
+      {
+        "method": "sessions.groups.defaults",
+        "agentId": "perso"
+      },
+      {
+        "method": "sessions.groups.list",
+        "agentId": "main"
+      },
+      {
+        "method": "sessions.groups.defaults",
+        "agentId": "main"
+      }
+    ]
+  },
+  "servedAssets": [
+    {
+      "file": "control-ui-core-JPg57hSA.js",
+      "encoding": "identity",
+      "same": true
+    },
+    {
+      "file": "control-ui-core-JPg57hSA.js",
+      "encoding": "gzip",
+      "same": true
+    },
+    {
+      "file": "control-ui-core-JPg57hSA.js",
+      "encoding": "br",
+      "same": true
+    },
+    {
+      "file": "control-ui-boot-new-D7uPHpvm.js",
+      "encoding": "identity",
+      "same": true
+    },
+    {
+      "file": "control-ui-boot-new-D7uPHpvm.js",
+      "encoding": "gzip",
+      "same": true
+    },
+    {
+      "file": "control-ui-boot-new-D7uPHpvm.js",
+      "encoding": "br",
+      "same": true
+    }
+  ],
+  "postRestart": {
+    "perso": "PERSO_OK via native omlx Qwen, 2002 ms",
+    "bookstack": "HTTP 200 native Perso read search, zero results",
+    "protectedFilesUnchanged": 13
+  },
+  "configurationChanges": false,
+  "sessionReset": false,
+  "paidCalls": false,
+  "gui": "NOT_TESTED; requires user window reload",
+  "rollbackSuffix": ".bak-group-route-v1"
+}

@@ -1,0 +1,48 @@
+# API publique limitée ; toute autre méthode ou route reste privée/VPN.
+# Le dashboard conserve son cookie natif non HttpOnly dans ce périmètre privé.
+http:
+  routers:
+    litellm-api-public:
+      rule: Host(`litellm.gangneux.org`) && ((Path(`/v1/models`) && Method(`GET`)) || (Path(`/v1/chat/completions`) && Method(`POST`)) || (Path(`/v1/responses`) && Method(`POST`)))
+      priority: 200
+      entryPoints: [websecure]
+      middlewares: [litellm-security, litellm-inflight]
+      service: litellm
+      tls: {}
+    litellm-private:
+      rule: Host(`litellm.gangneux.org`)
+      priority: 100
+      entryPoints: [websecure]
+      middlewares: [private-networks@file, litellm-security, litellm-inflight]
+      service: litellm
+      tls: {}
+    litellm-http:
+      rule: Host(`litellm.gangneux.org`)
+      priority: 10
+      entryPoints: [web]
+      middlewares: [litellm-https]
+      service: noop@internal
+  services:
+    litellm:
+      loadBalancer:
+        servers:
+          - url: http://litellm_gateway:4000
+        healthCheck:
+          path: /health/liveliness
+          interval: 30s
+          timeout: 5s
+  middlewares:
+    litellm-https:
+      redirectScheme:
+        scheme: https
+        permanent: true
+    litellm-inflight:
+      inFlightReq:
+        amount: 100
+    litellm-security:
+      headers:
+        contentTypeNosniff: true
+        referrerPolicy: no-referrer
+        stsSeconds: 31536000
+        customResponseHeaders:
+          X-Robots-Tag: noindex, nofollow

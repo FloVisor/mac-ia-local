@@ -1,0 +1,23 @@
+{
+  "ok": true,
+  "plugins": {
+    "loaded": [
+      "active-memory",
+      "anthropic",
+      "bookstack-perso",
+      "imessage",
+      "litellm-compat",
+      "llm-router",
+      "memory-core",
+      "microsoft-graph",
+      "ollama",
+      "omlx-thinking",
+      "send-approval"
+    ],
+    "errors": [],
+    "unavailable": []
+  },
+  "configReload": {
+    "hotReloadStatus": "active"
+  }
+}

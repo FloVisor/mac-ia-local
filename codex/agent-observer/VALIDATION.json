@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "nodes": 90,
+  "native_subagents": 3,
+  "router_task": "1e595a8e-9e9d-4553-8d18-7d38fee4949f",
+  "parent": "01a15de3-b087-75d2-bc09-b064732582a0",
+  "tree": true,
+  "filter": true,
+  "details": true,
+  "standup_active": true,
+  "standup_version": "1.40.0",
+  "unit_tests": {
+    "passed": 8,
+    "command": "python3 -m unittest discover -s codex/agent-observer/test -v"
+  },
+  "static_check": "node --check: PASS",
+  "inference_calls": 0,
+  "installed_extension": "local-xithi.p3c-agent-observer@0.1.0",
+  "limitations": [
+    "provider provenance unknown",
+    "router parent declared, session trace absent",
+    "visual human validation not run",
+    "SQLite schema compatibility dependency"
+  ],
+  "preservation": {
+    "/Users/fngux2/.codex/config.toml": true,
+    "/Users/fngux2/.codex/ollama-launch-models.json": true,
+    "/Users/fngux2/.vscode/extensions/doublegeste.agent-standup-1.40.0/codex.js": true,
+    "/Users/fngux2/.vscode/extensions/doublegeste.agent-standup-1.40.0/extension.js": true,
+    "mcp/llm-router/router.py": true
+  },
+  "installed_source_hashes": {
+    "collector.py": "afdb793ea12d5b5681ea6b3770d6a41cd5ac644acc1929d83e8c382060cdba4a",
+    "extension.js": "9d7fdbe42d33896da5935c724f429a1476df3b31276a247ad426651353676337",
+    "README.md": "b00c0f45237fec5415300592245588caa233084d85bfb8873a09fbd526718cc9"
+  },
+  "sqlite_connections": "explicitly closed after each read"
+}

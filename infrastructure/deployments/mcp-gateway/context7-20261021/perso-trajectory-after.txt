@@ -1,0 +1,15 @@
+15:38:32Z session.started  agent:perso:context7-isolatio… session started
+15:38:32Z trace.metadata   agent:perso:context7-isolatio…
+15:38:32Z context.compiled agent:perso:context7-isolatio… context compiled (42 tools)
+15:38:32Z prompt.submitted agent:perso:context7-isolatio… prompt submitted
+15:38:46Z tool.call        agent:perso:context7-isolatio… tool_search {...redacted...}
+15:38:46Z tool.call        agent:perso:context7-isolatio… tool_call {...redacted...}
+15:38:46Z tool.call        agent:perso:context7-isolatio… tool_call {...redacted...}
+15:38:46Z tool.result      agent:perso:context7-isolatio… tool_call error
+15:38:46Z tool.call        agent:perso:context7-isolatio… docker_gateway_perso__get_current_time {...redacted...}
+15:38:46Z tool.result      agent:perso:context7-isolatio… tool_search ok
+15:38:48Z tool.result      agent:perso:context7-isolatio… docker_gateway_perso__get_current_time ok
+15:38:48Z tool.result      agent:perso:context7-isolatio… tool_call ok
+15:39:05Z model.completed  agent:perso:context7-isolatio… omlx/mlx-community--Qwen3.6-35B-A3B-4bit done
+15:39:05Z trace.artifacts  agent:perso:context7-isolatio…
+15:39:05Z session.ended    agent:perso:context7-isolatio… success

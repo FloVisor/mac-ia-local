@@ -1,0 +1,39 @@
+{
+  "tools": {
+    "alsoAllow": [
+      "exec",
+      "microsoft-graph",
+      "orion__*",
+      "outline__*",
+      "message",
+      "web_fetch",
+      "sessions_send",
+      "sessions_list",
+      "session_status",
+      "bookstack_*",
+      "read",
+      "gmail_read",
+      "gmail_send",
+      "imessage_read",
+      "imessage_send",
+      "system_read",
+      "system_action",
+      "file_change",
+      "contacts_read"
+    ]
+  },
+  "agents": {
+    "entries": {
+      "main": {
+        "tools": {
+          "deny": [
+            "bookstack_*",
+            "gmail_read",
+            "gmail_send",
+            "contacts_read"
+          ]
+        }
+      }
+    }
+  }
+}

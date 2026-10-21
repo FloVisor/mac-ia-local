@@ -1,0 +1,271 @@
+[
+  {
+    "root": "/Users/fngux2/Workspaces/mac-ia-local",
+    "branch": "main",
+    "tracked_files": 1668,
+    "tracked_MiB": 47.6,
+    "extensions": [
+      [
+        ".go",
+        788
+      ],
+      [
+        ".md",
+        114
+      ],
+      [
+        "(sans extension)",
+        81
+      ],
+      [
+        ".json",
+        64
+      ]
+    ],
+    "git_marker": "directory",
+    "worktrees": "worktree /Users/fngux2/Workspaces/mac-ia-local\nHEAD 366df4d41ae13f84647efbb6170de584828005d6\nbranch refs/heads/main",
+    "graphify": []
+  },
+  {
+    "root": "/Users/fngux2/Workspaces/m3-si-xithi",
+    "branch": "main",
+    "tracked_files": 537,
+    "tracked_MiB": 8.3,
+    "extensions": [
+      [
+        ".json",
+        330
+      ],
+      [
+        ".md",
+        167
+      ],
+      [
+        "(sans extension)",
+        19
+      ],
+      [
+        ".js",
+        12
+      ]
+    ],
+    "git_marker": "directory",
+    "worktrees": "worktree /Users/fngux2/Workspaces/m3-si-xithi\nHEAD a552bc9feb1cbde4154f0afea4c5ec120d7a0728\nbranch refs/heads/main",
+    "graphify": []
+  },
+  {
+    "root": "/Users/fngux2/Workspaces/Plateforme-SD-WAN-XITHI",
+    "branch": "chore/altiwan-branding",
+    "tracked_files": 641,
+    "tracked_MiB": 4.4,
+    "extensions": [
+      [
+        ".md",
+        201
+      ],
+      [
+        ".go",
+        182
+      ],
+      [
+        ".json",
+        63
+      ],
+      [
+        ".py",
+        52
+      ]
+    ],
+    "git_marker": "directory",
+    "worktrees": "worktree /Users/fngux2/Workspaces/Plateforme-SD-WAN-XITHI\nHEAD 61ee85ef4ac405734ef9f6a65cacb648366aedec\nbranch refs/heads/chore/altiwan-branding",
+    "graphify": []
+  },
+  {
+    "root": "/Users/fngux2/Workspaces/Plateforme-CaaS-XITHI",
+    "branch": "main",
+    "tracked_files": 158,
+    "tracked_MiB": 0.2,
+    "extensions": [
+      [
+        ".md",
+        84
+      ],
+      [
+        "(sans extension)",
+        35
+      ],
+      [
+        ".sh",
+        17
+      ],
+      [
+        ".yaml",
+        9
+      ]
+    ],
+    "git_marker": "directory",
+    "worktrees": "worktree /Users/fngux2/Workspaces/Plateforme-CaaS-XITHI\nHEAD d2898e150fe466c5925301044fcbeaad041aa861\nbranch refs/heads/main",
+    "graphify": []
+  },
+  {
+    "root": "/Users/fngux2/Workspaces/XITHI-Infrastructure-Ops",
+    "branch": "main",
+    "tracked_files": 1503,
+    "tracked_MiB": 11.9,
+    "extensions": [
+      [
+        ".py",
+        410
+      ],
+      [
+        ".yml",
+        319
+      ],
+      [
+        ".md",
+        309
+      ],
+      [
+        ".ps1",
+        113
+      ]
+    ],
+    "git_marker": "directory",
+    "worktrees": "worktree /Users/fngux2/Workspaces/XITHI-Infrastructure-Ops\nHEAD 87e1d899e104e9784a127f1a3e23b51bffba92a1\nbranch refs/heads/main\n\nworktree /Users/fngux2/Workspaces/.codex-worktrees/XITHI-xansible-decisions-0.5.16\nHEAD 87ce0f021ff1080010552fefe4d8bf6f59f8ace9\nbranch refs/heads/codex/xansible-decisions-0.5.16",
+    "graphify": []
+  },
+  {
+    "root": "/Users/fngux2/Projects/m3-si-mixtrio-kit",
+    "branch": "main",
+    "tracked_files": 255,
+    "tracked_MiB": 8.8,
+    "extensions": [
+      [
+        ".md",
+        148
+      ],
+      [
+        ".json",
+        85
+      ],
+      [
+        ".js",
+        11
+      ],
+      [
+        ".tgz",
+        6
+      ]
+    ],
+    "git_marker": "directory",
+    "worktrees": "worktree /Users/fngux2/Projects/m3-si-mixtrio-kit\nHEAD 1c775e1dd0188f7bc0dc6b59e57b0ba7bff92bc0\nbranch refs/heads/main",
+    "graphify": []
+  },
+  {
+    "root": "/Users/fngux2/super-agent",
+    "branch": "migration/candidate-0.8.0-no-deploy",
+    "tracked_files": 344,
+    "tracked_MiB": 4.0,
+    "extensions": [
+      [
+        ".py",
+        156
+      ],
+      [
+        ".json",
+        82
+      ],
+      [
+        ".md",
+        76
+      ],
+      [
+        ".sh",
+        10
+      ]
+    ],
+    "git_marker": "directory",
+    "worktrees": "worktree /Users/fngux2/super-agent\nHEAD b83d006606669e00919f1a09c6d51969ee8a56ed\nbranch refs/heads/migration/candidate-0.8.0-no-deploy",
+    "graphify": []
+  },
+  {
+    "root": "/Users/fngux2/super-agent-migration-private/20261002T-migration.4ewvdU/recovery-clone",
+    "branch": "(detached)",
+    "tracked_files": 344,
+    "tracked_MiB": 4.0,
+    "extensions": [
+      [
+        ".py",
+        156
+      ],
+      [
+        ".json",
+        82
+      ],
+      [
+        ".md",
+        76
+      ],
+      [
+        ".sh",
+        10
+      ]
+    ],
+    "git_marker": "directory",
+    "worktrees": "worktree /Users/fngux2/super-agent-migration-private/20261002T-migration.4ewvdU/recovery-clone\nHEAD a7a0ae0f5bb9b040e82102ea8c22e73382ed42a4\ndetached",
+    "graphify": []
+  },
+  {
+    "root": "/Users/fngux2/nodectra",
+    "branch": "main",
+    "tracked_files": 225,
+    "tracked_MiB": 1.6,
+    "extensions": [
+      [
+        ".py",
+        92
+      ],
+      [
+        ".md",
+        66
+      ],
+      [
+        "(sans extension)",
+        34
+      ],
+      [
+        ".txt",
+        6
+      ]
+    ],
+    "git_marker": "directory",
+    "worktrees": "worktree /Users/fngux2/nodectra\nHEAD ae39f5845de6e52cd95201402a93fec717321b9d\nbranch refs/heads/main",
+    "graphify": []
+  },
+  {
+    "root": "/Users/fngux2/Workspaces/.codex-worktrees/XITHI-xansible-decisions-0.5.16",
+    "branch": "codex/xansible-decisions-0.5.16",
+    "tracked_MiB": 4.6,
+    "tracked_files": 684,
+    "extensions": [
+      [
+        ".yml",
+        250
+      ],
+      [
+        ".py",
+        189
+      ],
+      [
+        ".md",
+        121
+      ],
+      [
+        ".json",
+        34
+      ]
+    ],
+    "git_marker": "linked worktree",
+    "graphify": []
+  }
+]

@@ -1,0 +1,7 @@
+test_addition (test_calcul.CalculTest.test_addition) ... ok
+test_multiplication (test_calcul.CalculTest.test_multiplication) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+OK

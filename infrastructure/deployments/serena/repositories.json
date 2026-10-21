@@ -1,0 +1,4 @@
+{
+  "primary": ["FloVisor/XITHI-Infrastructure-Ops", "FloVisor/nodectra", "FloVisor/Plateforme-CaaS-XITHI", "FloVisor/Plateforme-SD-WAN-XITHI", "FloVisor/mac-ia-local", "FloVisor/super-agent", "FloVisor/post-activation-validation"],
+  "secondary": ["rldet9/m3-si-mixtrio-kit", "rldet9/n8n-nodes-advanced", "rldet9/m3-si-xithi", "rldet9/m3-orionai-patterns", "rldet9/m3-workspace", "xithi-fr/AlerteSmiden"]
+}

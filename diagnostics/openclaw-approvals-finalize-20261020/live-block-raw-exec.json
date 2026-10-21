@@ -1,0 +1,8 @@
+{
+  "ok": false,
+  "toolName": "exec",
+  "error": {
+    "code": "not_found",
+    "message": "Tool not available: exec"
+  }
+}

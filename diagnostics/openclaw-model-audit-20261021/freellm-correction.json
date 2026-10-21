@@ -1,0 +1,78 @@
+{
+  "status": "PASS",
+  "modelId": 281,
+  "field": "contextWindow",
+  "before": 256000,
+  "after": 128000,
+  "rollback": {
+    "method": "PATCH",
+    "path": "/api/models/281",
+    "body": {
+      "contextWindow": 256000
+    }
+  },
+  "settings": {
+    "output-limit": {
+      "mode": "off",
+      "effectiveCap": null,
+      "autoValue": 32768
+    },
+    "headroom": {
+      "rampStart": null,
+      "floor": null
+    },
+    "compression": {
+      "mode": "off",
+      "engines": {
+        "dedup": {
+          "enabled": true,
+          "minBlockChars": 80,
+          "minBlockLines": 3
+        },
+        "lite": {
+          "enabled": true
+        },
+        "read-lifecycle": {
+          "enabled": true
+        },
+        "toolfilter": {
+          "enabled": true,
+          "intensity": "standard",
+          "maxLinesPerResult": 120,
+          "maxCharsPerResult": 12000,
+          "disabledFilters": []
+        },
+        "jsoncompact": {
+          "enabled": true,
+          "minRows": 8
+        },
+        "relevance": {
+          "enabled": true,
+          "maxChars": 18000
+        },
+        "aging": {
+          "enabled": true,
+          "liveTurns": 3,
+          "condenseAfterTurns": 8
+        },
+        "hard-budget": {
+          "enabled": true
+        }
+      },
+      "trustProjectFilters": false,
+      "prefixFreeze": true
+    },
+    "fusion": {
+      "config": {
+        "mode": "auto",
+        "models": [],
+        "judge": null,
+        "k": 4,
+        "strategy": "synthesize",
+        "expose_panel": false
+      },
+      "maxK": 8
+    }
+  }
+}
+

@@ -1,0 +1,44 @@
+✔ Context7 exact Pro read contracts, direct and deferred, fail closed (0.848417ms)
+✔ Docker time is read-only, agent scoped, direct and deferred (0.810375ms)
+✔ Contacts use read-only argv without shell and preserve Perso scope (1.677292ms)
+✔ Orion discovery and Outline reads, direct and deferred, need no approval (0.208667ms)
+✔ exec_tool reads require a real matching contract result in same session (0.74675ms)
+✔ deferred actual get_contract result works; fabricated nested params do not (0.162042ms)
+✔ wrapper cannot bypass sender gates or side-effect refusals (2.0835ms)
+[agents/tools] plugin approval gateway request failed; blocking tool call: Error: SIMULATED_TRANSPORT_ERROR
+[agents/tools] before_tool_call hook failed: tool=gmail_send toolCallId=15f88306-47b3-45ca-976a-90990f7b948a error=Error: TEST_HOOK_FAILURE
+✔ installed runtime decision allow-once (6.544833ms)
+✔ installed runtime decision deny (0.309958ms)
+✔ installed runtime decision timeout (0.205417ms)
+✔ installed runtime decision cancelled (0.160334ms)
+✔ installed runtime decision undefined (0.167ms)
+✔ installed runtime decision allow-always (0.199959ms)
+✔ installed runtime decision bogus (0.262541ms)
+✔ installed runtime transport error blocks tool (26.342833ms)
+✔ installed runtime freezes args and demands fresh approval for changed action (0.479583ms)
+✔ installed runtime rejects lower-priority parameter rewrite (0.244958ms)
+✔ installed runtime lower-priority veto and hook exception both block (8.769209ms)
+✔ all shell commands and unqualified execution paths fail closed (0.779958ms)
+✔ dedicated reads do not ask; Graph/BookStack remain separated (0.134375ms)
+✔ strict Gmail read argv: query is data, no flags/injection/control-flow (0.271958ms)
+✔ attachment read destination is generated inside own workspace (4.00375ms)
+✔ native grants bind agent/session/id/content and are consumable once (1.783167ms)
+✔ Gmail MIME binds body/recipients/attachment bytes, transport neutralized (1.774875ms)
+✔ memory exception respects canonical paths, relative paths, own workspace and symlinks (1.28775ms)
+✔ file_change approval protects exact preimage, native outside writes blocked (7.1275ms)
+✔ deletions of memory always require approval; trash/delete/archive distinguished (0.877833ms)
+✔ controlled system commands are fixed argv and are never run during qualification (0.418208ms)
+✔ known outgoing messages remain single-call gated, remote draft send remains blocked (0.13125ms)
+✔ iMessage transport is neutralized and exactly bound; no shell or fallback (0.197584ms)
+✔ all automatic channel sends are cancelled and direct plugin writes need a grant (0.572042ms)
+✔ grant remains bound across duplicate module loads, but cannot be reused (1.070541ms)
+✔ hard links cannot extend own memory exception (0.556791ms)
+✔ Serena read contracts are Pro only and strict, including deferred calls (0.806292ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 34
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 794.079666

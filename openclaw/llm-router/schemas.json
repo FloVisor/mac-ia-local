@@ -1,0 +1,243 @@
+[
+  {
+    "name": "submit",
+    "description": "Persist a recoverable task; return immediately.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "type": "string",
+          "enum": [
+            "analysis",
+            "coding",
+            "review",
+            "testing",
+            "documentation"
+          ]
+        },
+        "task": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "allow_cloud": {
+          "type": "boolean"
+        },
+        "confidentiality": {
+          "enum": [
+            "local",
+            "cloud-approved"
+          ]
+        },
+        "reasoning": {
+          "type": "string",
+          "enum": [
+            "off",
+            "minimal",
+            "low",
+            "medium",
+            "high",
+            "max",
+            "ultra"
+          ]
+        },
+        "required_capabilities": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "tools",
+              "json",
+              "vision"
+            ]
+          }
+        },
+        "context_tokens": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_output_tokens": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "deadline": {
+          "type": "number"
+        },
+        "idempotency_key": {
+          "type": "string"
+        },
+        "quality": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "profile",
+        "task"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "delegate",
+    "description": "Compatible five-profile delegation; prefer submit for long tasks.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "profile": {
+          "type": "string",
+          "enum": [
+            "analysis",
+            "coding",
+            "review",
+            "testing",
+            "documentation"
+          ]
+        },
+        "task": {
+          "type": "string"
+        },
+        "model": {
+          "type": "string"
+        },
+        "allow_cloud": {
+          "type": "boolean"
+        },
+        "confidentiality": {
+          "enum": [
+            "local",
+            "cloud-approved"
+          ]
+        },
+        "reasoning": {
+          "type": "string",
+          "enum": [
+            "off",
+            "minimal",
+            "low",
+            "medium",
+            "high",
+            "max",
+            "ultra"
+          ]
+        },
+        "required_capabilities": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "tools",
+              "json",
+              "vision"
+            ]
+          }
+        },
+        "context_tokens": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "max_output_tokens": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "deadline": {
+          "type": "number"
+        },
+        "idempotency_key": {
+          "type": "string"
+        },
+        "quality": {
+          "type": "object"
+        }
+      },
+      "required": [
+        "profile",
+        "task"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "status",
+    "description": "status",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "task_id"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "result",
+    "description": "result",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string"
+        },
+        "offset": {
+          "type": "integer"
+        },
+        "limit": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "task_id"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "cancel",
+    "description": "cancel",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "task_id": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "task_id"
+      ],
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "activity",
+    "description": "activity",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "after": {
+          "type": "integer"
+        },
+        "limit": {
+          "type": "integer"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    }
+  },
+  {
+    "name": "catalogue",
+    "description": "catalogue",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "refresh": {
+          "type": "boolean"
+        }
+      },
+      "required": [],
+      "additionalProperties": false
+    }
+  }
+]

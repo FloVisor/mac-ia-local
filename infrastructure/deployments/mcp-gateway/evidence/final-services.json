@@ -1,0 +1,32 @@
+{
+  "codex": {
+    "service_id": "j5h7kt64m3o0gaj52h06uymv5",
+    "replicas": 1,
+    "ports": [],
+    "gateway_memory": 0,
+    "gateway_nanocpus": 0,
+    "gateway_cpuquota": 0,
+    "update": "completed",
+    "token_mode": "0600"
+  },
+  "pro": {
+    "service_id": "hcqagi0vqg8961i42zocv8vq2",
+    "replicas": 1,
+    "ports": [],
+    "gateway_memory": 0,
+    "gateway_nanocpus": 0,
+    "gateway_cpuquota": 0,
+    "update": "completed",
+    "token_mode": "0600"
+  },
+  "perso": {
+    "service_id": "nxohckcwf9awsdrobl5eis7ud",
+    "replicas": 1,
+    "ports": [],
+    "gateway_memory": 0,
+    "gateway_nanocpus": 0,
+    "gateway_cpuquota": 0,
+    "update": "completed",
+    "token_mode": "0600"
+  }
+}

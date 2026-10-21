@@ -1,0 +1,30 @@
+{
+  "captured_at": "2026-10-21T06:29:49.350381+00:00",
+  "unit_last_results": {
+    "bookstack-backup.service": "Result=success\nExecMainStatus=0\nActiveState=inactive\n",
+    "traefik-syno-cert-sync.service": "Result=success\nExecMainStatus=0\nActiveState=inactive\n"
+  },
+  "backup_scripts": [
+    {
+      "path": "/srv/docker-local/compose/bookstack/backup.sh",
+      "sha256": "7808ddfe727fa67432161cd7f40457cc691d76ec47a05cefa88745730e646c7b",
+      "paths_referenced": [
+        "/srv/docker-local/compose/bookstack",
+        "/srv/docker-shared/bookstack",
+        "/srv/docker-shared/traefik/dynamic/bookstack.yml"
+      ],
+      "tools": [
+        "mariadb-dump",
+        "tar",
+        "docker"
+      ]
+    }
+  ],
+  "old_acme_path": {
+    "exists": true,
+    "resolved": "/srv/docker-local/compose/traefik/acme/acme.json"
+  },
+  "ollama_backend_directive": [
+    "set $ollama_backend http://ollama-tailscale:11434;"
+  ]
+}

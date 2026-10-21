@@ -643,3 +643,280 @@ le passage en attente.
 Règle : une demande récurrente vers un tiers interne (commercial, achats,
 support) doit être **typée** (champs + gabarit) dans un skill, pas laissée à
 l'improvisation du modèle.
+
+## Suivi d'activité : bilan sans messagerie — 2026-10-20
+
+Symptôme visé : un « état du suivi » déclenchait des recherches Gmail et
+l'ouverture des mails cités, alors que la page `Suivi` contenait déjà la
+réponse.
+
+Implémentation : outil `bookstack_suivi` (page `Suivi` à la racine du livre,
+créée par `bookstack_activity create` ou `ensure`), événements identifiés par
+`gmail:<messageId>` / `bookstack:page:<id>` / `doc:<sha256>` (idempotence),
+`expectedRevision` contre les écritures concurrentes, préservation des ajouts
+humains et des sections inconnues.
+
+Consignes : `workspace-perso/AGENTS.md` + skill `perso-bookstack` (section
+« Suivi d'activité ») — bilan ordinaire = `bookstack_suivi read` seul, zéro
+appel mail ; détail absent = récupération ciblée du seul message utile.
+
+Pièges constatés avec le modèle local :
+
+1. `exec` avec `2>&1` → refusé par l'allowlist. Consigne : commande simple,
+   sans `2>&1`, `|`, `;` ni redirection.
+2. « Aucun compte rendu dans les mails » interprété comme « rendez-vous non
+   tenu ». Consigne : une absence de trace n'est pas une preuve d'échec.
+3. Ajouter un outil au contrat du plugin exige un nouveau consentement de
+   capacité : `openclaw plugins enable bookstack-perso --accept-capabilities`,
+   puis redémarrage franc du gateway (`stop --force`).
+
+Recette : [diagnostics/openclaw-bookstack-suivi-20261020](../diagnostics/openclaw-bookstack-suivi-20261020/VALIDATION.md).
+
+## Dossiers de conversations visibles des deux agents — 2026-10-20
+
+Symptôme : les conversations sont filtrées par `agentId`, mais les dossiers
+manuels et les dossiers créés par une activité apparaissent dans Pro **et**
+Perso.
+
+Cause : `session_groups` (catalogue des dossiers) vit dans la base d'état
+**partagée** et n'avait aucune notion de propriétaire ; seul `category` est
+stocké par agent dans `openclaw-agent.sqlite`.
+
+Correctif (runtime utilisateur `~/.openclaw/runtime/current`, l'app bundle est
+protégée par SIP) — colonne additive `session_groups.agent_id TEXT` :
+
+1. `dist/session-group-catalog.kernel-*.mjs` — `hasAgentOwner` /
+   `ensureAgentOwnerColumn`, écriture de `agent_id` à l'enregistrement,
+   `put`/`prepare`/`retire`/`defaults` scopés par agent.
+2. `dist/session-groups-*.mjs` — `agentId` propagé, `filterGroupsByAgent`.
+3. `dist/sessions-groups-*.mjs` — handlers RPC `sessions.groups.*` filtrent
+   par `agentId` (côté gateway, pas seulement UI).
+4. `dist/sessions-*.mjs` (schémas TypeBox) — `agentId` optionnel sur les
+   params et sur `SessionGroupSchema`.
+5. `dist/session-create-category-*.mjs` + appelants
+   (`sessions-create-*`, `sessions-mutations-*`) — l'`agentId` de la session
+   est passé à l'enregistrement automatique du dossier.
+6. `dist/state/openclaw-state-read.worker.js` — copie bundlée du kernel :
+   `readSessionGroupCatalogSnapshot` lit `agent_id` (sinon le worker renvoie
+   un snapshot sans propriétaire).
+7. `dist/openclaw-state-db-legacy-backfills-*.mjs` — `agent_id` déclaré dans
+   `lazyColumns` (colonne additive tolérée par le contrat de schéma).
+8. `dist/openclaw-tools-*.mjs` — `group_list`/`group_set`/`group_rename`/
+   `group_delete` passent l'agent demandeur.
+9. `dist/control-ui/assets/control-ui-core-*.js` — le store de dossiers envoie
+   `agentId` et se recharge au changement d'agent.
+
+Migration unique et idempotente :
+[migrations/20261020-session-groups-agent-owner.mjs](migrations/20261020-session-groups-agent-owner.mjs)
+(`--dry-run` disponible). Sauvegarde préalable :
+`~/.openclaw/backups-group-agent-isolation-20261020-171237/`.
+
+Attention : ces patches vivent dans le runtime versionné ; une mise à jour
+d'OpenClaw les écrase. À revérifier après chaque upgrade (le worker bundlé
+`state/openclaw-state-read.worker.js` est le point le plus facile à oublier).
+
+### Le client lourd macOS ne charge pas l'UI du gateway
+
+Symptôme : l'isolation fonctionne dans un navigateur sur
+`http://127.0.0.1:18789/chat/<agent>` mais **pas** dans la fenêtre de
+l'application macOS, qui continue d'afficher tous les dossiers.
+
+Cause : l'app ne charge pas l'UI servie par le gateway. Elle embarque son
+propre bundle `control-ui` dans
+`/Applications/OpenClaw.app/Contents/Resources/runtime/.../dist/control-ui/`
+et le sert via un `WKURLSchemeHandler` (schéma `openclaw-control-ui`) ; elle ne
+se connecte au gateway qu'en `ws://127.0.0.1:18789`. Deux fichiers de même nom
+coexistent donc avec des contenus différents :
+
+| bundle | appel |
+| --- | --- |
+| app (d'origine) | `request(Kh,{})` |
+| gateway (patché) | `request(Kh,ag())` |
+
+Sans `agentId` dans la requête, le gateway ne peut pas deviner l'agent affiché
+et renvoie le catalogue complet.
+
+Correctif : [migrations/patch-app-control-ui-agent-scope.sh](migrations/patch-app-control-ui-agent-scope.sh)
+applique les mêmes modifications au bundle de l'app (`.js` + régénération des
+variantes précompressées `.br`/`.gz`, sans lesquelles le patch est ignoré).
+Idempotent, `--check` pour tester, sauvegarde en `.bak-agent-scope`.
+
+Prérequis macOS : autoriser le terminal appelant dans **Réglages Système →
+Confidentialité et sécurité → Gestion des apps**, puis le relancer. Sans cette
+autorisation l'écriture dans `/Applications/OpenClaw.app` échoue avec
+`Operation not permitted` (protection App Management, distincte de SIP).
+
+À réappliquer après **chaque mise à jour de l'application** : le bundle est
+remplacé. Correctif de fond à porter en amont (l'UI native doit envoyer
+l'agent courant).
+
+Deux pièges rencontrés lors de la mise au point :
+
+1. **`selectedId` vide = agent par défaut.** Dans l'onglet Pro, l'UI ne
+   renseigne pas `agentSelection.state.selectedId` ; un helper naïf
+   (`selectedId ? {agentId} : {}`) n'envoie donc rien et le gateway renvoie
+   tout le catalogue. Le helper doit retomber sur l'agent par défaut :
+   `selectedId || ga({hello: snapshot.hello})`.
+2. **Un `put` sans `agentId` est global.** Il supprime les noms absents de
+   `names`, y compris ceux d'un autre agent. Le kernel ne supprime désormais
+   que les lignes de l'agent demandé, ou les lignes non attribuées quand aucun
+   agent n'est fourni. Les handlers RPC résolvent aussi l'agent depuis
+   `client.connect.modelCatalog.agentId` en dernier recours.
+
+## Approbations d’envoi natives — reprise du 2026-10-20
+
+Plugin local [send-approval](send-approval/README.md), chargé via l’API officielle
+`before_tool_call.requireApproval`, sans autorisation permanente ni patch runtime.
+Recette : [validation](../diagnostics/openclaw-send-approval-20261020/VALIDATION.md).
+Gmail/SMS/iMessage : uniquement paramètres inline complètement affichables.
+Les variantes à contenu externe et les aperçus >512 caractères sont bloqués.
+
+**Attention Graph 3.14.1** : `send_draft` approuve des arguments figés mais envoie
+un brouillon distant mutable ; son prompt n’affiche ni destinataires ni contenu.
+Ne pas confondre snapshot des paramètres et snapshot du message. L’envoi Outlook
+est temporairement bloqué par le plugin ; préparation des brouillons conservée.
+Une correction du connecteur est nécessaire avant déblocage. Aucune compensation
+par simple consigne agent ni relecture non atomique. Aucun signalement envoyé.
+
+Les commandes `exec` contenant `openclaw` ou `osascript` sont bloquées pour fermer
+ces voies d’envoi alternatives ; cela restreint aussi leurs usages de lecture.
+La couverture demeure partielle : les autres outils et réponses automatiques de
+canaux ne deviennent pas une politique universelle d’approbation. Voir les limites
+et les scénarios NOT_RUN dans la validation.
+
+## Approbations étendues 0.2.0 — 2026-10-20
+
+Les outils enregistrés exigent leur déclaration `contracts.tools` dans le
+manifeste : des tests Node réussis ne prouvent pas leur chargement Gateway.
+Lectures Gmail via `gmail_read` Perso (gog readonly à argv fixe), plus aucune
+entrée gog générale. Les outils bruts exec/write/message sont désactivés ;
+utiliser file_change, system_read/system_action et les expéditeurs dédiés.
+Graph send_exact exige le bundle patché qualifié par SHA256 ; send_draft reste
+refusé. Ne pas restaurer allow-always pour contourner une erreur de composition.
+Rapport : `diagnostics/openclaw-approvals-finalize-20261020/VALIDATION.md`.
+L’interface humaine et les envois réels restent NOT_RUN.
+
+## Régression des lectures MCP corrigée — 2026-10-20 (0.2.1)
+
+Le hook 0.2.0 refusait `tool_call` : même `orion__search_tools`, autorisé
+individuellement, devenait inutilisable via le catalogue différé. Il refusait
+également `orion__list_registries` et tous les `orion__exec_tool`. Le MCP était
+disponible ; la configuration Pro/Perso n'avait pas retiré Orion de Pro.
+
+Correction ciblée : classifier la cible du wrapper, découverte libre, autoriser
+exec_tool seulement après observation d'un résultat réel get_contract `read`
+dans la même session. Les mutations inconnues restent bloquées. Ne jamais
+utiliser un indicateur read fourni par le modèle comme une autorisation.
+Contacts Apple passe par contacts_read, argv fixe, Perso seulement.
+
+Recette : appels natifs réels Pro list_registries/search_tools/get_contract/
+exec_tool, trois tickets de trois entités, zéro approbation ; simulations SMS
+et Gmail toujours soumises à confirmation. Aucun tour LLM ni historique créé.
+Détails : `diagnostics/openclaw-mcp-read-regression-20261020-225949/VALIDATION.md`.
+
+## llm-router P3-B — 2026-10-21
+
+- Un plugin peut être `loaded` sans exposer ses outils : déclarer
+  `contracts.tools` dans le manifeste. Vérifier le chemin réel de l'agent,
+  pas seulement le chargement ou une exécution terminal.
+- OpenClaw capture les packages de plugins : un chemin relatif vers un script
+  hors package devient invalide. Fournir son chemin absolu dans la configuration
+  opérateur ; ne jamais le prendre depuis les arguments du modèle.
+- Lors d'une évolution de schéma, migrer la configuration avec un schéma
+  compatible avant de rendre un champ obligatoire. Le Gateway peut conserver
+  l'ancien schéma ; ne pas modifier sa registry/SQLite pour forcer le passage.
+- Les profils statiques du principal peuvent être hérités par Perso. Utiliser
+  des noms de providers distincts et une politique de modèles propre par agent,
+  en plus des identités et des clés séparées.
+- La sélection DIRECT payante appartient au sélecteur utilisateur. Refuser un
+  changement de modèle demandé par l'outil `session_status` pour empêcher le
+  modèle de se donner cette autorisation. Les confirmations d'envoi ne changent pas.
+- Limite constatée : outils llm_router exécutables dans les contextes Pro/Perso
+  par l'API Gateway, mais absents de la recherche/appel différés du modèle Pro.
+  Ne pas présenter ce transport comme une délégation conversationnelle qualifiée.
+  Pas de contournement global de tool_search ni de patch du runtime appliqué.
+
+[Rapport, preuves et rollback P3-B](../codex/21-llm-router-p3b.md).
+
+
+### Reprise P3-B : complément de profil par agent
+
+`agents.entries.main.tools.alsoAllow` remplace le complément global : un plugin
+peut figurer dans `tools.catalog` et fonctionner par HTTP, tout en étant exclu
+du catalogue conversationnel par `coding`. Diagnostiquer avec `tools.effective`
+sur la session réelle avant de toucher au manifeste ou au runtime. Correction
+ciblée : sept noms exacts du routeur ajoutés à la liste Pro, refus conservés.
+Recettes neuves Pro/Perso : découverte puis invocation et résultat vérifiés ;
+Perso a repris sa récupération après expiration du premier tour. Refus croisés
+des tâches dans les deux sens. Voir la reprise du rapport P3-B.
+
+
+### Dossiers Perso : formulaire « cible indisponible » — 21 octobre 2026
+
+Le correctif de portée de la sidebar ne suffit pas : le chargeur du formulaire
+`new-session` peut porter `agent=perso` alors que le store global est encore sur
+Pro. Il déclarait alors les dossiers Perso absents. Les contrôles avant création
+et les nouvelles tentatives relisaient eux aussi ce store partagé.
+
+Complément autorisé : `migrations/patch-app-control-ui-group-route.py`, appelé
+par le script historique `patch-app-control-ui-agent-scope.sh`. Deux bundles
+sont concernés (core et new-session), dans l'app **et** dans le runtime Gateway.
+Le complément réutilise le chargeur de dossiers existant avec un état séparé
+par agent de route ; aucune union des catalogues. Le chargement, la validation
+et les retries utilisent la même portée. Un changement d'agent dans un
+formulaire lié à un dossier interdit la soumission avec l'autre identité.
+Le cache n'est validé qu'à `ready`, invalidé sur retry et rechargé si l'epoch
+Gateway change. Aucune modification de session, de BookStack, de modèle,
+d'autorisation ou de clé.
+
+Test ciblé : `node openclaw/migrations/test-group-route.mjs <assets>`.
+Dix scénarios passent ; la recette native du chargeur installé résout les deux
+dossiers Perso avec sélection globale Pro, et les refuse sous Pro. Cela ne
+remplace pas la validation de l'écran dans la fenêtre macOS après rechargement.
+Le cache mémoire des assets de la Gateway peut conserver le core antérieur
+après écriture sur disque : vérifier les octets réellement servis. Si nécessaire,
+utiliser `gateway.restart.preflight`, puis `openclaw gateway restart --safe`
+uniquement après constat de zéro travail actif. Le rechargement de la fenêtre
+reste nécessaire pour remplacer les modules JavaScript déjà importés ; conserver
+tout brouillon avant de le faire.
+
+Retour arrière : restaurer pour chacun des deux bundles les trois fichiers
+`.js`, `.js.gz`, `.js.br` à partir de leur voisin `.bak-group-route-v1`, dans
+les deux répertoires d'assets. Ces sauvegardes conservent le correctif sidebar
+antérieur. Recharger ensuite la fenêtre, sans réinitialiser de session. Ne pas
+utiliser `.bak-agent-scope` pour ce rollback limité.
+
+
+Complément v2 au correctif de formulaire : une route sans `agent` signifie
+l'agent par défaut du formulaire (Pro ici), et non `selectedId` du store global.
+Le premier complément utilisait à tort ce dernier et a introduit une régression
+Pro après réparation de Perso, confirmée par l'utilisateur et par test rouge.
+Le complément réutilise désormais le helper natif `Mo` et attend la liste des
+agents si nécessaire. Couverture portée à treize scénarios, dont le défaut
+implicite Pro après sélection Perso et l'hydratation à froid. Perso confirmé en
+GUI par l'utilisateur ; Pro v2 validé techniquement, confirmation GUI attendue.
+Sauvegarde du module avant v2 : `.bak-group-default-v2`. La sauvegarde initiale
+`.bak-group-route-v1` reste la référence pour annuler l'ensemble du complément.
+
+
+## Contextes LiteLLM et admission 429 — 21 octobre 2026
+
+Une déclaration client uniforme 8192 peut être inférieure au prompt fixe OpenClaw
+(~20000 tokens), même sans historique long. Ne pas confondre fenêtre du modèle,
+num_ctx effectif, budget de sortie et quotas TPM/RPM. Les pools doivent tenir
+compte de tous leurs membres. Le 429 Ministral observé venait de l'admission
+FreeLLMAPI à 2 RPM, avant appel fournisseur ; le reset ~17h annoncé ne décrivait
+pas fidèlement la disponibilité RPM. Extension ciblée `litellm-compat` et limites
+qualifiées dans [le rapport d'audit](../diagnostics/openclaw-model-audit-20261021/RAPPORT.md).
+Le test outil est prouvé par un `toolCallId` associé au résultat et un contenu
+témoin absent du prompt, pas par un texte OUTIL_OK. Les grandes fenêtres et le
+reasoning Cloud restent NOT_RUN.
+
+
+## Context7 derrière Docker MCP Gateway — 2026-10-21
+
+Le secret déclaré par un catalogue ne prouve pas qu’il est obligatoire : l’entrée officielle Context7 indique désormais `required: false` et les appels sans clé fonctionnent avec cette Gateway. Ajouter le serveur par `profile server add`, puis autoriser explicitement ses deux outils par `profile tools`. Les filtres clients initiaux `time` doivent également inclure les noms exacts `resolve-library-id` et `query-docs`. La politique Pro valide ces deux contrats, sans règle générique. Perso inchangé. La Gateway OpenClaw est possédée par l’application : fermeture normale, attendre son arrêt effectif puis réouverture ; une réouverture pendant l’arrêt peut renvoyer macOS `-600`. Voir [recette](../infrastructure/deployments/mcp-gateway/context7-20261021/REPORT.md).
+
+## Serena centralisé via Docker MCP Gateway — 2026-10-21
+
+La Gateway installée refuse les remotes HTTP (`remote URL must use https`) et les binds hôte hors liste. Utiliser l'entrée conteneur/stdio documentée et les deux autorisations de chemins exacts : clones ro, state dédié rw. Aucun désarmement du contrôle HTTPS ou de la vérification des images. Serena 2.1.0 utilise MCP SDK 2 : `MCPServer.run` reçoit host/port pour HTTP et `CallToolResult.is_error` est l'attribut Python ; `isError` est le champ JSON. Pyright exige uv/uvx ; caches uv et installations Python sont placés dans le state persistant. Le projet actif Serena est un état de processus : l'adaptateur choisit un projet fixe par appel et n'expose pas activate_project. Une session modèle ouverte pendant la mise à jour du profil peut conserver un catalogue incomplet ; distinguer le probe CLI du catalogue réellement utilisé par le modèle. [Rapport et preuves](../infrastructure/deployments/serena/REPORT.md).

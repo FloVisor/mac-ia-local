@@ -1,0 +1,7 @@
+{
+  "ok": false,
+  "error": {
+    "type": "cli_error",
+    "message": "Plugin \"send-approval\" requires capability consent. Rerun the openclaw plugins install, enable, update, or reload command with --accept-capabilities after reviewing the plugin."
+  }
+}

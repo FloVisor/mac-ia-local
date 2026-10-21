@@ -1,0 +1,20 @@
+{
+  "ok": true,
+  "restartRequired": false,
+  "runtime": {
+    "operationId": "408b488e-ee07-4b9d-8ec5-91f12c9f12a0",
+    "generation": 3,
+    "pluginIds": [
+      "send-approval"
+    ],
+    "sourceDigests": {
+      "send-approval": "8bbbc35745bfe4ced80a66b95181fbdf3efdbb7a0eb34d4113fce31ddb828c00"
+    },
+    "selectedEntries": {
+      "send-approval": "/Users/fngux2/Workspaces/mac-ia-local/openclaw/send-approval/index.js"
+    }
+  },
+  "pluginIds": [
+    "send-approval"
+  ]
+}

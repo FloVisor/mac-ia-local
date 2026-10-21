@@ -1,0 +1,9 @@
+
+ RUN  v5.0.2 /Users/fngux2/Workspaces/mac-ia-local/artifacts/send-approval-graph-3.14.1
+
+
+ Test Files  1 passed (1)
+      Tests  1 passed | 7 skipped (8)
+   Start at  22:36:46
+   Duration  879ms (import 76%, transform 20%, tests 5%)
+

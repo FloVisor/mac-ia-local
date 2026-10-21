@@ -1,0 +1,366 @@
+{
+  "models": [
+    {
+      "alias": "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit",
+      "params": {
+        "api_base": "http://ollama-tailscale:8000/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "openai/mlx-community--Qwen3.6-35B-A3B-4bit"
+      },
+      "info": {
+        "blocked": false,
+        "mode": "chat",
+        "backend": "local-omlx",
+        "max_tokens": 131072,
+        "max_input_tokens": 131072,
+        "max_output_tokens": 131072,
+        "supports_response_schema": null,
+        "supports_function_calling": null,
+        "supports_reasoning": null
+      }
+    },
+    {
+      "alias": "local-ollama/embeddinggemma:latest",
+      "params": {
+        "api_base": "http://172.29.2.27:11434",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "ollama/embeddinggemma:latest"
+      },
+      "info": {
+        "blocked": false,
+        "mode": "embedding",
+        "backend": "local-ollama",
+        "max_tokens": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "supports_response_schema": null,
+        "supports_function_calling": null,
+        "supports_reasoning": null
+      }
+    },
+    {
+      "alias": "local-ollama/muse-glimmer:30b-mlx",
+      "params": {
+        "api_base": "http://172.29.2.27:11434",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "ollama_chat/muse-glimmer:30b-mlx"
+      },
+      "info": {
+        "blocked": true,
+        "mode": "chat",
+        "backend": "local-ollama"
+      }
+    },
+    {
+      "alias": "free-groq/qwen3.8-27b",
+      "params": {
+        "api_base": "http://freellmapi_api:3001/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "openai/groq:qwen/qwen3.8-27b"
+      },
+      "info": {
+        "blocked": false,
+        "mode": "chat",
+        "backend": "freellmapi",
+        "route_type": "chat",
+        "max_tokens": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "supports_response_schema": null,
+        "supports_function_calling": null,
+        "supports_reasoning": null
+      }
+    },
+    {
+      "alias": "free-groq/gpt-oss-120b",
+      "params": {
+        "api_base": "http://freellmapi_api:3001/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "openai/groq:openai/gpt-oss-120b"
+      },
+      "info": {
+        "blocked": false,
+        "mode": "chat",
+        "backend": "freellmapi",
+        "route_type": "chat",
+        "max_tokens": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "supports_response_schema": null,
+        "supports_function_calling": null,
+        "supports_reasoning": null
+      }
+    },
+    {
+      "alias": "free-openrouter/dots-3-note-preview:free",
+      "params": {
+        "api_base": "http://freellmapi_api:3001/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "openai/openrouter:dots-studio/dots-3-note-preview:free"
+      },
+      "info": {
+        "blocked": false,
+        "mode": "chat",
+        "backend": "freellmapi",
+        "route_type": "chat",
+        "max_tokens": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "supports_response_schema": null,
+        "supports_function_calling": null,
+        "supports_reasoning": null
+      }
+    },
+    {
+      "alias": "local-ollama/qwen3:4b-instruct",
+      "params": {
+        "api_base": "http://172.29.2.27:11434",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "ollama_chat/qwen3:4b-instruct",
+        "num_ctx": 8192
+      },
+      "info": {
+        "blocked": false,
+        "mode": "chat",
+        "backend": "local-ollama"
+      }
+    },
+    {
+      "alias": "free-openrouter/north-mini-code:free",
+      "params": {
+        "api_base": "http://freellmapi_api:3001/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "openai/openrouter:cohere/north-mini-code:free"
+      },
+      "info": {
+        "blocked": false,
+        "mode": "chat",
+        "backend": "freellmapi",
+        "route_type": "chat",
+        "max_tokens": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "supports_response_schema": null,
+        "supports_function_calling": null,
+        "supports_reasoning": null
+      }
+    },
+    {
+      "alias": "free-mistral/ministral-8b-2512",
+      "params": {
+        "api_base": "http://freellmapi_api:3001/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "openai/mistral:ministral-8b-2512"
+      },
+      "info": {
+        "blocked": false,
+        "mode": "chat",
+        "backend": "freellmapi",
+        "route_type": "chat",
+        "max_tokens": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "supports_response_schema": null,
+        "supports_function_calling": null,
+        "supports_reasoning": null
+      }
+    },
+    {
+      "alias": "free-mistral/codestral-2508",
+      "params": {
+        "api_base": "http://freellmapi_api:3001/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "openai/mistral:codestral-2508"
+      },
+      "info": {
+        "blocked": false,
+        "mode": "chat",
+        "backend": "freellmapi",
+        "route_type": "chat",
+        "max_tokens": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "supports_response_schema": null,
+        "supports_function_calling": null,
+        "supports_reasoning": null
+      }
+    },
+    {
+      "alias": "paid-openrouter/deepseek-v4.1-flash-1017",
+      "params": {
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "openrouter/deepseek/deepseek-v4.1-flash-1017"
+      },
+      "info": {
+        "blocked": false,
+        "mode": "chat",
+        "backend": "openrouter-paid",
+        "max_tokens": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "supports_response_schema": null,
+        "supports_function_calling": null,
+        "supports_reasoning": null
+      }
+    },
+    {
+      "alias": "paid-openrouter/glm-5.3",
+      "params": {
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "openrouter/z-ai/glm-5.3"
+      },
+      "info": {
+        "blocked": false,
+        "mode": "chat",
+        "backend": "openrouter-paid",
+        "max_tokens": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "supports_response_schema": null,
+        "supports_function_calling": null,
+        "supports_reasoning": null
+      }
+    },
+    {
+      "alias": "paid/task-advanced",
+      "params": {
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "openrouter/deepseek/deepseek-v4.1-flash-1017"
+      },
+      "info": {
+        "blocked": false,
+        "mode": "chat",
+        "backend": "openrouter-paid",
+        "max_tokens": null,
+        "max_input_tokens": null,
+        "max_output_tokens": null,
+        "supports_response_schema": null,
+        "supports_function_calling": null,
+        "supports_reasoning": null
+      }
+    },
+    {
+      "alias": "free/task-fast",
+      "params": {
+        "api_base": "http://freellmapi_api:3001/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "openai/auto:task-fast",
+        "max_tokens": 2048
+      },
+      "info": {
+        "blocked": false,
+        "mode": "chat",
+        "backend": "freellmapi",
+        "max_tokens": 262144,
+        "route_type": "pool",
+        "max_input_tokens": 262144,
+        "max_output_tokens": 2048,
+        "supports_response_schema": null,
+        "supports_function_calling": null,
+        "supports_reasoning": null
+      }
+    },
+    {
+      "alias": "free/task-coding",
+      "params": {
+        "api_base": "http://freellmapi_api:3001/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "openai/auto:task-coding",
+        "max_tokens": 2048
+      },
+      "info": {
+        "blocked": false,
+        "mode": "chat",
+        "backend": "freellmapi",
+        "max_tokens": 128000,
+        "route_type": "pool",
+        "max_input_tokens": 128000,
+        "max_output_tokens": 2048,
+        "supports_response_schema": null,
+        "supports_function_calling": null,
+        "supports_reasoning": null
+      }
+    },
+    {
+      "alias": "free/task-reasoning",
+      "params": {
+        "api_base": "http://freellmapi_api:3001/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "openai/auto:task-reasoning",
+        "max_tokens": 2048
+      },
+      "info": {
+        "blocked": false,
+        "mode": "chat",
+        "backend": "freellmapi",
+        "max_tokens": 131072,
+        "route_type": "pool",
+        "max_input_tokens": 131072,
+        "max_output_tokens": 2048,
+        "supports_response_schema": null,
+        "supports_function_calling": null,
+        "supports_reasoning": null
+      }
+    },
+    {
+      "alias": "free/task-long-context",
+      "params": {
+        "api_base": "http://freellmapi_api:3001/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "openai/auto:task-long-context",
+        "max_tokens": 2048
+      },
+      "info": {
+        "blocked": false,
+        "mode": "chat",
+        "backend": "freellmapi",
+        "max_tokens": 256000,
+        "route_type": "pool",
+        "max_input_tokens": 256000,
+        "max_output_tokens": 2048,
+        "supports_response_schema": null,
+        "supports_function_calling": null,
+        "supports_reasoning": null
+      }
+    }
+  ],
+  "router_settings": {
+    "num_retries": 0,
+    "fallbacks": []
+  },
+  "num_retries": 0
+}

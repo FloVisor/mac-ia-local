@@ -1,0 +1,204 @@
+{
+  "captured_at": "2026-10-21T06:29:21.939451+00:00",
+  "source": "docker exec Traefik wget --spider, no bodies or headers exported",
+  "probes": [
+    {
+      "url": "http://192.168.201.21:8765/",
+      "exit": 0,
+      "http_codes": [
+        "302",
+        "200"
+      ],
+      "diagnostic": []
+    },
+    {
+      "url": "http://192.168.201.22:8765/",
+      "exit": 1,
+      "http_codes": [],
+      "diagnostic": [
+        "Connection refused"
+      ]
+    },
+    {
+      "url": "http://192.168.201.23:8765/",
+      "exit": 1,
+      "http_codes": [],
+      "diagnostic": [
+        "Connection refused"
+      ]
+    },
+    {
+      "url": "http://192.168.201.33:5380/",
+      "exit": 0,
+      "http_codes": [
+        "200"
+      ],
+      "diagnostic": []
+    },
+    {
+      "url": "http://192.168.205.40:8080/",
+      "exit": 0,
+      "http_codes": [
+        "200"
+      ],
+      "diagnostic": []
+    },
+    {
+      "url": "http://[2a01:e0a:8ce:68c1::21]:8765/",
+      "exit": 0,
+      "http_codes": [
+        "302",
+        "200"
+      ],
+      "diagnostic": []
+    },
+    {
+      "url": "http://[2a01:e0a:8ce:68c1::22]:8765/",
+      "exit": 1,
+      "http_codes": [],
+      "diagnostic": [
+        "Connection refused"
+      ]
+    },
+    {
+      "url": "http://[2a01:e0a:8ce:68c1::23]:8765/",
+      "exit": 1,
+      "http_codes": [],
+      "diagnostic": [
+        "Connection refused"
+      ]
+    },
+    {
+      "url": "http://[2a01:e0a:8ce:68c5::40]:8080/",
+      "exit": 0,
+      "http_codes": [
+        "200"
+      ],
+      "diagnostic": []
+    },
+    {
+      "url": "http://bookstack:80/",
+      "exit": 0,
+      "http_codes": [
+        "302",
+        "200"
+      ],
+      "diagnostic": []
+    },
+    {
+      "url": "http://diun:9090/",
+      "exit": 1,
+      "http_codes": [
+        "404",
+        "404"
+      ],
+      "diagnostic": []
+    },
+    {
+      "url": "http://homeassistant:8123/",
+      "exit": 0,
+      "http_codes": [
+        "200"
+      ],
+      "diagnostic": []
+    },
+    {
+      "url": "http://homepage:3000/",
+      "exit": 1,
+      "http_codes": [
+        "400",
+        "400"
+      ],
+      "diagnostic": []
+    },
+    {
+      "url": "http://n8n:5678/",
+      "exit": 0,
+      "http_codes": [
+        "200"
+      ],
+      "diagnostic": []
+    },
+    {
+      "url": "http://openwebui:8080/",
+      "exit": 0,
+      "http_codes": [
+        "200"
+      ],
+      "diagnostic": []
+    },
+    {
+      "url": "http://provider-gateway:8081/",
+      "exit": 1,
+      "http_codes": [
+        "404",
+        "404"
+      ],
+      "diagnostic": []
+    },
+    {
+      "url": "https://192.168.201.21:9443/api/status",
+      "exit": 1,
+      "http_codes": [],
+      "diagnostic": [
+        "Connection reset by peer"
+      ]
+    },
+    {
+      "url": "https://192.168.201.22:9443/api/status",
+      "exit": 1,
+      "http_codes": [],
+      "diagnostic": [
+        "Connection reset by peer"
+      ]
+    },
+    {
+      "url": "https://192.168.201.23:9443/api/status",
+      "exit": 1,
+      "http_codes": [],
+      "diagnostic": [
+        "Connection reset by peer"
+      ]
+    },
+    {
+      "url": "https://192.168.201.61:5001/",
+      "exit": 1,
+      "http_codes": [],
+      "diagnostic": [
+        "Connection reset by peer"
+      ]
+    },
+    {
+      "url": "https://[2a01:e0a:8ce:68c1::21]:9443/api/status",
+      "exit": 1,
+      "http_codes": [],
+      "diagnostic": [
+        "Connection reset by peer"
+      ]
+    },
+    {
+      "url": "https://[2a01:e0a:8ce:68c1::22]:9443/api/status",
+      "exit": 1,
+      "http_codes": [],
+      "diagnostic": [
+        "Connection reset by peer"
+      ]
+    },
+    {
+      "url": "https://[2a01:e0a:8ce:68c1::23]:9443/api/status",
+      "exit": 1,
+      "http_codes": [],
+      "diagnostic": [
+        "Connection reset by peer"
+      ]
+    },
+    {
+      "url": "https://[2a01:e0a:8ce:68c1::61]:5001/",
+      "exit": 1,
+      "http_codes": [],
+      "diagnostic": [
+        "Connection reset by peer"
+      ]
+    }
+  ]
+}

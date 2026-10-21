@@ -1,0 +1,24 @@
+{
+  "ok": true,
+  "toolName": "bookstack_search",
+  "output": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"ok\": true,\n  \"scope\": \"global\",\n  \"corpus\": \"pages\",\n  \"pages\": {\n    \"total\": 0,\n    \"page\": 1,\n    \"results\": []\n  },\n  \"note\": \"Aperçus uniquement : lire la page ou le fil pour le contenu complet. La recherche native BookStack n'indexe pas les commentaires.\"\n}"
+      }
+    ],
+    "details": {
+      "ok": true,
+      "scope": "global",
+      "corpus": "pages",
+      "pages": {
+        "total": 0,
+        "page": 1,
+        "results": []
+      },
+      "note": "Aperçus uniquement : lire la page ou le fil pour le contenu complet. La recherche native BookStack n'indexe pas les commentaires."
+    }
+  },
+  "source": "plugin"
+}

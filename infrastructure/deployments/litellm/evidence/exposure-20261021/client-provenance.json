@@ -1,0 +1,21 @@
+{
+  "tls_connections": [
+    {
+      "target": "192.168.205.10",
+      "source": "192.168.202.131",
+      "http_status_line": "HTTP/1.1 200 OK",
+      "tls": "TLSv1.3"
+    },
+    {
+      "target": "2a01:e0a:8ce:68c5::10",
+      "source": "2a01:e0a:8ce:68c2::195",
+      "http_status_line": "HTTP/1.1 200 OK",
+      "tls": "TLSv1.3"
+    }
+  ],
+  "traefik_socket_peers": [
+    "tcp        0      0 2a01:e0a:8ce:68c5::10:443 2a01:e0a:8ce:68c2::195:61681 ESTABLISHED ",
+    "tcp        0      0 ::ffff:192.168.205.10:443 ::ffff:192.168.202.131:61680 ESTABLISHED "
+  ],
+  "socket_probe_exit": 0
+}

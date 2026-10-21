@@ -1,0 +1,92 @@
+{
+  "model_list": [
+    {
+      "model_name": "local-omlx/mlx-community--Qwen3.6-35B-A3B-4bit",
+      "litellm_params": {
+        "api_base": "http://ollama-tailscale:8000/v1",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "litellm_credential_name": "local-omlx-auth",
+        "model": "openai/mlx-community--Qwen3.6-35B-A3B-4bit"
+      },
+      "model_info": {
+        "id": "17720d29-9da3-4888-aef8-f6db0cc5bd96",
+        "mode": "chat",
+        "backend": "local-omlx",
+        "access_groups": [
+          "local-omlx"
+        ]
+      }
+    },
+    {
+      "model_name": "local-ollama/embeddinggemma:latest",
+      "litellm_params": {
+        "api_base": "http://172.29.2.27:11434",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "ollama/embeddinggemma:latest"
+      },
+      "model_info": {
+        "id": "96001682-bd49-4729-be82-3b1f84871396",
+        "mode": "embedding",
+        "backend": "local-ollama",
+        "access_groups": [
+          "local-ollama"
+        ],
+        "advertised_capabilities": [
+          "embedding"
+        ]
+      }
+    },
+    {
+      "model_name": "local-ollama/qwen3:4b-instruct",
+      "litellm_params": {
+        "api_base": "http://172.29.2.27:11434",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "ollama_chat/qwen3:4b-instruct",
+        "num_ctx": 8192
+      },
+      "model_info": {
+        "id": "867c15c5-d096-4f1e-b5ac-3781a56d6083",
+        "mode": "chat",
+        "backend": "local-ollama",
+        "access_groups": [
+          "local-ollama"
+        ],
+        "advertised_capabilities": [
+          "tools",
+          "thinking",
+          "completion"
+        ]
+      }
+    },
+    {
+      "model_name": "local-ollama/muse-glimmer:30b-mlx",
+      "litellm_params": {
+        "api_base": "http://172.29.2.27:11434",
+        "timeout": 300.0,
+        "stream_timeout": 3600.0,
+        "max_retries": 0,
+        "model": "ollama_chat/muse-glimmer:30b-mlx"
+      },
+      "model_info": {
+        "id": "a673aa77-7c29-4da8-a5ad-49d844847f97",
+        "mode": "chat",
+        "backend": "local-ollama",
+        "access_groups": [
+          "local-ollama"
+        ],
+        "advertised_capabilities": [
+          "completion",
+          "vision",
+          "tools",
+          "thinking"
+        ]
+      }
+    }
+  ]
+}
